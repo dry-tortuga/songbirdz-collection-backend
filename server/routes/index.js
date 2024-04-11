@@ -69,6 +69,59 @@ router.get("/image/:id", async (req, res, next) => {
 
 });
 
+// Get the image file for a specific bird
+router.get("/image-lg/:id", async (req, res, next) => {
+
+	const birdId = parseInt(req.params.id, 10);
+
+	// Check to make sure ID parameter is a valid integer number
+	if (isNaN(birdId)) {
+
+		return next({
+			status: 400,
+			message: "The bird ID is invalid",
+		});
+
+	}
+
+	// Check to make sure ID parameter is in the supported range of numbers
+	if (birdId < MIN_BIRD_ID || birdId > MAX_BIRD_ID) {
+
+		return next({
+			status: 400,
+			message: "The bird ID is invalid",
+		});
+
+	}
+
+	// Check to make sure that a species result matches the ID parameter
+	if (!SPECIES_DATA[birdId]?.name) {
+
+		return next({
+			status: 400,
+			message: "The bird ID is invalid",
+		});
+
+	}
+
+	const isIdentified = await isBirdIdentified(birdId);
+
+	const filename = isIdentified
+		? `${birdId}-lg.jpg`
+		: "unidentified.jpg";
+
+	res.sendFile(filename, { root: PRIVATE_PATH.IMAGES }, (err) => {
+
+		if (err) {
+			next(err)
+		} else {
+			debug("Sent: ", filename)
+		}
+ 
+	});
+
+});
+
 // Get the metadata for a specific bird
 router.get("/metadata/:id", async (req, res, next) => {
 
@@ -117,8 +170,9 @@ router.get("/metadata/:id", async (req, res, next) => {
 		name: `Songbird #${birdId}`,
 		description,
 		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
-		audio: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
-		image: `${process.env.SONGBIRDZ_BACKEND_URL}/birds/image/${birdId}`,
+		image: `${process.env.SONGBIRDZ_BACKEND_URL}/birds/image-lg/${birdId}`,
+		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/birds/image/${birdId}`,
+		audio_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
 		species,
 		attributes: [{
 			display_type: "number",
