@@ -4,7 +4,7 @@ This project contains the back-end for the SongBirdz NFT collection. It includes
 
 You can find the front-end application [here](https://github.com/dry-tortuga/songbirdz-collection-frontend).
 
-**NOTE:** The image files, species names, and merkle trees are hidden for now until each bird in the NFT collection has been successfully identified. This means the `./private` folder is not included in this repo, so you will need to generate it yourself if forking this repo!
+**NOTE:** The species names and merkle trees are hidden for now until each bird in the NFT collection has been successfully identified. This means the `./private` folder is not included in this repo, so you will need to generate it yourself if forking this repo!
 
 # Solidity (ERC721 Contract)
 
@@ -34,9 +34,9 @@ Since each bird starts out unidentified, this back-end server is used to obfusca
 
 The API endpoints for the server are:
 
-- `GET /birds/image/:id` -> Returns the image file associated with the given bird ID. If the bird is not yet identified, then the image file will be hidden.
+- `GET /birds/image/:id` -> Returns the image file associated with the given bird ID.
 
-- `GET /birds/metadata/:id` -> Returns the metadata associated with the given bird ID. If the bird is not yet identified, then the species name, description, and image file will be hidden. See [here](https://docs.opensea.io/docs/getting-started) for the expected JSON structure of the response.
+- `GET /birds/metadata/:id` -> Returns the metadata associated with the given bird ID. If the bird is not yet identified, then the species name and description will be hidden. See [here](https://docs.opensea.io/docs/getting-started) for the expected JSON structure of the response.
 
 - `GET /birds/merkle-proof/:id` -> Returns the merkle tree proof associated with the given bird ID and species name guess.
 
