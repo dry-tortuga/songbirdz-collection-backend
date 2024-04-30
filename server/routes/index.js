@@ -169,12 +169,10 @@ router.get("/metadata/:id", async (req, res, next) => {
 	res.send({
 		name: `Songbird #${birdId}`,
 		description,
+		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
-		// image: `${process.env.SONGBIRDZ_BACKEND_URL}/birds/image-lg/${birdId}`,
-		// image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/birds/image/${birdId}`,
 		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
-		audio_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
 		species,
 		attributes: [{
 			display_type: "number",
