@@ -5,7 +5,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes");
+const indexStreamer = require("./streams");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// initialize the API routes
 app.use("/birds", indexRouter);
 
 if ((process.env.NODE_ENV === 'staging' ||
@@ -44,5 +46,8 @@ app.use(function(err, req, res, next) {
 	res.send("error");
 
 });
+
+// initialize the ws streaming
+indexStreamer();
 
 module.exports = app;
