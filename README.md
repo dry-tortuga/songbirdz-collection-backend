@@ -40,17 +40,23 @@ The API endpoints for the server are:
 
 - `GET /birds/merkle-proof/:id` -> Returns the merkle tree proof associated with the given bird ID and species name guess.
 
-There are 4 node scripts related to the server:
+There are 6 node scripts related to the server:
 
 1. `./scripts/node/generateImages.js` can be used to generate the image files using Dalle-3 for a collection of 1000 birds.
 
 2. `./scripts/node/generateSpeciesAndAudio.js` can be used to generate the species names, answer choices, and audio files for a collection of 1000 birds.
 
-3. `./scripts/bash/trimAudioFiles` can be used to clean up the final audio files for a collection of 1000 birds.
+3. `./scripts/node/generateMerkleTree.js` can be used to generate the merkle tree for a collection of 1000 birds.
 
-4. `./scripts/bash/processImageFiles` can be used to clean up the final image files for a collection of 1000 birds.
+4. `./scripts/node/backfillPoints.js` can be used to backfill any missing points based on transfer and sale events on OpenSea.
 
-5. `./scripts/node/generateMerkleTree.js` can be used to generate the merkle tree for a collection of 1000 birds.
+- `npx api install "@opensea/v2.0#tyjem2mlwzlfgof"`
+
+There are 2 bash scripts related to the server:
+
+1. `./scripts/bash/trimAudioFiles` can be used to clean up the final audio files for a collection of 1000 birds.
+
+2. `./scripts/bash/processImageFiles` can be used to clean up the final image files for a collection of 1000 birds.
 
 ## Setup
 

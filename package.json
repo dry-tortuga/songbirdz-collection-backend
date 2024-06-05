@@ -34,6 +34,7 @@
     "truffle": "^5.4.29"
   },
   "dependencies": {
+    "@api/opensea": "file:.api/apis/opensea",
     "@opensea/stream-js": "^0.1.3",
     "@openzeppelin/contracts": "^5.0.0",
     "@openzeppelin/merkle-tree": "^1.0.5",
