@@ -1,8 +1,11 @@
+const { Alchemy, Network, Utils } = require("alchemy-sdk");
 const fs = require("fs");
 const OpenAI = require("openai");
 const path = require("path");
 
 const sdk = require("@api/opensea");
+
+const {	SONGBIRDZ_CONTRACT_ABI } = require("../../server/constants");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -17,6 +20,7 @@ const CONTRACT_GENESIS_TIME = new Date("2024-04-01 00:00");
 const CURRENT_TIME = new Date();
 
 const ONE_WEEK_IN_SECS = 604800;
+const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -34,6 +38,13 @@ sdk.auth(process.env.OPENSEA_PRIVATE_API_KEY);
 
 sdk.server("https://api.opensea.io");
 
+// https://docs.alchemy.com/reference/alchemy-getassettransfers
+
+const alchemy = new Alchemy({
+	apiKey: process.env.ALCHEMY_API_KEY,
+	network: Network.BASE_MAINNET,
+});
+
 /*
 function sleep(ms) {
 	return new Promise((resolve) => {
@@ -44,12 +55,109 @@ function sleep(ms) {
 
 const finalPointResults = {};
 
-const fetchEvents = async (after, before) => {
+const fetchAlchemyEvents = async (results = {}) => {
 
 	let isLoadingMore = true;
 	let nextBatchCursor = undefined;
 
-	// Loop through each batch in the this time period
+	// Loop through each batch in this time period
+	while (isLoadingMore) {
+
+		console.log(`-------- next=${nextBatchCursor} --------`);
+
+		const data = await alchemy.core.getAssetTransfers({
+			fromBlock: 12723129,
+			toBlock: "latest",
+			category: ["erc721"],
+			contractAddresses: [process.env.SONGBIRDZ_CONTRACT_ADDRESS],
+			order: "asc", // Oldest to Newest
+			withMetadata: true,
+			maxCount: "0x3e8", // 1000
+			pageKey: nextBatchCursor, // Key for the next page
+		});
+
+		console.log(data.pageKey);
+
+		// Loop through each event in this time period
+		for (let i = 0, len = data.transfers.length; i < len; i++) {
+
+			const event = data.transfers[i];
+
+			console.log(event);
+
+			let parsedHexId = Utils.hexStripZeros(event.tokenId).replace('0x', '');
+
+			// Handle edge case of the bird with ID = 0
+			if (parsedHexId === "") {
+				parsedHexId = "0";
+			}
+
+			// Convert hex value to decimal value for the bird ID
+			const id = parseInt(parsedHexId, 16);
+
+			if (event.category !== "erc721") {
+				throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
+			}
+
+			if (event.erc721TokenId !== event.tokenId) {
+				throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
+			}
+
+			const from = event.from;
+			const to = event.to;
+
+			let pointsToAward = 0;
+
+			// Check if the transfer was related to minting (i.e. successful identification)
+			if (from === ZERO_ADDRESS) {
+
+				pointsToAward = 10;
+
+			// Otherwise, it was a simple transfer (or possibly a sale)
+			} else {
+
+				pointsToAward = 1;
+
+			}
+
+			// Check to make sure the results include an entry for the user's address
+			if (!results[to]) {
+				results[to] = {};
+			}
+
+			// Check to make sure the results don't already include this id/event combo
+			if (!results[to][id] ||
+				results[to][id] < pointsToAward) {
+
+				// If not, then award the user the points!
+				results[to][id] = pointsToAward;
+
+			}
+
+		}
+
+		// Check the cursor for the next batch of results for this time period
+		nextBatchCursor = data.pageKey;
+
+		// If there's no next batch of results, then we're done!
+		if (!nextBatchCursor) {
+			isLoadingMore = false;
+		}
+
+	}
+
+	return results;
+
+};
+
+const fetchOpenseaEvents = async (after, before, results = {}) => {
+
+	const finalResults = Object.assign({}, results);
+
+	let isLoadingMore = true;
+	let nextBatchCursor = undefined;
+
+	// Loop through each batch in this time period
 	while (isLoadingMore) {
 
 		console.log(`-------- next=${nextBatchCursor} --------`);
@@ -57,9 +165,9 @@ const fetchEvents = async (after, before) => {
 		// Fetch the events from the OpenSea API
 		const { data } = await sdk.list_events_by_collection({
 			collection_slug: OPENSEA_COLLECTION_SLUG,
-			event_type: ["sale", "transfer"],
+			event_type: ["sale"],
 			after: Math.floor(CONTRACT_GENESIS_TIME.getTime() / 1000),
-			// before: Math.floor(before.getTime() / 1000),
+			before: Math.floor(before.getTime() / 1000),
 			limit: "50",
 			next: nextBatchCursor,
 		});
@@ -77,6 +185,10 @@ const fetchEvents = async (after, before) => {
 			
 			let from, to;
 
+			if (event.event_type !== "sale") {
+				throw new Error(`Encountered an invalid event_type=${event.event_type}!`);				
+			}
+
 			if (event.chain !== "base") {
 				throw new Error(`Encountered an invalid chain=${event.chain}!`);
 			}
@@ -85,75 +197,46 @@ const fetchEvents = async (after, before) => {
 				throw new Error(`Encountered an invalid nft.identifier=${event.nft.identifier}!`);	
 			}
 
+			if (event.quantity !== 1) {
+				throw new Error(`Encountered an invalid quantity=${event.quantity} for a sale!`);
+			}
+
+			if (event.payment.symbol !== "ETH") {
+				throw new Error(`Encountered an invalid payment.symbol=${event.payment.symbol} for a sale!`);
+			}
+
+			if (event.payment.decimals !== 18) {
+				throw new Error(`Encountered an invalid payment.decimals=${event.payment.decimals} for a sale!`);
+			}
+
 			let pointsToAward = 0;
 
-			if (event.event_type === "transfer") {
+			from = event.seller;
+			to = event.buyer;
 
-				if (event.quantity !== 1) {
-					throw new Error(`Encountered an invalid quantity=${event.quantity} for a transfer!`);
-				}
+			// Check if the sale was above the minting price
+			if (parseInt(event.payment.quantity, 10) > parseInt(OPENSEA_CONTRACT_MINT_PRICE, 10)) {
 
-				from = event.from_address;
-				to = event.to_address;
+				pointsToAward = 3;
 
-				// Check if the transfer was related to minting (i.e. successful identification)
-				if (from === ZERO_ADDRESS) {
-
-					pointsToAward = 10;
-
-				// Otherwise, it was a simple transfer (or possibly a sale)
-				} else {
-
-					pointsToAward = 1;
-
-				}
-
-			} else if (event.event_type === "sale") {
-
-				if (event.quantity !== 1) {
-					throw new Error(`Encountered an invalid quantity=${event.quantity} for a sale!`);
-				}
-
-				if (event.payment.symbol !== "ETH") {
-					throw new Error(`Encountered an invalid payment.symbol=${event.payment.symbol} for a sale!`);
-				}
-
-				if (event.payment.decimals !== 18) {
-					throw new Error(`Encountered an invalid payment.decimals=${event.payment.decimals} for a sale!`);
-				}
-
-				from = event.seller;
-				to = event.buyer;
-
-				// Check if the sale was above the minting price
-				if (parseInt(event.payment.quantity, 10) > parseInt(OPENSEA_CONTRACT_MINT_PRICE, 10)) {
-
-					pointsToAward = 3;
-
-				// Otherwise, it's worth less points
-				} else {
-
-					pointsToAward = 1;
-
-				}
-
+			// Otherwise, it's worth less points
 			} else {
 
-				throw new Error(`Encountered an invalid event_type=${event.event_type}!`);
+				pointsToAward = 1;
 
 			}
 
 			// Check to make sure the results include an entry for the user's address
-			if (!finalPointResults[to]) {
-				finalPointResults[to] = {};
+			if (!finalResults[to]) {
+				finalResults[to] = {};
 			}
 
 			// Check to make sure the results don't already include this id/event combo
-			if (!finalPointResults[to][id] ||
-				finalPointResults[to][id] < pointsToAward) {
+			if (!finalResults[to][id] ||
+				finalResults[to][id] < pointsToAward) {
 
 				// If not, then award the user the points!
-				finalPointResults[to][id] = pointsToAward;
+				finalResults[to][id] = pointsToAward;
 
 			}
 
@@ -169,6 +252,8 @@ const fetchEvents = async (after, before) => {
 
 	}
 
+	return finalResults;
+
 };
 
 // Generate and store the final image files for the collection
@@ -183,14 +268,20 @@ const fetchEvents = async (after, before) => {
 
 	try {
 
+		let result = {};
+
+		// Fetch all Alchemy events for the current time period
+
+		result = await fetchAlchemyEvents(result);
+
 		// Check if we've reached the current date
 		while (after < CURRENT_TIME) {
 
 			console.log(`-------- Fetching events from ${after} to ${before} --------`);
 
-			// Fetch the events for the current time period
+			// Fetch all OpenSea events for the current time period
 
-			await fetchEvents(after, before);
+			result = await fetchOpenseaEvents(after, before, result);
 
 			// Move on to the next time period
 
@@ -199,8 +290,8 @@ const fetchEvents = async (after, before) => {
 
 		}
 
-		console.log('---------------- Final Point Results ------------------');
-		console.log(finalPointResults);
+		console.log("---------------- Final Point Results ------------------");
+		console.log(result);
 
 	} catch (error) {
 		console.error(error);
