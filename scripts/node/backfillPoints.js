@@ -5,6 +5,7 @@ const path = require("path");
 
 const sdk = require("@api/opensea");
 
+const db = require("../../server/db");
 const {	SONGBIRDZ_CONTRACT_ABI } = require("../../server/constants");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
@@ -16,11 +17,12 @@ const COLLECTION_SIZE = 1000;
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
 const OPENSEA_CONTRACT_MINT_PRICE = "1500000000000000";
+const CONTRACT_GENESIS_BLOCK = 12723129;
 const CONTRACT_GENESIS_TIME = new Date("2024-04-01 00:00");
 const CURRENT_TIME = new Date();
 
 const ONE_WEEK_IN_SECS = 604800;
-const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
+const ONE_WEEK_IN_BLOCKS = 604800 / 12; // 1 block produced every 12 seconds
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -55,7 +57,7 @@ function sleep(ms) {
 
 const finalPointResults = {};
 
-const fetchAlchemyEvents = async (results = {}) => {
+const fetchAlchemyEvents = async (after, before, results = {}) => {
 
 	let isLoadingMore = true;
 	let nextBatchCursor = undefined;
@@ -66,8 +68,8 @@ const fetchAlchemyEvents = async (results = {}) => {
 		console.log(`-------- next=${nextBatchCursor} --------`);
 
 		const data = await alchemy.core.getAssetTransfers({
-			fromBlock: 12723129,
-			toBlock: "latest",
+			fromBlock: after,
+			toBlock: before,
 			category: ["erc721"],
 			contractAddresses: [process.env.SONGBIRDZ_CONTRACT_ADDRESS],
 			order: "asc", // Oldest to Newest
@@ -264,20 +266,27 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 	before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 
+	let afterBlock = CONTRACT_GENESIS_BLOCK;
+	let beforeBlock = afterBlock + ONE_WEEK_IN_BLOCKS;
+
 	let nextBatchCursor = undefined;
 
 	try {
 
 		let result = {};
 
-		// Fetch all Alchemy events for the current time period
-
-		result = await fetchAlchemyEvents(result);
-
 		// Check if we've reached the current date
 		while (after < CURRENT_TIME) {
 
 			console.log(`-------- Fetching events from ${after} to ${before} --------`);
+
+			if (before >= CURRENT_TIME) {
+				beforeBlock = "latest";
+			}
+
+			// Fetch all Alchemy events for the current time period
+
+			result = await fetchAlchemyEvents(afterBlock, beforeBlock, result);
 
 			// Fetch all OpenSea events for the current time period
 
@@ -287,6 +296,9 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 			after.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 			before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
+
+			afterBlock += ONE_WEEK_IN_BLOCKS;
+			beforeBlock += ONE_WEEK_IN_BLOCKS;
 
 		}
 
