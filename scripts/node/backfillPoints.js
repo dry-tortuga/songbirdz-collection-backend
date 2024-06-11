@@ -5,10 +5,10 @@ const path = require("path");
 
 const sdk = require("@api/opensea");
 
-const db = require("../../server/db");
-const {	SONGBIRDZ_CONTRACT_ABI } = require("../../server/constants");
-
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
+
+const DB = require("../../server/db");
+const {	SONGBIRDZ_CONTRACT_ABI } = require("../../server/constants");
 
 const COLLECTION_NAME = "picasso";
 const COLLECTION_START_INDEX = 0;
@@ -20,13 +20,18 @@ const OPENSEA_CONTRACT_MINT_PRICE = "1500000000000000";
 const CONTRACT_GENESIS_BLOCK = 12723129;
 const CONTRACT_GENESIS_TIME = new Date("2024-04-01 00:00");
 const CURRENT_TIME = new Date();
+const CURRENT_BLOCK = 15632888;
 
 const ONE_WEEK_IN_SECS = 604800;
-const ONE_WEEK_IN_BLOCKS = 604800 / 12; // 1 block produced every 12 seconds
+const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
+
+// Create a new connection to the database
+
+const db = new DB();
 
 // Get the list of species names to use as answer key for the collection
 
@@ -46,14 +51,6 @@ const alchemy = new Alchemy({
 	apiKey: process.env.ALCHEMY_API_KEY,
 	network: Network.BASE_MAINNET,
 });
-
-/*
-function sleep(ms) {
-	return new Promise((resolve) => {
-		setTimeout(resolve, ms);
-	});
-}
-*/
 
 const finalPointResults = {};
 
@@ -127,12 +124,23 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 				results[to] = {};
 			}
 
+			// Check to make sure the results include an entry for the bird's ID
+			if (!results[to][id]) {
+
+				results[to][id] = {
+					amount: 0,
+					timestamp: null,
+				};
+
+			}
+
 			// Check to make sure the results don't already include this id/event combo
-			if (!results[to][id] ||
-				results[to][id] < pointsToAward) {
+			if (results[to][id].amount < pointsToAward) {
 
 				// If not, then award the user the points!
-				results[to][id] = pointsToAward;
+
+				results[to][id].amount = pointsToAward;
+				results[to][id].timestamp = new Date(event.metadata.blockTimestamp);
 
 			}
 
@@ -233,12 +241,23 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 				finalResults[to] = {};
 			}
 
+			// Check to make sure the results include an entry for the bird's ID
+			if (!results[to][id]) {
+
+				results[to][id] = {
+					amount: 0,
+					timestamp: null,
+				};
+
+			}
+
 			// Check to make sure the results don't already include this id/event combo
-			if (!finalResults[to][id] ||
-				finalResults[to][id] < pointsToAward) {
+			if (finalResults[to][id].amount < pointsToAward) {
 
 				// If not, then award the user the points!
-				finalResults[to][id] = pointsToAward;
+
+				results[to][id].amount = pointsToAward;
+				results[to][id].timestamp = new Date(event.event_timestamp * 1000);
 
 			}
 
@@ -255,6 +274,44 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 	}
 
 	return finalResults;
+
+};
+
+const storePoints = async (pointResults) => {
+
+	// Loop through each address in the results
+	for (const address in pointResults) {
+
+		const birdIdEvents = pointResults[address];
+
+		// Loop through each bird ID event for the address in the results
+		for (const birdID in birdIdEvents) {
+
+			console.log(`-------- Checking for id=${birdID} for address=${address} ---------`);
+
+			const data = birdIdEvents[birdID];
+
+			const existingLog = await db.fetchPointLog(address, parseInt(birdID, 10));
+
+			if (!existingLog) {
+
+				// TODO: Update if existingLog.amount < data.amount
+
+				await db.createOrUpdatePointLog({
+					address,
+					bird_id: parseInt(birdID, 10),
+					amount: data.amount,
+					timestamp: data.timestamp,
+				});
+
+			}
+
+		}
+
+	}
+
+	// Close the connection to the database
+	await db.close();
 
 };
 
@@ -284,6 +341,14 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 				beforeBlock = "latest";
 			}
 
+			if (afterBlock >= CURRENT_BLOCK) {
+				afterBlock = "latest";
+			}
+
+			if (beforeBlock >= CURRENT_BLOCK) {
+				beforeBlock = "latest";
+			}
+
 			// Fetch all Alchemy events for the current time period
 
 			result = await fetchAlchemyEvents(afterBlock, beforeBlock, result);
@@ -297,13 +362,22 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 			after.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 			before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 
-			afterBlock += ONE_WEEK_IN_BLOCKS;
-			beforeBlock += ONE_WEEK_IN_BLOCKS;
+			if (afterBlock !== "latest") {
+				afterBlock += ONE_WEEK_IN_BLOCKS;
+			}
+
+			if (beforeBlock !== "latest") {
+				beforeBlock += ONE_WEEK_IN_BLOCKS;
+			}
 
 		}
 
 		console.log("---------------- Final Point Results ------------------");
 		console.log(result);
+
+		// Store the point results in the database
+
+		await storePoints(result);
 
 	} catch (error) {
 		console.error(error);

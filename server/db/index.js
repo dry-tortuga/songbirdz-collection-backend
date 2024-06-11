@@ -1,7 +1,32 @@
-const createOrUpdatePoint = require("./createOrUpdatePoint");
-const fetchPoint = require("./fetchPoint");
+const createOrUpdatePointLog = require("./createOrUpdatePointLog");
+const fetchPointLog = require("./fetchPointLog");
 
-module.exports = {
-	createOrUpdatePoint,
-	fetchPoint,
+const { MongoClient } = require("mongodb");
+
+class DB {
+
+	constructor() {
+
+		// Create a new client and connect to MongoDB
+		this.client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
+
+	}
+
+	async close() {
+
+		// Close the MongoDB client connection
+		await this.client.close();
+
+	}
+
+	async createOrUpdatePointLog(data) {
+		return await createOrUpdatePointLog(this.client, data);
+	}
+
+	async fetchPointLog(address, birdID) {
+		return await fetchPointLog(this.client, address, birdID);
+	}
+
 };
+
+module.exports = DB;

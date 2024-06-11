@@ -1,9 +1,4 @@
-const { MongoClient } = require("mongodb");
-
-// Create a new client and connect to MongoDB
-const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
-
-const createOrUpdatePoint = async (data) => {
+const createOrUpdatePointLog = async (client, data) => {
 
 	try {
 
@@ -27,13 +22,8 @@ const createOrUpdatePoint = async (data) => {
 
 		console.error(error);
 
-	} finally {
-
-		// Close the MongoDB client connection
-		await client.close();
-
 	}
 
 };
 
-module.exports = createOrUpdatePoint;
+module.exports = createOrUpdatePointLog;
