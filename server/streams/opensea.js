@@ -1,6 +1,6 @@
-import { OpenSeaStreamClient, Network } from '@opensea/stream-js';
-import { WebSocket } from 'ws';
-import { LocalStorage } from 'node-localstorage';
+const { OpenSeaStreamClient, Network } = require("@opensea/stream-js");
+const { WebSocket } = require("ws");
+const { LocalStorage } = require("node-localstorage");
 
 // https://docs.opensea.io/reference/stream-api-overview
 
@@ -12,11 +12,11 @@ const OPENSEA_COLLECTION_SLUG = process.env.OPENSEA_COLLECTION_SLUG;
 
 let network = null;
 
-if (process.env.NODE_ENV === 'staging') {
+if (process.env.NODE_ENV === "staging") {
 
 	network = Network.TESTNET;
 
-} else if (process.env.NODE_ENV === 'production') {
+} else if (process.env.NODE_ENV === "production") {
 
 	network = Network.MAINNET;
 
@@ -25,17 +25,17 @@ if (process.env.NODE_ENV === 'staging') {
 const initOpenseaStream = () => {
 
 	if (!network) {
-		console.error('Network is not specified for opensea stream...');
+		console.error("Network is not specified for opensea stream...");
 		return;
 	}
 
 	if (!OPENSEA_API_KEY) {
-		console.error('API key is not specified for opensea stream...');
+		console.error("API key is not specified for opensea stream...");
 		return;
 	}
 
 	if (!OPENSEA_COLLECTION_SLUG) {
-		console.error('Collection slug is not specified for opensea stream...');
+		console.error("Collection slug is not specified for opensea stream...");
 		return;
 	}
 

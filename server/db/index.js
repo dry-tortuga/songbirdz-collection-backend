@@ -1,5 +1,6 @@
 const createOrUpdatePointLog = require("./createOrUpdatePointLog");
 const fetchPointLog = require("./fetchPointLog");
+const rankPointLogs = require("./rankPointLogs");
 
 const { MongoClient } = require("mongodb");
 
@@ -25,6 +26,10 @@ class DB {
 
 	async fetchPointLog(address, birdID) {
 		return await fetchPointLog(this.client, address, birdID);
+	}
+
+	async rankPointLogs(limit = 50) {
+		return await rankPointLogs(this.client, limit);
 	}
 
 };

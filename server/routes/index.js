@@ -5,7 +5,8 @@ const {
 	getBirdLg,
 	getBirdMetadata,
 	getBirdProof,
-} = require('./birds');
+} = require("./birds");
+const { getLeaderboard } = require("./leaderboard");
 
 const router = express.Router();
 
@@ -20,5 +21,8 @@ router.get("/metadata/:id", getBirdMetadata);
 
 // Get the merkle tree proof of the species guess for a specific bird
 router.get("/merkle-proof/:id", getBirdProof);
+
+// Get the leaderboard
+router.get("/leaderboard", getLeaderboard);
 
 module.exports = router;

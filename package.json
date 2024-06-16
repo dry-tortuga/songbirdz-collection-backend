@@ -5,7 +5,7 @@
   "description": "Back-End for the Songbirdz NFT Collection",
   "main": "index.js",
   "scripts": {
-    "start-server": "NODE_ENV=development DEBUG=* node ./server/bin/www",
+    "start-server": "npm run deploy-local; npm run populate-local; NODE_ENV=development DEBUG=* node ./server/bin/www",
     "start-blockchain": "NODE_ENV=development npx hardhat node",
     "compile-contracts": "NODE_ENV=development npx hardhat compile",
     "test-contracts": "NODE_ENV=development npx hardhat test",
