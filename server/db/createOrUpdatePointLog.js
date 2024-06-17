@@ -10,6 +10,7 @@ const createOrUpdatePointLog = async (client, data) => {
 		// Insert the defined document into the "point_logs" collection
 		const result = await pointLogs.insertOne({
 			address: data.address,
+			species_id: data.species_id,
 			bird_id: data.bird_id,
 			amount: data.amount,
 			timestamp: data.timestamp,

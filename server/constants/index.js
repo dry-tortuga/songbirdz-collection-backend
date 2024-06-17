@@ -19,11 +19,15 @@ const COLLECTIION_SIZE = 1000;
 const MIN_BIRD_ID = 0;
 const MAX_BIRD_ID = 999;
 
-// Build data map of ID -> name for all the species
+// Build data map of ID -> name|collection for all the birds
 
-const SPECIES_DATA = {};
+const KEY_BIRD_DATA = {};
 
-// Build data map of ID -> merkle tree for all the collections
+// Build data map of name -> ID for all the species
+
+const SOURCE_SPECIES_DATA = {};
+
+// Build an array of merkle tree data for all the collections
 
 const MERKLE_TREE_DATA = [];
 
@@ -41,7 +45,7 @@ fs.readFileSync(
 	// Get the unique ID of the bird relative to the entire 10000
 	const finalIndex = COLLECTION_START_INDEX + index;
 
-	SPECIES_DATA[finalIndex] = {
+	KEY_BIRD_DATA[finalIndex] = {
 		name,
 		collectionName: COLLECTION_NAME,
 		collectionNumber: COLLECTION_NUMBER,
@@ -49,17 +53,44 @@ fs.readFileSync(
 
 });
 
+if (Object.keys(KEY_BIRD_DATA).length !== 1000) {
+	throw new Error(`Invalid size received for KEY_BIRD_DATA!`);
+}
+
+fs.readFileSync(
+	`${PRIVATE_PATH.COLLECTIONS}/picasso/source.txt`,
+	"utf8",
+).split(/\r?\n/).forEach((name, index) => {
+
+	const SPECIES_START_INDEX = 0;
+
+	// Get the unique ID of the species relative to the entire set
+	const finalIndex = SPECIES_START_INDEX + index;
+
+	SOURCE_SPECIES_DATA[name] = finalIndex;
+
+});
+
+if (Object.keys(SOURCE_SPECIES_DATA).length !== 200) {
+	throw new Error(`Invalid size received for SOURCE_SPECIES_DATA!`);
+}
+
 MERKLE_TREE_DATA.push(StandardMerkleTree.load(JSON.parse(fs.readFileSync(
 	`${PRIVATE_PATH.COLLECTIONS}/picasso/tree.json`,
 	"utf8",
 ))));
+
+if (Object.keys(MERKLE_TREE_DATA).length !== 1) {
+	throw new Error(`Invalid size received for MERKLE_TREE_DATA!`);
+}
 
 module.exports = {
 	UNIDENTIFIED_NAME,
 	COLLECTIION_SIZE,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
-	SPECIES_DATA,
+	KEY_BIRD_DATA,
+	SOURCE_SPECIES_DATA,
 	MERKLE_TREE_DATA,
 	SONGBIRDZ_CONTRACT_ABI,
 	PRIVATE_PATH,

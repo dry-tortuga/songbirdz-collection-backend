@@ -7,7 +7,7 @@ const {
 	UNIDENTIFIED_NAME,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
-	SPECIES_DATA,
+	KEY_BIRD_DATA,
 	MERKLE_TREE_DATA,
 	PRIVATE_PATH,
 } = require("../constants");
@@ -38,7 +38,7 @@ const getBird = async (req, res, next) => {
 	}
 
 	// Check to make sure that a species result matches the ID parameter
-	if (!SPECIES_DATA[birdId]?.name) {
+	if (!KEY_BIRD_DATA[birdId]?.name) {
 
 		return next({
 			status: 400,
@@ -90,7 +90,7 @@ const getBirdLg = async (req, res, next) => {
 	}
 
 	// Check to make sure that a species result matches the ID parameter
-	if (!SPECIES_DATA[birdId]?.name) {
+	if (!KEY_BIRD_DATA[birdId]?.name) {
 
 		return next({
 			status: 400,
@@ -142,8 +142,8 @@ const getBirdMetadata = async (req, res, next) => {
 	}
 
 	// Check to make sure that a species result matches the ID parameter
-	if (!SPECIES_DATA[birdId]?.name ||
-		!SPECIES_DATA[birdId]?.collectionName) {
+	if (!KEY_BIRD_DATA[birdId]?.name ||
+		!KEY_BIRD_DATA[birdId]?.collectionName) {
 
 		return next({
 			status: 400,
@@ -154,7 +154,7 @@ const getBirdMetadata = async (req, res, next) => {
 
 	const isIdentified = await isBirdIdentified(birdId);
 
-	const species = isIdentified ? SPECIES_DATA[birdId].name : UNIDENTIFIED_NAME;
+	const species = isIdentified ? KEY_BIRD_DATA[birdId].name : UNIDENTIFIED_NAME;
 	const description = isIdentified ? null : 'This bird has not been identified yet.';
 
 	// See below the required JSON structure for metadata
@@ -171,10 +171,10 @@ const getBirdMetadata = async (req, res, next) => {
 		attributes: [{
 			display_type: "number",
 			trait_type: "Collection",
-			value: SPECIES_DATA[birdId].collectionNumber,
+			value: KEY_BIRD_DATA[birdId].collectionNumber,
 		}, {
 			trait_type: "Style",
-			value: SPECIES_DATA[birdId].collectionName,
+			value: KEY_BIRD_DATA[birdId].collectionName,
 		}, {
 			trait_type: "Species",
 			value: species,
@@ -220,7 +220,7 @@ const getBirdProof = async (req, res, next) => {
 	}
 
 	// Check to make sure that a species result matches the ID parameter
-	if (!SPECIES_DATA[birdId]?.name) {
+	if (!KEY_BIRD_DATA[birdId]?.name) {
 
 		return next({
 			status: 400,
@@ -229,7 +229,7 @@ const getBirdProof = async (req, res, next) => {
 
 	}
 
-	const collectionNumber = SPECIES_DATA[birdId].collectionNumber;
+	const collectionNumber = KEY_BIRD_DATA[birdId].collectionNumber;
 
 	const merkleTree = MERKLE_TREE_DATA[collectionNumber];
 

@@ -1,4 +1,4 @@
-const fetchPointLog = async (client, address, birdID) => {
+const fetchPointLog = async (client, address, speciesID) => {
 
 	try {
 
@@ -10,7 +10,7 @@ const fetchPointLog = async (client, address, birdID) => {
 		// Query for a matching point log
 		const result = await pointLogs.findOne({
 			address,
-			bird_id: birdID,
+			species_id: speciesID,
 		});
 
 		console.log(result);
