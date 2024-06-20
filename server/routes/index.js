@@ -6,7 +6,10 @@ const {
 	getBirdMetadata,
 	getBirdProof,
 } = require("./birds");
-const { getLeaderboard } = require("./leaderboard");
+const {
+	getLeaderboard,
+	getLifeList,
+} = require("./leaderboard");
 
 const router = express.Router();
 
@@ -24,5 +27,8 @@ router.get("/merkle-proof/:id", getBirdProof);
 
 // Get the leaderboard
 router.get("/leaderboard", getLeaderboard);
+
+// Get the life list for a specific user
+router.get("/life-list", getLifeList);
 
 module.exports = router;
