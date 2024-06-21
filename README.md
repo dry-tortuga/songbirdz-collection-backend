@@ -40,7 +40,7 @@ The API endpoints for the server are:
 
 - `GET /birds/merkle-proof/:id` -> Returns the merkle tree proof associated with the given bird ID and species name guess.
 
-There are 6 node scripts related to the server:
+There are 4 node scripts related to the server:
 
 1. `./scripts/node/generateImages.js` can be used to generate the image files using Dalle-3 for a collection of 1000 birds.
 
