@@ -107,7 +107,18 @@ const initOpenseaStream = () => {
 				}
 
 				const timestamp = payload.event_timestamp;
-				const parsedStringId = payload.item.nft_id.split('/').pop();
+
+				const nftPiecesID = payload.item.nft_id.split('/');
+
+				if (nftPiecesID[0] !== chain) {
+					throw new Error(`Encountered an invalid chain=${nftPiecesID[0]} for a transfer!`);
+				}
+
+				if (nftPiecesID[1] !== process.env.SONGBIRDZ_CONTRACT_ADDRESS) {
+					throw new Error(`Encountered an contract address=${nftPiecesID[1]} for a transfer!`);
+				}
+
+				const parsedStringId = nftPiecesID[2];
 
 				const quantity = payload.quantity;
 
@@ -168,7 +179,18 @@ const initOpenseaStream = () => {
 				}
 
 				const timestamp = payload.event_timestamp;
-				const parsedStringId = payload.item.nft_id.split('/').pop();
+
+				const nftPiecesID = payload.item.nft_id.split('/');
+
+				if (nftPiecesID[0] !== chain) {
+					throw new Error(`Encountered an invalid chain=${nftPiecesID[0]} for a sale!`);
+				}
+
+				if (nftPiecesID[1] !== process.env.SONGBIRDZ_CONTRACT_ADDRESS) {
+					throw new Error(`Encountered an contract address=${nftPiecesID[1]} for a sale!`);
+				}
+
+				const parsedStringId = nftPiecesID[2];
 
 				const quantity = payload.quantity;
 				const salePrice = parseInt(payload.sale_price, 10);
