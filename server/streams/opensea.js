@@ -92,11 +92,13 @@ const initOpenseaStream = () => {
 
 			try {
 
+				console.log('------------- OpenSea streamClient.onItemTransferred event --------');
+
 				// Handle event
 
-				const payload = event.payload.payload;
+				const payload = event.payload;
 
-				console.log(payload);
+				console.log(event);
 
 				if (payload.collection.slug !== OPENSEA_COLLECTION_SLUG) {
 					throw new Error(`Encountered an invalid collection.slug=${payload.collection.slug} for a transfer!`);
@@ -114,7 +116,7 @@ const initOpenseaStream = () => {
 					throw new Error(`Encountered an invalid chain=${nftPiecesID[0]} for a transfer!`);
 				}
 
-				if (nftPiecesID[1] !== process.env.SONGBIRDZ_CONTRACT_ADDRESS) {
+				if (nftPiecesID[1].toLowerCase() !== process.env.SONGBIRDZ_CONTRACT_ADDRESS.toLowerCase()) {
 					throw new Error(`Encountered an contract address=${nftPiecesID[1]} for a transfer!`);
 				}
 
@@ -166,9 +168,10 @@ const initOpenseaStream = () => {
 
 				// Handle event
 
-				const payload = event.payload.payload;
+				const payload = event.payload;
 
-				console.log(payload);
+				console.log('------------- OpenSea streamClient.onItemSold event --------');
+				console.log(event);
 
 				if (payload.collection.slug !== OPENSEA_COLLECTION_SLUG) {
 					throw new Error(`Encountered an invalid collection.slug=${payload.collection.slug} for a sale!`);
