@@ -13,6 +13,10 @@ const {
 	KEY_BIRD_DATA,
 	SOURCE_SPECIES_DATA,
 } = require("../../server/constants");
+const {
+	processPoints,
+	storePoints,
+} = require("../../server/utils/points");
 
 const COLLECTION_NAME = "picasso";
 const COLLECTION_START_INDEX = 0;
@@ -20,7 +24,6 @@ const COLLECTION_SIZE = 1000;
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const OPENSEA_CONTRACT_MINT_PRICE = "1500000000000000";
 const CONTRACT_GENESIS_BLOCK = 12723129;
 const CONTRACT_GENESIS_TIME = new Date("2024-04-01 00:00");
 const CURRENT_TIME = new Date();
@@ -30,12 +33,6 @@ const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
-
-const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
-
-// Create a new connection to the database
-
-const db = new DB();
 
 // https://docs.opensea.io/reference/list_events_by_collection
 
@@ -49,26 +46,6 @@ const alchemy = new Alchemy({
 	apiKey: process.env.ALCHEMY_API_KEY,
 	network: Network.BASE_MAINNET,
 });
-
-const finalPointResults = {};
-
-const convertBirdIDtoSpeciesID = (birdID) => {
-
-	const speciesName = KEY_BIRD_DATA[birdID]?.name;
-
-	if (!speciesName) {
-		throw new Error(`Missing species name for bird_id=${birdID}!`);
-	}
-
-	const speciesID = SOURCE_SPECIES_DATA[speciesName];
-
-	if (!speciesID) {
-		throw new Error(`Missing species record for species_id=${speciesID}!`);
-	}
-
-	return speciesID;
-
-};
 
 const fetchAlchemyEvents = async (after, before, results = {}) => {
 
@@ -120,21 +97,14 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 
 			const from = event.from;
 			const to = event.to;
-			const speciesID = convertBirdIDtoSpeciesID(id);
 
-			let pointsToAward = 0;
-
-			// Check if the transfer was related to minting (i.e. successful identification)
-			if (from === ZERO_ADDRESS) {
-
-				pointsToAward = 10;
-
-			// Otherwise, it was a simple transfer (or possibly a sale)
-			} else {
-
-				pointsToAward = 1;
-
-			}
+			// Process the event to determine the amount of points to award
+			const {
+				pointsToAward,
+				speciesID,
+			} = processPoints(id, from, to, {
+				type: 'transfer',
+			});
 
 			// Check to make sure the results include an entry for the user's address
 			if (!results[to]) {
@@ -212,7 +182,8 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 			const id = parseInt(event.nft.identifier, 10);
 			
-			let from, to;
+			const from = event.seller;
+			const to = event.buyer;
 
 			if (event.event_type !== "sale") {
 				throw new Error(`Encountered an invalid event_type=${event.event_type}!`);				
@@ -238,24 +209,14 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 				throw new Error(`Encountered an invalid payment.decimals=${event.payment.decimals} for a sale!`);
 			}
 
-			const speciesID = convertBirdIDtoSpeciesID(id);
-
-			let pointsToAward = 0;
-
-			from = event.seller;
-			to = event.buyer;
-
-			// Check if the sale was above the minting price
-			if (parseInt(event.payment.quantity, 10) > parseInt(OPENSEA_CONTRACT_MINT_PRICE, 10)) {
-
-				pointsToAward = 3;
-
-			// Otherwise, it's worth less points
-			} else {
-
-				pointsToAward = 1;
-
-			}
+			// Process the event to determine the amount of points to award
+			const {
+				pointsToAward,
+				speciesID,
+			} = processPoints(id, from, to, {
+				type: 'sale',
+				pricePaid: parseInt(event.payment.quantity, 10),
+			});
 
 			// Check to make sure the results include an entry for the user's address
 			if (!finalResults[to]) {
@@ -300,46 +261,12 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 };
 
-const storePoints = async (pointResults) => {
-
-	// Loop through each address in the results
-	for (const address in pointResults) {
-
-		const birdIdentificationEvents = pointResults[address];
-
-		// Loop through each species ID event for the address in the results
-		for (const speciesID in birdIdentificationEvents) {
-
-			console.log(`-------- Checking for id=${speciesID} for address=${address} ---------`);
-
-			const data = birdIdentificationEvents[speciesID];
-
-			const existingLog = await db.fetchPointLog(address, parseInt(speciesID, 10));
-
-			// Check to make sure the results don't already include this id/event combo
-			if (!existingLog || existingLog.amount < data.amount) {
-
-				await db.createOrUpdatePointLog({
-					address,
-					species_id: parseInt(speciesID, 10),
-					bird_id: parseInt(data.bird_id, 10),
-					amount: data.amount,
-					timestamp: data.timestamp,
-				});
-
-			}
-
-		}
-
-	}
-
-	// Close the connection to the database
-	await db.close();
-
-};
-
 // Generate and store the final image files for the collection
 (async () => {
+
+	// Create a new connection to the database
+
+	const db = new DB();
 
 	let after = new Date(CONTRACT_GENESIS_TIME);
 	let before = new Date(CONTRACT_GENESIS_TIME);
@@ -400,7 +327,11 @@ const storePoints = async (pointResults) => {
 
 		// Store the point results in the database
 
-		await storePoints(result);
+		await storePoints(db, result);
+
+		// Close the connection to the database
+
+		await db.close();
 
 	} catch (error) {
 		console.error(error);

@@ -2,6 +2,13 @@ const { OpenSeaStreamClient, Network } = require("@opensea/stream-js");
 const { WebSocket } = require("ws");
 const { LocalStorage } = require("node-localstorage");
 
+const DB = require("../db");
+const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require("../constants");
+const {
+	processPoints,
+	storePoints,
+} = require("../utils/points");
+
 // https://docs.opensea.io/reference/stream-api-overview
 
 const OPENSEA_API_KEY = process.env.OPENSEA_PRIVATE_API_KEY;
@@ -10,22 +17,47 @@ const OPENSEA_COLLECTION_SLUG = process.env.OPENSEA_COLLECTION_SLUG;
 
 // Choose the environments to listen to
 
-let network = null;
+let network = null, chain = null;
 
 if (process.env.NODE_ENV === "staging") {
 
 	network = Network.TESTNET;
+	chain = "base_sepolia";
 
 } else if (process.env.NODE_ENV === "production") {
 
 	network = Network.MAINNET;
+	chain = "base";
 
 }
+
+const convertBirdIDtoSpeciesID = (birdID) => {
+
+	const speciesName = KEY_BIRD_DATA[birdID]?.name;
+
+	if (!speciesName) {
+		throw new Error(`Missing species name for bird_id=${birdID}!`);
+	}
+
+	const speciesID = SOURCE_SPECIES_DATA[speciesName];
+
+	if (!speciesID) {
+		throw new Error(`Missing species record for species_id=${speciesID}!`);
+	}
+
+	return speciesID;
+
+};
 
 const initOpenseaStream = () => {
 
 	if (!network) {
 		console.error("Network is not specified for opensea stream...");
+		return;
+	}
+
+	if (!chain) {
+		console.error("Chain is not specified for opensea stream...");
 		return;
 	}
 
@@ -38,6 +70,10 @@ const initOpenseaStream = () => {
 		console.error("Collection slug is not specified for opensea stream...");
 		return;
 	}
+
+	// Create a new connection to the database
+
+	const db = new DB();
 
 	// Create the client
 
@@ -52,15 +88,127 @@ const initOpenseaStream = () => {
 			},
 		});
 
-		client.onItemTransferred(OPENSEA_COLLECTION_SLUG, (event) => {
+		client.onItemTransferred(OPENSEA_COLLECTION_SLUG, async (event) => {
 
-			// Handle event
+			try {
+
+				// Handle event
+
+				const payload = event.payload.payload;
+
+				console.log(payload);
+
+				if (payload.collection.slug !== OPENSEA_COLLECTION_SLUG) {
+					throw new Error(`Encountered an invalid collection.slug=${payload.collection.slug} for a transfer!`);
+				}
+
+				if (payload.item.chain.name !== chain) {
+					throw new Error(`Encountered an invalid chain=${payload.collection.slug} for a transfer!`);
+				}
+
+				const timestamp = payload.event_timestamp;
+				const parsedStringId = payload.item.nft_id.split('/').pop();
+
+				const quantity = payload.quantity;
+
+				if (quantity !== 1) {
+					throw new Error(`Encountered an invalid quantity=${quantity} for a transfer!`);
+				}
+
+				// Convert string value to decimal value for the bird ID
+				const id = parseInt(parsedStringId, 10);
+
+				const from = payload.from_account.address;
+				const to = payload.to_account.address;
+
+				// Process the event to determine the amount of points to award
+				const {
+					pointsToAward,
+					speciesID,
+				} = processPoints(id, from, to, {
+					type: 'transfer',
+				});
+
+				const result = {
+					[to]: {
+						[speciesID]: {
+							bird_id: id,
+							amount: pointsToAward,
+							timestamp: new Date(timestamp),
+						},
+					}
+				};
+
+				// Store the point results in the database
+
+				await storePoints(db, result);
+
+			} catch (error) {
+				console.error(error);
+			}
 
 		});
 
-		client.onItemSold(OPENSEA_COLLECTION_SLUG, (event) => {
+		client.onItemSold(OPENSEA_COLLECTION_SLUG, async (event) => {
 
-			// Handle event
+			try {
+
+				// Handle event
+
+				const payload = event.payload.payload;
+
+				console.log(payload);
+
+				if (payload.collection.slug !== OPENSEA_COLLECTION_SLUG) {
+					throw new Error(`Encountered an invalid collection.slug=${payload.collection.slug} for a sale!`);
+				}
+
+				if (payload.item.chain.name !== chain) {
+					throw new Error(`Encountered an invalid chain=${payload.collection.slug} for a sale!`);
+				}
+
+				const timestamp = payload.event_timestamp;
+				const parsedStringId = payload.item.nft_id.split('/').pop();
+
+				const quantity = payload.quantity;
+				const salePrice = parseInt(payload.sale_price, 10);
+
+				if (quantity !== 1) {
+					throw new Error(`Encountered an invalid quantity=${quantity} for a sale!`);
+				}
+
+				// Convert string value to decimal value for the bird ID
+				const id = parseInt(parsedStringId, 10);
+
+				const from = payload.maker.address;
+				const to = payload.taker.address;
+
+				// Process the event to determine the amount of points to award
+				const {
+					pointsToAward,
+					speciesID,
+				} = processPoints(id, from, to, {
+					type: 'sale',
+					pricePaid: salePrice,
+				});
+
+				const result = {
+					[to]: {
+						[speciesID]: {
+							bird_id: id,
+							amount: pointsToAward,
+							timestamp: new Date(timestamp),
+						},
+					}
+				};
+
+				// Store the point results in the database
+
+				await storePoints(db, result);
+
+			} catch (error) {
+				console.error(error);
+			}
 
 		});
 

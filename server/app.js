@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 const indexRouter = require("./routes");
-// const indexStreamer = require("./streams");
+const indexStreamer = require("./streams");
 
 const app = express();
 
@@ -48,6 +48,6 @@ app.use(function(err, req, res, next) {
 });
 
 // initialize the ws streaming
-// indexStreamer();
+indexStreamer();
 
 module.exports = app;

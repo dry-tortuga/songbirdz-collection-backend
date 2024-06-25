@@ -2,7 +2,13 @@ const initOpenseaStream = require("./opensea");
 
 const streamer = () => {
 
-	initOpenseaStream();
+	try {
+
+		initOpenseaStream();
+
+	} catch (error) {
+		console.error(error);
+	}
 
 };
 
