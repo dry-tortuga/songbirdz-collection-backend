@@ -13,8 +13,6 @@ const fetchPointLog = async (client, address, speciesID) => {
 			species_id: speciesID,
 		});
 
-		console.log(result);
-
 		return result;
 
 	} catch(error) {

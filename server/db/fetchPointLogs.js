@@ -10,8 +10,6 @@ const fetchPointLogs = async (client, address) => {
 		// Query for all matching point logs
 		const result = await pointLogs.find({ address });
 
-		console.log(result);
-
 		const finalData = await result.toArray();
 
 		return finalData;

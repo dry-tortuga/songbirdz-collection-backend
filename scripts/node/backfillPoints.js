@@ -27,7 +27,7 @@ const OPENSEA_COLLECTION_SLUG = "songbirdz";
 const CONTRACT_GENESIS_BLOCK = 12723129;
 const CONTRACT_GENESIS_TIME = new Date("2024-04-01 00:00");
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 15632888;
+const CURRENT_BLOCK = 16267048;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
