@@ -8,9 +8,9 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 const abiPath = path.join(__dirname, "../../artifacts/contracts/SongBirdz.sol");
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
-const COLLECTION_NAME = "picasso";
-const COLLECTION_NUMBER = 0;
-const COLLECTION_START_INDEX = 0;
+const COLLECTION_NAME = "waterfowl-1";
+const COLLECTION_NUMBER = 1;
+const COLLECTION_START_INDEX = 1000;
 const COLLECTION_SIZE = 1000;
 
 // Loading the contract ABI

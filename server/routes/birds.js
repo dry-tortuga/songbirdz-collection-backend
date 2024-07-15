@@ -3,7 +3,7 @@ const { ethers: { keccak256, toUtf8Bytes } } = require("ethers");
 const fs = require("fs");
 
 const {
-	COLLECTIIN_SIZE,
+	COLLECTION_SIZE,
 	UNIDENTIFIED_NAME,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
@@ -162,8 +162,6 @@ const getBirdProof = async (req, res, next) => {
 };
 
 module.exports = {
-	getBird,
-	getBirdLg,
 	getBirdMetadata,
 	getBirdProof,
 };

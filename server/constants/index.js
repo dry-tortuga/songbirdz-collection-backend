@@ -44,14 +44,14 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 		const finalIndex = (cIndex * COLLECTION_SIZE) + birdIndex;
 
 		KEY_BIRD_DATA[finalIndex] = {
-			name,
+			name: speciesName,
 			collectionName: COLLECTION_NAMES[cIndex],
 			collectionNumber: cIndex,
 		};
 
 	});
 
-	if (Object.keys(KEY_BIRD_DATA).length !== COLLECTION_SIZE) {
+	if (Object.keys(KEY_BIRD_DATA).length !== (COLLECTION_SIZE + (COLLECTION_SIZE * cIndex))) {
 		throw new Error(`Invalid size=${Object.keys(KEY_BIRD_DATA).length} received for KEY_BIRD_DATA!`);
 	}
 
@@ -78,9 +78,11 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 
 	} else {
 
-		fs.readFileSync(
+		const sourceList = require(
 			`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`,
-		).forEach((sBird, sIndex) => {
+		);
+
+		sourceList.forEach((sBird, sIndex) => {
 
 			const SPECIES_START_INDEX = 200 + (50 * (cIndex - 1));
 
