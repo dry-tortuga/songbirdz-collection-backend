@@ -154,10 +154,12 @@ const initOpenseaStream = () => {
 
 				// Store the point results in the database
 
+				console.log(result);
+
 				await storePoints(db, result);
 
 			} catch (error) {
-				console.error(error);
+				console.log(error);
 			}
 
 		});
@@ -229,10 +231,12 @@ const initOpenseaStream = () => {
 
 				// Store the point results in the database
 
+				console.log(result);
+
 				await storePoints(db, result);
 
 			} catch (error) {
-				console.error(error);
+				console.log(error);
 			}
 
 		});

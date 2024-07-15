@@ -201,7 +201,7 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 				throw new Error(`Encountered an invalid quantity=${event.quantity} for a sale!`);
 			}
 
-			if (event.payment.symbol !== "ETH") {
+			if (event.payment.symbol !== "ETH" && event.payment.symbol !== "WETH") {
 				throw new Error(`Encountered an invalid payment.symbol=${event.payment.symbol} for a sale!`);
 			}
 
