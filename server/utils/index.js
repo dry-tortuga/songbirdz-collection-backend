@@ -17,6 +17,12 @@ const BIRD_ID_RESULTS = {};
 
 const isBirdIdentified = async (id) => {
 
+	// Check if the bird's collection has been 100% identified as a whole
+	if (id <= 999) {
+		debug(`isBirdIdentified=true,id=${id},collection=100%`);
+		return true;
+	}
+
 	// Check if the bird has already been successfully identified
 	if (BIRD_ID_RESULTS[id]) {
 

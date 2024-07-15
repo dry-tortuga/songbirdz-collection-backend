@@ -131,8 +131,8 @@ const initOpenseaStream = () => {
 				// Convert string value to decimal value for the bird ID
 				const id = parseInt(parsedStringId, 10);
 
-				const from = payload.from_account.address;
-				const to = payload.to_account.address;
+				const from = payload.from_account.address.toLowerCase();
+				const to = payload.to_account.address.toLowerCase();
 
 				// Process the event to determine the amount of points to award
 				const {
@@ -205,8 +205,8 @@ const initOpenseaStream = () => {
 				// Convert string value to decimal value for the bird ID
 				const id = parseInt(parsedStringId, 10);
 
-				const from = payload.maker.address;
-				const to = payload.taker.address;
+				const from = payload.maker.address.toLowerCase();
+				const to = payload.taker.address.toLowerCase();
 
 				// Process the event to determine the amount of points to award
 				const {

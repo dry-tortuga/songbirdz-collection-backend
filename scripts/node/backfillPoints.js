@@ -95,8 +95,8 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 				throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
 			}
 
-			const from = event.from;
-			const to = event.to;
+			const from = event.from.toLowerCase();
+			const to = event.to.toLowerCase();
 
 			// Process the event to determine the amount of points to award
 			const {
@@ -182,8 +182,8 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 			const id = parseInt(event.nft.identifier, 10);
 			
-			const from = event.seller;
-			const to = event.buyer;
+			const from = event.seller.toLowerCase();
+			const to = event.buyer.toLowerCase();
 
 			if (event.event_type !== "sale") {
 				throw new Error(`Encountered an invalid event_type=${event.event_type}!`);				

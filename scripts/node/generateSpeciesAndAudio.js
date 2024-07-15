@@ -4,10 +4,9 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "picasso";
-const COLLECTION_START_INDEX = 0;
+const COLLECTION_NAME = "waterfowl-1";
+const COLLECTION_START_INDEX = 1000;
 const COLLECTION_SIZE = 1000;
-const NUMBER_OF_UNIQUE_SPECIES = 200;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
@@ -33,20 +32,30 @@ const audioSourceMaterial = fs.readdirSync(audioFolder).forEach((file) => {
 
 });
 
-// Get the list of species names to use as source for the collection
+// Get the list of bird species to use as source for the collection
 
-const speciesSourceNames = fs.readFileSync(
-	`${privatePath}/collections/${COLLECTION_NAME}/source.txt`, "utf8"
-).split(/\r?\n/);
+const speciesSourceBirds = require(
+	`${privatePath}/collections/${COLLECTION_NAME}/source.json`,
+);
 
 // Build the final list of species names (in randomized order)
 
 let finalSpeciesNames = [];
 
-for (let i = 0; i < (COLLECTION_SIZE / NUMBER_OF_UNIQUE_SPECIES); i++) {
-	finalSpeciesNames = [...finalSpeciesNames, ...speciesSourceNames];
+speciesSourceBirds.forEach((bird) => {
+
+	for (let i = 0; i < bird.count; i++) {
+		finalSpeciesNames.push(bird.name);
+	}
+
+});
+
+if (finalSpeciesNames.length !== COLLECTION_SIZE) {
+	throw new Error(`The collection must contain exactly ${COLLECTION_SIZE} birds!`);
 }
 
+shuffle(finalSpeciesNames);
+shuffle(finalSpeciesNames);
 shuffle(finalSpeciesNames);
 
 // Store the final list of species name to the answer key for the collection
@@ -69,19 +78,19 @@ console.log(`The answer key for the ${COLLECTION_NAME} collection was stored at 
 
 const answerChoices = [];
 
+const speciesSourceNames = speciesSourceBirds.map((bird) => bird.name);
+
 finalSpeciesNames.forEach((name, index) => {
 
 	let answerSourceNames = [...speciesSourceNames.filter((temp) => temp !== name)];
 
 	shuffle(answerSourceNames);
 
-	answerSourceNames = [name, ...answerSourceNames.slice(0, 14)];
+	answerSourceNames = [name, ...answerSourceNames.slice(0, 4)];
 
 	shuffle(answerSourceNames);
 
-	answerChoices.push({
-		options: answerSourceNames,
-	});
+	answerChoices.push({ options: answerSourceNames });
 
 });
 
@@ -97,13 +106,15 @@ fs.writeFileSync(finalAnswerChoicesFileName, JSON.stringify(answerChoices), (err
 
 // Store the final list of audio files for the collection
 
+console.log(`----- Generating the audio files for the ${COLLECTION_NAME} collection ------`);
+
 finalSpeciesNames.forEach((name, index) => {
+
+	console.log(index);
 
 	if (!audioHashMap[name]) {
 		throw new Error(`The audio file is missing for species="${name}"!`);
 	}
-
-	console.log(index);
 
 	// Get the unique ID of the bird relative to the entire 10000
 	const finalIndex = COLLECTION_START_INDEX + index;

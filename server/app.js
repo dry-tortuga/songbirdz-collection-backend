@@ -11,7 +11,7 @@ const indexStreamer = require("./streams");
 const app = express();
 
 app.use(cors({ origin: "*" }));
-app.use(logger("dev"));
+app.use(logger("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

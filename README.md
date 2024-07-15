@@ -158,20 +158,21 @@ You should now be able to succesfully run the front-end application!
 - [x] Deploy the back-end server to gcloud/aws/azure/etc.
 - [x] Deploy the front-end application to gcloud/aws/azure/etc.
 - [x] Navigate to https://songbirdz.cc and verify that the application is working!
-- [ ] Successfully mint a bird NFT with Metamask - Chrome
-- [ ] Incorrectly mint a bird NFT with Metamask - Chrome
+- [x] Successfully mint a bird NFT with Metamask - Chrome
+- [x] Incorrectly mint a bird NFT with Metamask - Chrome
 - [x] Successfully mint a bird NFT with Coinbase Wallet - Chrome
 - [x] Incorrectly mint a bird NFT with Coinbase Wallet - Chrome
-- [ ] Successfully mint a bird NFT with Metamask - Mobile
-- [ ] Incorrectly mint a bird NFT with Metamask - Mobile
-- [ ] Successfully mint a bird NFT with Coinbase Wallet - Mobile
-- [ ] Incorrectly mint a bird NFT with Coinbase Wallet - Mobile
+- [x] Successfully mint a bird NFT with Metamask - Mobile
+- [x] Incorrectly mint a bird NFT with Metamask - Mobile
+- [x] Successfully mint a bird NFT with Coinbase Wallet - Mobile
+- [x] Incorrectly mint a bird NFT with Coinbase Wallet - Mobile
 - [x] Verify the collection (i.e. metadata) on OpenSea mainnet.
 
 ## Roadmap for Production
 - [x] Upload the first 1,000 birds in the Picasso collection.
-- [ ] Successfully mint all 1,000 birds in the Picasso collection.
-- [ ] Make public the merkle tree, images, species, audio, etc. files for the first 1,000 birds in the Picasso collection.
+- [x] Successfully mint all 1,000 birds in the Picasso collection.
+- [x] Make public the merkle tree, images, species, audio, etc. files for the first 1,000 birds in the Picasso collection.
+- [ ] Repeat for TBD collection with birds 1000-1999.
 - [ ] Repeat for TBD collection with birds 2000-2999.
 - [ ] Repeat for TBD collection with birds 3000-3999.
 - [ ] Repeat for TBD collection with birds 4000-4999.

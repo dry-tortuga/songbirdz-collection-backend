@@ -9,15 +9,23 @@ class DB {
 
 	constructor() {
 
-		// Create a new client and connect to MongoDB
-		this.client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
+		if (process.env.NODE_ENV === "production") {
+
+			// Create a new client and connect to MongoDB
+			this.client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
+
+		}
 
 	}
 
 	async close() {
 
-		// Close the MongoDB client connection
-		await this.client.close();
+		if (process.env.NODE_ENV === "production") {
+
+			// Close the MongoDB client connection
+			await this.client.close();
+
+		}
 
 	}
 
