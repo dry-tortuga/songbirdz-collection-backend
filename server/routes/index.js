@@ -3,6 +3,7 @@ const express = require("express");
 const {
 	getBirdMetadata,
 	getBirdProof,
+	getBirdAlreadyIdentifiedList,
 } = require("./birds");
 const {
 	getLeaderboard,
@@ -16,6 +17,9 @@ router.get("/metadata/:id", getBirdMetadata);
 
 // Get the merkle tree proof of the species guess for a specific bird
 router.get("/merkle-proof/:id", getBirdProof);
+
+// Get the list of already identified birds
+router.get("/already-identified-list", getBirdAlreadyIdentifiedList);
 
 // Get the leaderboard
 router.get("/leaderboard", getLeaderboard);

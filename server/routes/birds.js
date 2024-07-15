@@ -13,6 +13,10 @@ const {
 } = require("../constants");
 const { isBirdIdentified } = require("../utils");
 
+// Store identification results locally in simple cache to
+// speed-up lookup for birds that are already identified
+const BIRD_ID_RESULTS = {};
+
 const getBirdMetadata = async (req, res, next) => {
 
 	const birdId = parseInt(req.params.id, 10);
@@ -48,7 +52,7 @@ const getBirdMetadata = async (req, res, next) => {
 
 	}
 
-	const isIdentified = await isBirdIdentified(birdId);
+	const isIdentified = await isBirdIdentified(birdId, BIRD_ID_RESULTS);
 
 	const species = isIdentified ? KEY_BIRD_DATA[birdId].name : UNIDENTIFIED_NAME;
 	const description = isIdentified ? null : 'This bird has not been identified yet.';
@@ -161,7 +165,12 @@ const getBirdProof = async (req, res, next) => {
 
 };
 
+const getBirdAlreadyIdentifiedList = async (req, res, next) => {
+	res.send({ results: BIRD_ID_RESULTS });
+};
+
 module.exports = {
 	getBirdMetadata,
 	getBirdProof,
+	getBirdAlreadyIdentifiedList,
 };

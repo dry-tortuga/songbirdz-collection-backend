@@ -47,6 +47,8 @@ for (let i = 0; i < COLLECTION_SIZE; i++) {
 	const imageFileBytes = new Uint8Array(imageFile);
 
 	console.log(`${birdId}: ${species}`);
+	console.log(audioFileBytes.length);
+	console.log(imageFileBytes.length);
 
 	// Add hash values as leafs to the merkle tree
 

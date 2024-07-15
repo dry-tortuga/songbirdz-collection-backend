@@ -11,11 +11,7 @@ const contract = new ethers.Contract(
 	provider,
 );
 
-// Store identification results locally in simple cache to
-// speed-up lookup for birds that are already identified
-const BIRD_ID_RESULTS = {};
-
-const isBirdIdentified = async (id) => {
+const isBirdIdentified = async (id, cachedResults) => {
 
 	// Check if the bird's collection has been 100% identified as a whole
 	if (id <= 999) {
@@ -24,7 +20,7 @@ const isBirdIdentified = async (id) => {
 	}
 
 	// Check if the bird has already been successfully identified
-	if (BIRD_ID_RESULTS[id]) {
+	if (cachedResults[id]) {
 
 		debug(`isBirdIdentified=true,id=${id},owner=hit`);
 		return true;
@@ -39,7 +35,7 @@ const isBirdIdentified = async (id) => {
 		debug(`isBirdIdentified=true,id=${id},owner=${owner}`);
 
 		// Store the result in the cache
-		BIRD_ID_RESULTS[id] = true;
+		cachedResults[id] = true;
 
 		return true;
 
@@ -53,6 +49,4 @@ const isBirdIdentified = async (id) => {
 
 };
 
-module.exports = {
-	isBirdIdentified,
-};
+module.exports = { isBirdIdentified };
