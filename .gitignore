@@ -47,3 +47,5 @@ private/
 # solidity-coverage files
 /coverage
 /coverage.json
+
+.api/
