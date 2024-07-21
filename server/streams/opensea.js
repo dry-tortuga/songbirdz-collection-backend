@@ -3,7 +3,6 @@ const { WebSocket } = require("ws");
 const { LocalStorage } = require("node-localstorage");
 
 const DB = require("../db");
-const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require("../constants");
 const {
 	processPoints,
 	storePoints,
