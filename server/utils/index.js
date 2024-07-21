@@ -1,7 +1,7 @@
 const debug = require("debug")("server");
 const { ethers } = require("ethers");
 
-const {	SONGBIRDZ_CONTRACT_ABI } = require("../constants");
+const { SONGBIRDZ_CONTRACT_ABI } = require("../constants");
 
 const provider = new ethers.JsonRpcProvider(process.env.BASE_NETWORK_RPC_URL);
 
@@ -14,7 +14,7 @@ const contract = new ethers.Contract(
 const isBirdIdentified = async (id, cachedResults) => {
 
 	// Check if the bird's collection has been 100% identified as a whole
-	if (id <= 999) {
+	if (id <= 1999) {
 		debug(`isBirdIdentified=true,id=${id},collection=100%`);
 		return true;
 	}

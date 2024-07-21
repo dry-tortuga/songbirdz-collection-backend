@@ -169,10 +169,11 @@ You should now be able to succesfully run the front-end application!
 - [x] Verify the collection (i.e. metadata) on OpenSea mainnet.
 
 ## Roadmap for Production
-- [x] Upload the first 1,000 birds in the Picasso collection.
-- [x] Successfully mint all 1,000 birds in the Picasso collection.
-- [x] Make public the merkle tree, images, species, audio, etc. files for the first 1,000 birds in the Picasso collection.
-- [ ] Repeat for TBD collection with birds 1000-1999.
+- [x] Upload the first 1,000 birds in the "Picasso Genesis" flock.
+- [x] Successfully mint all 1,000 birds (0-999) in the "Picasso Genesis" flock.
+- [x] Make public the (merkle-tree, images, species, audio) files for the "Picasso Genesis" flock.
+- [x] Successfully mint all 1,000 birds (1000-1999) in the "Deep Blue" flock.
+- [x] Make public the (merkle-tree, images, species, audio) files for the "Deep Blue" flock.
 - [ ] Repeat for TBD collection with birds 2000-2999.
 - [ ] Repeat for TBD collection with birds 3000-3999.
 - [ ] Repeat for TBD collection with birds 4000-4999.
@@ -181,7 +182,7 @@ You should now be able to succesfully run the front-end application!
 - [ ] Repeat for TBD collection with birds 7000-7999.
 - [ ] Repeat for TBD collection with birds 8000-8999.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
-- [ ] Upload all merkle tree, images, species, audio, etc. files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [nft.storage](https://nft.storage/)).
+- [ ] Upload all (merkle-tree, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [nft.storage](https://nft.storage/)).
 - [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [nft.storage](https://nft.storage/). Freeze it permanently!
 - [ ] Upload the web application to a decentralized storage provider (i.e. [nft.storage](https://nft.storage/).
 - [ ] Shut down the back-end server.

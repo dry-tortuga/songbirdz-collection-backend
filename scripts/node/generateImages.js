@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "waterfowl-1";
-const COLLECTION_START_INDEX = 1000;
+const COLLECTION_NAME = "small-but-mighty-2";
+const COLLECTION_START_INDEX = 2000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -56,15 +56,61 @@ function sleep(ms) {
 
 	const errors = [];
 
-	const redos = [272];
+	const redos = [
+		802,
+		817,
+		820,
+		838,
+		847,
+		901,
+		906,
+		913,
+		993,
+		47,
+		327,
+		0,
+		284,
+		314,
+		616,
+		721,
+		930,
+		961,
+		136,
+		83,
+		93,
+		98,
+		211,
+		215,
+		309,
+		728,
+		5,
+		55,
+		3,
+		579,
+		606,
+		826,
+		760,
+		833,
+		223,
+		270,
+		397,
+		453,
+		2,
+		486,
+		496,
+		1,
+		595,
+		597,
+		664,
+	];
 
 	for (let temp = 0; temp < redos.length; temp++) {
 
 		const i = redos[temp];
 
-		if (i === 967 || i === 339 || i === 326 || i === 77 || i === 146) {
-			continue;
-		}
+		// if (i === 844 || i === 603 || i === 673 || i === 575 || i === 202) {
+		//	continue;
+		//}
 
 		try {
 
@@ -115,6 +161,8 @@ async function generateImage(i) {
 
 	let promptName = name, colorsToFeature = '';
 
+	/*
+
 	if (promptName === 'Ring-necked Duck') {
 
 		colorsToFeature += ' with focus on the black head, gray bill featuring a white stripe at top, and a yellow eye';
@@ -163,11 +211,9 @@ async function generateImage(i) {
 		promptName = ' common sandpiper wading in the water'
 		colorsToFeature + ', large round body, brilliant terracotta-orange underparts and intricate gold, red, rufous, and black upperparts';
 
-	} else {
+	} else { */
 
-		promptName += ' bird';
-
-	}
+	promptName += ' bird';
 
 	console.log(`---${finalIndex}---`);
 

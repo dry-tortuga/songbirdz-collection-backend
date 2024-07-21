@@ -31,24 +31,6 @@ if (process.env.NODE_ENV === "staging") {
 
 }
 
-const convertBirdIDtoSpeciesID = (birdID) => {
-
-	const speciesName = KEY_BIRD_DATA[birdID]?.name;
-
-	if (!speciesName) {
-		throw new Error(`Missing species name for bird_id=${birdID}!`);
-	}
-
-	const speciesID = SOURCE_SPECIES_DATA[speciesName];
-
-	if (!speciesID) {
-		throw new Error(`Missing species record for species_id=${speciesID}!`);
-	}
-
-	return speciesID;
-
-};
-
 const initOpenseaStream = () => {
 
 	if (!network) {

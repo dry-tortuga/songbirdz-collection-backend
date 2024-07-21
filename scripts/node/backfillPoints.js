@@ -18,10 +18,6 @@ const {
 	storePoints,
 } = require("../../server/utils/points");
 
-const COLLECTION_NAME = "picasso";
-const COLLECTION_START_INDEX = 0;
-const COLLECTION_SIZE = 1000;
-
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
 const CONTRACT_GENESIS_BLOCK = 12723129;

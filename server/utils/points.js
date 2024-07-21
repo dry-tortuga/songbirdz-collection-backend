@@ -1,4 +1,4 @@
-const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require("../constants");
+const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require('../constants');
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 

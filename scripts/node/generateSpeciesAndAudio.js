@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "waterfowl-1";
-const COLLECTION_START_INDEX = 1000;
+const COLLECTION_NAME = "small-but-mighty-2";
+const COLLECTION_START_INDEX = 2000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -74,7 +74,7 @@ fs.writeFileSync(finalKeyFileName, finalSpeciesTxt, (err) => {
 
 console.log(`The answer key for the ${COLLECTION_NAME} collection was stored at ${finalKeyFileName}!`);
 
-// Store the final list of 15 possible answer choices for each item in the collection
+// Store the final list of 5 possible answer choices for each item in the collection
 
 const answerChoices = [];
 
