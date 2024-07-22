@@ -13,10 +13,6 @@ const COLLECTIONS_TO_POPULATE = [{
 	name: "waterfowl-1",
 	number: 1,
 	merkleTreeRoot: "0x0fd31aa0cf9ce48e13dd99ecda792226242ce7c5e98bf99fc19c124f815b67db",
-}, {
-	name: "small-but-mighty-2",
-	number: 2,
-	merkleTreeRoot: "TBD",
 }];
 
 // Load the contract ABI

@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "small-but-mighty-2";
-const COLLECTION_START_INDEX = 2000;
+const COLLECTION_NAME = "waterfowl-1";
+const COLLECTION_START_INDEX = 1000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -56,61 +56,11 @@ function sleep(ms) {
 
 	const errors = [];
 
-	const redos = [
-		802,
-		817,
-		820,
-		838,
-		847,
-		901,
-		906,
-		913,
-		993,
-		47,
-		327,
-		0,
-		284,
-		314,
-		616,
-		721,
-		930,
-		961,
-		136,
-		83,
-		93,
-		98,
-		211,
-		215,
-		309,
-		728,
-		5,
-		55,
-		3,
-		579,
-		606,
-		826,
-		760,
-		833,
-		223,
-		270,
-		397,
-		453,
-		2,
-		486,
-		496,
-		1,
-		595,
-		597,
-		664,
-	];
+	const redos = [];
 
 	for (let temp = 0; temp < redos.length; temp++) {
 
 		const i = redos[temp];
-
-		// if (i === 844 || i === 603 || i === 673 || i === 575 || i === 202) {
-		//	continue;
-		//}
 
 		try {
 
@@ -145,9 +95,9 @@ function sleep(ms) {
 
 	}
 
-	console.log('------------- errors ---------------');
+	console.log("------------- errors ---------------");
 	console.log(finalErrors);
-	console.log('------------------------------------');
+	console.log("------------------------------------");
 
 })();
 
@@ -159,61 +109,9 @@ async function generateImage(i) {
 	// Get the unique ID of the bird relative to the entire 10000
 	const finalIndex = COLLECTION_START_INDEX + i;
 
-	let promptName = name, colorsToFeature = '';
+	let promptName = name, colorsToFeature = "";
 
-	/*
-
-	if (promptName === 'Ring-necked Duck') {
-
-		colorsToFeature += ' with focus on the black head, gray bill featuring a white stripe at top, and a yellow eye';
-
-	} else if (promptName === 'Cinnamon Teal') {
-
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the color cinnamon';
-
-	} else if (promptName === 'Canvasback') {
-
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the black chest, white body, sloping forehead and stout neck';
-
-	} else if (promptName === 'Eurasian Wigeon') {
-
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the gray body, bright rufous-brown head, and buffy-cream forehead';
-
-	} else if (promptName.endsWith('Petrel') || promptName.endsWith('Black-backed Gull') || promptName.endsWith('Gannet')) {
-
-		promptName += ' small bird flying over water';
-		colorsToFeature += ' with short skinny beak';
-
-	} else if (promptName === 'Northern Pintail' ) {
-
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the long tail';
-
-	} else if (promptName === 'Common Crane' ) {
-
-		promptName += ' bird';
-		colorsToFeature += ' with focus on the tall height of its body and legs';
-
-	} else if (promptName === 'Little Stint') {
-
-		promptName += ' bird foraging in the sand'
-
-	} else if (promptName === 'Dovekie') {
-
-		promptName = ' small auk bird';
-		colorsToFeature += ' with focus on black and white contrasting colors on its body'
-
-	} else if (promptName === 'Red Knot') {
-
-		promptName = ' common sandpiper wading in the water'
-		colorsToFeature + ', large round body, brilliant terracotta-orange underparts and intricate gold, red, rufous, and black upperparts';
-
-	} else { */
-
-	promptName += ' bird';
+	promptName += " bird";
 
 	console.log(`---${finalIndex}---`);
 
