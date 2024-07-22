@@ -30,8 +30,7 @@
     "@openzeppelin/test-helpers": "^0.5.15",
     "chai": "^4.3.4",
     "hardhat": "^2.19.1",
-    "openai": "^4.4.0",
-    "truffle": "^5.4.29"
+    "openai": "^4.4.0"
   },
   "dependencies": {
     "@api/opensea": "file:.api/apis/opensea",

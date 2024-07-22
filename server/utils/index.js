@@ -1,7 +1,7 @@
 const debug = require("debug")("server");
 const { ethers } = require("ethers");
 
-const {	SONGBIRDZ_CONTRACT_ABI } = require("../constants");
+const { SONGBIRDZ_CONTRACT_ABI } = require("../constants");
 
 const provider = new ethers.JsonRpcProvider(process.env.BASE_NETWORK_RPC_URL);
 
@@ -11,14 +11,16 @@ const contract = new ethers.Contract(
 	provider,
 );
 
-// Store identification results locally in simple cache to
-// speed-up lookup for birds that are already identified
-const BIRD_ID_RESULTS = {};
+const isBirdIdentified = async (id, cachedResults) => {
 
-const isBirdIdentified = async (id) => {
+	// Check if the bird's collection has been 100% identified as a whole
+	if (id <= 1999) {
+		debug(`isBirdIdentified=true,id=${id},collection=100%`);
+		return true;
+	}
 
 	// Check if the bird has already been successfully identified
-	if (BIRD_ID_RESULTS[id]) {
+	if (cachedResults[id]) {
 
 		debug(`isBirdIdentified=true,id=${id},owner=hit`);
 		return true;
@@ -33,7 +35,7 @@ const isBirdIdentified = async (id) => {
 		debug(`isBirdIdentified=true,id=${id},owner=${owner}`);
 
 		// Store the result in the cache
-		BIRD_ID_RESULTS[id] = true;
+		cachedResults[id] = true;
 
 		return true;
 
@@ -47,6 +49,4 @@ const isBirdIdentified = async (id) => {
 
 };
 
-module.exports = {
-	isBirdIdentified,
-};
+module.exports = { isBirdIdentified };

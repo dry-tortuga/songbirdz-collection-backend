@@ -1,4 +1,4 @@
-const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require("../constants");
+const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require('../constants');
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -14,7 +14,7 @@ const convertBirdIDtoSpeciesID = (birdID) => {
 
 	const speciesID = SOURCE_SPECIES_DATA[speciesName];
 
-	if (!speciesID) {
+	if (!speciesID && speciesID !== 0) {
 		throw new Error(`Missing species record for species_id=${speciesID}!`);
 	}
 
@@ -47,6 +47,8 @@ const processPoints = (id, from, to, meta = {}) => {
 		pointsToAward = 1;
 
 	}
+
+	console.log(`pointsToAward=${pointsToAward}`);
 
 	return {
 		pointsToAward,

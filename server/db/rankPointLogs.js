@@ -7,6 +7,8 @@ const rankPointLogs = async (client, limit) => {
 		const database = client.db("songbirdz");
 		const pointLogs = database.collection("point_logs");
 
+		// TODO: Use consistent upper/lowercase values for addresses before storing in DB
+
 		// Sort/Sum/Query for the top point logs
 
 		const result = await pointLogs.aggregate([{

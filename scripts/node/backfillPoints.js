@@ -18,10 +18,6 @@ const {
 	storePoints,
 } = require("../../server/utils/points");
 
-const COLLECTION_NAME = "picasso";
-const COLLECTION_START_INDEX = 0;
-const COLLECTION_SIZE = 1000;
-
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
 const CONTRACT_GENESIS_BLOCK = 12723129;
@@ -95,8 +91,8 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 				throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
 			}
 
-			const from = event.from;
-			const to = event.to;
+			const from = event.from.toLowerCase();
+			const to = event.to.toLowerCase();
 
 			// Process the event to determine the amount of points to award
 			const {
@@ -182,8 +178,8 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 			const id = parseInt(event.nft.identifier, 10);
 			
-			const from = event.seller;
-			const to = event.buyer;
+			const from = event.seller.toLowerCase();
+			const to = event.buyer.toLowerCase();
 
 			if (event.event_type !== "sale") {
 				throw new Error(`Encountered an invalid event_type=${event.event_type}!`);				
@@ -201,7 +197,7 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 				throw new Error(`Encountered an invalid quantity=${event.quantity} for a sale!`);
 			}
 
-			if (event.payment.symbol !== "ETH") {
+			if (event.payment.symbol !== "ETH" && event.payment.symbol !== "WETH") {
 				throw new Error(`Encountered an invalid payment.symbol=${event.payment.symbol} for a sale!`);
 			}
 

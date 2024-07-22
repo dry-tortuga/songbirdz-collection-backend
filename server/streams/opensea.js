@@ -3,7 +3,6 @@ const { WebSocket } = require("ws");
 const { LocalStorage } = require("node-localstorage");
 
 const DB = require("../db");
-const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require("../constants");
 const {
 	processPoints,
 	storePoints,
@@ -30,24 +29,6 @@ if (process.env.NODE_ENV === "staging") {
 	chain = "base";
 
 }
-
-const convertBirdIDtoSpeciesID = (birdID) => {
-
-	const speciesName = KEY_BIRD_DATA[birdID]?.name;
-
-	if (!speciesName) {
-		throw new Error(`Missing species name for bird_id=${birdID}!`);
-	}
-
-	const speciesID = SOURCE_SPECIES_DATA[speciesName];
-
-	if (!speciesID) {
-		throw new Error(`Missing species record for species_id=${speciesID}!`);
-	}
-
-	return speciesID;
-
-};
 
 const initOpenseaStream = () => {
 
@@ -131,8 +112,8 @@ const initOpenseaStream = () => {
 				// Convert string value to decimal value for the bird ID
 				const id = parseInt(parsedStringId, 10);
 
-				const from = payload.from_account.address;
-				const to = payload.to_account.address;
+				const from = payload.from_account.address.toLowerCase();
+				const to = payload.to_account.address.toLowerCase();
 
 				// Process the event to determine the amount of points to award
 				const {
@@ -154,10 +135,12 @@ const initOpenseaStream = () => {
 
 				// Store the point results in the database
 
+				console.log(result);
+
 				await storePoints(db, result);
 
 			} catch (error) {
-				console.error(error);
+				console.log(error);
 			}
 
 		});
@@ -205,8 +188,8 @@ const initOpenseaStream = () => {
 				// Convert string value to decimal value for the bird ID
 				const id = parseInt(parsedStringId, 10);
 
-				const from = payload.maker.address;
-				const to = payload.taker.address;
+				const from = payload.maker.address.toLowerCase();
+				const to = payload.taker.address.toLowerCase();
 
 				// Process the event to determine the amount of points to award
 				const {
@@ -229,10 +212,12 @@ const initOpenseaStream = () => {
 
 				// Store the point results in the database
 
+				console.log(result);
+
 				await storePoints(db, result);
 
 			} catch (error) {
-				console.error(error);
+				console.log(error);
 			}
 
 		});

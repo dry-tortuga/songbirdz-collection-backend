@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "picasso";
-const COLLECTION_START_INDEX = 0;
+const COLLECTION_NAME = "waterfowl-1";
+const COLLECTION_START_INDEX = 1000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -54,56 +54,104 @@ function sleep(ms) {
 
 	console.log(`Generating images for the ${COLLECTION_NAME} collection:`);
 
-	for (let i = 0; i < COLLECTION_SIZE; i++) {
+	const errors = [];
 
-		// Get the species name of the bird
-		const name = speciesNames[i];
+	const redos = [];
 
-		// Get the unique ID of the bird relative to the entire 10000
-		const finalIndex = COLLECTION_START_INDEX + i;
+	for (let temp = 0; temp < redos.length; temp++) {
 
-		console.log(`---${finalIndex}---`);
+		const i = redos[temp];
 
-		const response = await openai.images.generate({
-			model: "dall-e-3",
-			prompt: `A ${name} bird in the style of a ${COLLECTION_NAME} painting`,
-			n: 1,
-			size: "1024x1024",
-			quality: "standard",
-			response_format: "b64_json",
-		});
+		try {
 
-		const imageData = response.data[0]["b64_json"];
+			await generateImage(i);
 
-		const imageBuffer = Buffer.from(imageData, "base64");
+		} catch (error) {
+			console.error(error);
+			errors.push(i);
+		}
 
-		fs.writeFileSync(
-			`${privatePath}/images-to-verify/${i}-${name}.webp`,
-			imageBuffer,
-			(err) => {
-
-				if (err) {
-					throw new err;
-				}
-
-			},
-		);
-
-		fs.writeFileSync(
-			`${privatePath}/images-hidden/${finalIndex}.webp`,
-			imageBuffer,
-			(err) => {
-
-				if (err) {
-					throw new err;
-				}
-
-			},
-		);
-
-		// Wait 13s before generating the next image to avoid issues with rate-limiting
-		await sleep(1000 * 13);
+		// Wait 9s before generating the next image to avoid issues with rate-limiting
+		await sleep(1000 * 9);
 
 	}
 
+	// Attempt to re-generate any images that errored on the initial API call
+
+	const finalErrors = [];
+
+	for (let i = 0; i < errors.length; i++) {
+
+		const errorID = errors[i];
+
+		try {
+
+			await generateImage(errorID);
+
+		} catch (error) {
+			console.error(error);
+			finalErrors.push(errorID);
+		}
+
+	}
+
+	console.log("------------- errors ---------------");
+	console.log(finalErrors);
+	console.log("------------------------------------");
+
 })();
+
+async function generateImage(i) {
+
+	// Get the species name of the bird
+	const name = speciesNames[i];
+
+	// Get the unique ID of the bird relative to the entire 10000
+	const finalIndex = COLLECTION_START_INDEX + i;
+
+	let promptName = name, colorsToFeature = "";
+
+	promptName += " bird";
+
+	console.log(`---${finalIndex}---`);
+
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. The bird should feature a variety of bright colors${colorsToFeature}. The background should consist of geometric shapes, integrating smoothly to produce a visually striking and harmonious scene.`;
+
+	const response = await openai.images.generate({
+		model: "dall-e-3",
+		prompt,
+		n: 1,
+		size: "1024x1024",
+		quality: "standard",
+		response_format: "b64_json",
+	});
+
+	const imageData = response.data[0]["b64_json"];
+
+	const imageBuffer = Buffer.from(imageData, "base64");
+
+	fs.writeFileSync(
+		`${privatePath}/images-to-verify/${i}-${name}.webp`,
+		imageBuffer,
+		(err) => {
+
+			if (err) {
+				throw new err;
+			}
+
+		},
+	);
+
+	fs.writeFileSync(
+		`${privatePath}/images-original/${finalIndex}.webp`,
+		imageBuffer,
+		(err) => {
+
+			if (err) {
+				throw new err;
+			}
+
+		},
+	);
+
+};
