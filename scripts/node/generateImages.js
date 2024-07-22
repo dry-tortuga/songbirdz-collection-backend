@@ -56,61 +56,19 @@ function sleep(ms) {
 
 	const errors = [];
 
-	const redos = [
-		802,
-		817,
-		820,
-		838,
-		847,
-		901,
-		906,
-		913,
-		993,
-		47,
-		327,
-		0,
-		284,
-		314,
-		616,
-		721,
-		930,
-		961,
-		136,
-		83,
-		93,
-		98,
-		211,
-		215,
-		309,
-		728,
-		5,
-		55,
-		3,
-		579,
-		606,
-		826,
-		760,
-		833,
-		223,
-		270,
-		397,
-		453,
-		2,
-		486,
-		496,
-		1,
-		595,
-		597,
-		664,
-	];
+	const redoList = [844, 603, 673, 574, 202];
 
-	for (let temp = 0; temp < redos.length; temp++) {
+	for (let temp = 0; temp < redoList.length; temp++) {
 
-		const i = redos[temp];
+		const i = redoList[temp];
 
-		// if (i === 844 || i === 603 || i === 673 || i === 575 || i === 202) {
-		//	continue;
-		//}
+	//	if (i === 844 || i === 603 || i === 673 || i === 574 || i === 202) {
+	//		continue;
+	//	}
+
+		if (ignoreList.findIndex((value) => value === i) >= 0) {
+			continue;
+		}
 
 		try {
 
@@ -161,63 +119,118 @@ async function generateImage(i) {
 
 	let promptName = name, colorsToFeature = '';
 
-	/*
+	if (promptName === "Mexican Violetear") {
 
-	if (promptName === 'Ring-necked Duck') {
+		promptName += " hummingbird";
+		colorsToFeature += " with overall deep green plumage and a dark violet cheek and breast patches. It should have a broad dark tail band";
 
-		colorsToFeature += ' with focus on the black head, gray bill featuring a white stripe at top, and a yellow eye';
+	} else if (promptName === "Tricolored Munia") {
 
-	} else if (promptName === 'Cinnamon Teal') {
+		colorsToFeature += " with handsome and striking rusty upperparts. Black head and underparts are cut by a broad white swath from flanks across the lower breast. It should have a stout gray bill and a pointed tail";
 
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the color cinnamon';
+	} else if (promptName === "Great Tit") {
 
-	} else if (promptName === 'Canvasback') {
+		colorsToFeature += " with large size, yellow breast, black head, and bright white cheek patch";
 
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the black chest, white body, sloping forehead and stout neck';
+	} else if (promptName === "Bluethroat") {
 
-	} else if (promptName === 'Eurasian Wigeon') {
+		promptName += " thrush-like bird";
+		colorsToFeature += " with dull gray above, a round belly, and head-on view reveals a stunning pattern of electric blue throat with orange red in center. It should flash orange on its tail feathers"
 
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the gray body, bright rufous-brown head, and buffy-cream forehead';
+	} else if (promptName === "Blackburnian Warbler") {
 
-	} else if (promptName.endsWith('Petrel') || promptName.endsWith('Black-backed Gull') || promptName.endsWith('Gannet')) {
+		colorsToFeature += " with intricate black-and-white plumage set off by flame-orange face and glowing orange throat"
 
-		promptName += ' small bird flying over water';
-		colorsToFeature += ' with short skinny beak';
+	} else if (promptName === "Bay-breasted Warbler" ) {
 
-	} else if (promptName === 'Northern Pintail' ) {
+		colorsToFeature += " with black mask. It should have rich dark bay color on the crown, throat, and flanks. It should have streaked back and butter yellow neckpatch";
 
-		promptName += ' duck';
-		colorsToFeature += ' with focus on the long tail';
+	} else if (promptName === "American Redstart" ) {
 
-	} else if (promptName === 'Common Crane' ) {
+		colorsToFeature += " with mostly black body and a black eye. It should have bright orange patches on the sides, wings, and tail";
 
-		promptName += ' bird';
-		colorsToFeature += ' with focus on the tall height of its body and legs';
+	} else if (promptName === "Allen's Hummingbird" ) {
 
-	} else if (promptName === 'Little Stint') {
+		colorsToFeature += " with reddish orange throat, orange belly, and metallic green back";
 
-		promptName += ' bird foraging in the sand'
+	} else if (promptName === "Yellow-throated Vireo" ) {
 
-	} else if (promptName === 'Dovekie') {
+		colorsToFeature += " with plain yellow throat, bright yellow eyering and lores, white streaks on wings"
 
-		promptName = ' small auk bird';
-		colorsToFeature += ' with focus on black and white contrasting colors on its body'
+	} else if (promptName === "Red Avadavat" ) {
 
-	} else if (promptName === 'Red Knot') {
+		colorsToFeature += " with white speckles on the body and a large seed-eating finch beak"
 
-		promptName = ' common sandpiper wading in the water'
-		colorsToFeature + ', large round body, brilliant terracotta-orange underparts and intricate gold, red, rufous, and black upperparts';
+	} else if (promptName === "Yellow-rumped Warbler") {
 
-	} else { */
+		colorsToFeature += " with black streaks down its breast and flanks, rump, crown. It should have a yellow throat, large white patch on its wing, and a major focus on the yellow square patch on the base of the tail"
 
-	promptName += ' bird';
+	} else if (promptName === "Painted Redstart" ) {
+
+		colorsToFeature += " with black-and-white wings, solid scarlet belly, white crescent below the eye, and white wing patches. It should be fanning its tail";
+
+	} else if (promptName === "Wrentit") {
+
+		colorsToFeature += " with plump body, streaky underbelly, long tail, and tiny black bill. It should have a small white eye";
+
+	} else if (promptName === "Worm-eating Warbler") {
+
+		colorsToFeature += " with olive colored body, buffy black head stripes, and dull yellow crown";
+
+	} else if (promptName === "Virginia's Warbler") {
+
+		colorsToFeature += " with big eyes and a white eye ring, and then should have a mostly gray body"
+
+	} else if (promptName === "White-throated Swift") {
+
+		colorsToFeature += " with long tail, chunky tube sized body, and arched wings in flight"
+
+	} else if (promptName === "Blue-throated Mountain-gem") {
+
+		promptName += " hummingbird";
+		colorsToFeature += " with brilliant sapphire colored gorget/throat that glitters in good light, double white stripes on face and gray underparts"
+
+	} else if (promptName === "Cactus Wren") {
+
+		colorsToFeature += " with bright white eyebrow, speckled body, slight curve to the bill, and long barred tail";
+
+	} else if (promptName === "Magnolia Warbler") {
+
+		colorsToFeature += " with a very small bill, bright yellow chest, and distinctive black streaking that radiates from the neck to the belly";
+
+	} else if (promptName === "Black-throated Blue Warbler") {
+
+		colorsToFeature += " with a blue head and black face and black throat, white squares on wings";
+
+	} else if (promptName === "Black-throated Green Warbler") {
+
+		colorsToFeature += " with bright yellow face with olive cheeks, crown, back, and a contrasting solid black throat. It should have dark streaks on flanks";
+
+	} else if (promptName === "Little Bunting") {
+
+		colorsToFeature += " with an attractive contrasting head pattern: black crown with red-brown central stripe and pale eyering. Rufous cheeks bordered by narrow black lines framing the eyes. Heavily streaked patterns on the belly";
+
+	} else if (promptName === "Winter Wren") {
+
+		colorsToFeature += " with general light brown colored body, white eyebrow, subtle checkered pattern from chest to belly, and its tail cocked at a 45 degree angle upwards";
+
+	} else if (promptName === "Olive Warbler") {
+
+		colorsToFeature += " with focus on solid bright orange hood and black round patch that extends from eye to cheek in the shape of a teardrop"
+
+	} else if (promptName.endsWith("Warbler")) {
+
+		promptName += "";
+
+	} else {
+
+		promptName += " bird";
+
+	}
 
 	console.log(`---${finalIndex}---`);
 
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. The bird should feature a variety of bright colors${colorsToFeature}. The background should consist of geometric shapes, integrating smoothly to produce a visually striking and harmonious scene.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. The bird should feature a variety of colors${colorsToFeature}. The background should consist of geometric shapes, integrating smoothly to produce a visually striking and harmonious scene.`;
 
 	const response = await openai.images.generate({
 		model: "dall-e-3",

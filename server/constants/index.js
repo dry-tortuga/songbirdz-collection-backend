@@ -14,8 +14,8 @@ const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
 const UNIDENTIFIED_NAME = "UNIDENTIFIED";
 
-const COLLECTION_KEYS = ["picasso", "waterfowl-1", "small-but-mighty-2"];
-const COLLECTION_NAMES = ["Picasso Genesis", "Deep Blue", "Small but Mighty"];
+const COLLECTION_KEYS = ["picasso", "waterfowl-1"];//, "small-but-mighty-2"];
+const COLLECTION_NAMES = ["Picasso Genesis", "Deep Blue"];//, "Small but Mighty"];
 const COLLECTION_SIZE = 1000;
 
 const MIN_BIRD_ID = 0;
