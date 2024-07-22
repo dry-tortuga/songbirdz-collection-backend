@@ -103,9 +103,9 @@ function sleep(ms) {
 
 	}
 
-	console.log('------------- errors ---------------');
+	console.log("------------- errors ---------------");
 	console.log(finalErrors);
-	console.log('------------------------------------');
+	console.log("------------------------------------");
 
 })();
 

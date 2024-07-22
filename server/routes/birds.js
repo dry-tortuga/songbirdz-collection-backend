@@ -69,7 +69,8 @@ const getBirdMetadata = async (req, res, next) => {
 		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
 		species,
 		attributes: [{
-			trait_type: "Flock #",
+			trait_type: "Flock Number",
+			display_type: "number",
 			value: KEY_BIRD_DATA[birdId].collectionNumber,
 		}, {
 			trait_type: "Flock Name",
