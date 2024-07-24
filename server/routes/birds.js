@@ -60,13 +60,26 @@ const getBirdMetadata = async (req, res, next) => {
 	// See below the required JSON structure for metadata
 	// https://docs.opensea.io/docs/getting-started
 
+	let image = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`;
+	let imageOnchain = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`;
+
+	// Check if it is one of the "1 of 1" species...
+	if (birdId === 2844 || birdId === 2603 || birdId === 2673 || birdId === 2574 || birdId === 2202) {
+
+		if (!isIdentified) {
+			image = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg-pre.jpg`;
+			imageOnchain = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-pre.jpg`;
+		}
+
+	}
+
 	res.send({
 		name: `Songbird #${birdId}`,
 		description,
 		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
-		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
-		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
+		image,
+		image_onchain: imageOnchain,
 		species,
 		attributes: [{
 			trait_type: "Flock Number",

@@ -4,7 +4,7 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "small-but-mighty-2";
+const COLLECTION_NAME = "small-and-mighty-2";
 const COLLECTION_START_INDEX = 2000;
 const COLLECTION_SIZE = 1000;
 
@@ -56,19 +56,11 @@ function sleep(ms) {
 
 	const errors = [];
 
-	const redoList = [844, 603, 673, 574, 202];
+	for (let i = 0; i < COLLECTION_SIZE; i++) {
 
-	for (let temp = 0; temp < redoList.length; temp++) {
-
-		const i = redoList[temp];
-
-	//	if (i === 844 || i === 603 || i === 673 || i === 574 || i === 202) {
-	//		continue;
-	//	}
-
-		if (ignoreList.findIndex((value) => value === i) >= 0) {
-			continue;
-		}
+		// if (ignoreList.findIndex((value) => value === i) >= 0) {
+		//	continue;
+		// }
 
 		try {
 
@@ -122,24 +114,24 @@ async function generateImage(i) {
 	if (promptName === "Mexican Violetear") {
 
 		promptName += " hummingbird";
-		colorsToFeature += " with overall deep green plumage and a dark violet cheek and breast patches. It should have a broad dark tail band";
+		colorsToFeature += " with overall deep green plumage and a dark violet cheek and breast patches. It should have a broad dark tail band. It should be drinking nectar out of a bright orange orchid with its beak inside the center of the flower";
 
 	} else if (promptName === "Tricolored Munia") {
 
-		colorsToFeature += " with handsome and striking rusty upperparts. Black head and underparts are cut by a broad white swath from flanks across the lower breast. It should have a stout gray bill and a pointed tail";
+		colorsToFeature += " with handsome and striking rusty upperparts. Black head and underparts are cut by a broad white swath from flanks across the lower breast. It should have a stout gray bill and a pointed tail. It should have its beak open and be chewing on a yellow wheat plant";
 
 	} else if (promptName === "Great Tit") {
 
-		colorsToFeature += " with large size, yellow breast, black head, and bright white cheek patch";
+		colorsToFeature += " with large size, yellow breast, black head, and bright white cheek patch. It should be eating a caterpillar";
 
 	} else if (promptName === "Bluethroat") {
 
 		promptName += " thrush-like bird";
-		colorsToFeature += " with dull gray above, a round belly, and head-on view reveals a stunning pattern of electric blue throat with orange red in center. It should flash orange on its tail feathers"
+		colorsToFeature += " with dull gray above, a round belly, and head-on view reveals a stunning pattern of electric blue throat with orange red in center. It should flash orange on its tail feathers. It should have a red berry in its beak and a nearby berry bush"
 
 	} else if (promptName === "Blackburnian Warbler") {
 
-		colorsToFeature += " with intricate black-and-white plumage set off by flame-orange face and glowing orange throat"
+		colorsToFeature += " with intricate black-and-white plumage set off by flame-orange face and glowing orange throat. It should be eating a spruce budworm off of a dead pile of leaves"
 
 	} else if (promptName === "Bay-breasted Warbler" ) {
 
