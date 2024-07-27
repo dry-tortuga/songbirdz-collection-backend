@@ -8,15 +8,8 @@ const sdk = require("@api/opensea");
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const DB = require("../../server/db");
-const {
-	SONGBIRDZ_CONTRACT_ABI,
-	KEY_BIRD_DATA,
-	SOURCE_SPECIES_DATA,
-} = require("../../server/constants");
-const {
-	processPoints,
-	storePoints,
-} = require("../../server/utils/points");
+const { SONGBIRDZ_CONTRACT_ABI } = require("../../server/constants");
+const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 

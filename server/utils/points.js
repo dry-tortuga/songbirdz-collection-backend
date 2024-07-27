@@ -12,13 +12,13 @@ const convertBirdIDtoSpeciesID = (birdID) => {
 		throw new Error(`Missing species name for bird_id=${birdID}!`);
 	}
 
-	const speciesID = SOURCE_SPECIES_DATA[speciesName];
+	const speciesData = SOURCE_SPECIES_DATA[speciesName];
 
-	if (!speciesID && speciesID !== 0) {
-		throw new Error(`Missing species record for species_id=${speciesID}!`);
+	if (!speciesData) {
+		throw new Error(`Missing species record for name=${speciesName}!`);
 	}
 
-	return speciesID;
+	return speciesData.id;
 
 };
 

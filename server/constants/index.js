@@ -12,6 +12,8 @@ const PRIVATE_PATH = {
 
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
+const FAMILIES_DATA = require('./families.json');
+
 const UNIDENTIFIED_NAME = "UNIDENTIFIED";
 
 const COLLECTION_KEYS = ["picasso", "waterfowl-1", "small-and-mighty-2"];
@@ -25,7 +27,7 @@ const MAX_BIRD_ID = 2999;
 
 const KEY_BIRD_DATA = {};
 
-// Build data map of name -> ID for all the species
+// Build data map of name -> ID|family for all the species
 
 const SOURCE_SPECIES_DATA = {};
 
@@ -68,7 +70,10 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 			// Get the unique ID of the species relative to the entire set
 			const finalIndex = SPECIES_START_INDEX + sIndex;
 
-			SOURCE_SPECIES_DATA[sName] = finalIndex;
+			SOURCE_SPECIES_DATA[sName] = {
+				id: finalIndex,
+				family: getFamily(sName),
+			};
 
 		});
 
@@ -89,7 +94,10 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 			// Get the unique ID of the species relative to the entire set
 			const finalIndex = SPECIES_START_INDEX + sIndex;
 
-			SOURCE_SPECIES_DATA[sBird.name] = finalIndex;
+			SOURCE_SPECIES_DATA[sBird.name] = {
+				id: finalIndex,
+				family: getFamily(sBird.name),
+			};
 
 		});
 
@@ -121,3 +129,19 @@ module.exports = {
 	SONGBIRDZ_CONTRACT_ABI,
 	PRIVATE_PATH,
 };
+
+function getFamily(speciesName) {
+
+	const match = FAMILIES_DATA.find((group) => {
+
+		const isSpeciesIncluded = Boolean(
+			group.species.find((item) => item.label === speciesName)
+		);
+
+		return isSpeciesIncluded;
+
+	});
+
+	return match.name;
+
+}

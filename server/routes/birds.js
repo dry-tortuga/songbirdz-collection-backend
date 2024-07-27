@@ -8,6 +8,7 @@ const {
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
 	KEY_BIRD_DATA,
+	SOURCE_SPECIES_DATA,
 	MERKLE_TREE_DATA,
 	PRIVATE_PATH,
 } = require("../constants");
@@ -56,6 +57,7 @@ const getBirdMetadata = async (req, res, next) => {
 
 	const species = isIdentified ? KEY_BIRD_DATA[birdId].name : UNIDENTIFIED_NAME;
 	const description = isIdentified ? null : 'This bird has not been identified yet.';
+	const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
 
 	// See below the required JSON structure for metadata
 	// https://docs.opensea.io/docs/getting-started
@@ -91,6 +93,9 @@ const getBirdMetadata = async (req, res, next) => {
 		}, {
 			trait_type: "Species",
 			value: species,
+		}, {
+			trait_type: "Family",
+			value: family,
 		}],
 	});
 
