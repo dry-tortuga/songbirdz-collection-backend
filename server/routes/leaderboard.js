@@ -1,6 +1,6 @@
 const DB = require("../db");
 
-const LEADERBOARD_SIZE = 50;
+const LEADERBOARD_SIZE = 52;
 
 // TODO: Cache results for a few minutes???
 
