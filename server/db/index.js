@@ -29,20 +29,20 @@ class DB {
 
 	}
 
-	async createOrUpdatePointLog(data) {
-		return await createOrUpdatePointLog(this.client, data);
+	async createOrUpdatePointLog(collectionId, data) {
+		return await createOrUpdatePointLog(this.client, collectionId, data);
 	}
 
-	async fetchPointLog(address, birdID) {
-		return await fetchPointLog(this.client, address, birdID);
+	async fetchPointLog(collectionId, address, birdID) {
+		return await fetchPointLog(this.client, collectionId, address, birdID);
 	}
 
-	async fetchPointLogs(address) {
-		return await fetchPointLogs(this.client, address);
+	async fetchPointLogs(collectionId, address) {
+		return await fetchPointLogs(this.client, collectionId, address);
 	}
 
-	async rankPointLogs(limit = 50) {
-		return await rankPointLogs(this.client, limit);
+	async rankPointLogs(collectionId, limit = 50) {
+		return await rankPointLogs(this.client, collectionId, limit);
 	}
 
 };

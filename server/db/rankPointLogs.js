@@ -1,11 +1,11 @@
-const rankPointLogs = async (client, limit) => {
+const rankPointLogs = async (client, collectionId, limit) => {
 
 	try {
 
-		// Connect to the "songbirdz" database and access its "point_logs" collection
+		// Connect to the "songbirdz" database and access the collection
 
 		const database = client.db("songbirdz");
-		const pointLogs = database.collection("point_logs");
+		const pointLogs = database.collection(collectionId);
 
 		// TODO: Use consistent upper/lowercase values for addresses before storing in DB
 

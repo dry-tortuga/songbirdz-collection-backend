@@ -1,8 +1,7 @@
+const { DB_COLLECTION_IDS } = require('../constants');
 const DB = require("../db");
 
 const LEADERBOARD_SIZE = 50;
-
-// TODO: Cache results for a few minutes???
 
 // Create a new connection to the database
 
@@ -10,11 +9,16 @@ const db = new DB();
 
 const getLeaderboard = async (req, res, next) => {
 
-	// const limit = parseInt(req.query.limit, 10);
 	const limit = LEADERBOARD_SIZE;
 
+	let dbCollectionId = DB_COLLECTION_IDS[1];
+
+	if (req.query.season === '1') {
+		dbCollectionId = DB_COLLECTION_IDS[0];
+	}
+
 	// Fetch the results for the leaderboard
-	const results = await db.rankPointLogs(limit);
+	const results = await db.rankPointLogs(dbCollectionId, limit);
 
 	res.send(results);
 
@@ -34,9 +38,14 @@ const getLifeList = async (req, res, next) => {
 	}
 
 	// Fetch the results for the life list for the user
-	const results = await db.fetchPointLogs(address);
 
-	res.send(results);
+	const resultsSeason1 = await db.fetchPointLogs(DB_COLLECTION_IDS[0], address);
+	const resultsSeason2 = await db.fetchPointLogs(DB_COLLECTION_IDS[1], address);
+
+	res.send({
+		season_1: resultsSeason1,
+		season_2: resultsSeason2,
+	});
 
 };
 
