@@ -18,7 +18,7 @@ const FAMILIES_DATA = require('./families.json');
 
 const UNIDENTIFIED_NAME = "UNIDENTIFIED";
 
-const COLLECTION_KEYS = ["picasso", "waterfowl-1", "small-and-mighty-2"];
+const COLLECTION_KEYS = ["picasso-genesis-0", "deep-blue-1", "small-and-mighty-2"];
 const COLLECTION_NAMES = ["Picasso Genesis", "Deep Blue", "Small & Mighty"];
 const COLLECTION_SIZE = 1000;
 

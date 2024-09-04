@@ -1,7 +1,7 @@
 const { DB_COLLECTION_IDS } = require('../constants');
 const DB = require("../db");
 
-const LEADERBOARD_SIZE = 50;
+const LEADERBOARD_SIZE = 52;
 
 // Create a new connection to the database
 
