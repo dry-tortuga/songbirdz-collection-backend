@@ -5,6 +5,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 // Load our custom hardhat task scripts
+require("./scripts/solidity/bulkSend");
 require("./scripts/solidity/fetchHolders");
 require("./scripts/solidity/populateCollection");
 
@@ -62,7 +63,7 @@ if (process.env.NODE_ENV === "development") {
 			isUsingLedgerHardwareWallet ? undefined : [process.env.WALLET_PRIVATE_KEY_OWNER],
 		ledgerAccounts:
 			isUsingLedgerHardwareWallet ? [process.env.LEDGER_HARDWARE_WALLET_PUB_KEY] : undefined,
-		gasPrice: 1000000000,
+		gasPrice: "auto",
 		verify: {
 			etherscan: {
 				apiUrl: "https://api-sepolia.basescan.org",
@@ -79,7 +80,7 @@ if (process.env.NODE_ENV === "development") {
 			isUsingLedgerHardwareWallet ? undefined : [process.env.WALLET_PRIVATE_KEY_OWNER],
 		ledgerAccounts:
 			isUsingLedgerHardwareWallet ? [process.env.LEDGER_HARDWARE_WALLET_PUB_KEY] : undefined,
-		gasPrice: 1000000000,
+		gasPrice: "auto",
 		verify: {
 			etherscan: {
 				apiUrl: "https://api.basescan.org",

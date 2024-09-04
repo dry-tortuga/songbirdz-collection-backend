@@ -19,6 +19,7 @@
     "deploy-mainnet": "NODE_ENV=production npx hardhat run ./scripts/solidity/deployContract.js --network base-mainnet",
     "verify-mainnet": "NODE_ENV=production npx hardhat verify --network base-mainnet <deployed address> <owner>",
     "populate-mainnet": "NODE_ENV=production npx hardhat populateCollection --network base-mainnet",
+    "bulk-send-mainnet": "NODE_ENV=production npx hardhat bulkSend --network base-mainnet",
     "fetch-holders-mainnet": "NODE_ENV=production npx hardhat fetchHolders --network base-mainnet"
   },
   "keywords": [],
