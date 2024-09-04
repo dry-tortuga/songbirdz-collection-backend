@@ -75,12 +75,95 @@ function sleep(ms) {
 	const ignoreList = [];
 
 	const redoList = [
-    7,  57,  69, 120, 265, 280,
-  301, 315, 357, 393, 405, 459,
-  589, 610, 661, 673, 736, 803,
-  816, 971
-]
-;
+		/*14,
+		20,
+		22,
+		51,
+		78,
+		93,
+		97,
+		106,
+		111,
+		127,
+		128,
+		130,
+		133,
+		134,
+		154,
+		165,
+		168,
+		186,
+		187,
+		211,
+		212,
+		217,
+		233,
+		240,
+		241,
+		250,
+		262,
+		281,
+		286,
+		291,
+		299,
+		300,
+		317,
+		318,
+		340,
+		347,
+		375,
+		380,
+		387,
+		404,
+		420,
+		431,
+		441,
+		442,
+		450,
+		461,
+		473,
+		493,
+		503,
+		505,
+		511,
+		518,
+		520,
+		554,
+		556,
+		558,
+		568,
+		569,
+		570,
+		571,
+		590,
+		619,
+		633,
+		644,
+		658,
+		677,
+		683,
+		685,
+		730,
+		759,
+		780,
+		782,
+		809,
+		812,
+		817,
+		820,
+		845,
+		850,
+		882,
+		896,
+		923,
+		926,
+		933,
+		934,
+		939,*/
+		956,
+		//965,
+		//984,
+	];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
 
@@ -179,7 +262,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Antillean Nighthawk") {
 
-		colorsToFeature += " with long wings, intricate brown and gray patterning, and bright white throat."
+		colorsToFeature += " with long wings, intricate brown and gray patterning, bright white throat, small head, and a tiny beak."
 
 	} else if (promptName === "Bachman's Sparrow") {
 
@@ -235,7 +318,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Buff-collared Nightjar") {
 
-		colorsToFeature += " with pale grayish body, pointed wings, and long tail."
+		colorsToFeature += " with pale grayish body, pointed wings, long tail, small head, and a tiny beak."
 
 	} else if (promptName === "Chimney Swift") {
 
@@ -243,7 +326,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Common Nighthawk") {
 
-		colorsToFeature += " with mottled gray and brown body, large black eyes, and small flat head."
+		colorsToFeature += " with mottled gray and brown body, large black eyes, small flat head, and a tiny beak."
 
 	} else if (promptName === "Common Poorwill") {
 
@@ -259,7 +342,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Lesser Nighthawk") {
 
-		colorsToFeature += " with small flat head, large mouth, small feet, long wings, long tail."
+		colorsToFeature += " with small flat head, tiny beak, small feet, long wings, long tail."
 
 	} else if (promptName === "Mangrove Cuckoo") {
 
