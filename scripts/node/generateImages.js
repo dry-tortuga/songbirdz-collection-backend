@@ -75,94 +75,29 @@ function sleep(ms) {
 	const ignoreList = [];
 
 	const redoList = [
-		/*14,
-		20,
-		22,
-		51,
 		78,
-		93,
 		97,
-		106,
-		111,
-		127,
-		128,
-		130,
-		133,
-		134,
 		154,
-		165,
-		168,
-		186,
-		187,
-		211,
-		212,
-		217,
 		233,
-		240,
-		241,
-		250,
-		262,
-		281,
-		286,
-		291,
-		299,
-		300,
-		317,
-		318,
-		340,
-		347,
-		375,
-		380,
 		387,
-		404,
 		420,
 		431,
-		441,
-		442,
 		450,
-		461,
 		473,
 		493,
 		503,
 		505,
-		511,
-		518,
-		520,
 		554,
-		556,
-		558,
-		568,
 		569,
 		570,
 		571,
-		590,
 		619,
-		633,
-		644,
 		658,
 		677,
-		683,
-		685,
-		730,
 		759,
-		780,
-		782,
 		809,
-		812,
 		817,
 		820,
-		845,
-		850,
-		882,
-		896,
-		923,
-		926,
-		933,
-		934,
-		939,*/
-		956,
-		//965,
-		//984,
 	];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
@@ -262,7 +197,8 @@ async function generateImage(i) {
 
 	} else if (promptName === "Antillean Nighthawk") {
 
-		colorsToFeature += " with long wings, intricate brown and gray patterning, bright white throat, small head, and a tiny beak."
+		promptName = "Nightjar bird";
+		colorsToFeature += " with long wings, intricate brown and gray patterning, bright white throat patch. It should have large dark eyes. It should look similar to a Chuck-will’s-widow bird, but its beak is very short and positioned low on the face blending into the soft rounded head. Its beak should look like a chickadee's beak";
 
 	} else if (promptName === "Bachman's Sparrow") {
 
@@ -318,7 +254,8 @@ async function generateImage(i) {
 
 	} else if (promptName === "Buff-collared Nightjar") {
 
-		colorsToFeature += " with pale grayish body, pointed wings, long tail, small head, and a tiny beak."
+		promptName = "Nightjar bird";
+		colorsToFeature += ". It has mottled gray, brown, and white plumage which provides excellent camouflage against the bark of the tree. The bird has large dark eyes and delicate whisker-like feathers around its face. The beak is very short, stout, and wide, positioned low on the face blending into the soft rounded head"
 
 	} else if (promptName === "Chimney Swift") {
 
@@ -453,6 +390,8 @@ async function generateImage(i) {
 	console.log(`---${finalIndex}---`);
 
 	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. The bird should feature a variety of ${introColors} colors${colorsToFeature}. The background should consist of ${locationToFeature}, integrating smoothly to produce a visually striking and harmonious scene.`;
+
+	console.log(prompt);
 
 	const response = await openai.images.generate({
 		model: "dall-e-3",
