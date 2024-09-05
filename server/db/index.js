@@ -41,8 +41,8 @@ class DB {
 		return await fetchPointLogs(this.client, collectionId, address);
 	}
 
-	async rankPointLogs(collectionId, limit = 50) {
-		return await rankPointLogs(this.client, collectionId, limit);
+	async rankPointLogs(collectionId, address, limit = 50) {
+		return await rankPointLogs(this.client, collectionId, address, limit);
 	}
 
 };

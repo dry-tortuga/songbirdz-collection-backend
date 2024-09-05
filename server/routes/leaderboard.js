@@ -9,6 +9,7 @@ const db = new DB();
 
 const getLeaderboard = async (req, res, next) => {
 
+	const address = req.query.address;
 	const limit = LEADERBOARD_SIZE;
 
 	let dbCollectionId = DB_COLLECTION_IDS[1];
@@ -18,7 +19,7 @@ const getLeaderboard = async (req, res, next) => {
 	}
 
 	// Fetch the results for the leaderboard
-	const results = await db.rankPointLogs(dbCollectionId, limit);
+	const results = await db.rankPointLogs(dbCollectionId, address, limit);
 
 	res.send(results);
 

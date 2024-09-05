@@ -1,4 +1,6 @@
-const rankPointLogs = async (client, collectionId, limit) => {
+const rankPointLogs = async (client, collectionId, address, limit) => {
+
+	const currentUserAddress = address ? address.toLowerCase() : null;
 
 	try {
 
@@ -7,11 +9,9 @@ const rankPointLogs = async (client, collectionId, limit) => {
 		const database = client.db("songbirdz");
 		const pointLogs = database.collection(collectionId);
 
-		// TODO: Use consistent upper/lowercase values for addresses before storing in DB
+		// Sort/Sum/Query for the top 52 point logs
 
-		// Sort/Sum/Query for the top point logs
-
-		const result = await pointLogs.aggregate([{
+		const pointLogQueryResults = await pointLogs.aggregate([{
 			$group: {
 				_id: "$address", // Calculate the total points for each address
 				total: {
@@ -32,7 +32,29 @@ const rankPointLogs = async (client, collectionId, limit) => {
 			$unset: ["_id"],
 		}]);
 
-		const finalData = await result.toArray();
+		const finalData = await pointLogQueryResults.toArray();
+
+		// Make sure to include the current user's address in the final results
+
+		if (currentUserAddress &&
+			finalData.findIndex((temp) => temp.address === currentUserAddress) === -1) {
+
+			const resultCurrentUser = await pointLogs.find({ address });
+
+			const pointLogsCurrentUser = await resultCurrentUser.toArray();
+
+			let total = 0;
+
+			pointLogsCurrentUser.forEach((log) => {
+				total += log.amount;
+			});
+
+			finalData.push({
+				total,
+				address: currentUserAddress,
+			});
+
+		}
 
 		return finalData;
 
