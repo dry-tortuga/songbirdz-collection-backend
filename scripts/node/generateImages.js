@@ -75,29 +75,25 @@ function sleep(ms) {
 	const ignoreList = [];
 
 	const redoList = [
-		78,
-		97,
-		154,
-		233,
-		387,
-		420,
-		431,
-		450,
-		473,
-		493,
-		503,
-		505,
-		554,
-		569,
-		570,
-		571,
-		619,
-		658,
-		677,
-		759,
-		809,
-		817,
-		820,
+		78, // Black-billed Cuckoo
+		//97, // Common Poorwill
+		//233, // Common Nighthawk
+		387, // Chimney Swift
+		//431, // Common Nighthawk
+		//450, //Common Nighthawk
+		//473, //Lesser Nighthawk
+		493, //Chimney Swift
+		503, // Vaux's Swift
+		//505, // Common Poorwill
+		554, //Chimney Swift
+		//569, //Lesser Nighthawk
+		//570, // Common Nighthawk
+		//571,//Lesser Nighthawk
+		//619,// Common Poorwill
+		// 677, //Mangrove Cuckoo
+		//759,//Common Nighthawk
+		//817,// Common Nighthawk
+		//820,// Common Nighthawk
 	];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
@@ -214,7 +210,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Black-billed Cuckoo") {
 
-		colorsToFeature += " with slender long tail, red eye ring and a long slightly curved black bill."
+		colorsToFeature += " with slender long tail, red eye ring and a long slightly curved black bill. It should have an all black beak."
 
 	} else if (promptName === "Black-billed Magpie") {
 
@@ -259,7 +255,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Chimney Swift") {
 
-		colorsToFeature += " with small cigar shaped body, long wings, and short tail. It should be flying in the air."
+		colorsToFeature += " with small cigar shaped body, long wings, and short tail. It should be flying in the air with 2 wings."
 
 	} else if (promptName === "Common Nighthawk") {
 
@@ -359,7 +355,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Vaux's Swift") {
 
-		colorsToFeature += " with small tubular body with long arched wings and short tail. It should be flying rapidly with brownish color and paler chest and rump."
+		colorsToFeature += " with small tubular body with long arched wings and short tail. It should be flying rapidly with brownish color and paler chest and rump. It should have 2 wings"
 
 	} else if (promptName === "Veery") {
 

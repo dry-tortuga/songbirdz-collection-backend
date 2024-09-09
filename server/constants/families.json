@@ -235,6 +235,9 @@
 		"id": 5,
 		"label": "American Coot"
 	}, {
+		"id": 302,
+		"label": "Black Rail"
+	}, {
 		"id": 49,
 		"label": "Clapper Rail"
 	}, {
@@ -247,11 +250,17 @@
 		"id": 138,
 		"label": "Purple Gallinule"
 	}, {
+		"id": 318,
+		"label": "Ridgway's Rail"
+	}, {
 		"id": 172,
 		"label": "Sora"
 	}, {
 		"id": 182,
 		"label": "Virginia Rail"
+	}, {
+		"id": 324,
+		"label": "Yellow Rail"
 	}]
 }, {
 	"name": "Herons, Ibis, & Allies",
@@ -373,26 +382,62 @@
 		"id": 68,
 		"label": "Eastern Screech-Owl"
 	}, {
+		"id": 309,
+		"label": "Elf Owl"
+	}, {
+		"id": 310,
+		"label": "Flammulated Owl"
+	}, {
 		"id": 91,
 		"label": "Great Horned Owl"
+	}, {
+		"id": 314,
+		"label": "Northern Hawk Owl"
+	}, {
+		"id": 315,
+		"label": "Northern Pygmy-Owl"
+	}, {
+		"id": 319,
+		"label": "Short-eared Owl"
 	}, {
 		"id": 170,
 		"label": "Snowy Owl"
 	}, {
+		"id": 320,
+		"label": "Spotted Owl"
+	}, {
 		"id": 185,
 		"label": "Western Screech-Owl"
+	}, {
+		"id": 322,
+		"label": "Whiskered Screech-Owl"
 	}]
 }, {
 	"name": "Nightjars",
 	"species": [{
+		"id": 300,
+		"label": "Antillean Nighthawk"
+	}, {
+		"id": 305,
+		"label": "Buff-collared Nightjar"
+	}, {
 		"id": 48,
 		"label": "Chuck-will's-widow"
+	}, {
+		"id": 307,
+		"label": "Common Nighthawk"
 	}, {
 		"id": 57,
 		"label": "Common Pauraque"
 	}, {
+		"id": 308,
+		"label": "Common Poorwill"
+	}, {
 		"id": 70,
 		"label": "Eastern Whip-poor-will"
+	}, {
+		"id": 311,
+		"label": "Lesser Nighthawk"
 	}]
 }, {
 	"name": "Hummingbirds",
@@ -424,6 +469,12 @@
 }, {
 	"name": "Swifts",
 	"species": [{
+		"id": 306,
+		"label": "Chimney Swift"
+	}, {
+		"id": 321,
+		"label": "Vaux's Swift"
+	}, {
 		"id": 292,
 		"label": "White-throated Swift"
 	}]
@@ -550,6 +601,9 @@
 }, {
 	"name": "Catbirds, Mockingbirds, & Thrashers",
 	"species": [{
+		"id": 304,
+		"label": "Blue Mockingbird"
+	}, {
 		"id": 85,
 		"label": "Gray Catbird"
 	}, {
@@ -737,6 +791,15 @@
 		"label": "Bushtit"
 	}]
 }, {
+	"name": "Bulbuls",
+	"species": [{
+		"id": 316,
+		"label": "Red-vented Bulbul"
+	}, {
+		"id": 317,
+		"label": "Red-whiskered Bulbul"
+	}]
+}, {
 	"name": "Nuthatches",
 	"species": [{
 		"id": 34,
@@ -907,8 +970,14 @@
 }, {
 	"name": "Petrels, Shearwaters, & Diving-Petrels",
 	"species": [{
+		"id": 303,
+		"label": "Black Storm-Petrel"
+	}, {
 		"id": 246,
 		"label": "Manx Shearwater"
+	}, {
+		"id": 313,
+		"label":  "Northern Fulmar"
 	}]
 }, {
 	"name": "Storm-Petrels",
@@ -988,8 +1057,17 @@
 }, {
 	"name": "Cuckoos",
 	"species": [{
+		"id": 301,
+		"label": "Black-billed Cuckoo"
+	}, {
 		"id": 90,
 		"label": "Greater Roadrunner"
+	}, {
+		"id": 312,
+		"label": "Mangrove Cuckoo"
+	}, {
+		"id": 323,
+		"label": "Yellow-billed Cuckoo"
 	}]
 }, {
 	"name": "Chachalacas, Guans, & Curassows",

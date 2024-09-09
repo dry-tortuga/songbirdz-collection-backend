@@ -17,6 +17,10 @@ const COLLECTIONS_TO_POPULATE = [{
 	name: "small-and-mighty-2",
 	number: 2,
 	merkleTreeRoot: "0xa0f7b9e7f1e8429b619ed5656b695085e10244be698636097f519ea4e789777e",
+}, {
+	name: "night-and-day-3",
+	number: 3,
+	merkleTreeRoot: "TBD",
 }];
 
 // Load the contract ABI

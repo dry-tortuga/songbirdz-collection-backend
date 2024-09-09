@@ -65,7 +65,7 @@ const getBirdMetadata = async (req, res, next) => {
 	let image = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`;
 	let imageOnchain = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`;
 
-	// Check if it is one of the "1 of 1" species...
+	// Check if it is one of the "1 of 1" species (TODO: Update locally in production)
 	if (birdId === 2844 || birdId === 2603 || birdId === 2673 || birdId === 2574 || birdId === 2202) {
 
 		if (!isIdentified) {
