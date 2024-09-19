@@ -1,13 +1,13 @@
-const createOrUpdatePointLog = async (client, data) => {
+const createOrUpdatePointLog = async (client, collectionId, data) => {
 
 	try {
 
-		// Connect to the "songbirdz" database and access its "point_logs" collection
+		// Connect to the "songbirdz" database and access the collection
 
 		const database = client.db("songbirdz");
-		const pointLogs = database.collection("point_logs");
+		const pointLogs = database.collection(collectionId);
 
-		// Insert the defined document into the "point_logs" collection
+		// Insert the defined document into the collection
 		const result = await pointLogs.insertOne({
 			address: data.address,
 			species_id: data.species_id,

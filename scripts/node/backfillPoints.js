@@ -13,10 +13,10 @@ const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const CONTRACT_GENESIS_BLOCK = 12723129;
-const CONTRACT_GENESIS_TIME = new Date("2024-04-01 00:00");
+const SEASON_GENESIS_BLOCK = 19176893;
+const SEASON_GENESIS_TIME = new Date("2024-08-31T23:00:00.000Z");
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 16267048;
+const CURRENT_BLOCK = 19176894;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
@@ -154,7 +154,7 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 		const { data } = await sdk.list_events_by_collection({
 			collection_slug: OPENSEA_COLLECTION_SLUG,
 			event_type: ["sale"],
-			after: Math.floor(CONTRACT_GENESIS_TIME.getTime() / 1000),
+			after: Math.floor(SEASON_GENESIS_TIME.getTime() / 1000),
 			before: Math.floor(before.getTime() / 1000),
 			limit: "50",
 			next: nextBatchCursor,
@@ -257,12 +257,12 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
 	const db = new DB();
 
-	let after = new Date(CONTRACT_GENESIS_TIME);
-	let before = new Date(CONTRACT_GENESIS_TIME);
+	let after = new Date(SEASON_GENESIS_TIME);
+	let before = new Date(SEASON_GENESIS_TIME);
 
 	before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 
-	let afterBlock = CONTRACT_GENESIS_BLOCK;
+	let afterBlock = SEASON_GENESIS_BLOCK;
 	let beforeBlock = afterBlock + ONE_WEEK_IN_BLOCKS;
 
 	let nextBatchCursor = undefined;

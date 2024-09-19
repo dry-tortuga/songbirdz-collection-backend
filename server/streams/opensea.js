@@ -3,10 +3,7 @@ const { WebSocket } = require("ws");
 const { LocalStorage } = require("node-localstorage");
 
 const DB = require("../db");
-const {
-	processPoints,
-	storePoints,
-} = require("../utils/points");
+const { processPoints, storePoints } = require("../utils/points");
 
 // https://docs.opensea.io/reference/stream-api-overview
 
