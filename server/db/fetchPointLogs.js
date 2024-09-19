@@ -1,11 +1,11 @@
-const fetchPointLogs = async (client, address) => {
+const fetchPointLogs = async (client, collectionId, address) => {
 
 	try {
 
-		// Connect to the "songbirdz" database and access its "point_logs" collection
+		// Connect to the "songbirdz" database and access the collection
 
 		const database = client.db("songbirdz");
-		const pointLogs = database.collection("point_logs");
+		const pointLogs = database.collection(collectionId);
 
 		// Query for all matching point logs
 		const result = await pointLogs.find({ address });

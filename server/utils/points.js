@@ -1,4 +1,8 @@
-const { KEY_BIRD_DATA, SOURCE_SPECIES_DATA } = require('../constants');
+const {
+	DB_COLLECTION_IDS,
+	KEY_BIRD_DATA,
+	SOURCE_SPECIES_DATA,
+} = require('../constants');
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -74,12 +78,12 @@ const storePoints = async (db, pointResults) => {
 			const birdIntegerID = parseInt(data.bird_id, 10);
 			const speciesIntegerID = parseInt(speciesID, 10);
 
-			const existingLog = await db.fetchPointLog(address, speciesIntegerID);
+			const existingLog = await db.fetchPointLog(DB_COLLECTION_IDS[1], address, speciesIntegerID);
 
 			// Check to make sure the results don't already include this id/event combo
 			if (!existingLog || existingLog.amount < data.amount) {
 
-				await db.createOrUpdatePointLog({
+				await db.createOrUpdatePointLog(DB_COLLECTION_IDS[1], {
 					address,
 					species_id: speciesIntegerID,
 					bird_id: birdIntegerID,

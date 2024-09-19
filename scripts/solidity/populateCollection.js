@@ -6,11 +6,11 @@ const abiPath = path.join(__dirname, "../../artifacts/contracts/SongBirdz.sol");
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
 const COLLECTIONS_TO_POPULATE = [{
-	name: "picasso",
+	name: "picasso-genesis-0",
 	number: 0,
 	merkleTreeRoot: "0x5eb5e6c29aeeeca6d18591b5857bb3732385b031b324a4a7e5ce0d93be4f2b96",
 }, {
-	name: "waterfowl-1",
+	name: "deep-blue-1",
 	number: 1,
 	merkleTreeRoot: "0x0fd31aa0cf9ce48e13dd99ecda792226242ce7c5e98bf99fc19c124f815b67db",
 }, {
@@ -20,7 +20,7 @@ const COLLECTIONS_TO_POPULATE = [{
 }, {
 	name: "night-and-day-3",
 	number: 3,
-	merkleTreeRoot: "TBD",
+	merkleTreeRoot: "0xc5a013e8cdd4cdeb9179693293f7aca4047af04aa941dacf12a5347fc0b09477",
 }];
 
 // Load the contract ABI

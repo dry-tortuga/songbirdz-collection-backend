@@ -10,6 +10,8 @@ const PRIVATE_PATH = {
 	IMAGES: path.join(PRIVATE_FOLDER, "images-hidden"),
 };
 
+const DB_COLLECTION_IDS = ["point_logs", "point_logs_2"];
+
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
 const FAMILIES_DATA = require('./families.json');
@@ -121,6 +123,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 module.exports = {
 	UNIDENTIFIED_NAME,
 	COLLECTION_SIZE,
+	DB_COLLECTION_IDS,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
 	KEY_BIRD_DATA,
