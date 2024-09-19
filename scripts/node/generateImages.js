@@ -74,27 +74,7 @@ function sleep(ms) {
 
 	const ignoreList = [];
 
-	const redoList = [
-		78, // Black-billed Cuckoo
-		//97, // Common Poorwill
-		//233, // Common Nighthawk
-		387, // Chimney Swift
-		//431, // Common Nighthawk
-		//450, //Common Nighthawk
-		//473, //Lesser Nighthawk
-		493, //Chimney Swift
-		503, // Vaux's Swift
-		//505, // Common Poorwill
-		554, //Chimney Swift
-		//569, //Lesser Nighthawk
-		//570, // Common Nighthawk
-		//571,//Lesser Nighthawk
-		//619,// Common Poorwill
-		// 677, //Mangrove Cuckoo
-		//759,//Common Nighthawk
-		//817,// Common Nighthawk
-		//820,// Common Nighthawk
-	];
+	const redoList = [];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
 
@@ -103,7 +83,7 @@ function sleep(ms) {
 		}
 
 		// Get the species name of the bird
-		// const name = speciesNames[i];
+		const name = speciesNames[i];
 
 		// if (doneSpecies[name]) { continue; }
 
@@ -111,7 +91,7 @@ function sleep(ms) {
 
 			await generateImage(i);
 
-			// doneSpecies[name] = true;
+			doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
@@ -132,7 +112,7 @@ function sleep(ms) {
 		const errorID = errors[i];
 
 		// Get the species name of the bird
-		// const name = speciesNames[errorID];
+		const name = speciesNames[errorID];
 
 		// if (doneSpecies[name]) { continue; }
 
@@ -140,7 +120,7 @@ function sleep(ms) {
 
 			await generateImage(errorID);
 
-			// doneSpecies[name] = true;
+			doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
@@ -179,7 +159,15 @@ async function generateImage(i) {
 		throw new Error("Encountered a bird without day or night...");
 	}
 
-	if (promptName === "American Dipper") {
+	if (promptName === "Ferruginous Pygmy-Owl") {
+
+		colorsToFeature += " with a small, plump body, tuftless head, and patterned in cinnamon or gray";
+
+	} else if (promptName === "Boreal Owl") {
+
+		colorsToFeature += " with bright-eyes, a square face, crown has elongated white/buff streaks, the wing coverts have white spots, and the underparts are heavily streaked white. There are prominent white supercilia above the facial disc. There are two dark spots on the nape, often termed \"false eyes\" by birders. Otherwise, its overall color is highly variable, ranging from grey-brown with a black-and-white barred tail to rich rufous with a uniform rufous tail"
+
+	} else if (promptName === "American Dipper") {
 
 		colorsToFeature += " with chunky slate-gray body, long legs, rounded head and short neck. It should be walking in a flowing river of water."
 
@@ -222,7 +210,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Black Rail") {
 
-		colorsToFeature += " with a stocky chicken-like body, short bill and tail, dark gray head, black bill and chest, with white speckles on the upperparts."
+		colorsToFeature += " with a stocky chicken-like body, short bill and tail, dark gray head, black bill and chest, dark red eye, with white speckles on the upperparts. It should be foraging for food in the reeds"
 
 	} else if (promptName === "Black Storm-Petrel") {
 
@@ -287,7 +275,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Northern Hawk Owl") {
 
-		colorsToFeature += " with dark brownish black plumage with white spots, and streak on the head, back and wings. It should have a white underside and dark barring. It should have small golden eyes and golden bill."
+		colorsToFeature += " with dark brownish black plumage with white spots, and streak on the head, back and wings. It should have a white underside and dark barring. It should have small golden eyes and golden bill. The wings should be open and it should be flying"
 
 	} else if (promptName === "Northern Pygmy-Owl") {
 
@@ -315,7 +303,7 @@ async function generateImage(i) {
 
 	} else if (promptName === "Scott's Oriole") {
 
-		colorsToFeature += " with black head, black, and breast. It should have vivid yellow underparts, a yellow shoulder patch, and white wing bar, black tail with a yellow base."
+		colorsToFeature += " with black head, black, and breast. It should have vivid yellow underparts, a yellow shoulder patch, and white wing bar, black tail with a yellow base. It should be perched on a yucca plant"
 
 	} else if (promptName === "Sharp-shinned Hawk") {
 
@@ -331,7 +319,8 @@ async function generateImage(i) {
 
 	} else if (promptName === "Spot-breasted Oriole") {
 
-		colorsToFeature += " with black face, black bib, black back, and black tail. It should have a bright orange head and body. Black spots on the side of the breast."
+		promptName = "Altamira Oriole";
+		colorsToFeature += " with black throat, black back, and black tail. It should have a bright orange head and body, with some black dots on the orange chest"
 
 	} else if (promptName === "Spotted Owl") {
 

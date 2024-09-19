@@ -14,7 +14,7 @@ const contract = new ethers.Contract(
 const isBirdIdentified = async (id, cachedResults) => {
 
 	// Check if the bird's collection has been 100% identified as a whole
-	if (id >= 0 && id <= 2239) {
+	if (id >= 0 && id <= 2244) {
 		debug(`isBirdIdentified=true,id=${id},collection=100%`);
 		return true;
 	}

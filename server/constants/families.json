@@ -4,6 +4,9 @@
 		"id": 4,
 		"label": "American Black Duck"
 	}, {
+		"id": 327,
+		"label": "American Wigeon"
+	}, {
 		"id": 19,
 		"label": "Barrow's Goldeneye"
 	}, {
@@ -187,6 +190,9 @@
 		"id": 231,
 		"label": "Sanderling"
 	}, {
+		"id": 341,
+		"label": "Solitary Sandpiper"
+	}, {
 		"id": 232,
 		"label": "Spotted Sandpiper"
 	}, {
@@ -308,6 +314,18 @@
 		"label": "Yellow-crowned Night-Heron"
 	}]
 }, {
+	"name": "Dippers",
+	"species": [{
+		"id": 325,
+		"label": "American Dipper"
+	}]
+}, {
+	"name": "Wagtails & Pipits",
+	"species": [{
+		"id": 326,
+		"label": "American Pipit"
+	}]
+}, {
 	"name": "Pigeons & Doves",
 	"species": [{
 		"id": 72,
@@ -324,6 +342,9 @@
 	"species": [{
 		"id": 14,
 		"label": "Bald Eagle"
+	}, {
+		"id": 334,
+		"label": "Broad-winged Hawk"
 	}, {
 		"id": 38,
 		"label": "California Condor"
@@ -352,6 +373,9 @@
 		"id": 152,
 		"label": "Roadside Hawk"
 	}, {
+		"id": 340,
+		"label": "Sharp-shinned Hawk"
+	}, {
 		"id": 176,
 		"label": "Swainson's Hawk"
 	}, {
@@ -376,6 +400,9 @@
 		"id": 18,
 		"label": "Barred Owl"
 	}, {
+		"id": 307,
+		"label": "Boreal Owl"
+	}, {
 		"id": 37,
 		"label": "Burrowing Owl"
 	}, {
@@ -384,6 +411,9 @@
 	}, {
 		"id": 309,
 		"label": "Elf Owl"
+	}, {
+		"id": 311,
+		"label": "Ferruginous Pygmy-Owl"
 	}, {
 		"id": 310,
 		"label": "Flammulated Owl"
@@ -424,9 +454,6 @@
 		"id": 48,
 		"label": "Chuck-will's-widow"
 	}, {
-		"id": 307,
-		"label": "Common Nighthawk"
-	}, {
 		"id": 57,
 		"label": "Common Pauraque"
 	}, {
@@ -435,9 +462,6 @@
 	}, {
 		"id": 70,
 		"label": "Eastern Whip-poor-will"
-	}, {
-		"id": 311,
-		"label": "Lesser Nighthawk"
 	}]
 }, {
 	"name": "Hummingbirds",
@@ -481,6 +505,9 @@
 }, {
 	"name": "Martins & Swallows",
 	"species": [{
+		"id": 329,
+		"label": "Bank Swallow"
+	}, {
 		"id": 17,
 		"label": "Barn Swallow"
 	}, {
@@ -511,6 +538,9 @@
 		"id": 0,
 		"label": "Acorn Woodpecker"
 	}, {
+		"id": 330,
+		"label": "Black-backed Woodpecker"
+	}, {
 		"id": 63,
 		"label": "Downy Woodpecker"
 	}, {
@@ -538,8 +568,14 @@
 		"id": 6,
 		"label": "American Crow"
 	}, {
+		"id": 331,
+		"label": "Black-billed Magpie"
+	}, {
 		"id": 28,
 		"label": "Blue Jay"
+	}, {
+		"id": 335,
+		"label": "Brown Jay"
 	}, {
 		"id": 50,
 		"label": "Clark's Nutcracker"
@@ -592,8 +628,14 @@
 		"id": 167,
 		"label": "Scissor-tailed Flycatcher"
 	}, {
+		"id": 343,
+		"label": "Sulphur-bellied Flycatcher"
+	}, {
 		"id": 181,
 		"label": "Vermilion Flycatcher"
+	}, {
+		"id": 349,
+		"label": "Western Kingbird"
 	}, {
 		"id": 187,
 		"label": "Western Wood-Pewee"
@@ -603,6 +645,9 @@
 	"species": [{
 		"id": 304,
 		"label": "Blue Mockingbird"
+	}, {
+		"id": 336,
+		"label": "Brown Thrasher"
 	}, {
 		"id": 85,
 		"label": "Gray Catbird"
@@ -631,6 +676,15 @@
 		"id": 117,
 		"label": "Mountain Bluebird"
 	}, {
+		"id": 337,
+		"label": "Rufous-backed Robin"
+	}, {
+		"id": 344,
+		"label": "Swainson's Thrush"
+	}, {
+		"id": 347,
+		"label": "Veery"
+	}, {
 		"id": 183,
 		"label": "Western Bluebird"
 	}, {
@@ -645,6 +699,9 @@
 	}, {
 		"id": 15,
 		"label": "Baltimore Oriole"
+	}, {
+		"id": 333,
+		"label": "Boat-tailed Grackle"
 	}, {
 		"id": 30,
 		"label": "Bobolink"
@@ -663,6 +720,12 @@
 	}, {
 		"id": 149,
 		"label": "Red-winged Blackbird"
+	}, {
+		"id": 339,
+		"label": "Scott's Oriole"
+	}, {
+		"id": 342,
+		"label": "Spot-breasted Oriole"
 	}, {
 		"id": 184,
 		"label": "Western Meadowlark"
@@ -823,6 +886,12 @@
 }, {
 	"name": "New World Sparrows",
 	"species": [{
+		"id": 328,
+		"label": "Bachman's Sparrow"
+	}, {
+		"id": 332,
+		"label": "Black-chinned Sparrow"
+	}, {
 		"id": 261,
 		"label": "Black-throated Sparrow"
 	}, {
@@ -861,6 +930,9 @@
 	}, {
 		"id": 173,
 		"label": "Spotted Towhee"
+	}, {
+		"id": 345,
+		"label": "Swamp Sparrow"
 	}, {
 		"id": 189,
 		"label": "White-crowned Sparrow"
@@ -1040,6 +1112,12 @@
 		"label": "Loggerhead Shrike"
 	}]
 }, {
+	"name": "Penduline-Tits & Verdin",
+	"species": [{
+		"id": 348,
+		"label": "Verdin"
+	}]
+}, {
 	"name": "Grouse, Quail, & Allies",
 	"species": [{
 		"id": 89,
@@ -1050,6 +1128,9 @@
 	}, {
 		"id": 162,
 		"label": "Ruffed Grouse"
+	}, {
+		"id": 338,
+		"label": "Scaled Quail"
 	}, {
 		"id": 192,
 		"label": "Wild Turkey"
@@ -1153,6 +1234,9 @@
 }, {
 	"name": "Vireos",
 	"species": [{
+		"id": 346,
+		"label": "Thick-billed Vireo"
+	}, {
 		"id": 299,
 		"label": "Yellow-throated Vireo"
 	}]
