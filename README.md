@@ -174,8 +174,10 @@ You should now be able to succesfully run the front-end application!
 - [x] Make public the (merkle-tree, images, species, audio) files for the "Picasso Genesis" flock.
 - [x] Successfully mint all 1,000 birds (1000-1999) in the "Deep Blue" flock.
 - [x] Make public the (merkle-tree, images, species, audio) files for the "Deep Blue" flock.
-- [ ] Repeat for TBD collection with birds 2000-2999.
-- [ ] Repeat for TBD collection with birds 3000-3999.
+- [ ] Successfully mint all 1,000 birds (2000-2999) in the "Small & Mighty" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Small & Mighty" flock.
+- [ ] Successfully mint all 1,000 birds (3000-3999) in the "Night & Day" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Night & Day" flock.
 - [ ] Repeat for TBD collection with birds 4000-4999.
 - [ ] Repeat for TBD collection with birds 5000-5999.
 - [ ] Repeat for TBD collection with birds 6000-6999.
@@ -183,7 +185,7 @@ You should now be able to succesfully run the front-end application!
 - [ ] Repeat for TBD collection with birds 8000-8999.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
 - [ ] Upload all (merkle-tree, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [nft.storage](https://nft.storage/)).
-- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [nft.storage](https://nft.storage/). Freeze it permanently!
-- [ ] Upload the web application to a decentralized storage provider (i.e. [nft.storage](https://nft.storage/).
+- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [nft.storage](https://nft.storage/). TBD: Freeze it permanently!
+- [ ] TBD: Upload the web application to ipfs.
 - [ ] Shut down the back-end server.
 - [ ] Project is now complete!

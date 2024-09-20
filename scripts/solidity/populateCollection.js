@@ -17,6 +17,10 @@ const COLLECTIONS_TO_POPULATE = [{
 	name: "small-and-mighty-2",
 	number: 2,
 	merkleTreeRoot: "0xa0f7b9e7f1e8429b619ed5656b695085e10244be698636097f519ea4e789777e",
+}, {
+	name: "night-and-day-3",
+	number: 3,
+	merkleTreeRoot: "0xc5a013e8cdd4cdeb9179693293f7aca4047af04aa941dacf12a5347fc0b09477",
 }];
 
 // Load the contract ABI
@@ -52,6 +56,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 			"utf8",
 		)));
 
+		console.log('Collection Number:', collection.number);
 		console.log('Merkle Root:', merkleTree.root);
 
 		if (merkleTree.root !== collection.merkleTreeRoot) {

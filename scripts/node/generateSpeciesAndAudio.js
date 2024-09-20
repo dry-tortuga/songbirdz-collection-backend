@@ -4,8 +4,9 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "small-and-mighty-2";
-const COLLECTION_START_INDEX = 2000;
+const COLLECTION_NAME = "night-and-day-3";
+const COLLECTION_START_INDEX = 3000;
+const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 

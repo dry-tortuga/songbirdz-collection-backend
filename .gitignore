@@ -20,6 +20,7 @@ node_modules/
 
 # Private Data Directory
 private/
+private.zip
 
 # Optional npm cache directory
 .npm
