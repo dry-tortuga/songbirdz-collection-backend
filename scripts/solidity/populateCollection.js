@@ -56,6 +56,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 			"utf8",
 		)));
 
+		console.log('Collection Number:', collection.number);
 		console.log('Merkle Root:', merkleTree.root);
 
 		if (merkleTree.root !== collection.merkleTreeRoot) {
