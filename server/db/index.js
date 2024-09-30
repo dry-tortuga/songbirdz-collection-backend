@@ -2,6 +2,7 @@ const createOrUpdatePointLog = require("./createOrUpdatePointLog");
 const fetchPointLog = require("./fetchPointLog");
 const fetchPointLogs = require("./fetchPointLogs");
 const rankPointLogs = require("./rankPointLogs");
+const updateDailyStreak = require('./updateDailyStreak');
 
 const { MongoClient } = require("mongodb");
 
@@ -43,6 +44,14 @@ class DB {
 
 	async rankPointLogs(collectionId, address, limit = 50) {
 		return await rankPointLogs(this.client, collectionId, address, limit);
+	}
+
+	async rankDailyStreaks(address, limit = 50) {
+		return await rankDailyStreaks(address, limit);
+	}
+
+	async updateDailyStreak(address) {
+		return await updateDailyStreak(this.client, address);
 	}
 
 };

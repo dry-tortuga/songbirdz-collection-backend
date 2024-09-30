@@ -52,7 +52,7 @@ if (process.env.NODE_ENV === "development") {
 			process.env.WALLET_PRIVATE_KEY_OWNER,
 			process.env.WALLET_PRIVATE_KEY_NON_OWNER,
 		],
-		gasPrice: 1000000000,
+		gasPrice: "auto",
 	};
 
 } else if (process.env.NODE_ENV === "staging") {
