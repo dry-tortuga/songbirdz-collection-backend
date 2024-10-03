@@ -10,23 +10,28 @@ class DB {
 
 	constructor() {
 
-		if (process.env.NODE_ENV === "production") {
+		try {
 
 			// Create a new client and connect to MongoDB
 			this.client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
 
+		} catch (error) {
+			console.error("Unable to initialize the MongoDB connection...");
 		}
 
 	}
 
 	async close() {
 
-		if (process.env.NODE_ENV === "production") {
+		try {
 
 			// Close the MongoDB client connection
-			await this.client.close();
+			await this?.client.close();
 
+		} catch (error) {
+			console.error("Unable to close the MongoDB connection...");
 		}
+
 
 	}
 

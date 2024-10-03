@@ -8,7 +8,7 @@ const updateDailyStreak = async (client, address) => {
 		// calculate the previous day, in the Indian locale
 		const yesterdayDate = new Date();
 
-		yestardayDate.setDate(yesterdayDate.getDate() - 1);
+		yesterdayDate.setDate(yesterdayDate.getDate() - 1);
 
 		const yesterday = yesterdayDate.toLocaleDateString('en-IN', { dateStyle: 'medium' });
 
@@ -26,26 +26,72 @@ const updateDailyStreak = async (client, address) => {
 
 			if (tracker.last_login === today) {
 
-				// do nothing
+				return {
+					...tracker,
+					status: "no-change",
+					change_in_points: 0,
+				};
 
-			} else if (tracker.last_login == yesterday) {
+			}
 
+			let newStatus, pointsEarned = 0;
+
+			if (tracker.last_login === yesterday) {
+
+				newStatus = "updated";
+
+				tracker.last_login = today;
 				tracker.login_streak += 1;
+
+				// Check if this current streak is a new max for the user
+
+				tracker.longest_login_streak = Math.max(
+					tracker.longest_login_streak,
+					tracker.login_streak,
+				);
+
+				// Apply bonus points to earn based on the current streak hitting key milestones
+
+				if (tracker.login_streak === 7) {
+
+					pointsEarned = 50;
+					tracker.bonus_points_earned += 50;
+
+				} else if (tracker.login_streak === 14) {
+
+					pointsEarned = 125;
+					tracker.bonus_points_earned += 125;
+
+				} else if (tracker.login_streak === 30) {
+
+					pointsEarned = 300;
+					tracker.bonus_points_earned += 300;
+
+				}
 
 			} else {
 
+				newStatus = "created";
+
+				tracker.last_login = today;
 				tracker.login_streak = 1;
 
 			}
 
-			tracker.longest_login_streak = Math.max(
-				tracker.longest_login_streak,
-				tracker.login_streak,
-			);
+			// Update the existing entry for the daily streak tracker for the user
 
-			await tracker.save();
+			const updatedTracker = await trackers.updateOne({ address }, {
+				last_login: tracker.last_login,
+				login_streak: tracker.login_streak,
+				longest_login_streak: tracker.longest_login_streak,
+				bonus_points_earned: tracker.bonus_points_earned,
+			});
 
-			return tracker;
+			return {
+				...updatedTracker,
+				status: newStatus,
+				change_in_points: pointsEarned,
+			};
 
 		} else {
 
@@ -56,12 +102,22 @@ const updateDailyStreak = async (client, address) => {
 				last_login: today,
 				login_streak: 1,
 				longest_login_streak: 1,
+				bonus_points_earned: 0,
 			});
 
 			// Print the ID of the inserted document
 			console.log(`A document was inserted with the _id: ${result.insertedId}`);
 
-			return result;
+			return {
+				_id: result.insertedId,
+				address,
+				last_login: today,
+				login_streak: 1,
+				longest_login_streak: 1,
+				bonus_points_earned: 0,
+				status: "created",
+				change_in_points: 0,
+			};
 
 		}
 
