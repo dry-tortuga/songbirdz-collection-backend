@@ -32,7 +32,7 @@ router.get("/leaderboard", getLeaderboard);
 router.get("/life-list", getLifeList);
 
 // Get the daily streaks
-router.get("/daily-streaks", getDailyStreaks);
+router.get("/daily-streak/active", getDailyStreaks);
 
 // Update the daily streak for a specific user
 router.post("/daily-streak", updateDailyStreak);

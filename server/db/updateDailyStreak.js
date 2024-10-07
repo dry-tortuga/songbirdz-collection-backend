@@ -5,7 +5,7 @@ const updateDailyStreak = async (client, address) => {
 		// Calculate the current day, in the Indian locale
 		const today = (new Date()).toLocaleDateString('en-IN', { dateStyle: 'medium' });
 
-		// calculate the previous day, in the Indian locale
+		// Calculate the previous day, in the Indian locale
 		const yesterdayDate = new Date();
 
 		yesterdayDate.setDate(yesterdayDate.getDate() - 1);
@@ -36,36 +36,43 @@ const updateDailyStreak = async (client, address) => {
 
 			let newStatus, pointsEarned = 0;
 
-			if (tracker.last_login === yesterday) {
+			const updatedFields = {
+				last_login: tracker.last_login,
+				login_streak: tracker.login_streak,
+				longest_login_streak: tracker.longest_login_streak,
+				bonus_points_earned: tracker.bonus_points_earned,
+			};
+
+			if (updatedFields.last_login === yesterday) {
 
 				newStatus = "updated";
 
-				tracker.last_login = today;
-				tracker.login_streak += 1;
+				updatedFields.last_login = today;
+				updatedFields.login_streak += 1;
 
 				// Check if this current streak is a new max for the user
 
-				tracker.longest_login_streak = Math.max(
-					tracker.longest_login_streak,
-					tracker.login_streak,
+				updatedFields.longest_login_streak = Math.max(
+					updatedFields.longest_login_streak,
+					updatedFields.login_streak,
 				);
 
 				// Apply bonus points to earn based on the current streak hitting key milestones
 
-				if (tracker.login_streak === 7) {
+				if (updatedFields.login_streak === 7) {
 
 					pointsEarned = 50;
-					tracker.bonus_points_earned += 50;
+					updatedFields.bonus_points_earned += 50;
 
-				} else if (tracker.login_streak === 14) {
+				} else if (updatedFields.login_streak === 14) {
 
 					pointsEarned = 125;
-					tracker.bonus_points_earned += 125;
+					updatedFields.bonus_points_earned += 125;
 
-				} else if (tracker.login_streak === 30) {
+				} else if (updatedFields.login_streak === 30) {
 
 					pointsEarned = 300;
-					tracker.bonus_points_earned += 300;
+					updatedFields.bonus_points_earned += 300;
 
 				}
 
@@ -73,22 +80,18 @@ const updateDailyStreak = async (client, address) => {
 
 				newStatus = "created";
 
-				tracker.last_login = today;
-				tracker.login_streak = 1;
+				updatedFields.last_login = today;
+				updatedFields.login_streak = 1;
 
 			}
 
 			// Update the existing entry for the daily streak tracker for the user
 
-			const updatedTracker = await trackers.updateOne({ address }, {
-				last_login: tracker.last_login,
-				login_streak: tracker.login_streak,
-				longest_login_streak: tracker.longest_login_streak,
-				bonus_points_earned: tracker.bonus_points_earned,
-			});
+			await trackers.updateOne({ address }, { $set: updatedFields });
 
 			return {
-				...updatedTracker,
+				...tracker,
+				...updatedFields,
 				status: newStatus,
 				change_in_points: pointsEarned,
 			};

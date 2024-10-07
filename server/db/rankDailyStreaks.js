@@ -2,6 +2,16 @@ const rankDailyStreaks = async (client, address, limit) => {
 
 	try {
 
+		// Calculate the current day, in the Indian locale
+		const today = (new Date()).toLocaleDateString('en-IN', { dateStyle: 'medium' });
+
+		// Calculate the previous day, in the Indian locale
+		const yesterdayDate = new Date();
+
+		yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+
+		const yesterday = yesterdayDate.toLocaleDateString('en-IN', { dateStyle: 'medium' });
+
 		// Connect to the "songbirdz" database and access the collection
 
 		const database = client.db("songbirdz");
@@ -9,7 +19,11 @@ const rankDailyStreaks = async (client, address, limit) => {
 
 		// Sort/Query for the top 52 daily streaks
 
-		const queryResults = await trackers.aggregate([{
+		const queryResults = await trackers.aggregate([/*{
+			$match: {
+				last_login: [yesterday, today],
+			}
+		},*/ {
 			$sort: {
 				login_streak: -1, // Sort in descending order
 			}
@@ -19,14 +33,31 @@ const rankDailyStreaks = async (client, address, limit) => {
 
 		const finalData = await queryResults.toArray();
 
-		// Make sure to include the current user's address in the final results
+		// Make sure to include the current user in the final results
 
 		if (address &&
 			finalData.findIndex((temp) => temp.address === address) === -1) {
 
 			const resultCurrentUser = await trackers.findOne({ address });
 
-			finalData.push(resultCurrentUser);
+			if (resultCurrentUser) {
+
+				finalData.push(resultCurrentUser);
+
+			} else {
+
+				finalData.push({
+					_id: null,
+					address,
+					last_login: null,
+					login_streak: 0,
+					longest_login_streak: 0,
+					bonus_points_earned: 0,
+					status: "missing",
+					change_in_points: 0,
+				});
+
+			}
 
 		}
 
