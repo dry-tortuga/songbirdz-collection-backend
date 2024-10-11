@@ -6,6 +6,10 @@ const {
 	getBirdAlreadyIdentifiedList,
 } = require("./birds");
 const {
+	getDailyStreaks,
+	updateDailyStreak,
+} = require("./dailyStreak");
+const {
 	getLeaderboard,
 	getLifeList,
 } = require("./leaderboard");
@@ -26,5 +30,11 @@ router.get("/leaderboard", getLeaderboard);
 
 // Get the life list for a specific user
 router.get("/life-list", getLifeList);
+
+// Get the daily streaks
+router.get("/daily-streak/active", getDailyStreaks);
+
+// Update the daily streak for a specific user
+router.post("/daily-streak", updateDailyStreak);
 
 module.exports = router;
