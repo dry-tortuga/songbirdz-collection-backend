@@ -19,11 +19,13 @@ const rankDailyStreaks = async (client, address, limit) => {
 
 		// Sort/Query for the top 52 daily streaks
 
-		const queryResults = await trackers.aggregate([/*{
+		const queryResults = await trackers.aggregate([{
 			$match: {
-				last_login: [yesterday, today],
+				last_login: {
+					$in: [yesterday, today] // Limit results to last active yesterday and/or today
+				}
 			}
-		},*/ {
+		}, {
 			$sort: {
 				login_streak: -1, // Sort in descending order
 			}
