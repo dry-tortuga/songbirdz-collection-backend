@@ -1,6 +1,6 @@
 # SongBirdz Back-End
 
-This project contains the back-end for the SongBirdz NFT collection. It includes the solidity contract, test code for that contract, a NodeJS server to serve images, metadata, and merkle proof, as well as the scripts used to generate and deploy the collection.
+This project contains the back-end for the [SongBirdz NFT collection](https://songbirdz.cc). It includes the solidity contract, test code for that contract, a NodeJS server to serve images, metadata, and merkle proof, as well as the scripts used to generate and deploy the collection.
 
 You can find the front-end application [here](https://github.com/dry-tortuga/songbirdz-collection-frontend).
 
