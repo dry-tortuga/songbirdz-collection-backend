@@ -20,6 +20,29 @@ const getDailyStreaks = async (req, res, next) => {
 
 };
 
+getDailyStreak = async (req, res, next) => {
+
+	const address = req.query.address;
+
+	if (!address) {
+
+		return next({
+			status: 400,
+			message: "The address is invalid",
+		});
+
+	}
+
+	const parsedAddress = address.toLowerCase();
+
+	// Fetch the daily streak tracker for the user
+
+	const tracker = await db.getDailyStreak(parsedAddress);
+
+	res.send(tracker);
+
+};
+
 const updateDailyStreak = async (req, res, next) => {
 
 	const address = req.body.address;
@@ -45,5 +68,6 @@ const updateDailyStreak = async (req, res, next) => {
 
 module.exports = {
 	getDailyStreaks,
+	getDailyStreak,
 	updateDailyStreak,
 };

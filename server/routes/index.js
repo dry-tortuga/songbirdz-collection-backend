@@ -7,6 +7,7 @@ const {
 } = require("./birds");
 const {
 	getDailyStreaks,
+	getDailyStreak,
 	updateDailyStreak,
 } = require("./dailyStreak");
 const {
@@ -32,7 +33,10 @@ router.get("/leaderboard", getLeaderboard);
 router.get("/life-list", getLifeList);
 
 // Get the daily streaks
-router.get("/daily-streak/active", getDailyStreaks);
+router.get("/daily-streaks/active", getDailyStreaks);
+
+// Get the daily streak for a specific user
+router.get("/daily-streak", getDailyStreak);
 
 // Update the daily streak for a specific user
 router.post("/daily-streak", updateDailyStreak);

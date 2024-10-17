@@ -15,7 +15,7 @@ const fetchPointLog = async (client, collectionId, address, speciesID) => {
 
 		return result;
 
-	} catch(error) {
+	} catch (error) {
 
 		console.error(error);
 

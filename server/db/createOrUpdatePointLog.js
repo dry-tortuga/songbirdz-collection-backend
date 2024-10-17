@@ -19,7 +19,7 @@ const createOrUpdatePointLog = async (client, collectionId, data) => {
 		// Print the ID of the inserted document
 		console.log(`A document was inserted with the _id: ${result.insertedId}`);
 
-	} catch(error) {
+	} catch (error) {
 
 		console.error(error);
 

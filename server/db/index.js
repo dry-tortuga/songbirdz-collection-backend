@@ -2,6 +2,7 @@ const createOrUpdatePointLog = require("./createOrUpdatePointLog");
 const fetchPointLog = require("./fetchPointLog");
 const fetchPointLogs = require("./fetchPointLogs");
 const rankPointLogs = require("./rankPointLogs");
+const fetchDailyStreak = require("./fetchDailyStreak");
 const rankDailyStreaks = require("./rankDailyStreaks");
 const updateDailyStreak = require("./updateDailyStreak");
 
@@ -50,6 +51,10 @@ class DB {
 
 	async rankPointLogs(collectionId, address, limit = 50) {
 		return await rankPointLogs(this.client, collectionId, address, limit);
+	}
+
+	async fetchDailyStreak(address) {
+		return await fetchDailyStreak(this.client, address);
 	}
 
 	async rankDailyStreaks(address, limit = 50) {
