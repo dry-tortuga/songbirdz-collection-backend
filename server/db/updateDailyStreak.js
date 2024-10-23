@@ -125,9 +125,7 @@ const updateDailyStreak = async (client, address) => {
 		}
 
 	} catch (error) {
-
 		console.error(error);
-
 	}
 
 };

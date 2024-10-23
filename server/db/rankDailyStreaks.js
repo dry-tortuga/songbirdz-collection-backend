@@ -66,9 +66,7 @@ const rankDailyStreaks = async (client, address, limit) => {
 		return finalData;
 
 	} catch (error) {
-
 		console.error(error);
-
 	}
 
 };
