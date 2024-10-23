@@ -58,7 +58,7 @@ const rankPointLogs = async (client, collectionId, address, limit) => {
 
 		return finalData;
 
-	} catch(error) {
+	} catch (error) {
 
 		console.error(error);
 
