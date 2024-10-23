@@ -5,7 +5,7 @@ const fetchDailyStreak = async (client, address) => {
 		// Connect to the "songbirdz" database and access the collection
 
 		const database = client.db("songbirdz");
-		const pointLogs = database.collection("daily_streak_tracker");
+		const trackers = database.collection("daily_streak_tracker");
 
 		// Query for a matching tracker
 		const tracker = await trackers.findOne({ address });

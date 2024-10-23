@@ -30,6 +30,7 @@ const updateDailyStreak = async (client, address) => {
 					...tracker,
 					status: "no-change",
 					change_in_points: 0,
+					today: true,
 				};
 
 			}
@@ -94,6 +95,7 @@ const updateDailyStreak = async (client, address) => {
 				...updatedFields,
 				status: newStatus,
 				change_in_points: pointsEarned,
+				today: true,
 			};
 
 		} else {
@@ -120,6 +122,7 @@ const updateDailyStreak = async (client, address) => {
 				bonus_points_earned: 0,
 				status: "created",
 				change_in_points: 0,
+				today: true,
 			};
 
 		}

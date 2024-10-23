@@ -20,7 +20,7 @@ const getDailyStreaks = async (req, res, next) => {
 
 };
 
-getDailyStreak = async (req, res, next) => {
+const getDailyStreak = async (req, res, next) => {
 
 	const address = req.query.address;
 
@@ -37,7 +37,7 @@ getDailyStreak = async (req, res, next) => {
 
 	// Fetch the daily streak tracker for the user
 
-	const tracker = await db.getDailyStreak(parsedAddress);
+	const tracker = await db.fetchDailyStreak(parsedAddress);
 
 	res.send(tracker);
 
