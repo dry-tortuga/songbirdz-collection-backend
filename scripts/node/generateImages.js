@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "night-and-day-3";
-const COLLECTION_START_INDEX = 3000;
+const COLLECTION_NAME = "fire-and-ice-4";
+const COLLECTION_START_INDEX = 4000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -72,13 +72,17 @@ function sleep(ms) {
 
 	const doneSpecies = {};
 
-	const ignoreList = [];
+	const skipList = [];
 
-	const redoList = [];
+	const redoList = [484];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
 
 		if (redoList.findIndex((value) => value === i) === -1) {
+			continue;
+		}
+
+		if (skipList.findIndex((value) => value === i) >= 0) {
 			continue;
 		}
 
@@ -91,7 +95,7 @@ function sleep(ms) {
 
 			await generateImage(i);
 
-			doneSpecies[name] = true;
+			// doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
@@ -120,7 +124,7 @@ function sleep(ms) {
 
 			await generateImage(errorID);
 
-			doneSpecies[name] = true;
+			// doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
@@ -145,236 +149,281 @@ async function generateImage(i) {
 
 	let promptName = name, colorsToFeature = '', locationToFeature = '', introColors = '';
 
-	if (speciesSourceTypes[name] === "night") {
+	if (speciesSourceTypes[name] === "fire") {
 
-		locationToFeature += "all black night sky with some stars";
-		introColors += "neon";
+		locationToFeature = "warm color tones indicating the theme of fire and summer";
 
-	} else if (speciesSourceTypes[name] === "day") {
+	} else if (speciesSourceTypes[name] === "ice") {
 
-		locationToFeature += "a subtle sunrise in a light blue sky";
-		introColors += "bright";
+		locationToFeature = "cold color tones indicating the theme of ice and winter";
 
 	} else {
-		throw new Error("Encountered a bird without day or night...");
+		throw new Error("Encountered a bird without fire or ice...");
 	}
 
-	if (promptName === "Ferruginous Pygmy-Owl") {
+	if (promptName === "African Silverbill") {
 
-		colorsToFeature += " with a small, plump body, tuftless head, and patterned in cinnamon or gray";
+		colorsToFeature = " be a small, delicate bird with a rounded body and a short, thick silvery-gray beak, which stands out against its light sandy-brown plumage. Its feathers are soft, blending from pale beige on its chest and underside to a slightly darker brown on its wings and tail. This bird has short, rounded wings and a short tail, which are darker brown, adding a bit of contrast. Its legs and feet are a pale pinkish-gray. The bird's overall appearance is gentle and unobtrusive, with an expression that seems curious but calm";
+		locationToFeature += " , it should include tall grasslands or scattered shrubs"
 
-	} else if (promptName === "Boreal Owl") {
+	} else if (promptName === "Aleutian Tern") {
 
-		colorsToFeature += " with bright-eyes, a square face, crown has elongated white/buff streaks, the wing coverts have white spots, and the underparts are heavily streaked white. There are prominent white supercilia above the facial disc. There are two dark spots on the nape, often termed \"false eyes\" by birders. Otherwise, its overall color is highly variable, ranging from grey-brown with a black-and-white barred tail to rich rufous with a uniform rufous tail"
+		colorsToFeature = " have a sleek body with long, pointed wings and a deeply forked tail. A black cap covers its head and extends into a mask around its eyes. It should have a sharp black bill and dark legs";
+		locationToFeature += ", it should include a body of water such as the ocean";
 
-	} else if (promptName === "American Dipper") {
+	} else if (promptName === "Ancient Murrelet") {
 
-		colorsToFeature += " with chunky slate-gray body, long legs, rounded head and short neck. It should be walking in a flowing river of water."
+		colorsToFeature = " have a compact body, short wings, and a distinctive black and white plumage, with a dark cap on its head. Its size is similar to a pigeon, but it should have a short, slim beak";
+		locationToFeature += " , it should include coastal islands or open ocean waters";
 
-	} else if (promptName === "American Pipit") {
+	} else if (promptName === "Bananaquit") {
 
-		colorsToFeature += " with solid grayish upperparts and streaked belly and chest."
+		colorsToFeature = " be a small, sparrow-sized bird with a slender body, yellow belly, and black-and-white head, often noted for its curved bill";
+		locationToFeature += ", it should include tropical gardens, woodlands, or mangroves";
 
-	} else if (promptName === "American Wigeon") {
+	} else if (promptName === "Barnacle Goose") {
 
-		colorsToFeature += " with brownish gray head, wide green stripe behind the eye, white cap and white beak."
+		colorsToFeature = " have a striking black head and neck which contrasts with a creamy white face and white cheek patches. It should have a grayish white belly and a short stubby bill. It should have black legs";
+		locationToFeature += ", it should include grassy areas near water";
 
-	} else if (promptName === "Antillean Nighthawk") {
+	} else if (promptName === "Black-chinned Hummingbird") {
 
-		promptName = "Nightjar bird";
-		colorsToFeature += " with long wings, intricate brown and gray patterning, bright white throat patch. It should have large dark eyes. It should look similar to a Chuck-will’s-widow bird, but its beak is very short and positioned low on the face blending into the soft rounded head. Its beak should look like a chickadee's beak";
+		colorsToFeature = " be a small hummingbird with iridescent green feathers, a distinctive black chin, and a white stripe behind the eye";
+		locationToFeature += ", it should include arid and semi-arid habitats with flowering plants";
 
-	} else if (promptName === "Bachman's Sparrow") {
+	} else if (promptName === "Bohemian Waxwing") {
 
-		colorsToFeature += " with long round tail, brownish gray above with rusty-streaked feathers and a rusty crown. The throat should be buffy with sparse rusty streaks."
+		colorsToFeature = " have a soft brownish plumage, a black mask, and distinctive yellow tips on the wings and tail";
+		locationToFeature += ", it should include forests and woodlands with abundant fruiting trees";
 
-	} else if (promptName === "Bank Swallow") {
+	} else if (promptName === "Bronze Mannikin") {
 
-		colorsToFeature += " with small and compact body, brown above and white below, with contrasting dark chest band . It should be flying in the air with pointed wings and notched tail."
+		colorsToFeature = " be a small, stout bird with a brownish-black body and glossy greenish-brown sheen";
+		locationToFeature += ", it should include grasslands and savannas, often near water sources";
 
-	} else if (promptName === "Black-backed Woodpecker") {
+	} else if (promptName === "California Towhee") {
 
-		colorsToFeature += " with solid black back, single white stripe on the face, yellow crown patch on top of head, and barred flanks."
+		colorsToFeature = " have a brownish body, orange underparts, and a long, rounded tail";
+		locationToFeature += ", it should include scrubby areas, chaparral, and suburban gardens";
 
-	} else if (promptName === "Black-billed Cuckoo") {
+	} else if (promptName === "Canada Jay") {
 
-		colorsToFeature += " with slender long tail, red eye ring and a long slightly curved black bill. It should have an all black beak."
+		colorsToFeature = " be a grayish bird with a pale head, dark wings, and a long tail, known for its friendly behavior";
+		locationToFeature += ", it should include boreal forests and mountainous regions";
 
-	} else if (promptName === "Black-billed Magpie") {
+	} else if (promptName === "Curve-billed Thrasher") {
 
-		colorsToFeature += " with long tail, bold black and white patterning. The wings and tail should shine with blue green iridescence."
+		colorsToFeature = " have a long, curved bill, gray-brown plumage, and a distinctively long tail";
+		locationToFeature += ", it should include desert scrub and open woodlands";
 
-	} else if (promptName === "Black-chinned Sparrow") {
+	} else if (promptName === "Elegant Trogon") {
 
-		colorsToFeature += " with slim long tail, primarily gray, with a reddish-brown back streaked with black, brown wings and tail and a pink beak."
+		promptName = "Collared Trogon";
+		colorsToFeature = " have vibrant plumage, including a metallic-green back, rose-red belly, yellow beak, as well as an unusual stout-bodied, square-tailed profile with an extremely long black-and-white patterned tail. There should be extra focus on the length of the tail";
+		locationToFeature += ", it should be perched on a tropical tree and include flowers";
 
-	} else if (promptName === "Black Rail") {
+	} else if (promptName === "Greater Sage-Grouse") {
 
-		colorsToFeature += " with a stocky chicken-like body, short bill and tail, dark gray head, black bill and chest, dark red eye, with white speckles on the upperparts. It should be foraging for food in the reeds"
+		colorsToFeature = " be a large ground-dwelling bird with a rounded body, long tail feathers, and distinctively feathered legs";
+		locationToFeature += ", it should include sagebrush ecosystems in arid regions";
 
-	} else if (promptName === "Black Storm-Petrel") {
+	} else if (promptName === "Great Gray Owl") {
 
-		colorsToFeature += " with large dark angular deeply notched tail. It should be flying over a body of water."
+		colorsToFeature = " have a distinctive round face, long gray feathers, and striking yellow eyes";
+		locationToFeature += ", it should include dense coniferous forests and be either (1) flying through the air or (2) perched in a tree";
 
-	} else if (promptName === "Blue Mockingbird") {
+	} else if (promptName === "Hawaii Amakihi") {
 
-		colorsToFeature += " with dull blue plumage, a long rounded tail, black mask around reddish brown eyes."
+		colorsToFeature = " be a small songbird with olive-green plumage and a slightly curved bill";
+		locationToFeature += ", it should include Hawaiian forests with native flowers and vegetation";
 
-	} else if (promptName === "Boat-tailed Grackle") {
+	} else if (promptName === "Himalayan Snowcock") {
 
-		colorsToFeature += " with large body, long tail, yellow eye, glossy blue black with iridescent sheen."
+		colorsToFeature = " be a large, robust bird with a long neck, grayish-brown plumage, and a distinctive white facial patch";
+		locationToFeature += ", it should include steep, rocky mountain slopes and alpine meadows";
 
-	} else if (promptName === "Broad-winged Hawk") {
+	} else if (promptName === "Horned Puffin") {
 
-		colorsToFeature += " with broad wings that come to a slight point at the tips, barred upperparts, and black and white bands on the tail."
+		colorsToFeature = " have a colorful bill with a horn-like extension, black upperparts, and white underparts";
+		locationToFeature += ", it should include coastal cliffs and cold ocean waters";
 
-	} else if (promptName === "Brown Jay") {
+	} else if (promptName === "Iceland Gull") {
 
-		colorsToFeature += " with long rounded tail, dark chocolate color, and pale grayish belly."
+		colorsToFeature = " be a medium-sized gull with pale plumage, gray wings, and a slightly darker mantle";
+		locationToFeature += ", it should include coastal areas and lakes";
 
-	} else if (promptName === "Brown Thrasher") {
+	} else if (promptName === "Laysan Albatross") {
 
-		colorsToFeature += " with reddish brown body, long tail and slightly curved bill."
+		colorsToFeature = " be a large seabird with a white body and dark gray wings, featuring a distinctive black 'M' pattern";
+		locationToFeature += ", it should include open ocean and remote islands in the North Pacific";
 
-	} else if (promptName === "Buff-collared Nightjar") {
+	} else if (promptName === "McKay's Bunting") {
 
-		promptName = "Nightjar bird";
-		colorsToFeature += ". It has mottled gray, brown, and white plumage which provides excellent camouflage against the bark of the tree. The bird has large dark eyes and delicate whisker-like feathers around its face. The beak is very short, stout, and wide, positioned low on the face blending into the soft rounded head"
+		colorsToFeature = " be a small, stocky bird with all-white plumage and black wings";
+		locationToFeature += ", it should include tundra and coastal areas in the Arctic regions";
 
-	} else if (promptName === "Chimney Swift") {
+	} else if (promptName === "Mexican Jay") {
 
-		colorsToFeature += " with small cigar shaped body, long wings, and short tail. It should be flying in the air with 2 wings."
+		colorsToFeature = " have a grayish-blue body, a black crown, and a white belly";
+		locationToFeature += ", it should include Mexican oak woodlands and mountainous areas";
 
-	} else if (promptName === "Common Nighthawk") {
+	} else if (promptName === "Mitred Parakeet") {
 
-		colorsToFeature += " with mottled gray and brown body, large black eyes, small flat head, and a tiny beak."
+		colorsToFeature = " be a medium-sized parakeet with bright green plumage, a red forehead, and distinctive yellow underwing feathers";
+		locationToFeature += ", it should include tropical trees and flowers";
 
-	} else if (promptName === "Common Poorwill") {
+	} else if (promptName === "Nanday Parakeet") {
 
-		colorsToFeature += " with gray, brown, and buffy body. It should have white in the collar and outer tail feathers."
+		colorsToFeature = " be a small, striking parakeet with bright green body, black head, and red underparts";
+		locationToFeature += ", it should include open woodland trees or grassy savanna plants";
 
-	} else if (promptName === "Elf Owl") {
+	} else if (promptName === "Northern Beardless-Tyrannulet") {
 
-		colorsToFeature += " with short tail, a V-shaped white stripe above their eyes, no ear tuffs, reddish brown coloring with vertical striped buff colored breast. It should be very small."
+		colorsToFeature = " be a small, grayish bird with a slight crest and no distinct markings";
+		locationToFeature += ", it should include scrubby areas and open woodlands";
 
-	} else if (promptName === "Flammulated Owl") {
+	} else if (promptName === "Northern Shrike") {
 
-		colorsToFeature += " with dark eyes, short ear tuffs, incomplete facial disk that runs from ears to mustache, gray brown rust and white plumage, with dark streaks in cross bars."
+		colorsToFeature = " be a medium-sized bird with a gray body, black mask, and stout bill";
+		locationToFeature += ", it should include open fields, shrubby areas, and woodlands";
 
-	} else if (promptName === "Lesser Nighthawk") {
+	} else if (promptName === "Pacific Loon") {
 
-		colorsToFeature += " with small flat head, tiny beak, small feet, long wings, long tail."
+		colorsToFeature = " be a large, slender bird with a sharp bill, dark head, and spotted back";
+		locationToFeature += ", it should include large lakes and coastal waters";
 
-	} else if (promptName === "Mangrove Cuckoo") {
+	} else if (promptName === "Pine Grosbeak") {
 
-		colorsToFeature += " with long tail, thick curved beak, long wings. It should have brown above, buffy below, black mask, and yellow eye ring. Bold black-and-white pattern on the underside of the tail."
+		colorsToFeature = " be a large finch with bright yellow or red plumage in males and a large conical bill";
+		locationToFeature += ", it should include coniferous forests, especially in northern regions";
 
-	} else if (promptName === "Northern Fulmar") {
+	} else if (promptName === "Plain-capped Starthroat") {
 
-		colorsToFeature += " with white and gray body, thick yellow beak."
+		colorsToFeature = " be a medium-sized hummingbird with iridescent green and white plumage and a unique plain cap";
+		locationToFeature += ", it should include arid and semi-arid regions with flowering plants";
 
-	} else if (promptName === "Northern Hawk Owl") {
+	} else if (promptName === "Razorbill") {
 
-		colorsToFeature += " with dark brownish black plumage with white spots, and streak on the head, back and wings. It should have a white underside and dark barring. It should have small golden eyes and golden bill. The wings should be open and it should be flying"
+		colorsToFeature = " be a seabird with a large black body, white underparts, and a distinctive blunt bill with a sharp ridge";
+		locationToFeature += ", it should include rocky coastal areas";
 
-	} else if (promptName === "Northern Pygmy-Owl") {
+	} else if (promptName === "Red Junglefowl") {
 
-		colorsToFeature += " with small compact dark brown and white body, smooth rounded head, and piercing yellow eyes."
+		colorsToFeature = " be a colorful bird with a red comb, bright plumage, and a long tail";
+		locationToFeature += ", it should include tropical forests and scrubland plants";
 
-	} else if (promptName === "Red-vented Bulbul") {
+	} else if (promptName === "Red-lored Parrot") {
 
-		colorsToFeature += " with dark sleek body and bright red patch of feathers under its tail. It should have a black dark crest on its head."
+		colorsToFeature = " be a medium-sized parrot with green plumage, red forehead, and yellow patches on the wings";
+		locationToFeature += ", it should include tropical rainforest trees and flowers";
 
-	} else if (promptName === "Red-whiskered Bulbul") {
+	} else if (promptName === "Red-masked Parakeet") {
 
-		colorsToFeature += " with tall pointed black crest, dark spur running onto the breast at shoulder level, thin black mustache like line on face, with a long brown tail and white terminal feather tips."
+		colorsToFeature = " be a bright green parakeet with a red mask and orange underwing feathers";
+		locationToFeature += ", it should include subtropical forest trees";
 
-	} else if (promptName === "Ridgway's Rail") {
+	} else if (promptName === "Red-necked Grebe") {
 
-		colorsToFeature += " with chicken sized body, with large downward curving bill, and brown gray cinnamon colors."
+		colorsToFeature = " be a medium-sized grebe with a distinctive red neck during breeding plumage and a slender body";
+		locationToFeature += ", it should include freshwater lakes and wetlands";
 
-	} else if (promptName === "Rufous-backed Robin") {
+	} else if (promptName === "Red-necked Phalarope") {
 
-		colorsToFeature += " with a gray head, white throat, black streaks, deep rufous mantle and wing covers, orange chestnut upperparts, and a yellow bill and eyering."
+		colorsToFeature = " be a small, slender shorebird with a striking red neck in breeding plumage";
+		locationToFeature += ", it should include coastal areas and wetlands";
 
-	} else if (promptName === "Scaled Quail") {
+	} else if (promptName === "Red-tailed Tropicbird") {
 
-		colorsToFeature += " with small plump chicken-like body, a short crest, a buffy top, and a marvelous pattern of dark brown and gray buff on the breast and belly. It should be in the desert."
+		colorsToFeature = " be a large, elegant seabird with a white body and long tail feathers";
+		locationToFeature += ", it should include tropical islands and open ocean waters and should be flying";
 
-	} else if (promptName === "Scott's Oriole") {
+	} else if (promptName === "Rock Ptarmigan") {
 
-		colorsToFeature += " with black head, black, and breast. It should have vivid yellow underparts, a yellow shoulder patch, and white wing bar, black tail with a yellow base. It should be perched on a yucca plant"
+		colorsToFeature = " be a medium-sized bird with a stocky body and long tail feathers, turning white in winter and brown in summer";
+		locationToFeature += ", it should include alpine tundra and rocky mountainous areas";
 
-	} else if (promptName === "Sharp-shinned Hawk") {
+	} else if (promptName === "Ruddy Ground Dove") {
 
-		colorsToFeature += " with dark gray back and a white breast with rust colored bars."
+		colorsToFeature = " be a small, plump dove with a reddish-brown body and a slightly long tail";
+		locationToFeature += ", it should include riparian forest, logged areas, cultivated fields, or garden plants"
 
-	} else if (promptName === "Short-eared Owl") {
+	} else if (promptName === "Rufous-crowned Sparrow" ) {
 
-		colorsToFeature += " with black rimmed yellow eyes, a pale facial disk, no ear tuffs, and dark eye patches."
+		colorsToFeature += " have a distinctive rufous crown, a grayish-brown body, and streaked sides. The face is often marked with a darker mask";
+		locationToFeature += ", it should include shrubby areas and grasslands, often with scattered bushes or trees"
 
-	} else if (promptName === "Solitary Sandpiper") {
+	} else if (promptName === "Saffron Finch") {
 
-		colorsToFeature += " with olive brown above, white eyering, pale body below, long bill and long neck."
+		colorsToFeature = " be a small, bright yellow bird with a slightly curved bill and a cheerful demeanor";
+		locationToFeature += ", it should include open fields, gardens, and shrubland plants";
 
-	} else if (promptName === "Spot-breasted Oriole") {
+	} else if (promptName === "Sagebrush Sparrow") {
 
-		promptName = "Altamira Oriole";
-		colorsToFeature += " with black throat, black back, and black tail. It should have a bright orange head and body, with some black dots on the orange chest"
+		colorsToFeature = " be a small, sparrow-like bird with a streaked brown and gray body and a distinctive pale eye";
+		locationToFeature += ", it should include arid, sagebrush-dominated habitats";
 
-	} else if (promptName === "Spotted Owl") {
+	} else if (promptName === "Scaly-breasted Munia") {
 
-		colorsToFeature += " with dark brown eyes, round head, white spots on the head neck and back. It should have oval white spots on the chest and belly. The facial disk is brown with pale markings."
+		colorsToFeature = " be a stocky bird with a unique scaly pattern on its chest and a brownish overall coloration";
+		locationToFeature += ", it should include grasslands, rice fields, and areas with abundant seeds";
 
-	} else if (promptName === "Sulphur-bellied Flycatcher") {
+	} else if (promptName === "White-tailed Tropicbird") {
 
-		colorsToFeature += " with bold white eyebrow and mustache, large bill, rufous tail, dark facepatch, and pale yellow belly."
+		colorsToFeature = " be a striking bird with a long, elegant tail, a white body, and black wing tips";
+		locationToFeature += ", it should include tropical oceanic waters, it should either be (1) nesting on cliffs or islands or (2) in flight over the water";
 
-	} else if (promptName === "Swainson's Thrush") {
+	} else if (promptName === "Scripps's Murrelet") {
 
-		colorsToFeature += " with olive brown to rust brown colored upperparts, cream colored underside with pale brown spots."
+		colorsToFeature = " be a small seabird with dark gray upperparts and white underparts, along with a distinctive black crown and small, slim beak";
+		locationToFeature += ", it should include coastal marine environments, nesting on rocky cliffs";
 
-	} else if (promptName === "Swamp Sparrow") {
+	} else if (promptName === "Smith's Longspur") {
 
-		colorsToFeature += " with compact robust body, rusty wings, a gray chest, white ish throat and belly."
+		colorsToFeature = " be a small, sparrow-like bird with a stout body, featuring a brownish back and distinct black markings during breeding season";
+		locationToFeature += ", it should include open grasslands and tundra regions, often in northern Canada and Alaska";
 
-	} else if (promptName === "Thick-billed Vireo") {
+	} else if (promptName === "Snow Goose") {
 
-		colorsToFeature += " with small greyish olive head and back, buffy white underparts and dark wings and tail."
+		colorsToFeature = " be a large waterfowl, typically white with black wingtips and a distinctive pink bill";
+		locationToFeature += ", it should include wetlands, marshes, and agricultural fields with some snow on the ground";
 
-	} else if (promptName === "Vaux's Swift") {
+	} else if (promptName === "Snowy Plover") {
 
-		colorsToFeature += " with small tubular body with long arched wings and short tail. It should be flying rapidly with brownish color and paler chest and rump. It should have 2 wings"
+		colorsToFeature = " be a small, pale-colored shorebird with a short bill and compact body";
+		locationToFeature += ", it should include sandy or pebbly beaches, often nesting in dune areas";
 
-	} else if (promptName === "Veery") {
+	} else if (promptName === "South Polar Skua") {
 
-		colorsToFeature += " with cinnamon brown above and a white belly and grayish face. It should be singing with with a faint buffy wash on the throat and breast."
+		colorsToFeature = " be a large, robust seabird with dark brown plumage and a stout bill";
+		locationToFeature += ", it should include Antarctic waters and remote breeding islands";
 
-	} else if (promptName === "Verdin") {
+	} else if (promptName === "White-tailed Ptarmigan") {
 
-		colorsToFeature += " with gray back, white underparts, and yellow head and throat. It should  have a red-chesnut patch at the bend of its wings and a sharply pointed bill."
+		colorsToFeature = " be a small, stocky bird with white plumage in winter and mottled brown in summer";
+		locationToFeature += ", it should include alpine tundra and rocky mountainous regions";
 
-	} else if (promptName === "Western Kingbird") {
+	} else if (promptName === "Willow Ptarmigan") {
 
-		colorsToFeature += " with gray head and bright yellow body."
+		colorsToFeature = " be a medium-sized bird with a plump body, brown plumage in summer, and white in winter";
+		locationToFeature += ", it should include shrubby tundra and willow thickets in colder regions";
 
-	} else if (promptName === "Whiskered Screech-Owl") {
+	} else if (promptName === "Crested Caracara") {
 
-		colorsToFeature += " with mottled gray appearance with yellow and brown streaks and bars. It should have ear tufts and long facial whiskers, and golden eyes."
+		colorsToFeature = " be standing tall on long yellow-orange legs with a sharp black cap set against a white neck and yellow-orange face";
+		locationToFeature += ", it should be perched on a flowering cactus in the desert";
 
-	} else if (promptName === "Yellow-billed Cuckoo") {
+	// SKIP EVERYTHING ELSE FOR NOW
+	} else {
 
-		colorsToFeature += " with a curved bill, grayish brown head, white underparts and a long black tail that has six white spots on the underside."
+		console.log('SKIPPED -> ', i, " -> ", promptName);
 
-	} else if (promptName === "Yellow Rail") {
-
-		colorsToFeature += " with chicken-like marsh bird body that is very skinny, it should have a short yellow bill and buffy yellow chest and face with the rest being brown to grey.";
+		return;
 
 	}
 
 	console.log(`---${finalIndex}---`);
 
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. The bird should feature a variety of ${introColors} colors${colorsToFeature}. The background should consist of ${locationToFeature}, integrating smoothly to produce a visually striking and harmonious scene.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should${colorsToFeature}. The background should consist of ${locationToFeature}, integrating smoothly to produce a visually striking and harmonious scene.`;
 
 	console.log(prompt);
 

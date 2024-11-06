@@ -18,12 +18,26 @@ const FAMILIES_DATA = require('./families.json');
 
 const UNIDENTIFIED_NAME = "UNIDENTIFIED";
 
-const COLLECTION_KEYS = ["picasso-genesis-0", "deep-blue-1", "small-and-mighty-2", "night-and-day-3"];
-const COLLECTION_NAMES = ["Picasso Genesis", "Deep Blue", "Small & Mighty", "Night & Day"];
+const COLLECTION_KEYS = [
+	"picasso-genesis-0",
+	"deep-blue-1",
+	"small-and-mighty-2",
+	"night-and-day-3",
+	"fire-and-ice-4",
+];
+
+const COLLECTION_NAMES = [
+	"Picasso Genesis",
+	"Deep Blue",
+	"Small & Mighty",
+	"Night & Day",
+	"Fire & Ice",
+];
+
 const COLLECTION_SIZE = 1000;
 
 const MIN_BIRD_ID = 0;
-const MAX_BIRD_ID = 3999;
+const MAX_BIRD_ID = 4999;
 
 // Build data map of ID -> name|collection for all the birds
 
