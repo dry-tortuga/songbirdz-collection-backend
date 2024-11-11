@@ -4,6 +4,7 @@ const {
 	getBirdMetadata,
 	getBirdProof,
 	getBirdAlreadyIdentifiedList,
+	getRandomUnidentifiedBird,
 } = require("./birds");
 const {
 	getDailyStreaks,
@@ -25,6 +26,9 @@ router.get("/merkle-proof/:id", getBirdProof);
 
 // Get the list of already identified birds
 router.get("/already-identified-list", getBirdAlreadyIdentifiedList);
+
+// Get a random unidentified bird
+router.get("/random-bird", getRandomUnidentifiedBird);
 
 // Get the leaderboard
 router.get("/leaderboard", getLeaderboard);

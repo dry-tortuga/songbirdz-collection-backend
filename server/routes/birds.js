@@ -174,8 +174,41 @@ const getBirdAlreadyIdentifiedList = async (req, res, next) => {
 	res.send({ results: BIRD_ID_RESULTS });
 };
 
+const getRandomUnidentifiedBird = async (req, res, next) => {
+
+	const options = [];
+
+	for (let i = 2299; i < 5000; i++) {
+		if (!BIRD_ID_RESULTS[i]) {
+			options.push(i);
+		}
+	}
+
+	const birdId = options[Math.floor(Math.random() * options.length)];
+
+	const birdData = KEY_BIRD_DATA[birdId];
+
+	const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
+
+	res.send({
+		id: birdId,
+		name: `Songbird #${birdId}`,
+		description: 'This bird has not been identified yet.',
+		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
+		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
+		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
+		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
+		species: birdData?.name,
+		family,
+		flock: birdData?.collectionName,
+		options: birdData?.options,
+	});
+
+};
+
 module.exports = {
 	getBirdMetadata,
 	getBirdProof,
 	getBirdAlreadyIdentifiedList,
+	getRandomUnidentifiedBird,
 };
