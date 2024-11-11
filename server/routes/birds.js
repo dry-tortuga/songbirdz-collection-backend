@@ -176,15 +176,55 @@ const getBirdAlreadyIdentifiedList = async (req, res, next) => {
 
 const getRandomUnidentifiedBird = async (req, res, next) => {
 
-	const options = [];
+	let birdId = parseInt(req.query.id, 10);
 
-	for (let i = 2299; i < 5000; i++) {
-		if (!BIRD_ID_RESULTS[i]) {
-			options.push(i);
+	// Check if requesting a specific bird by ID
+	if (birdId) {
+
+		// Check to make sure ID parameter is a valid integer number
+		if (isNaN(birdId)) {
+
+			return next({
+				status: 400,
+				message: "The bird ID is invalid",
+			});
+
 		}
-	}
 
-	const birdId = options[Math.floor(Math.random() * options.length)];
+		// Check to make sure ID parameter is in the supported range of numbers
+		if (birdId < 2299 || birdId > MAX_BIRD_ID) {
+
+			return next({
+				status: 400,
+				message: "The bird ID is invalid",
+			});
+
+		}
+
+		// Check to make sure that a species result matches the ID parameter
+		if (!KEY_BIRD_DATA[birdId]?.name) {
+
+			return next({
+				status: 400,
+				message: "The bird ID is invalid",
+			});
+
+		}
+
+	// Otherwise, choose a bird ID at random
+	} else {
+
+		const options = [];
+
+		for (let i = 2299; i < MAX_BIRD_ID; i++) {
+			if (!BIRD_ID_RESULTS[i]) {
+				options.push(i);
+			}
+		}
+
+		birdId = options[Math.floor(Math.random() * options.length)];
+
+	}
 
 	const birdData = KEY_BIRD_DATA[birdId];
 
