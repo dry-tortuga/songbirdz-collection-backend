@@ -74,13 +74,17 @@ function sleep(ms) {
 
 	const skipList = [];
 
-	const redoList = [];
+	const redoList = [484];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
 
 		// if (redoList.findIndex((value) => value === i) === -1) {
 		//	continue;
 		// }
+
+		if (skipList.findIndex((value) => value === i) >= 0) {
+			continue;
+		}
 
 		if (skipList.findIndex((value) => value === i) >= 0) {
 			continue;
@@ -95,7 +99,7 @@ function sleep(ms) {
 
 			await generateImage(i);
 
-			doneSpecies[name] = true;
+			// doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
@@ -124,7 +128,7 @@ function sleep(ms) {
 
 			await generateImage(errorID);
 
-			doneSpecies[name] = true;
+			// doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
