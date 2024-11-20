@@ -39,7 +39,7 @@ const COLLECTION_SIZE = 1000;
 const MIN_BIRD_ID = 0;
 const MAX_BIRD_ID = 4999;
 
-// Build data map of ID -> name|collection for all the birds
+// Build data map of ID -> name|collection|answer-choices for all the birds
 
 const KEY_BIRD_DATA = {};
 
@@ -65,6 +65,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 			name: speciesName,
 			collectionName: COLLECTION_NAMES[cIndex],
 			collectionNumber: cIndex,
+			options: [],
 		};
 
 	});
@@ -72,6 +73,21 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 	if (Object.keys(KEY_BIRD_DATA).length !== (COLLECTION_SIZE + (COLLECTION_SIZE * cIndex))) {
 		throw new Error(`Invalid size=${Object.keys(KEY_BIRD_DATA).length} received for KEY_BIRD_DATA!`);
 	}
+
+	// Add the list of possible answer choices for each bird to the final data
+
+	const answerChoicesList = require(
+		`${PRIVATE_PATH.COLLECTIONS}/${cKey}/answer-choices.json`,
+	);
+
+	answerChoicesList.forEach((aData, aIndex) => {
+
+		// Get the unique ID of the bird relative to the entire 10,000
+		const finalIndex = (cIndex * COLLECTION_SIZE) + aIndex;
+
+		KEY_BIRD_DATA[finalIndex].options = [...aData.options];
+
+	});
 
 	// Picasso Genesis collection had 200 unique species, all others will have 50
 	if (cIndex === 0) {
