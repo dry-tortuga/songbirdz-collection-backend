@@ -74,13 +74,13 @@ function sleep(ms) {
 
 	const skipList = [];
 
-	const redoList = [484];
+	const redoList = [];
 
 	for (let i = 0; i < COLLECTION_SIZE; i++) {
 
-		if (redoList.findIndex((value) => value === i) === -1) {
-			continue;
-		}
+		// if (redoList.findIndex((value) => value === i) === -1) {
+		//	continue;
+		// }
 
 		if (skipList.findIndex((value) => value === i) >= 0) {
 			continue;
@@ -89,13 +89,13 @@ function sleep(ms) {
 		// Get the species name of the bird
 		const name = speciesNames[i];
 
-		// if (doneSpecies[name]) { continue; }
+		if (doneSpecies[name]) { continue; }
 
 		try {
 
 			await generateImage(i);
 
-			// doneSpecies[name] = true;
+			doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);
@@ -118,13 +118,13 @@ function sleep(ms) {
 		// Get the species name of the bird
 		const name = speciesNames[errorID];
 
-		// if (doneSpecies[name]) { continue; }
+		if (doneSpecies[name]) { continue; }
 
 		try {
 
 			await generateImage(errorID);
 
-			// doneSpecies[name] = true;
+			doneSpecies[name] = true;
 
 		} catch (error) {
 			console.error(error);

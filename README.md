@@ -178,7 +178,7 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Small & Mighty" flock.
 - [ ] Successfully mint all 1,000 birds (3000-3999) in the "Night & Day" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Night & Day" flock.
-- [ ] Successfully mint all 1,000 birds (4000-4999) in the "Night & Day" flock.
+- [ ] Successfully mint all 1,000 birds (4000-4999) in the "Fire & Ice" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Fire & Ice" flock.
 - [ ] Repeat for TBD collection with birds 5000-5999.
 - [ ] Repeat for TBD collection with birds 6000-6999.
