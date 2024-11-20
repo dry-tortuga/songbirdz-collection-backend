@@ -15,7 +15,6 @@ async function main() {
 	await tx.waitForDeployment();
 
 	console.log(`SongBirdz contract with owner=${owner} deployed to ${tx.target}!`);
-	console.log(tx);
 
 	console.log("---------------------------------------------------------------")
 

@@ -21,6 +21,10 @@ const COLLECTIONS_TO_POPULATE = [{
 	name: "night-and-day-3",
 	number: 3,
 	merkleTreeRoot: "0xc5a013e8cdd4cdeb9179693293f7aca4047af04aa941dacf12a5347fc0b09477",
+}, {
+	name: "fire-and-ice-4",
+	number: 4,
+	merkleTreeRoot: "0x7d91627265e4a50df86e7b074cab652f298ab617b65c1f0a3a149aa786a1d504",
 }];
 
 // Load the contract ABI
@@ -68,10 +72,10 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 		const receipt = await tx.wait();
 
-		console.log(receipt);
-
 		// The transaction is now on chain!
-		console.log(`Tx=${receipt.hash} is mined in block ${receipt.blockNumber}`);
+		console.log(`Tx=${receipt.hash}, gas=${receipt.gasUsed}, is mined in block ${receipt.blockNumber}`);
+
+		console.log('--------------------------------------------------');
 
 	}
 
