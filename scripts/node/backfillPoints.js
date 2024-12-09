@@ -13,10 +13,10 @@ const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const SEASON_GENESIS_BLOCK = 19176893;
-const SEASON_GENESIS_TIME = new Date("2024-08-31T23:00:00.000Z");
+const SEASON_GENESIS_BLOCK = 23109128;
+const SEASON_GENESIS_TIME = new Date("2024-11-30T11:00:03.000Z");
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 19176894;
+const CURRENT_BLOCK = 23483435;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
@@ -32,298 +32,282 @@ sdk.server("https://api.opensea.io");
 // https://docs.alchemy.com/reference/alchemy-getassettransfers
 
 const alchemy = new Alchemy({
-	apiKey: process.env.ALCHEMY_API_KEY,
-	network: Network.BASE_MAINNET,
+    apiKey: process.env.ALCHEMY_API_KEY,
+    network: Network.BASE_MAINNET,
 });
 
 const fetchAlchemyEvents = async (after, before, results = {}) => {
+    let isLoadingMore = true;
+    let nextBatchCursor = undefined;
 
-	let isLoadingMore = true;
-	let nextBatchCursor = undefined;
+    // Loop through each batch in this time period
+    while (isLoadingMore) {
+        console.log(`-------- next=${nextBatchCursor} --------`);
 
-	// Loop through each batch in this time period
-	while (isLoadingMore) {
+        const data = await alchemy.core.getAssetTransfers({
+            fromBlock: after,
+            toBlock: before,
+            category: ["erc721"],
+            contractAddresses: [process.env.SONGBIRDZ_CONTRACT_ADDRESS],
+            order: "asc", // Oldest to Newest
+            withMetadata: true,
+            maxCount: "0x3e8", // 1000
+            pageKey: nextBatchCursor, // Key for the next page
+        });
 
-		console.log(`-------- next=${nextBatchCursor} --------`);
+        console.log(data.pageKey);
 
-		const data = await alchemy.core.getAssetTransfers({
-			fromBlock: after,
-			toBlock: before,
-			category: ["erc721"],
-			contractAddresses: [process.env.SONGBIRDZ_CONTRACT_ADDRESS],
-			order: "asc", // Oldest to Newest
-			withMetadata: true,
-			maxCount: "0x3e8", // 1000
-			pageKey: nextBatchCursor, // Key for the next page
-		});
+        // Loop through each event in this time period
+        for (let i = 0, len = data.transfers.length; i < len; i++) {
+            const event = data.transfers[i];
 
-		console.log(data.pageKey);
+            console.log(event);
 
-		// Loop through each event in this time period
-		for (let i = 0, len = data.transfers.length; i < len; i++) {
+            let parsedHexId = Utils.hexStripZeros(event.tokenId).replace("0x", "");
 
-			const event = data.transfers[i];
+            // Handle edge case of the bird with ID = 0
+            if (parsedHexId === "") {
+                parsedHexId = "0";
+            }
 
-			console.log(event);
+            // Convert hex value to decimal value for the bird ID
+            const id = parseInt(parsedHexId, 16);
 
-			let parsedHexId = Utils.hexStripZeros(event.tokenId).replace('0x', '');
+            if (event.category !== "erc721") {
+                throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
+            }
 
-			// Handle edge case of the bird with ID = 0
-			if (parsedHexId === "") {
-				parsedHexId = "0";
-			}
+            if (event.erc721TokenId !== event.tokenId) {
+                throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
+            }
 
-			// Convert hex value to decimal value for the bird ID
-			const id = parseInt(parsedHexId, 16);
+            const from = event.from.toLowerCase();
+            const to = event.to.toLowerCase();
 
-			if (event.category !== "erc721") {
-				throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
-			}
+            // Process the event to determine the amount of points to award
+            const { pointsToAward, speciesID } = processPoints(id, from, to, {
+                type: "transfer",
+            });
 
-			if (event.erc721TokenId !== event.tokenId) {
-				throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
-			}
+            // Check to make sure the results include an entry for the user's address
+            if (!results[to]) {
+                results[to] = {};
+            }
 
-			const from = event.from.toLowerCase();
-			const to = event.to.toLowerCase();
+            // Check to make sure the results include an entry for the bird's ID
+            if (!results[to][speciesID]) {
+                results[to][speciesID] = {
+                    bird_id: null,
+                    amount: 0,
+                    timestamp: null,
+                };
+            }
 
-			// Process the event to determine the amount of points to award
-			const {
-				pointsToAward,
-				speciesID,
-			} = processPoints(id, from, to, {
-				type: 'transfer',
-			});
+            // Check to make sure the results don't already include this id/event combo
+            if (results[to][speciesID].amount < pointsToAward) {
+                // If not, then award the user the points!
 
-			// Check to make sure the results include an entry for the user's address
-			if (!results[to]) {
-				results[to] = {};
-			}
+                results[to][speciesID].bird_id = id;
+                results[to][speciesID].amount = pointsToAward;
+                results[to][speciesID].timestamp = new Date(
+                    event.metadata.blockTimestamp
+                );
+            }
+        }
 
-			// Check to make sure the results include an entry for the bird's ID
-			if (!results[to][speciesID]) {
+        // Check the cursor for the next batch of results for this time period
+        nextBatchCursor = data.pageKey;
 
-				results[to][speciesID] = {
-					bird_id: null,
-					amount: 0,
-					timestamp: null,
-				};
+        // If there's no next batch of results, then we're done!
+        if (!nextBatchCursor) {
+            isLoadingMore = false;
+        }
+    }
 
-			}
-
-			// Check to make sure the results don't already include this id/event combo
-			if (results[to][speciesID].amount < pointsToAward) {
-
-				// If not, then award the user the points!
-
-				results[to][speciesID].bird_id = id;
-				results[to][speciesID].amount = pointsToAward;
-				results[to][speciesID].timestamp = new Date(event.metadata.blockTimestamp);
-
-			}
-
-		}
-
-		// Check the cursor for the next batch of results for this time period
-		nextBatchCursor = data.pageKey;
-
-		// If there's no next batch of results, then we're done!
-		if (!nextBatchCursor) {
-			isLoadingMore = false;
-		}
-
-	}
-
-	return results;
-
+    return results;
 };
 
 const fetchOpenseaEvents = async (after, before, results = {}) => {
+    const finalResults = Object.assign({}, results);
 
-	const finalResults = Object.assign({}, results);
+    let isLoadingMore = true;
+    let nextBatchCursor = undefined;
 
-	let isLoadingMore = true;
-	let nextBatchCursor = undefined;
+    // Loop through each batch in this time period
+    while (isLoadingMore) {
+        console.log(`-------- next=${nextBatchCursor} --------`);
 
-	// Loop through each batch in this time period
-	while (isLoadingMore) {
+        // Fetch the events from the OpenSea API
+        const { data } = await sdk.list_events_by_collection({
+            collection_slug: OPENSEA_COLLECTION_SLUG,
+            event_type: ["sale"],
+            after: Math.floor(SEASON_GENESIS_TIME.getTime() / 1000),
+            before: Math.floor(before.getTime() / 1000),
+            limit: "50",
+            next: nextBatchCursor,
+        });
 
-		console.log(`-------- next=${nextBatchCursor} --------`);
+        console.log(data.next);
 
-		// Fetch the events from the OpenSea API
-		const { data } = await sdk.list_events_by_collection({
-			collection_slug: OPENSEA_COLLECTION_SLUG,
-			event_type: ["sale"],
-			after: Math.floor(SEASON_GENESIS_TIME.getTime() / 1000),
-			before: Math.floor(before.getTime() / 1000),
-			limit: "50",
-			next: nextBatchCursor,
-		});
+        // Loop through each event in this time period
+        for (let i = 0, len = data.asset_events.length; i < len; i++) {
+            const event = data.asset_events[i];
 
-		console.log(data.next);
+            console.log(event);
 
-		// Loop through each event in this time period
-		for (let i = 0, len = data.asset_events.length; i < len; i++) {
+            const id = parseInt(event.nft.identifier, 10);
 
-			const event = data.asset_events[i];
+            const from = event.seller.toLowerCase();
+            const to = event.buyer.toLowerCase();
 
-			console.log(event);
+            if (event.event_type !== "sale") {
+                throw new Error(
+                    `Encountered an invalid event_type=${event.event_type}!`
+                );
+            }
 
-			const id = parseInt(event.nft.identifier, 10);
-			
-			const from = event.seller.toLowerCase();
-			const to = event.buyer.toLowerCase();
+            if (event.chain !== "base") {
+                throw new Error(`Encountered an invalid chain=${event.chain}!`);
+            }
 
-			if (event.event_type !== "sale") {
-				throw new Error(`Encountered an invalid event_type=${event.event_type}!`);				
-			}
+            if (isNaN(id)) {
+                throw new Error(
+                    `Encountered an invalid nft.identifier=${event.nft.identifier}!`
+                );
+            }
 
-			if (event.chain !== "base") {
-				throw new Error(`Encountered an invalid chain=${event.chain}!`);
-			}
+            if (event.quantity !== 1) {
+                throw new Error(
+                    `Encountered an invalid quantity=${event.quantity} for a sale!`
+                );
+            }
 
-			if (isNaN(id)) {
-				throw new Error(`Encountered an invalid nft.identifier=${event.nft.identifier}!`);	
-			}
+            if (event.payment.symbol !== "ETH" && event.payment.symbol !== "WETH") {
+                throw new Error(
+                    `Encountered an invalid payment.symbol=${event.payment.symbol} for a sale!`
+                );
+            }
 
-			if (event.quantity !== 1) {
-				throw new Error(`Encountered an invalid quantity=${event.quantity} for a sale!`);
-			}
+            if (event.payment.decimals !== 18) {
+                throw new Error(
+                    `Encountered an invalid payment.decimals=${event.payment.decimals} for a sale!`
+                );
+            }
 
-			if (event.payment.symbol !== "ETH" && event.payment.symbol !== "WETH") {
-				throw new Error(`Encountered an invalid payment.symbol=${event.payment.symbol} for a sale!`);
-			}
+            // Process the event to determine the amount of points to award
+            const { pointsToAward, speciesID } = processPoints(id, from, to, {
+                type: "sale",
+                pricePaid: parseInt(event.payment.quantity, 10),
+            });
 
-			if (event.payment.decimals !== 18) {
-				throw new Error(`Encountered an invalid payment.decimals=${event.payment.decimals} for a sale!`);
-			}
+            // Check to make sure the results include an entry for the user's address
+            if (!finalResults[to]) {
+                finalResults[to] = {};
+            }
 
-			// Process the event to determine the amount of points to award
-			const {
-				pointsToAward,
-				speciesID,
-			} = processPoints(id, from, to, {
-				type: 'sale',
-				pricePaid: parseInt(event.payment.quantity, 10),
-			});
+            // Check to make sure the results include an entry for the bird's ID
+            if (!results[to][speciesID]) {
+                results[to][speciesID] = {
+                    bird_id: null,
+                    amount: 0,
+                    timestamp: null,
+                };
+            }
 
-			// Check to make sure the results include an entry for the user's address
-			if (!finalResults[to]) {
-				finalResults[to] = {};
-			}
+            // Check to make sure the results don't already include this id/event combo
+            if (finalResults[to][speciesID].amount < pointsToAward) {
+                // If not, then award the user the points!
 
-			// Check to make sure the results include an entry for the bird's ID
-			if (!results[to][speciesID]) {
+                results[to][speciesID].bird_id = id;
+                results[to][speciesID].amount = pointsToAward;
+                results[to][speciesID].timestamp = new Date(
+                    event.event_timestamp * 1000
+                );
+            }
+        }
 
-				results[to][speciesID] = {
-					bird_id: null,
-					amount: 0,
-					timestamp: null,
-				};
+        // Check the cursor for the next batch of results for this time period
+        nextBatchCursor = data.next;
 
-			}
+        // If there's no next batch of results, then we're done!
+        if (!nextBatchCursor) {
+            isLoadingMore = false;
+        }
+    }
 
-			// Check to make sure the results don't already include this id/event combo
-			if (finalResults[to][speciesID].amount < pointsToAward) {
-
-				// If not, then award the user the points!
-
-				results[to][speciesID].bird_id = id;
-				results[to][speciesID].amount = pointsToAward;
-				results[to][speciesID].timestamp = new Date(event.event_timestamp * 1000);
-
-			}
-
-		}
-
-		// Check the cursor for the next batch of results for this time period
-		nextBatchCursor = data.next;
-
-		// If there's no next batch of results, then we're done!
-		if (!nextBatchCursor) {
-			isLoadingMore = false;
-		}
-
-	}
-
-	return finalResults;
-
+    return finalResults;
 };
 
 // Generate and store the final image files for the collection
 (async () => {
+    // Create a new connection to the database
 
-	// Create a new connection to the database
+    const db = new DB();
 
-	const db = new DB();
+    let after = new Date(SEASON_GENESIS_TIME);
+    let before = new Date(SEASON_GENESIS_TIME);
 
-	let after = new Date(SEASON_GENESIS_TIME);
-	let before = new Date(SEASON_GENESIS_TIME);
+    before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 
-	before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
+    let afterBlock = SEASON_GENESIS_BLOCK;
+    let beforeBlock = afterBlock + ONE_WEEK_IN_BLOCKS;
 
-	let afterBlock = SEASON_GENESIS_BLOCK;
-	let beforeBlock = afterBlock + ONE_WEEK_IN_BLOCKS;
+    let nextBatchCursor = undefined;
 
-	let nextBatchCursor = undefined;
+    try {
+        let result = {};
 
-	try {
+        // Check if we've reached the current date
+        while (after < CURRENT_TIME) {
+            console.log(
+                `-------- Fetching events from ${after} to ${before} --------`
+            );
 
-		let result = {};
+            if (before >= CURRENT_TIME) {
+                beforeBlock = "latest";
+            }
 
-		// Check if we've reached the current date
-		while (after < CURRENT_TIME) {
+            if (afterBlock >= CURRENT_BLOCK) {
+                afterBlock = "latest";
+            }
 
-			console.log(`-------- Fetching events from ${after} to ${before} --------`);
+            if (beforeBlock >= CURRENT_BLOCK) {
+                beforeBlock = "latest";
+            }
 
-			if (before >= CURRENT_TIME) {
-				beforeBlock = "latest";
-			}
+            // Fetch all Alchemy events for the current time period
 
-			if (afterBlock >= CURRENT_BLOCK) {
-				afterBlock = "latest";
-			}
+            result = await fetchAlchemyEvents(afterBlock, beforeBlock, result);
 
-			if (beforeBlock >= CURRENT_BLOCK) {
-				beforeBlock = "latest";
-			}
+            // Fetch all OpenSea events for the current time period
 
-			// Fetch all Alchemy events for the current time period
+            result = await fetchOpenseaEvents(after, before, result);
 
-			result = await fetchAlchemyEvents(afterBlock, beforeBlock, result);
+            // Move on to the next time period
 
-			// Fetch all OpenSea events for the current time period
+            after.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
+            before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
 
-			result = await fetchOpenseaEvents(after, before, result);
+            if (afterBlock !== "latest") {
+                afterBlock += ONE_WEEK_IN_BLOCKS;
+            }
 
-			// Move on to the next time period
+            if (beforeBlock !== "latest") {
+                beforeBlock += ONE_WEEK_IN_BLOCKS;
+            }
+        }
 
-			after.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
-			before.setSeconds(before.getSeconds() + ONE_WEEK_IN_SECS);
+        console.log("---------------- Final Point Results ------------------");
+        console.log(result);
 
-			if (afterBlock !== "latest") {
-				afterBlock += ONE_WEEK_IN_BLOCKS;
-			}
+        // Store the point results in the database
 
-			if (beforeBlock !== "latest") {
-				beforeBlock += ONE_WEEK_IN_BLOCKS;
-			}
+        await storePoints(db, result);
 
-		}
+        // Close the connection to the database
 
-		console.log("---------------- Final Point Results ------------------");
-		console.log(result);
-
-		// Store the point results in the database
-
-		await storePoints(db, result);
-
-		// Close the connection to the database
-
-		await db.close();
-
-	} catch (error) {
-		console.error(error);
-	}
-
+        await db.close();
+    } catch (error) {
+        console.error(error);
+    }
 })();
