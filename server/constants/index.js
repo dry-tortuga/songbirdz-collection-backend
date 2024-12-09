@@ -88,10 +88,27 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
     const answerChoicesList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/answer-choices.json`);
 
     answerChoicesList.forEach((aData, aIndex) => {
+
         // Get the unique ID of the bird relative to the entire 10,000
         const finalIndex = cIndex * COLLECTION_SIZE + aIndex;
 
-        KEY_BIRD_DATA[finalIndex].options = [...aData.options];
+        let optionsCopy = [...aData.options];
+
+        const name = KEY_BIRD_DATA[finalIndex].name;
+
+        const matchingIndex = optionsCopy.findIndex((tOption) => tOption === name);
+
+        optionsCopy.splice(matchingIndex, 1);
+
+        optionsCopy = optionsCopy.slice(0, 3);
+
+        rOptions = [...optionsCopy, name];
+
+        shuffle(rOptions);
+        shuffle(rOptions);
+
+        KEY_BIRD_DATA[finalIndex].options = [...rOptions];
+
     });
 
     // Picasso Genesis collection had 200 unique species, all others will have 50
@@ -177,4 +194,25 @@ function getFamily(speciesName) {
     });
 
     return match.name;
+}
+
+function shuffle(array) {
+
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex > 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+
+    }
+
+    return array;
+
 }
