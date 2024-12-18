@@ -136,6 +136,8 @@ const getBirdProof = async (req, res, next) => {
 
 	const merkleTree = MERKLE_TREE_DATA[collectionNumber];
 
+    console.log(merkleTree.root);
+
 	let proof;
 
 	// Check the merkle tree for the valid proof matching the species guess

@@ -70,13 +70,13 @@ function sleep(ms) {
 
 	const skipList = [];
 
-    const todoList = [];
+    const redoList = [];
 
-    // const redoList = [];
+    const todoList = [];
 
     for (let i = 0; i < 1000; i += 1) {
 
-        // if (redoList.indexOf(i) === -1) { continue; }
+        if (redoList.indexOf(i) === -1) { continue; }
 
         todoList.push(i);
 
