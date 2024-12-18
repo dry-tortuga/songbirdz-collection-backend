@@ -1,11 +1,10 @@
-const { exec } = require('node:child_process');
 const fs = require("fs");
 const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "fire-and-ice-4";
-const COLLECTION_START_INDEX = 4000;
+const COLLECTION_NAME = "predator-and-prey-5";
+const COLLECTION_START_INDEX = 5000;
 const COLLECTION_SIZE = 1000;
 
 const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
@@ -21,7 +20,7 @@ const audioFolder =  path.join(
 
 const audioHashMap = {};
 
-const audioSourceMaterial = fs.readdirSync(audioFolder).forEach((file) => {
+fs.readdirSync(audioFolder).forEach((file) => {
 
 	for (const number of FILE_NUMBERS) {
 
@@ -78,7 +77,7 @@ fs.writeFileSync(finalKeyFileName, finalSpeciesTxt, (err) => {
 		throw new err;
 	}
 
-}); 
+});
 
 console.log(`The answer key for the ${COLLECTION_NAME} collection was stored at ${finalKeyFileName}!`);
 
@@ -88,7 +87,7 @@ const answerChoices = [];
 
 const speciesSourceNames = speciesSourceBirds.map((bird) => bird.name);
 
-finalSpeciesNames.forEach((name, index) => {
+finalSpeciesNames.forEach((name) => {
 
 	let answerSourceNames = [...speciesSourceNames.filter((temp) => temp !== name)];
 

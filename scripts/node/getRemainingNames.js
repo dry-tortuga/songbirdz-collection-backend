@@ -4,7 +4,7 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "small-and-mighty-2";
+const COLLECTION_NAME = "fire-and-ice-4";
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
@@ -47,4 +47,4 @@ fs.writeFileSync(finalKeyFileName, finalResultsTxt, (err) => {
 		throw new err;
 	}
 
-}); 
+});

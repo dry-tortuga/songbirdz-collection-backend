@@ -1,6 +1,4 @@
-const debug = require("debug")("server");
 const { ethers: { keccak256, toUtf8Bytes } } = require("ethers");
-const fs = require("fs");
 
 const {
 	COLLECTION_SIZE,
@@ -216,7 +214,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 
 		const options = [];
 
-		for (let i = 2299; i < MAX_BIRD_ID; i++) {
+		for (let i = 2335; i < MAX_BIRD_ID; i++) {
 			if (!BIRD_ID_RESULTS[i]) {
 				options.push(i);
 			}
