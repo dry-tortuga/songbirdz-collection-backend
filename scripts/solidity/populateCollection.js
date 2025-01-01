@@ -25,6 +25,10 @@ const COLLECTIONS_TO_POPULATE = [{
 	name: "fire-and-ice-4",
 	number: 4,
 	merkleTreeRoot: "0x7d91627265e4a50df86e7b074cab652f298ab617b65c1f0a3a149aa786a1d504",
+}, {
+    name: "predator-and-prey-5",
+    number: 5,
+    merkleTreeRoot: "0xa28dd33ab13f6eaf5f28a9d444ed2b9ae3fd3be437babede46ed9266e9e7b82c",
 }];
 
 // Load the contract ABI

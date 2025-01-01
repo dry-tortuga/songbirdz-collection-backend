@@ -1,6 +1,6 @@
 const DB = require("../db");
 
-const RESULTS_SIZE = 52;
+const RESULTS_SIZE = 53;
 
 // Create a new connection to the database
 

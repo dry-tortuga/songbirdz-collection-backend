@@ -8,6 +8,7 @@ const LEADERBOARD_SIZE = 52;
 const db = new DB();
 
 const getLeaderboard = async (req, res, next) => {
+
     const address = req.query.address;
     const limit = LEADERBOARD_SIZE;
 
@@ -23,9 +24,11 @@ const getLeaderboard = async (req, res, next) => {
     const results = await db.rankPointLogs(dbCollectionId, address, limit);
 
     res.send(results);
+
 };
 
 const getLifeList = async (req, res, next) => {
+
     const address = req.query.address;
 
     if (!address) {
@@ -46,6 +49,7 @@ const getLifeList = async (req, res, next) => {
         season_2: resultsSeason2,
         season_3: resultsSeason3,
     });
+
 };
 
 module.exports = {

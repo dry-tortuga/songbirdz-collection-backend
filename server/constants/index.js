@@ -30,6 +30,7 @@ const COLLECTION_KEYS = [
     "small-and-mighty-2",
     "night-and-day-3",
     "fire-and-ice-4",
+    "predator-and-prey-5",
 ];
 
 const COLLECTION_NAMES = [
@@ -38,12 +39,13 @@ const COLLECTION_NAMES = [
     "Small & Mighty",
     "Night & Day",
     "Fire & Ice",
+    "Predator & Prey",
 ];
 
 const COLLECTION_SIZE = 1000;
 
 const MIN_BIRD_ID = 0;
-const MAX_BIRD_ID = 4999;
+const MAX_BIRD_ID = 5999;
 
 // Build data map of ID -> name|collection|answer-choices for all the birds
 
@@ -61,6 +63,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
     fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/key.txt`, "utf8")
         .split(/\r?\n/)
         .forEach((speciesName, birdIndex) => {
+
             // Get the unique ID of the bird relative to the entire 10,000
             const finalIndex = cIndex * COLLECTION_SIZE + birdIndex;
 
@@ -70,6 +73,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
                 collectionNumber: cIndex,
                 options: [],
             };
+
         });
 
     if (
@@ -113,6 +117,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 
     // Picasso Genesis collection had 200 unique species, all others will have 50
     if (cIndex === 0) {
+
         fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.txt`, "utf8")
             .split(/\r?\n/)
             .forEach((sName, sIndex) => {
@@ -130,10 +135,13 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
         if (Object.keys(SOURCE_SPECIES_DATA).length !== 200) {
             throw new Error(`Invalid size received for SOURCE_SPECIES_DATA!`);
         }
+
     } else {
+
         const sourceList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`);
 
         sourceList.forEach((sBird, sIndex) => {
+
             const SPECIES_START_INDEX = 200 + 50 * (cIndex - 1);
 
             // Get the unique ID of the species relative to the entire set
@@ -143,6 +151,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
                 id: finalIndex,
                 family: getFamily(sBird.name),
             };
+
         });
 
         if (Object.keys(SOURCE_SPECIES_DATA).length !== 200 + 50 * cIndex) {
@@ -152,6 +161,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
                 } received for SOURCE_SPECIES_DATA!`
             );
         }
+
     }
 
     MERKLE_TREE_DATA.push(
@@ -185,15 +195,19 @@ module.exports = {
 };
 
 function getFamily(speciesName) {
+
     const match = FAMILIES_DATA.find((group) => {
+
         const isSpeciesIncluded = Boolean(
             group.species.find((item) => item.label === speciesName)
         );
 
         return isSpeciesIncluded;
+
     });
 
     return match.name;
+
 }
 
 function shuffle(array) {
