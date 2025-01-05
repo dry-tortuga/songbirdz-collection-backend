@@ -15,6 +15,7 @@ const {
 	getLeaderboard,
 	getLifeList,
 } = require("./leaderboard");
+const { createMemoryMatchLog } = require('./memoryMatch');
 
 const router = express.Router();
 
@@ -44,5 +45,8 @@ router.get("/daily-streak", getDailyStreak);
 
 // Update the daily streak for a specific user
 router.post("/daily-streak", updateDailyStreak);
+
+// Store the result of a memory match game for a specific user
+router.post("/memory-match/log", createMemoryMatchLog);
 
 module.exports = router;

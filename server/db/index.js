@@ -1,3 +1,4 @@
+const createMemoryMatchLog = require("./createMemoryMatchLog");
 const createOrUpdatePointLog = require("./createOrUpdatePointLog");
 const fetchPointLog = require("./fetchPointLog");
 const fetchPointLogs = require("./fetchPointLogs");
@@ -35,6 +36,10 @@ class DB {
 		}
 
 
+	}
+
+	async createMemoryMatchLog(data) {
+		return await createMemoryMatchLog(this.client, data);
 	}
 
 	async createOrUpdatePointLog(collectionId, data) {
