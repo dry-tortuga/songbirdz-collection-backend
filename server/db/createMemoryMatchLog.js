@@ -7,10 +7,20 @@ const createMemoryMatchLog = async (client, data) => {
 		const database = client.db("songbirdz");
 		const memoryMatchLogs = database.collection("memory_match_logs");
 
+        let mode = -1;
+
+        if (data.mode === "easy") {
+            mode = 0;
+        } else if (data.mode === "medium") {
+            mode = 1;
+        } else if (data.mode === "hard") {
+            mode = 2;
+        }
+
 		// Insert the defined document into the collection
 		const result = await memoryMatchLogs.insertOne({
 			address: data.address,
-			mode: data.mode,
+			mode,
 			score: data.score,
 			duration: data.duration,
 			moves: data.moves,
