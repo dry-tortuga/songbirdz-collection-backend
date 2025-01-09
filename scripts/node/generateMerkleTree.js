@@ -5,16 +5,11 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const abiPath = path.join(__dirname, "../../artifacts/contracts/SongBirdz.sol");
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
-const COLLECTION_NAME = "night-and-day-3";
-const COLLECTION_START_INDEX = 3000;
+const COLLECTION_NAME = "predator-and-prey-5";
+const COLLECTION_START_INDEX = 5000;
 const COLLECTION_SIZE = 1000;
-
-// Loading the contract ABI
-
-const { abi } = JSON.parse(fs.readFileSync(`${abiPath}/SongBirdz.json`));
 
 // Get the list of species names to use as answer key for the collection
 

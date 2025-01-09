@@ -1,6 +1,4 @@
-const debug = require("debug")("server");
 const { ethers: { keccak256, toUtf8Bytes } } = require("ethers");
-const fs = require("fs");
 
 const {
 	COLLECTION_SIZE,
@@ -62,26 +60,13 @@ const getBirdMetadata = async (req, res, next) => {
 	// See below the required JSON structure for metadata
 	// https://docs.opensea.io/docs/getting-started
 
-	let image = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`;
-	let imageOnchain = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`;
-
-	// Check if it is one of the "1 of 1" species...
-	if (birdId === 2844 || birdId === 2603 || birdId === 2673 || birdId === 2574 || birdId === 2202) {
-
-		if (!isIdentified) {
-			image = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg-pre.jpg`;
-			imageOnchain = `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-pre.jpg`;
-		}
-
-	}
-
 	res.send({
 		name: `Songbird #${birdId}`,
 		description,
 		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
-		image,
-		image_onchain: imageOnchain,
+		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
+		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
 		species,
 		attributes: [{
 			trait_type: "Flock Number",
@@ -187,8 +172,81 @@ const getBirdAlreadyIdentifiedList = async (req, res, next) => {
 	res.send({ results: BIRD_ID_RESULTS });
 };
 
+const getRandomUnidentifiedBird = async (req, res, next) => {
+
+	let birdId = parseInt(req.query.id, 10);
+
+	// Check if requesting a specific bird by ID
+	if (birdId) {
+
+		// Check to make sure ID parameter is a valid integer number
+		if (isNaN(birdId)) {
+
+			return next({
+				status: 400,
+				message: "The bird ID is invalid",
+			});
+
+		}
+
+		// Check to make sure ID parameter is in the supported range of numbers
+		if (birdId < 2299 || birdId > MAX_BIRD_ID) {
+
+			return next({
+				status: 400,
+				message: "The bird ID is invalid",
+			});
+
+		}
+
+		// Check to make sure that a species result matches the ID parameter
+		if (!KEY_BIRD_DATA[birdId]?.name) {
+
+			return next({
+				status: 400,
+				message: "The bird ID is invalid",
+			});
+
+		}
+
+	// Otherwise, choose a bird ID at random
+	} else {
+
+		const options = [];
+
+		for (let i = 2335; i < MAX_BIRD_ID; i++) {
+			if (!BIRD_ID_RESULTS[i]) {
+				options.push(i);
+			}
+		}
+
+		birdId = options[Math.floor(Math.random() * options.length)];
+
+	}
+
+	const birdData = KEY_BIRD_DATA[birdId];
+
+	const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
+
+	res.send({
+		id: birdId,
+		name: `Songbird #${birdId}`,
+		description: 'This bird has not been identified yet.',
+		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
+		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
+		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
+		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
+		species: birdData?.name,
+		family,
+		flock: birdData?.collectionName,
+		options: birdData?.options,
+	});
+
+};
+
 module.exports = {
 	getBirdMetadata,
 	getBirdProof,
 	getBirdAlreadyIdentifiedList,
+	getRandomUnidentifiedBird,
 };

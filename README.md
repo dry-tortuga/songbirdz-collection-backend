@@ -1,6 +1,6 @@
 # SongBirdz Back-End
 
-This project contains the back-end for the SongBirdz NFT collection. It includes the solidity contract, test code for that contract, a NodeJS server to serve images, metadata, and merkle proof, as well as the scripts used to generate and deploy the collection.
+This project contains the back-end for the [SongBirdz NFT collection](https://songbirdz.cc). It includes the solidity contract, test code for that contract, a NodeJS server to serve images, metadata, and merkle proof, as well as the scripts used to generate and deploy the collection.
 
 You can find the front-end application [here](https://github.com/dry-tortuga/songbirdz-collection-frontend).
 
@@ -56,7 +56,7 @@ There are 2 bash scripts related to the server:
 
 1. `./scripts/bash/trimAudioFiles` can be used to clean up the final audio files for a collection of 1000 birds.
 
-2. `./scripts/bash/processImageFiles` can be used to clean up the final image files for a collection of 1000 birds.
+2. `./scripts/bash/processImageFilesXXX` can be used to clean up the final image files for a collection of 1000 birds.
 
 ## Setup
 
@@ -78,7 +78,7 @@ There are 2 bash scripts related to the server:
 
 5. Make a copy of the example environment variables file
 
-	On Linux systems: 
+	On Linux systems:
 	```bash
 	$ cp .env.example .env.development
 	```
@@ -178,14 +178,17 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Small & Mighty" flock.
 - [ ] Successfully mint all 1,000 birds (3000-3999) in the "Night & Day" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Night & Day" flock.
-- [ ] Repeat for TBD collection with birds 4000-4999.
-- [ ] Repeat for TBD collection with birds 5000-5999.
+- [ ] Successfully mint all 1,000 birds (4000-4999) in the "Fire & Ice" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Fire & Ice" flock.
+- [ ] Successfully mint all 1,000 birds (5000-5999) in the "Predator & Prey" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Predator & Prey" flock.
 - [ ] Repeat for TBD collection with birds 6000-6999.
 - [ ] Repeat for TBD collection with birds 7000-7999.
 - [ ] Repeat for TBD collection with birds 8000-8999.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
-- [ ] Upload all (merkle-tree, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [nft.storage](https://nft.storage/)).
-- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [nft.storage](https://nft.storage/). TBD: Freeze it permanently!
+- [ ] Upload all (metadata, merkle-trees, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/) via [nft.storage](https://nft.storage/)).
+- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/). TBD: Freeze it permanently!
+- [ ] Deploy a 2nd Solidity Contract to store Life List and Points data onchain.
 - [ ] TBD: Upload the web application to ipfs.
-- [ ] Shut down the back-end server.
-- [ ] Project is now complete!
+- [ ] TBD: Shut down the back-end server.
+- [ ] Roadmap is now complete!

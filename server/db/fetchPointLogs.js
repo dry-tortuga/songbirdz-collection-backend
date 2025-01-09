@@ -14,7 +14,7 @@ const fetchPointLogs = async (client, collectionId, address) => {
 
 		return finalData;
 
-	} catch(error) {
+	} catch (error) {
 
 		console.error(error);
 
