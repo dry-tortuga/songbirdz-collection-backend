@@ -11,8 +11,6 @@ async function main() {
 
 	const owner = deployer.address;
 
-	/*
-
 	console.log("---------------------------------------------------------------")
 
 	console.log(`Deploying LifeList contract with account=${owner}...`);
@@ -23,21 +21,26 @@ async function main() {
 
 	console.log(`SongBirdz contract with owner=${owner} deployed to ${tx.target}!`);
 
-	*/
-
 	// Get an instance of the contract
 	const contract = await ethers.getContractAt(
 		abi,
-	    '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
+        tx.target,
 		deployer,
 	);
 
+	// Add 2 birds
+	await contract.publicGenerateSpecies(0, 2, 1, 0, 3, 0, "Atlantic Puffin");
+	await contract.publicGenerateSpecies(1, 0, 1, 2, 3, 2, "Rockhopper Penguin");
+
 	// Set the URL for the audio file
-	const tx1 = await contract.tokenURI(0);
+	const result0 = await contract.tokenURI(0);
 
-	const receipt1 = await tx1.wait();
+	console.log(result0);
 
-	console.log(receipt1);
+	// Set the URL for the audio file
+	const result1 = await contract.tokenURI(1);
+
+	console.log(result1);
 
 }
 
