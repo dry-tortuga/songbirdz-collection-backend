@@ -6,7 +6,7 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 // Load our custom hardhat task scripts
 require("./scripts/solidity/bulkSend");
-require("./scripts/solidity/fetchHolders");
+// require("./scripts/solidity/fetchHolders");
 require("./scripts/solidity/populateCollection");
 
 // https://docs.base.org/guides/deploy-smart-contracts

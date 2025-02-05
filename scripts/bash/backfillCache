@@ -1,0 +1,4 @@
+for i in $(seq 2000 5999);
+do
+	curl -get "https://songbirdz.cc/birds/metadata/$i"
+done
