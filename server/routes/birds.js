@@ -148,6 +148,10 @@ const getBirdProof = async (req, res, next) => {
 
 	}
 
+    if (process.env.NODE_ENV === 'development') {
+        console.log(`Merkle Proof Root: ${merkleTree.root}`);
+    }
+
 	// If no proof exists for the species guess, get a random proof from the tree
 	if (!proof) {
 
