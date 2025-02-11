@@ -69,11 +69,7 @@ const getBirdMetadata = async (req, res, next) => {
 		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
 		species,
 		attributes: [{
-			trait_type: "Flock Number",
-			display_type: "number",
-			value: KEY_BIRD_DATA[birdId].collectionNumber,
-		}, {
-			trait_type: "Flock Name",
+			trait_type: "Flock",
 			value: KEY_BIRD_DATA[birdId].collectionName,
 		}, {
 			trait_type: "Species",
@@ -152,6 +148,10 @@ const getBirdProof = async (req, res, next) => {
 
 	}
 
+    if (process.env.NODE_ENV === 'development') {
+        console.log(`Merkle Proof Root: ${merkleTree.root}`);
+    }
+
 	// If no proof exists for the species guess, get a random proof from the tree
 	if (!proof) {
 
@@ -190,7 +190,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		}
 
 		// Check to make sure ID parameter is in the supported range of numbers
-		if (birdId < 2299 || birdId > MAX_BIRD_ID) {
+		if (birdId < 2336 || birdId > MAX_BIRD_ID) {
 
 			return next({
 				status: 400,
@@ -214,7 +214,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 
 		const options = [];
 
-		for (let i = 2335; i < MAX_BIRD_ID; i++) {
+		for (let i = 2336; i < MAX_BIRD_ID; i++) {
 			if (!BIRD_ID_RESULTS[i]) {
 				options.push(i);
 			}

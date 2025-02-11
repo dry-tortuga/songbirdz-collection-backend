@@ -182,7 +182,8 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Fire & Ice" flock.
 - [ ] Successfully mint all 1,000 birds (5000-5999) in the "Predator & Prey" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Predator & Prey" flock.
-- [ ] Repeat for TBD collection with birds 6000-6999.
+- [ ] Successfully mint all 1,000 birds (6000-6999) in the "Lovebirds" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Lovebirds" flock.
 - [ ] Repeat for TBD collection with birds 7000-7999.
 - [ ] Repeat for TBD collection with birds 8000-8999.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
