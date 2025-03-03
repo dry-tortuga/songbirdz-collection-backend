@@ -1,4 +1,0 @@
-for i in $(seq 2300 5999);
-do
-	curl https://songbirdz.cc/birds/metadata/$i
-done
