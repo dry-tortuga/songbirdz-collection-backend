@@ -13,10 +13,10 @@ const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const SEASON_GENESIS_BLOCK = 23109128;
-const SEASON_GENESIS_TIME = new Date("2024-11-30T11:00:03.000Z");
+const SEASON_GENESIS_BLOCK = 26997128;
+const SEASON_GENESIS_TIME = new Date("2025-02-28T23:00:03.000Z");
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 26997127;
+const CURRENT_BLOCK = 27125194;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds

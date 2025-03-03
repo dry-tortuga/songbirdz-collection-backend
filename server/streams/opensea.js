@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "staging") {
 
 }
 
-const SEASON_END_DATE = new Date('2025-02-28T23:00:00.000+00:00');
+const SEASON_END_DATE = new Date('2025-05-31T23:00:00.000+00:00');
 
 const initOpenseaStream = () => {
 
@@ -101,14 +101,14 @@ const initOpenseaStream = () => {
 				}
 
 				// Check to make sure the event occurred before the season end date
-                                const sentAt = new Date(event.sent_at);
+				const sentAt = new Date(event.sent_at);
 
-                                if (sentAt.valueOf() > SEASON_END_DATE.valueOf()) {
+				if (sentAt.valueOf() > SEASON_END_DATE.valueOf()) {
 
-                                        console.log(`Ignoring event sent after deadline, i.e. sent_at=${event.sent_at}`);
-                                        return;
+					console.log(`Ignoring event sent after deadline, i.e. sent_at=${event.sent_at}`);
+					return;
 
-                                }
+				}
 
 				const parsedStringId = nftPiecesID[2];
 
@@ -186,14 +186,14 @@ const initOpenseaStream = () => {
 				}
 
 				// Check to make sure the event occurred before the season end date
-                                const sentAt = new Date(event.sent_at);
+				const sentAt = new Date(event.sent_at);
 
-                                if (sentAt.valueOf() > SEASON_END_DATE.valueOf()) {
+				if (sentAt.valueOf() > SEASON_END_DATE.valueOf()) {
 
-                                        console.log(`Ignoring event sent after deadline, i.e. sent_at=${event.sent_at}`);
-                                        return;
+					console.log(`Ignoring event sent after deadline, i.e. sent_at=${event.sent_at}`);
+					return;
 
-                                }
+				}
 
 				const parsedStringId = nftPiecesID[2];
 

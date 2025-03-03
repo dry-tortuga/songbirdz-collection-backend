@@ -16,7 +16,12 @@ const PRIVATE_PATH = {
     IMAGES: path.join(PRIVATE_FOLDER, "images-hidden"),
 };
 
-const DB_COLLECTION_IDS = ["point_logs", "point_logs_2", "point_logs_3"];
+const DB_COLLECTION_IDS = [
+    "point_logs",
+    "point_logs_2",
+    "point_logs_3",
+    "point_logs_4"
+];
 
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
