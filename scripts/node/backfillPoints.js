@@ -16,7 +16,7 @@ const OPENSEA_COLLECTION_SLUG = "songbirdz";
 const SEASON_GENESIS_BLOCK = 23109128;
 const SEASON_GENESIS_TIME = new Date("2024-11-30T11:00:03.000Z");
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 23483435;
+const CURRENT_BLOCK = 26997127;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
@@ -206,8 +206,8 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
             }
 
             // Check to make sure the results include an entry for the bird's ID
-            if (!results[to][speciesID]) {
-                results[to][speciesID] = {
+            if (!finalResults[to][speciesID]) {
+                finalResults[to][speciesID] = {
                     bird_id: null,
                     amount: 0,
                     timestamp: null,
@@ -218,9 +218,9 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
             if (finalResults[to][speciesID].amount < pointsToAward) {
                 // If not, then award the user the points!
 
-                results[to][speciesID].bird_id = id;
-                results[to][speciesID].amount = pointsToAward;
-                results[to][speciesID].timestamp = new Date(
+                finalResults[to][speciesID].bird_id = id;
+                finalResults[to][speciesID].amount = pointsToAward;
+                finalResults[to][speciesID].timestamp = new Date(
                     event.event_timestamp * 1000
                 );
             }

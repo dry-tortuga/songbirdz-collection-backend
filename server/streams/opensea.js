@@ -27,6 +27,8 @@ if (process.env.NODE_ENV === "staging") {
 
 }
 
+const SEASON_END_DATE = new Date('2025-02-28T23:00:00.000+00:00');
+
 const initOpenseaStream = () => {
 
 	if (!network) {
@@ -95,8 +97,18 @@ const initOpenseaStream = () => {
 				}
 
 				if (nftPiecesID[1].toLowerCase() !== process.env.SONGBIRDZ_CONTRACT_ADDRESS.toLowerCase()) {
-					throw new Error(`Encountered an contract address=${nftPiecesID[1]} for a transfer!`);
+					throw new Error(`Encountered an invalid contract address=${nftPiecesID[1]} for a transfer!`);
 				}
+
+				// Check to make sure the event occurred before the season end date
+                                const sentAt = new Date(event.sent_at);
+
+                                if (sentAt.valueOf() > SEASON_END_DATE.valueOf()) {
+
+                                        console.log(`Ignoring event sent after deadline, i.e. sent_at=${event.sent_at}`);
+                                        return;
+
+                                }
 
 				const parsedStringId = nftPiecesID[2];
 
@@ -169,9 +181,19 @@ const initOpenseaStream = () => {
 					throw new Error(`Encountered an invalid chain=${nftPiecesID[0]} for a sale!`);
 				}
 
-				if (nftPiecesID[1] !== process.env.SONGBIRDZ_CONTRACT_ADDRESS) {
-					throw new Error(`Encountered an contract address=${nftPiecesID[1]} for a sale!`);
+				if (nftPiecesID[1].toLowerCase() !== process.env.SONGBIRDZ_CONTRACT_ADDRESS.toLowerCase()) {
+					throw new Error(`Encountered an invalid contract address=${nftPiecesID[1]} for a sale!`);
 				}
+
+				// Check to make sure the event occurred before the season end date
+                                const sentAt = new Date(event.sent_at);
+
+                                if (sentAt.valueOf() > SEASON_END_DATE.valueOf()) {
+
+                                        console.log(`Ignoring event sent after deadline, i.e. sent_at=${event.sent_at}`);
+                                        return;
+
+                                }
 
 				const parsedStringId = nftPiecesID[2];
 
