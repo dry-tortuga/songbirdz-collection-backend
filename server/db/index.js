@@ -1,11 +1,14 @@
-const createMemoryMatchLog = require("./createMemoryMatchLog");
-const createOrUpdatePointLog = require("./createOrUpdatePointLog");
 const fetchPointLog = require("./fetchPointLog");
+const createPointLog = require("./createPointLog");
+const updatePointLog = require("./updatePointLog");
 const fetchPointLogs = require("./fetchPointLogs");
 const rankPointLogs = require("./rankPointLogs");
+
+const createMemoryMatchLog = require("./createMemoryMatchLog");
+
 const fetchDailyStreak = require("./fetchDailyStreak");
-const rankDailyStreaks = require("./rankDailyStreaks");
 const updateDailyStreak = require("./updateDailyStreak");
+const rankDailyStreaks = require("./rankDailyStreaks");
 
 const { MongoClient } = require("mongodb");
 
@@ -42,12 +45,16 @@ class DB {
 		return await createMemoryMatchLog(this.client, data);
 	}
 
-	async createOrUpdatePointLog(collectionId, data) {
-		return await createOrUpdatePointLog(this.client, collectionId, data);
-	}
-
 	async fetchPointLog(collectionId, address, birdID) {
 		return await fetchPointLog(this.client, collectionId, address, birdID);
+	}
+
+	async createPointLog(collectionId, data) {
+		return await createPointLog(this.client, collectionId, data);
+	}
+
+	async updatePointLog(collectionId, data) {
+		return await updatePointLog(this.client, collectionId, data);
 	}
 
 	async fetchPointLogs(collectionId, address) {

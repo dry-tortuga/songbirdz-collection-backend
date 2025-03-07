@@ -75,8 +75,8 @@ const storePoints = async (db, pointResults) => {
 
 			const data = birdIdentificationEvents[speciesID];
 
-			const birdIntegerID = parseInt(data.bird_id, 10);
 			const speciesIntegerID = parseInt(speciesID, 10);
+			const birdIntegerID = data.hasOwnProperty('bird_id') ? parseInt(data.bird_id, 10) : null;
 
 			const existingLog = await db.fetchPointLog(
 				DB_COLLECTION_IDS[3],
@@ -84,10 +84,26 @@ const storePoints = async (db, pointResults) => {
 				speciesIntegerID
 			);
 
-			// Check to make sure the results don't already include this id/event combo
-			if (!existingLog || existingLog.amount < data.amount) {
+			// Check if results already include the user-species-id
+			if (existingLog) {
 
-				await db.createOrUpdatePointLog(DB_COLLECTION_IDS[3], {
+				// Check if entry should be updated with higher point earned amount
+				if (existingLog.amount < data.amount) {
+
+					await db.updatePointLog(DB_COLLECTION_IDS[3], {
+						address,
+						species_id: speciesIntegerID,
+						bird_id: birdIntegerID,
+						amount: data.amount,
+						timestamp: data.timestamp,
+					});
+
+				}
+
+			// If not, then create a new entry for the user-species-id
+			} else {
+
+				await db.createPointLog(DB_COLLECTION_IDS[3], {
 					address,
 					species_id: speciesIntegerID,
 					bird_id: birdIntegerID,

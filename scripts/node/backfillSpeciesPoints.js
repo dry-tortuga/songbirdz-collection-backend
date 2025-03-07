@@ -238,8 +238,9 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
     return finalResults;
 };
 
-// Generate and store the final image files for the collection
+// Re-calculate and update points related to species IDing for all users for the current season
 (async () => {
+
     // Create a new connection to the database
 
     const db = new DB();
