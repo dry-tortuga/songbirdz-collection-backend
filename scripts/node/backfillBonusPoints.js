@@ -1,6 +1,8 @@
 const DB = require("../../server/db");
 const { storePoints } = require("../../server/utils/points");
 
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
+
 const CURRENT_TIME = new Date();
 
 const SEASON_4_BONUS_POINT_SPECIES = [{
@@ -85,6 +87,8 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	try {
 
 		// Build the point results
+
+		const results = {};
 
 		SEASON_4_BONUS_POINT_SPECIES.forEach((species) => {
 

@@ -23,7 +23,7 @@ const updatePointLog = async (client, collectionId, data) => {
 		);
 
 		// Log the updated document
-		console.log(`A document was updated for address=${address},species_id=${species_id}`);
+		console.log(`A document was updated for address=${data.address},species_id=${data.species_id}`);
 
 		return result;
 
