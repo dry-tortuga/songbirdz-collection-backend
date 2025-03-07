@@ -17,7 +17,7 @@ const createPointLog = async (client, collectionId, data) => {
 		});
 
 		// Log the created document
-		console.log(`A document was created for address=${address},species_id=${species_id}`);
+		console.log(`A document was created for address=${data.address},species_id=${data.species_id}`);
 
 		return result;
 
