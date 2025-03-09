@@ -102,7 +102,6 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 
 				results[parsedAddress][species.id] = {
 					amount: species.amount,
-					bird_id: null,
 					timestamp: CURRENT_TIME,
 				};
 
