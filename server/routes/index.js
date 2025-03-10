@@ -18,6 +18,7 @@ const {
 const {
 	createMemoryMatchLog,
 	getMemoryMatchLeaderboard,
+	getMemoryMatchGamesPlayed,
 } = require('./memoryMatch');
 
 const router = express.Router();
@@ -54,5 +55,8 @@ router.post("/memory-match/log", createMemoryMatchLog);
 
 // Get the leaderboard for the memory match game
 router.get("/memory-match/leaderboard", getMemoryMatchLeaderboard);
+
+// Get the games played (today) for a specific user for the memory match game
+router.get("/memory-match/leaderboard/games-played", getMemoryMatchGamesPlayed);
 
 module.exports = router;

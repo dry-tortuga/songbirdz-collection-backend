@@ -9,8 +9,6 @@ const db = new DB();
 
 const createMemoryMatchLog = async (req, res, next) => {
 
-	// TODO: Add validation on max score + 3 game limit per day
-
 	const address = req.body.address?.toLowerCase();
 
 	if (!address) {
@@ -45,6 +43,15 @@ const createMemoryMatchLog = async (req, res, next) => {
 
 	}
 
+	const logsToday = await db.getMemoryMatchGamesPlayed(address);
+
+	if (logsToday >= 3) {
+		return next({
+			status: 400,
+			message: "Exceeded maximum daily game attempts (3)",
+		});
+	}
+
     const data = {
         address,
         mode: req.body.mode,
@@ -72,6 +79,23 @@ const getMemoryMatchLeaderboard = async (req, res, next) => {
 	});
 
 	res.send(leaderboard);
+
+};
+
+const getMemoryMatchGamesPlayed = async (req, res, next) => {
+
+	if (!req.query.address) {
+		return next({
+			status: 400,
+			message: "Missing value for \"address\" parameter.",
+		});
+	}
+
+	const response = await db.getMemoryMatchGamesPlayed({
+		address: req.query.address?.toLowerCase(),
+	});
+
+	res.send({ count: response });
 
 };
 

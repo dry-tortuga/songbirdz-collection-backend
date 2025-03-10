@@ -105,7 +105,6 @@ const getCombinedLeaderboardQuery = (mode, address, limit, sortBy = 'total') => 
 
 };
 
-// Update the main function to accept sorting preference
 const getMemoryMatchLeaderboard = async (client, data) => {
 
 	try {
