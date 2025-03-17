@@ -52,20 +52,9 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				$limit: limit
 			},
 			{
-	            $setWindowFields: {
-	                sortBy: { [sortBy]: -1 },
-	                output: {
-	                    rank: {
-	                        $rank: {}
-	                    }
-	                }
-	            }
-	        },
-			{
 				$project: {
 					address: "$_id",
 					count: "$uniqueSpeciesCount",
-					rank: "$rank",
 					_id: 0
 				}
 			}
@@ -74,6 +63,11 @@ const rankSpeciesCounts = async (client, address, limit) => {
 		const finalData =
 			await database.collection(DB_COLLECTION_IDS[0])
 				.aggregate(pipeline).toArray();
+
+		// Add rank to each result
+		for (let i = 0; i < finalData.length; i++) {
+			finalData[i].rank = i + 1;
+		}
 
 		// Include current user if not in top results
 		if (currentUserAddress &&
