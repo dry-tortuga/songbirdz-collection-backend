@@ -12,8 +12,9 @@ const {
 	updateDailyStreak,
 } = require("./dailyStreak");
 const {
-	getLeaderboard,
-	getLifeList,
+	getPointsLeaderboard,
+	getLifeListData,
+	getLifeListLeaderboard,
 } = require("./leaderboard");
 const {
 	createMemoryMatchLog,
@@ -36,10 +37,13 @@ router.get("/already-identified-list", getBirdAlreadyIdentifiedList);
 router.get("/random-bird", getRandomUnidentifiedBird);
 
 // Get the leaderboard
-router.get("/leaderboard", getLeaderboard);
+router.get("/points/leaderboard", getPointsLeaderboard);
 
-// Get the life list for a specific user
-router.get("/life-list", getLifeList);
+// Get the leaderboard for the life list (i.e. species counts)
+router.get("/life-list/leaderboard", getLifeListLeaderboard);
+
+// Get the life list (i.e. species data) for a specific user
+router.get("/life-list/data", getLifeListData);
 
 // Get the daily streaks
 router.get("/daily-streaks/active", getDailyStreaks);

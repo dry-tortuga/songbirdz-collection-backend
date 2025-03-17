@@ -12,6 +12,8 @@ const fetchDailyStreak = require("./fetchDailyStreak");
 const updateDailyStreak = require("./updateDailyStreak");
 const rankDailyStreaks = require("./rankDailyStreaks");
 
+const rankSpeciesCounts = require("./rankSpeciesCounts");
+
 const { MongoClient } = require("mongodb");
 
 class DB {
@@ -85,6 +87,10 @@ class DB {
 
 	async updateDailyStreak(address) {
 		return await updateDailyStreak(this.client, address);
+	}
+
+	async rankSpeciesCounts(address, limit = 50) {
+		return await rankSpeciesCounts(this.client, address, limit);
 	}
 
 };
