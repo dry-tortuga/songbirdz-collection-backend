@@ -52,10 +52,20 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				$limit: limit
 			},
 			{
+	            $setWindowFields: {
+	                sortBy: { [sortBy]: -1 },
+	                output: {
+	                    rank: {
+	                        $rank: {}
+	                    }
+	                }
+	            }
+	        },
+			{
 				$project: {
 					address: "$_id",
 					count: "$uniqueSpeciesCount",
-					rank: { $add: [{ $indexOfArray: [ "$ROOT", "$$CURRENT" ] }, 1] },
+					rank: "$rank",
 					_id: 0
 				}
 			}
