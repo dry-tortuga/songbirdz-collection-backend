@@ -61,6 +61,6 @@ router.post("/memory-match/log", createMemoryMatchLog);
 router.get("/memory-match/leaderboard", getMemoryMatchLeaderboard);
 
 // Get the games played (today) for a specific user for the memory match game
-router.get("/memory-match/leaderboard/games-played", getMemoryMatchGamesPlayed);
+router.get("/memory-match/games-played", getMemoryMatchGamesPlayed);
 
 module.exports = router;

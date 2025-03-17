@@ -84,16 +84,16 @@ const getMemoryMatchLeaderboard = async (req, res, next) => {
 
 const getMemoryMatchGamesPlayed = async (req, res, next) => {
 
-	if (!req.query.address) {
+	const address = req.query.address?.toLowerCase();
+
+	if (!address) {
 		return next({
 			status: 400,
 			message: "Missing value for \"address\" parameter.",
 		});
 	}
 
-	const response = await db.getMemoryMatchGamesPlayed({
-		address: req.query.address?.toLowerCase(),
-	});
+	const response = await db.getMemoryMatchGamesPlayed(address);
 
 	res.send({ count: response });
 
@@ -102,4 +102,5 @@ const getMemoryMatchGamesPlayed = async (req, res, next) => {
 module.exports = {
 	createMemoryMatchLog,
 	getMemoryMatchLeaderboard,
+	getMemoryMatchGamesPlayed,
 };
