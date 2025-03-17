@@ -5,10 +5,14 @@ const fetchPointLogs = require("./fetchPointLogs");
 const rankPointLogs = require("./rankPointLogs");
 
 const createMemoryMatchLog = require("./createMemoryMatchLog");
+const getMemoryMatchLeaderboard = require("./getMemoryMatchLeaderboard");
+const getMemoryMatchGamesPlayed = require("./getMemoryMatchGamesPlayed");
 
 const fetchDailyStreak = require("./fetchDailyStreak");
 const updateDailyStreak = require("./updateDailyStreak");
 const rankDailyStreaks = require("./rankDailyStreaks");
+
+const rankSpeciesCounts = require("./rankSpeciesCounts");
 
 const { MongoClient } = require("mongodb");
 
@@ -45,6 +49,14 @@ class DB {
 		return await createMemoryMatchLog(this.client, data);
 	}
 
+	async getMemoryMatchLeaderboard(data) {
+		return await getMemoryMatchLeaderboard(this.client, data);
+	}
+
+	async getMemoryMatchGamesPlayed(address) {
+		return await getMemoryMatchGamesPlayed(this.client, address);
+	}
+
 	async fetchPointLog(collectionId, address, birdID) {
 		return await fetchPointLog(this.client, collectionId, address, birdID);
 	}
@@ -75,6 +87,10 @@ class DB {
 
 	async updateDailyStreak(address) {
 		return await updateDailyStreak(this.client, address);
+	}
+
+	async rankSpeciesCounts(address, limit = 50) {
+		return await rankSpeciesCounts(this.client, address, limit);
 	}
 
 };
