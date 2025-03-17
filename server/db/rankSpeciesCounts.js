@@ -12,21 +12,28 @@ const rankSpeciesCounts = async (client, address, limit) => {
 		// Aggregate unique species counts across all collections
 		const pipeline = [
 			{
-				$facet: {
-					results: DB_COLLECTION_IDS.map((name) => ({
-						$unionWith: {
-							coll: name,
-							pipeline: []
-						}
-					}))
-				}
-			},
-			{ $unwind: "$results" },
+                $unionWith: {
+                    coll: DB_COLLECTION_IDS[1],
+                    pipeline: []
+                }
+            },
+            {
+	            $unionWith: {
+	                coll: DB_COLLECTION_IDS[2],
+	                pipeline: []
+	            }
+            },
+            {
+	            $unionWith: {
+	                coll: DB_COLLECTION_IDS[3],
+	                pipeline: []
+	            }
+            },
 			{
 				$group: {
 					_id: {
-						address: "$results.address",
-						species_id: "$results.species_id"
+						address: "$address",
+						species_id: "$species_id"
 					}
 				}
 			},
@@ -54,7 +61,9 @@ const rankSpeciesCounts = async (client, address, limit) => {
 			}
 		];
 
-		const finalData = await database.aggregate(pipeline).toArray();
+		const finalData =
+			await database.collection(DB_COLLECTION_IDS[0])
+				.aggregate(pipeline).toArray();
 
 		// Include current user if not in top results
 		if (currentUserAddress &&
@@ -63,23 +72,31 @@ const rankSpeciesCounts = async (client, address, limit) => {
 			// Count unique species for current user
 			const userPipeline = [
 				{
-					$facet: {
-						results: DB_COLLECTION_IDS.map((name) => ({
-							$unionWith: {
-								coll: name,
-								pipeline: [
-									{ $match: { address: currentUserAddress } }
-								]
-							}
-						}))
-					}
-				},
-				{ $unwind: "$results" },
+	                $unionWith: {
+	                    coll: DB_COLLECTION_IDS[1],
+	                    pipeline: []
+	                }
+	            },
+	            {
+		            $unionWith: {
+		                coll: DB_COLLECTION_IDS[2],
+		                pipeline: []
+		            }
+	            },
+	            {
+		            $unionWith: {
+		                coll: DB_COLLECTION_IDS[3],
+		                pipeline: []
+		            }
+	            },
+				{
+                    $match: { address: currentUserAddress }
+                },
 				{
 					$group: {
 						_id: {
-							address: "$results.address",
-							species_id: "$results.species_id"
+							address: "$address",
+							species_id: "$species_id"
 						}
 					}
 				},
@@ -91,29 +108,38 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				}
 			];
 
-			const userResult = await database.aggregate(userPipeline).toArray();
+			const userResult =
+				await database.collection(DB_COLLECTION_IDS[0])
+					.aggregate(userPipeline).toArray();
 
 			// Get count of all users who have a higher species count
 			const rankPipeline = [
 				{
-					$facet: {
-						results: DB_COLLECTION_IDS.map((name) => ({
-							$unionWith: {
-								coll: name,
-								pipeline: []
-							}
-						}))
-					}
-				},
-				{ $unwind: "$results" },
+	                $unionWith: {
+	                    coll: DB_COLLECTION_IDS[1],
+	                    pipeline: []
+	                }
+	            },
+	            {
+		            $unionWith: {
+		                coll: DB_COLLECTION_IDS[2],
+		                pipeline: []
+		            }
+	            },
 				{
-					$group: {
-						_id: {
-							address: "$results.address",
-							species_id: "$results.species_id"
-						}
-					}
-				},
+		            $unionWith: {
+		                coll: DB_COLLECTION_IDS[3],
+		                pipeline: []
+		            }
+	            },
+				{
+                    $group: {
+                        _id: {
+                            address: "$address",
+                            species_id: "$species_id"
+                        }
+                    }
+                },
 				{
 					$group: {
 						_id: "$_id.address",
@@ -132,8 +158,11 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				}
 			];
 
-			const rankResult = await database.aggregate(rankPipeline).toArray();
-			const rank = (rankResult.length > 0 ? rankResult[0].rank : 0) + 1;
+			const rankResult =
+				await database.collection(DB_COLLECTION_IDS[0])
+					.aggregate(rankPipeline).toArray();
+
+			const rank = rankResult.length > 0 ? (rankResult[0].rank + 1) : 'N/A';
 
 			finalData.push({
 				address: currentUserAddress,
