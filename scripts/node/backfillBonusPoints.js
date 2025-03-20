@@ -26,7 +26,8 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	users: [
 		// MISSING POINTS: tokyo, jamesberg, jibbmoslice, RandomEgg, Tonywithouti,
 		// My_name_is_mudd, Basedsuiguru, VENOMDSLAYER, @OxMisan, @Web3majo,
-		// @bullionape1914,  oeuk nikon, melanie, @DEGENCOBRA
+		// @bullionape1914,  oeuk nikon, melanie, @DEGENCOBRA, satoshi-nakamoto,
+		// crypto-lady,
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 		'0xdd9c5b8893434da7a4ce0ada32db13d0770a0116', // krakencoke
@@ -42,6 +43,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x4d5a5f3d5e38f4ce8571e9d03a0814313a85597c', // E
 		'0x060813fe30137c5885f95a308dd9a068a4ba7fe8', // tatsuki
 		'0xc39225a87bafa3041a7671aeb2be9bea94ee42bf', // Nifty Dog (memgen)
+		'0x75521de871eea2f188a45e1a232bb6794600ebc6', // abrahamdomenick.base.eth
 	],
 }, {
 	id: 1016,
@@ -55,6 +57,10 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // artgridz
 		'0x972955a934de4d0e642d913a22e9cee77386f188', // ogstyle
 		'0xba397faae1d5fe10c0356f2e585bef34577ab111', // tanazolam
+		'0x91a0c767e86e832d279faa2b4b9deda28bbb26ce', // millionbithomepage
+		'0x46eca8796d1fab2cc52e66a508f499c8207378da', // crunklez
+		'0x75521de871eea2f188a45e1a232bb6794600ebc6', // abrahamdomenick.base.eth
+		'0x76ce03b1eea333ecce7d6e3506bc36cfb4dd76c6', // pederzani.eth (ozFather)
 	],
 }, {
 	id: 1017,
