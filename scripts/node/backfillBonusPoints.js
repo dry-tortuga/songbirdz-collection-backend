@@ -73,7 +73,9 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	id: 1018,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [],
+	users: [
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
+	],
 }, {
 	id: 1019,
 	label: 'Hit 30 Day Streak',
