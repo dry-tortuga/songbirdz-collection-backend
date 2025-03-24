@@ -3,8 +3,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "predator-and-prey-5";
-const COLLECTION_START_INDEX = 5000;
+const COLLECTION_NAME = "eggstravaganza-7";
+const COLLECTION_START_INDEX = 7000;
 const COLLECTION_SIZE = 1000;
 
 const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
@@ -13,7 +13,7 @@ const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`
 
 const audioFolder =  path.join(
 	__dirname,
-	`../../private/the-cornell-guide-to-bird-sounds--united-states-and-canada-v2021/files`,
+	`../../private/the-cornell-guide-to-bird-sounds--united-states-and-canada-v2021/`,
 );
 
 // Get the audio files to use as source for the collection
@@ -56,6 +56,8 @@ speciesSourceBirds.forEach((bird) => {
 	}
 
 });
+
+console.log(finalSpeciesNames.length);
 
 if (finalSpeciesNames.length !== COLLECTION_SIZE) {
 	throw new Error(`The collection must contain exactly ${COLLECTION_SIZE} birds!`);

@@ -184,11 +184,13 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Predator & Prey" flock.
 - [ ] Successfully mint all 1,000 birds (6000-6999) in the "Lovebirds" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Lovebirds" flock.
-- [ ] Repeat for TBD collection with birds 7000-7999.
+- [ ] Successfully mint all 1,000 birds ( 7000-7999) in the "Eggstravaganza" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Eggstravaganza" flock.
 - [ ] Repeat for TBD collection with birds 8000-8999.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
 - [ ] Upload all (metadata, merkle-trees, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/) via [nft.storage](https://nft.storage/)).
-- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/). TBD: Freeze it permanently!
+- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/).
+- [ ] TBD: Freeze metadata url permanently.
 - [ ] Deploy a 2nd Solidity Contract to store Life List and Points data onchain.
 - [ ] TBD: Upload the web application to ipfs.
 - [ ] TBD: Shut down the back-end server.
