@@ -33,6 +33,10 @@ const COLLECTIONS_TO_POPULATE = [{
     name: "love-birds-6",
     number: 6,
     merkleTreeRoot: "0x1119ce5125d4ccc90d4d8a21139b87ec4e168c711b68e90772537a0a5cd40a7e",
+}, {
+	name: "eggstravaganza-7",
+	number: 7,
+	merkleTreeRoot: "0xbb6881c1df4b6e39f1dd52dee558823f1ea13e96aa054e986d53674b2d56b6d3",
 }];
 
 // Load the contract ABI

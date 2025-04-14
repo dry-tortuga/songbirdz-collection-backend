@@ -7,8 +7,8 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
-const COLLECTION_NAME = "love-birds-6";
-const COLLECTION_START_INDEX = 6000;
+const COLLECTION_NAME = "eggstravaganza-7";
+const COLLECTION_START_INDEX = 7000;
 const COLLECTION_SIZE = 1000;
 
 // Get the list of species names to use as answer key for the collection

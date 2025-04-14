@@ -37,6 +37,7 @@ const COLLECTION_KEYS = [
     "fire-and-ice-4",
     "predator-and-prey-5",
     "love-birds-6",
+    "eggstravaganza-7",
 ];
 
 const COLLECTION_NAMES = [
@@ -47,12 +48,13 @@ const COLLECTION_NAMES = [
     "Fire & Ice",
     "Predator & Prey",
     "Lovebirds",
+    "Eggstravaganza",
 ];
 
 const COLLECTION_SIZE = 1000;
 
 const MIN_BIRD_ID = 0;
-const MAX_BIRD_ID = 6999;
+const MAX_BIRD_ID = (COLLECTION_NAMES.length * COLLECTION_SIZE) - 1;
 
 // Build data map of ID -> name|collection|answer-choices for all the birds
 

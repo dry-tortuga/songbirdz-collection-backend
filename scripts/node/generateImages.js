@@ -374,10 +374,10 @@ async function generateImage(i) {
 	    colorsToFeature = "Light brown with a white belly and a black ring around the neck, with orange legs.";
 	    locationToFeature = "Sandy beaches or mudflats, with soft ocean waves and spring flowers in the background.";
 	    eggsToFeature = " 3-4 eggs in the sand, pale gray or light brown with dark speckles.";
-	} else if (promptName === "Tree Swallow") {
-	    colorsToFeature = "Iridescent blue-green back with a white belly and a slender body.";
+	} else if (promptName === "Tricolored Blackbird") {
+	    colorsToFeature = "black body with red shoulder patches and a white line below the shoulder.";
 	    locationToFeature = "Open woodlands or marshes, with soft spring flowers and tall grasses around.";
-	    eggsToFeature = " 4-6 eggs, pale blue with darker speckles.";
+	    eggsToFeature = " 3-4 eggs, pale blue with darker speckles.";
 	} else if (promptName === "Varied Thrush") {
 	    colorsToFeature = "Vibrant orange and black-blue plumage with a dark streaked chest.";
 	    locationToFeature = "Forested areas with spring wildflowers and tall grasses as a backdrop.";
@@ -393,7 +393,7 @@ async function generateImage(i) {
 
 	console.log(`---${finalIndex}---`);
 
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should have ${colorsToFeature} ${locationToFeature} It should be nearby its clutch of${eggsToFeature} The background should integrate smoothly to produce a visually striking and harmonious scene. It should use a soft pastel color palette (baby blue, pale yellow, soft pink, mint green, etc.) to evoke the theme of spring and easter. Ensure that the eggs are solid blue in color using hex color code #0052FF.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should have ${colorsToFeature} ${locationToFeature} It should be nearby its clutch of${eggsToFeature} The background should integrate smoothly to produce a visually striking and harmonious scene. It should use a soft pastel color palette (baby blue, pale yellow, soft pink, mint green, etc.) to evoke the theme of spring and easter.`;
 
 	console.log(prompt);
 
