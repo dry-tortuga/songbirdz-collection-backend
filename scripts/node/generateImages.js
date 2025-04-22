@@ -100,7 +100,7 @@ Visual Concept:
 	console.log(`Generating images for the ${COLLECTION_NAME} collection:`);
 
 	const skipList = [];
-    const redoList = [];
+	const redoList = [];
 	const todoList = [];
 
     for (let i = 0; i < 1000; i += 1) {
