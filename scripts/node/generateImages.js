@@ -42,37 +42,6 @@ function sleep(ms) {
 	});
 }
 
-/*
-
-Eggstravaganza - The Birds of Easter & Eggs
-
-This flock celebrates birds that symbolize rebirth, new beginnings, and the beauty of eggs—a perfect tribute to Easter!
-
-From birds with striking egg-like plumage to famous nest-builders, this collection highlights the
-wonders of avian reproduction and the spirit of springtime.
-
-This flock brings the magic of Easter and the beauty of bird eggs into one charming collection!
-
-Types of Birds in the Flock:
-
-    Egg-cellent Layers – Birds known for their unique eggs (e.g., Emu, Tinamous, Killdeer).
-
-    Spring Symbols – Birds associated with renewal, joy, and Easter traditions (e.g., European Robin, Dove, Swallow).
-
-    Nest Masters – Birds that build intricate, artistic, or hidden nests (e.g., Bowerbirds, Weavers, Ovenbirds).
-
-    Egg-Colored Birds – Birds with pastel or speckled egg-like plumage (e.g., Snowy Plover, Cream-colored Courser).s
-
-Visual Concept:
-
-    Soft pastel color palette (baby blue, pale yellow, soft pink, mint green) reminiscent of dyed Easter eggs.
-
-    Backgrounds featuring nests, spring flowers, and grass fields with hidden eggs in the scenery.
-
-    Some birds posed next to their eggs or with hatchlings emerging to emphasize the theme of renewal.
-
-*/
-
 // Generate and store the final image files for the collection
 (async () => {
 

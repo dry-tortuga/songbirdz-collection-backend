@@ -57,8 +57,6 @@ speciesSourceBirds.forEach((bird) => {
 
 });
 
-console.log(finalSpeciesNames.length);
-
 if (finalSpeciesNames.length !== COLLECTION_SIZE) {
 	throw new Error(`The collection must contain exactly ${COLLECTION_SIZE} birds!`);
 }

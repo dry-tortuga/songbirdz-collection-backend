@@ -184,8 +184,8 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Predator & Prey" flock.
 - [ ] Successfully mint all 1,000 birds (6000-6999) in the "Lovebirds" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Lovebirds" flock.
-- [ ] Successfully mint all 1,000 birds (7000-7999) in the "Eggstravaganza" flock.
-- [ ] Make public the (merkle-tree, images, species, audio) files for the "Eggstravaganza" flock.
+- [ ] Successfully mint all 1,000 birds (7000-7999) in the "Hatchlings" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Hatchlings" flock.
 - [ ] Repeat for TBD collection with birds 8000-8999.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
 - [ ] Upload all (metadata, merkle-trees, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/) via [nft.storage](https://nft.storage/)).
