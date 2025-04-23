@@ -12,23 +12,28 @@ const rankSpeciesCounts = async (client, address, limit) => {
 		// Aggregate unique species counts across all collections
 		const pipeline = [
 			{
-                $unionWith: {
-                    coll: DB_COLLECTION_IDS[1],
-                    pipeline: []
-                }
-            },
-            {
-	            $unionWith: {
-	                coll: DB_COLLECTION_IDS[2],
-	                pipeline: []
-	            }
-            },
-            {
-	            $unionWith: {
-	                coll: DB_COLLECTION_IDS[3],
-	                pipeline: []
-	            }
-            },
+				$unionWith: {
+					coll: DB_COLLECTION_IDS[1],
+					pipeline: []
+				}
+			},
+			{
+				$unionWith: {
+					coll: DB_COLLECTION_IDS[2],
+					pipeline: []
+				}
+			},
+			{
+				$unionWith: {
+					coll: DB_COLLECTION_IDS[3],
+					pipeline: []
+				}
+			},
+			{
+				$match: {
+					species_id: { $lt: 1000 }
+				}
+			},
 			{
 				$group: {
 					_id: {
@@ -76,26 +81,29 @@ const rankSpeciesCounts = async (client, address, limit) => {
 			// Count unique species for current user
 			const userPipeline = [
 				{
-	                $unionWith: {
-	                    coll: DB_COLLECTION_IDS[1],
-	                    pipeline: []
-	                }
-	            },
-	            {
-		            $unionWith: {
-		                coll: DB_COLLECTION_IDS[2],
-		                pipeline: []
-		            }
-	            },
-	            {
-		            $unionWith: {
-		                coll: DB_COLLECTION_IDS[3],
-		                pipeline: []
-		            }
-	            },
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[1],
+						pipeline: []
+					}
+				},
 				{
-                    $match: { address: currentUserAddress }
-                },
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[2],
+						pipeline: []
+					}
+				},
+				{
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[3],
+						pipeline: []
+					}
+				},
+				{
+					$match: {
+						address: currentUserAddress,
+						species_id: { $lt: 1000 },
+					}
+				},
 				{
 					$group: {
 						_id: {
@@ -119,31 +127,36 @@ const rankSpeciesCounts = async (client, address, limit) => {
 			// Get count of all users who have a higher species count
 			const rankPipeline = [
 				{
-	                $unionWith: {
-	                    coll: DB_COLLECTION_IDS[1],
-	                    pipeline: []
-	                }
-	            },
-	            {
-		            $unionWith: {
-		                coll: DB_COLLECTION_IDS[2],
-		                pipeline: []
-		            }
-	            },
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[1],
+						pipeline: []
+					}
+				},
 				{
-		            $unionWith: {
-		                coll: DB_COLLECTION_IDS[3],
-		                pipeline: []
-		            }
-	            },
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[2],
+						pipeline: []
+					}
+				},
 				{
-                    $group: {
-                        _id: {
-                            address: "$address",
-                            species_id: "$species_id"
-                        }
-                    }
-                },
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[3],
+						pipeline: []
+					}
+				},
+				{
+					$match: {
+						species_id: { $lt: 1000 }
+					}
+				},
+				{
+					$group: {
+						_id: {
+							address: "$address",
+							species_id: "$species_id"
+						}
+					}
+				},
 				{
 					$group: {
 						_id: "$_id.address",
