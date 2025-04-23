@@ -37,7 +37,7 @@ const COLLECTION_KEYS = [
     "fire-and-ice-4",
     "predator-and-prey-5",
     "love-birds-6",
-    "eggstravaganza-7",
+    "hatchlings-7",
 ];
 
 const COLLECTION_NAMES = [
@@ -48,7 +48,7 @@ const COLLECTION_NAMES = [
     "Fire & Ice",
     "Predator & Prey",
     "Lovebirds",
-    "Eggstravaganza",
+    "Hatchlings",
 ];
 
 const COLLECTION_SIZE = 1000;

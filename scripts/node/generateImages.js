@@ -4,7 +4,7 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "eggstravaganza-7";
+const COLLECTION_NAME = "hatchlings-7";
 const COLLECTION_START_INDEX = 7000;
 const COLLECTION_SIZE = 1000;
 
