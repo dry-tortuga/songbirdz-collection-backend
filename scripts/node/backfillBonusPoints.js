@@ -11,6 +11,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	amount: 25,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0xaaa87024aa2fd6e816161cc2554f47a5256bb57d', // GlenCanete
 	],
 }, {
 	id: 1014,
@@ -27,7 +28,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		// MISSING POINTS: tokyo, jamesberg, jibbmoslice, RandomEgg, Tonywithouti,
 		// My_name_is_mudd, Basedsuiguru, VENOMDSLAYER, @OxMisan, @Web3majo,
 		// @bullionape1914,  oeuk nikon, melanie, @DEGENCOBRA, satoshi-nakamoto,
-		// crypto-lady,
+		// crypto-lady, refaund09, memekreator
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 		'0xdd9c5b8893434da7a4ce0ada32db13d0770a0116', // krakencoke
@@ -44,6 +45,9 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x060813fe30137c5885f95a308dd9a068a4ba7fe8', // tatsuki
 		'0xc39225a87bafa3041a7671aeb2be9bea94ee42bf', // Nifty Dog (memgen)
 		'0x75521de871eea2f188a45e1a232bb6794600ebc6', // abrahamdomenick.base.eth
+		'0xaaa87024aa2fd6e816161cc2554f47a5256bb57d', // GlenCanete
+		'0x4342cf54d72cefed89898b0c6513201f9917ea9b', // cryptosensei
+		'0xb8addea803817fdbf5e36875ddaf9016d8e267cd', // Fgallagah3er
 	],
 }, {
 	id: 1016,
@@ -61,6 +65,9 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x46eca8796d1fab2cc52e66a508f499c8207378da', // crunklez
 		'0x75521de871eea2f188a45e1a232bb6794600ebc6', // abrahamdomenick.base.eth
 		'0x76ce03b1eea333ecce7d6e3506bc36cfb4dd76c6', // pederzani.eth (ozFather)
+		'0xa13d127dc4e3a5552fb9a8eb10f30052579f62c5', // karii-explores
+		'0xbe061d84c50e156e2faa791228662e3b52c906e2', // xbornid.eth
+		'0xf5da620ba68d658fae300d79c11efab82a594243', // nuwwara1725
 	],
 }, {
 	id: 1017,
@@ -68,6 +75,8 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	amount: 50,
 	users: [
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
 	id: 1018,
@@ -75,12 +84,18 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	amount: 125,
 	users: [
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
 	id: 1019,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
-	users: [],
+	users: [
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+	],
 }];
 
 // Re-calculate and update points related to bonuses for all users for the current season

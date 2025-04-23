@@ -16,6 +16,7 @@ const COLLECTION_KEYS = [
     "fire-and-ice-4",
     "predator-and-prey-5",
     "love-birds-6",
+    "hatchlings-7",
 ];
 
 let results = fs.readFileSync(
