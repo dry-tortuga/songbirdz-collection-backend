@@ -5,7 +5,7 @@ const path = require("path");
 const abiPath = path.join(__dirname, "../../artifacts/contracts/SongBirdz.sol");
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
-const COLLECTIONS_TO_POPULATE = [{
+let COLLECTIONS_TO_POPULATE = [{
 	name: "picasso-genesis-0",
 	number: 0,
 	merkleTreeRoot: "0x5eb5e6c29aeeeca6d18591b5857bb3732385b031b324a4a7e5ce0d93be4f2b96",
@@ -39,6 +39,10 @@ const COLLECTIONS_TO_POPULATE = [{
 	merkleTreeRoot: "0xda2070ef627da6f6395a1a7c08cd115d7d2d0aa83456cf90d2cc52077e2bb36f",
 }];
 
+if (process.env.NODE_ENV === 'production') {
+	COLLECTIONS_TO_POPULATE = [COLLECTIONS_TO_POPULATE.pop()];
+}
+
 // Load the contract ABI
 
 const { abi } = JSON.parse(fs.readFileSync(`${abiPath}/SongBirdz.json`));
@@ -63,7 +67,9 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 		const collection = COLLECTIONS_TO_POPULATE[i];
 
-		console.log(`---- populating birds for the ${collection.name} collection ----`);
+		console.log(
+			`---- populating ${process.env.NODE_ENV} birds for the ${collection.name} collection ----`
+		);
 
 		// Load the merkle tree
 

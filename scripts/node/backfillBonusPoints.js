@@ -48,6 +48,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xaaa87024aa2fd6e816161cc2554f47a5256bb57d', // GlenCanete
 		'0x4342cf54d72cefed89898b0c6513201f9917ea9b', // cryptosensei
 		'0xb8addea803817fdbf5e36875ddaf9016d8e267cd', // Fgallagah3er
+		'0x8290f8f39615b803ee2b200534d3e5904a9b8ea3', // DopD
 	],
 }, {
 	id: 1016,
