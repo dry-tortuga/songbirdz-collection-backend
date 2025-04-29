@@ -12,6 +12,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 		'0xaaa87024aa2fd6e816161cc2554f47a5256bb57d', // GlenCanete
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
 	],
 }, {
 	id: 1014,
