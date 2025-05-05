@@ -13,6 +13,8 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 		'0xaaa87024aa2fd6e816161cc2554f47a5256bb57d', // GlenCanete
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
+		'0xa32fc2c4e09e71ec3a104f74ce4651117b4a90b7', // chewbs.base.eth
+		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 	],
 }, {
 	id: 1014,
@@ -50,6 +52,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x4342cf54d72cefed89898b0c6513201f9917ea9b', // cryptosensei
 		'0xb8addea803817fdbf5e36875ddaf9016d8e267cd', // Fgallagah3er
 		'0x8290f8f39615b803ee2b200534d3e5904a9b8ea3', // DopD
+		'0xef8a43bd9a093a562240bf43faabc74900e23284', // gojo_satoru
 	],
 }, {
 	id: 1016,
