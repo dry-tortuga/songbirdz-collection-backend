@@ -53,6 +53,7 @@ if (process.env.NODE_ENV === "development") {
 			process.env.WALLET_PRIVATE_KEY_NON_OWNER,
 		],
 		gasPrice: "auto",
+		blockGasLimit: 30000000
 	};
 
 } else if (process.env.NODE_ENV === "staging") {

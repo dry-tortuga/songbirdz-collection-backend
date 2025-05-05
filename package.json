@@ -10,6 +10,7 @@
     "compile-contracts": "NODE_ENV=development npx hardhat compile",
     "test-contracts": "NODE_ENV=development npx hardhat test",
     "deploy-local": "NODE_ENV=development npx hardhat run ./scripts/solidity/deployContract.js --network base-local",
+    "deploy-hof-local": "NODE_ENV=development npx hardhat run ./scripts/solidity/deployContractHOF.js --network base-local",
     "populate-local": "NODE_ENV=development npx hardhat populateCollection --network base-local",
     "verify-local": "NODE_ENV=development npx hardhat verify --network base-local 0x5fbdb2315678afecb367f032d93f642f64180aa3",
     "deploy-testnet": "NODE_ENV=staging npx hardhat run ./scripts/solidity/deployContract.js --network base-sepolia",
