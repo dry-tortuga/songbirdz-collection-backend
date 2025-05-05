@@ -73,6 +73,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xa13d127dc4e3a5552fb9a8eb10f30052579f62c5', // karii-explores
 		'0xbe061d84c50e156e2faa791228662e3b52c906e2', // xbornid.eth
 		'0xf5da620ba68d658fae300d79c11efab82a594243', // nuwwara1725
+		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 	],
 }, {
 	id: 1017,
