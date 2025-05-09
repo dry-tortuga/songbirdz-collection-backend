@@ -12,21 +12,17 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 	string private svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
 	string private svgEndString = '</svg>';
-	string private svgRectWidthHeightFill = '" width="1" height="1" fill="#';
 
 	// Keep track of the hex symbols
 	bytes private constant HEX_SYMBOLS = "0123456789abcdef";
-
-	// TODO: The x=0 and y=0 outer ring of the grid should be a different color for each trophy...
-	//       This will let us reduce the for loops from 16x16 to 15x15
 
 	// Store the image for each bird as a 16x16 pixel image (8 bit colors)
 
 	struct Trophy {
 		uint8 place; // 1, 2, 3, etc.
 		uint32 points; // 700, 1840, 2400, etc.
-		bytes32 colors;
-		bytes pixels;
+		bytes32 colors; // Store the hex color codes (each color = 3 bytes, max 10 colors)
+		bytes pixels; // Store the image for each bird as a 16x16 pixel image (4 bit colors)
 		string season; // Big Onchain Summer 2024, Big Onchain Fall 2024, etc.
 		string species; // Brandt, Bald Eagle, etc.
 	}
@@ -35,17 +31,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 	constructor(address originalOwner) Ownable(originalOwner) ERC721("SongbirdzHOF", "SongbirdzHOF") {}
 
-	// PUBLIC METHODS
-
-	/**
-	* @dev Withdraws the ETH stored in the contract and sends to the contract owner.
-	*
-	* @dev NOTE: Only called by the contract owner.
-	*/
-	function publicWithdraw() external onlyOwner {
-		uint256 balance = address(this).balance;
-		payable(msg.sender).transfer(balance);
-	}
+	/*--------------------- PUBLIC METHODS ------------------------*/
 
 	/**
 	* @dev Store the entry data for a trophy.
@@ -106,7 +92,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 		string memory json = string(
 			abi.encodePacked(
 				'{"name": "Songbirdz Hall of Fame #', Strings.toString(tokenId), '",',
-				'"description": "This collection of trophies honors the best onchain birders in the Songbirdz flock across all past seasons. Pixel art by xPoli. Code by drytortuga.",',
+				'"description": "This collection honors the best onchain birders from past Songbirdz seasons. Pixel art by xPoli. Code by drytortuga.",',
 				'"attributes":',
 				attributes,
 				',"image": "data:image/svg+xml;base64,',
@@ -123,7 +109,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 	}
 
-	// PRIVATE METHODS
+	/*--------------------- PRIVATE METHODS ------------------------*/
 
 	/**
 	 * @dev Build the JSON attributes for the token.
@@ -135,7 +121,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 		string memory attributes = string(
 			abi.encodePacked(
 				"[",
-				'{"trait_type":"Season","value":"Big Onchain ',
+				'{"trait_type":"Season","value":"',
 				trophyToRender.season,
 				'"},{"trait_type":"Place","value":"',
 				Strings.toString(trophyToRender.place),
@@ -158,15 +144,12 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 		Trophy memory trophyToRender = trophies[tokenId];
 
-		console.log("tokenId=%d", tokenId);
-		// console.log(trophyToRender.colors);
-
 		string[4] memory colorsToRender = _parseColorCode(trophyToRender.colors);
 
-		console.log("colorsToRender=%s", colorsToRender[0]);
-		console.log("colorsToRender=%s", colorsToRender[1]);
-		console.log("colorsToRender=%s", colorsToRender[2]);
-		console.log("colorsToRender=%s", colorsToRender[3]);
+		console.log("colorsToRender[0]=%s", colorsToRender[0]);
+		console.log("colorsToRender[1]=%s", colorsToRender[1]);
+		console.log("colorsToRender[2]=%s", colorsToRender[2]);
+		console.log("colorsToRender[3]=%s", colorsToRender[3]);
 
 		string memory svgContent = "";
 
@@ -176,10 +159,19 @@ contract SongBirdzHOF is ERC721, Ownable {
 			uint256 gridX = i % 16;
 			uint256 gridY = i / 16;
 
-			// Get the index of the hex color for the current pixel
-			uint256 byteIndex = i / 2;
-			uint256 shift = (i % 2) == 0 ? 4 : 0;
-			uint8 colorIdx = (uint8(uint8(trophyToRender.pixels[byteIndex]) >> shift) & 0x7);
+			// Get the index of the color code for the current pixel
+
+			uint256 byteIndex = i / 4;
+			uint256 shiftIndex = i % 4;
+
+			uint256 shift =
+				shiftIndex == 0 ? 6 : (
+					shiftIndex == 1 ? 4 : (
+						shiftIndex == 2 ? 2 : 0
+					)
+				);
+
+			uint8 colorIdx = (uint8(uint8(trophyToRender.pixels[byteIndex]) >> shift) & 0x3);
 
 			console.log("%d", colorIdx);
 
@@ -190,7 +182,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 					Strings.toString(gridX),
 					'" y="',
 					Strings.toString(gridY),
-					svgRectWidthHeightFill,
+					'" width="1" height="1" fill="#',
 					colorsToRender[colorIdx],
 					'" />'
 				)
@@ -207,20 +199,16 @@ contract SongBirdzHOF is ERC721, Ownable {
 	}
 
 	/**
-	 * @dev Parses the uint256 value and converts to the hex codes for each color.
+	 * @dev Parses the encoded value and converts to the 6 digit hex codes for each color.
 	 */
 	function _parseColorCode (bytes32 packedColors) private pure returns (string[4] memory) {
 
 		console.log("PARSING COLOR CODE");
 		console.logBytes32(packedColors);
-		console.logBytes3(bytes3(packedColors));
-		console.logBytes3(bytes3(packedColors << 24));
-		console.logBytes3(bytes3(packedColors << 48));
-		console.logBytes3(bytes3(packedColors << 72));
 
 		// Build the final 6 hex chars for the color codes
 		return [
-			_bytes3ToColorString(bytes3(packedColors)), // First color (rightmost)
+			_bytes3ToColorString(bytes3(packedColors)), // First color
 			_bytes3ToColorString(bytes3(packedColors << 24)), // Second color
 			_bytes3ToColorString(bytes3(packedColors << 48)), // Third color
 			_bytes3ToColorString(bytes3(packedColors << 72)) // Fourth color
@@ -234,7 +222,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 		for (uint256 i = 0; i < 3; i++) {
 			s[i*2] = HEX_SYMBOLS[uint8(color[i]) >> 4];
-			s[i*2+1] = HEX_SYMBOLS[uint8(color[i]) & 0x0f];
+			s[(i*2)+1] = HEX_SYMBOLS[uint8(color[i]) & 0x0f];
 		}
 
 		return string(s);
