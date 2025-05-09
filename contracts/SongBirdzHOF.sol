@@ -16,13 +16,11 @@ contract SongBirdzHOF is ERC721, Ownable {
 	// Keep track of the hex symbols
 	bytes private constant HEX_SYMBOLS = "0123456789abcdef";
 
-	// Store the image for each bird as a 16x16 pixel image (8 bit colors)
-
 	struct Trophy {
 		uint8 place; // 1, 2, 3, etc.
 		uint32 points; // 700, 1840, 2400, etc.
 		bytes32 colors; // Store the hex color codes (each color = 3 bytes, max 10 colors)
-		bytes pixels; // Store the image for each bird as a 16x16 pixel image (4 bit colors)
+		bytes pixels; // Store the image for each bird as a 16x16 pixel image (4 bit colors = 64 bytes)
 		string season; // Big Onchain Summer 2024, Big Onchain Fall 2024, etc.
 		string species; // Brandt, Bald Eagle, etc.
 	}
@@ -221,8 +219,8 @@ contract SongBirdzHOF is ERC721, Ownable {
 		bytes memory s = new bytes(6);
 
 		for (uint256 i = 0; i < 3; i++) {
-			s[i*2] = HEX_SYMBOLS[uint8(color[i]) >> 4];
-			s[(i*2)+1] = HEX_SYMBOLS[uint8(color[i]) & 0x0f];
+			s[i*2] = HEX_SYMBOLS[(uint8(color[i]) >> 4) & 0xe];
+			s[(i*2)+1] = HEX_SYMBOLS[uint8(color[i]) & 0xe];
 		}
 
 		return string(s);
