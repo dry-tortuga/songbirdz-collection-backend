@@ -53,6 +53,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xb8addea803817fdbf5e36875ddaf9016d8e267cd', // Fgallagah3er
 		'0x8290f8f39615b803ee2b200534d3e5904a9b8ea3', // DopD
 		'0xef8a43bd9a093a562240bf43faabc74900e23284', // gojo_satoru
+		'0x09087fd95c1fc7908a1cb2a9817ab97a8ce5e21f', // osthelka
 	],
 }, {
 	id: 1016,
