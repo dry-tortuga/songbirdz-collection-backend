@@ -2,6 +2,11 @@ const fs = require("fs");
 const OpenAI = require("openai");
 const path = require("path");
 
+// TODO: Double check the Hawaiian Spellings before deploying!
+// TODO: Verify audio for "Mexican Whip-poor-will"
+// TODO: Verify audio for "Millerbird"
+// TODO: Verify audio for "Palila"
+
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const COLLECTION_NAME = "masters-of-disguise-8";
@@ -46,8 +51,6 @@ function sleep(ms) {
 	});
 }
 
-const skipList = [0,1,2,3,4,5,7,9,10,11,13,16,17,18,19,20,24,25,28,29,34,37,39,45,46,51,52,56,72,73,77,89,95,99,101,118,150,155,163,171,182,219,416,498,794,981];
-
 // Generate and store the final image files for the collection
 (async () => {
 
@@ -74,14 +77,15 @@ const skipList = [0,1,2,3,4,5,7,9,10,11,13,16,17,18,19,20,24,25,28,29,34,37,39,4
 
 	console.log(`Generating images for the ${COLLECTION_NAME} collection:`);
 
-	const redoList = [533];
+	const redoList = [];
 	const todoList = [];
+	const skipList = [];
 
     for (let i = 0; i < 1000; i += 1) {
 
     	if (redoList.indexOf(i) === -1) { continue; }
 
-        // if (skipList.indexOf(i) >= 0) { continue; }
+        if (skipList.indexOf(i) >= 0) { continue; }
 
         todoList.push(i);
 
@@ -103,6 +107,8 @@ async function runBatch(birdIds) {
     const done = {};
     const errors = [];
 
+	let numImagesRequested = 0;
+
     // Process images in batches of 15
 	for (let batchStart = 0; batchStart < birdIds.length; batchStart += 15) {
 
@@ -122,6 +128,8 @@ async function runBatch(birdIds) {
 
 				try {
 
+					numImagesRequested += 1;
+
 					const imgResponse = await generateImage(birdIds[i]);
 
 				} catch (error) {
@@ -133,10 +141,12 @@ async function runBatch(birdIds) {
 
 			batch.push(promise);
 
-		}
+			if (numImagesRequested === 15) {
+				await sleep(61 * 1000);
+				numImagesRequested = 0;
+			}
 
-		// Sleep for 61 seconds
-        // await sleep(61 * 1000);
+		}
 
 	}
 
@@ -159,22 +169,9 @@ async function generateImage(i) {
 	if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
 	if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
 
-	// if (promptName === "Varied Thrush") {
-	//	colorsToFeature = "Vibrant orange and black-blue plumage with a dark streaked chest.";
-	//     locationToFeature = "Forested areas with spring wildflowers and tall grasses as a backdrop.";
-	//     eggsToFeature = " 3-4 eggs, light sky blue in color.";
-	// }  else {
-
-		// SKIP EVERYTHING ELSE FOR NOW
-	//	console.log('SKIPPED -> ', i, " -> ", promptName);
-
-	//	return false;
-
-	// }
-
 	console.log(`---${finalIndex}---`);
 
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
 
 	console.log(prompt);
 

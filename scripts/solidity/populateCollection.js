@@ -37,6 +37,10 @@ let COLLECTIONS_TO_POPULATE = [{
 	name: "hatchlings-7",
 	number: 7,
 	merkleTreeRoot: "0xda2070ef627da6f6395a1a7c08cd115d7d2d0aa83456cf90d2cc52077e2bb36f",
+}, {
+	name: "masters-of-disguise-8",
+	number: 8,
+	merkleTreeRoot: "0x01ec6850298f4cf07cd9fc616105d00945618e37653b2f1f4a43fd500e1474c8",
 }];
 
 if (process.env.NODE_ENV === 'production') {

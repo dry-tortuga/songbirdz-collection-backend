@@ -38,6 +38,7 @@ const COLLECTION_KEYS = [
     "predator-and-prey-5",
     "love-birds-6",
     "hatchlings-7",
+    "masters-of-disguise-8",
 ];
 
 const COLLECTION_NAMES = [
@@ -49,12 +50,15 @@ const COLLECTION_NAMES = [
     "Predator & Prey",
     "Lovebirds",
     "Hatchlings",
+    "Masters of Disguise",
 ];
 
 const COLLECTION_SIZE = 1000;
 
 const MIN_BIRD_ID = 0;
 const MAX_BIRD_ID = (COLLECTION_NAMES.length * COLLECTION_SIZE) - 1;
+
+const FIRST_ID_TO_IDENTIFY = 2402;
 
 // Build data map of ID -> name|collection|answer-choices for all the birds
 
@@ -196,6 +200,7 @@ module.exports = {
     DB_COLLECTION_IDS,
     MIN_BIRD_ID,
     MAX_BIRD_ID,
+    FIRST_ID_TO_IDENTIFY,
     KEY_BIRD_DATA,
     SOURCE_SPECIES_DATA,
     MERKLE_TREE_DATA,
