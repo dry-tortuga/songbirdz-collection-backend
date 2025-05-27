@@ -40,7 +40,7 @@ let COLLECTIONS_TO_POPULATE = [{
 }, {
 	name: "masters-of-disguise-8",
 	number: 8,
-	merkleTreeRoot: "0x01ec6850298f4cf07cd9fc616105d00945618e37653b2f1f4a43fd500e1474c8",
+	merkleTreeRoot: "0x96931597d1e46bf69bad810d9aba52eb71b2353cb1451ba6c2823632c0116572",
 }];
 
 if (process.env.NODE_ENV === 'production') {
