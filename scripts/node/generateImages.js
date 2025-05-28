@@ -2,12 +2,6 @@ const fs = require("fs");
 const OpenAI = require("openai");
 const path = require("path");
 
-// TODO: Double check the Hawaiian Spellings before deploying!
-// TODO: Verify audio for "Mexican Whip-poor-will"
-// TODO: Verify audio for "Millerbird"
-// TODO: Verify audio for "Palila"
-// TODO: Verify audio for "Wood Sandpiper"
-
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const COLLECTION_NAME = "masters-of-disguise-8";
