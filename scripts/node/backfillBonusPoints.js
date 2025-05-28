@@ -15,6 +15,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jbpunke
 		'0xa32fc2c4e09e71ec3a104f74ce4651117b4a90b7', // chewbs.base.eth
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
+		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
 	],
 }, {
 	id: 1014,
@@ -22,6 +23,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 	amount: 25,
 	users: [
 		'0xa6c49cf1871c3fbabc0373d4fd2812c4a4fb4683', // myro5
+		'0x8d888326e1e2b6a399b751105339f82476208d5d', // tomkey
 	],
 }, {
 	id: 1015,
@@ -53,6 +55,10 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xb8addea803817fdbf5e36875ddaf9016d8e267cd', // Fgallagah3er
 		'0x8290f8f39615b803ee2b200534d3e5904a9b8ea3', // DopD
 		'0xef8a43bd9a093a562240bf43faabc74900e23284', // gojo_satoru
+		'0x09087fd95c1fc7908a1cb2a9817ab97a8ce5e21f', // osthelka
+		'0xa32fc2c4e09e71ec3a104f74ce4651117b4a90b7', // chewbs.base.eth
+		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // dabus.base.eth
+		'0x8030778eb83a4f6111bf600159d29b385478c443', // xPoli
 	],
 }, {
 	id: 1016,
@@ -66,7 +72,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // artgridz
 		'0x972955a934de4d0e642d913a22e9cee77386f188', // ogstyle
 		'0xba397faae1d5fe10c0356f2e585bef34577ab111', // tanazolam
-		'0x91a0c767e86e832d279faa2b4b9deda28bbb26ce', // millionbithomepage
+		'0x91a0c767e86e832d279faa2b4b9deda28bbb26ce', // million.base.eth
 		'0x46eca8796d1fab2cc52e66a508f499c8207378da', // crunklez
 		'0x75521de871eea2f188a45e1a232bb6794600ebc6', // abrahamdomenick.base.eth
 		'0x76ce03b1eea333ecce7d6e3506bc36cfb4dd76c6', // pederzani.eth (ozFather)
@@ -74,6 +80,11 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xbe061d84c50e156e2faa791228662e3b52c906e2', // xbornid.eth
 		'0xf5da620ba68d658fae300d79c11efab82a594243', // nuwwara1725
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
+		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // dabus.base.eth
+		'0xbcfcd3bb907507a123f9c37e920ceb5c8db56feb', // myk.base.eth
+		'0x11415669286d998fd85a2a6146c41f6be41a794d', // reisub.base.eth
+		'0x9beadc1297f97fff916a487e49dea1004510c59e', // s0tric.base.eth
+		'0x8d888326e1e2b6a399b751105339f82476208d5d', // tomkey
 	],
 }, {
 	id: 1017,
