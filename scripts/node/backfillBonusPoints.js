@@ -58,7 +58,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x09087fd95c1fc7908a1cb2a9817ab97a8ce5e21f', // osthelka
 		'0xa32fc2c4e09e71ec3a104f74ce4651117b4a90b7', // chewbs.base.eth
 		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // dabus.base.eth
-		'', // xPoli (TODO)
+		'0x8030778eb83a4f6111bf600159d29b385478c443', // xPoli
 	],
 }, {
 	id: 1016,
