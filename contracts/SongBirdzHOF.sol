@@ -8,6 +8,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
+// TODO: Add max 99 cap on number of trophies in existence
+
 contract SongBirdzHOF is ERC721, Ownable {
 
 	string private svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
@@ -19,8 +21,10 @@ contract SongBirdzHOF is ERC721, Ownable {
 	struct Trophy {
 		uint8 place; // 1, 2, 3, etc.
 		uint32 points; // 700, 1840, 2400, etc.
-		bytes32 colors; // Store the hex color codes (each color = 3 bytes, max 10 colors)
-		bytes pixels; // Store the image for each bird as a 16x16 pixel image (4 bit colors = 64 bytes)
+		bytes32 colors1; // Store the hex color codes (each color = 3 bytes, first 8 colors)
+		bytes32 colors2; // Store the hex color codes (each color = 3 bytes, last 8 colors)
+		bytes pixels; // Store the image for each bird as a 16x16 pixel image (16 bit colors = 128 bytes)
+		string name; // The birder's name
 		string season; // Big Onchain Summer 2024, Big Onchain Fall 2024, etc.
 		string species; // Brandt, Bald Eagle, etc.
 	}
@@ -40,8 +44,10 @@ contract SongBirdzHOF is ERC721, Ownable {
 		address to,
 		uint8 place,
 		uint32 points,
-		bytes32 colors,
+		bytes32 colors1,
+		bytes32 colors2,
 		bytes memory pixels,
+		string memory name,
 		string memory season,
 		string memory species
 	) external onlyOwner {
@@ -55,8 +61,10 @@ contract SongBirdzHOF is ERC721, Ownable {
 		Trophy memory newTrophy = Trophy(
 			place,
 			points,
-			colors,
+			colors1,
+			colors2,
 			pixels,
+			name,
 			season,
 			species
 		);
@@ -125,6 +133,8 @@ contract SongBirdzHOF is ERC721, Ownable {
 				Strings.toString(trophyToRender.place),
 				'"},{"trait_type":"Points","value":"',
 				Strings.toString(trophyToRender.points),
+				'"},{"trait_type":"Name","value":"',
+				trophyToRender.name,
 				'"},{"trait_type":"Species","value":"',
 				trophyToRender.species,
 				'"}]'
@@ -142,7 +152,10 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 		Trophy memory trophyToRender = trophies[tokenId];
 
-		string[4] memory colorsToRender = _parseColorCode(trophyToRender.colors);
+		string[16] memory colorsToRender = _parseColorCode(
+			trophyToRender.colors1,
+			trophyToRender.colors2
+		);
 
 		console.log("colorsToRender[0]=%s", colorsToRender[0]);
 		console.log("colorsToRender[1]=%s", colorsToRender[1]);
@@ -159,33 +172,31 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 			// Get the index of the color code for the current pixel
 
-			uint256 byteIndex = i / 4;
-			uint256 shiftIndex = i % 4;
+			uint256 byteIndex = i / 2;
+			uint256 shiftIndex = i % 2;
 
-			uint256 shift =
-				shiftIndex == 0 ? 6 : (
-					shiftIndex == 1 ? 4 : (
-						shiftIndex == 2 ? 2 : 0
-					)
-				);
+			uint256 shift = shiftIndex == 0 ? 4 : 0;
 
-			uint8 colorIdx = (uint8(uint8(trophyToRender.pixels[byteIndex]) >> shift) & 0x3);
+			uint8 colorIdx = (uint8(uint8(trophyToRender.pixels[byteIndex]) >> shift) & 0xf);
+
+			string memory pixelColor = colorsToRender[colorIdx];
 
 			console.log("%d", colorIdx);
 
-			svgContent = string(
-				abi.encodePacked(
-					svgContent,
-					'<rect x="',
-					Strings.toString(gridX),
-					'" y="',
-					Strings.toString(gridY),
-					'" width="1" height="1" fill="#',
-					colorsToRender[colorIdx],
-					'" />'
-				)
-			);
-
+			if (keccak256(bytes(pixelColor)) != keccak256(bytes("000000"))) {
+				svgContent = string(
+					abi.encodePacked(
+						svgContent,
+						'<rect x="',
+						Strings.toString(gridX),
+						'" y="',
+						Strings.toString(gridY),
+						'" width="1" height="1" fill="#',
+						pixelColor,
+						'" />'
+					)
+				);
+			}
 		}
 
 		return string(abi.encodePacked(
@@ -199,17 +210,30 @@ contract SongBirdzHOF is ERC721, Ownable {
 	/**
 	 * @dev Parses the encoded value and converts to the 6 digit hex codes for each color.
 	 */
-	function _parseColorCode (bytes32 packedColors) private pure returns (string[4] memory) {
+	function _parseColorCode (bytes32 packedColors1, bytes32 packedColors2) private pure returns (string[16] memory) {
 
 		console.log("PARSING COLOR CODE");
-		console.logBytes32(packedColors);
+		console.logBytes32(packedColors1);
+		console.logBytes32(packedColors2);
 
 		// Build the final 6 hex chars for the color codes
 		return [
-			_bytes3ToColorString(bytes3(packedColors)), // First color
-			_bytes3ToColorString(bytes3(packedColors << 24)), // Second color
-			_bytes3ToColorString(bytes3(packedColors << 48)), // Third color
-			_bytes3ToColorString(bytes3(packedColors << 72)) // Fourth color
+			_bytes3ToColorString(bytes3(packedColors1)), // First color
+			_bytes3ToColorString(bytes3(packedColors1 << 24)), // Second color
+			_bytes3ToColorString(bytes3(packedColors1 << 48)), // Third color
+			_bytes3ToColorString(bytes3(packedColors1 << 72)), // Fourth color
+			_bytes3ToColorString(bytes3(packedColors1 << 96)), // Fifth color
+			_bytes3ToColorString(bytes3(packedColors1 << 120)), // Sixth color
+			_bytes3ToColorString(bytes3(packedColors1 << 144)), // Seventh color
+			_bytes3ToColorString(bytes3(packedColors1 << 168)), // Eighth color
+			_bytes3ToColorString(bytes3(packedColors2)), // Ninth color
+			_bytes3ToColorString(bytes3(packedColors2 << 24)), // Tenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 48)), // Eleventh color
+			_bytes3ToColorString(bytes3(packedColors2 << 72)), // Twelfth color
+			_bytes3ToColorString(bytes3(packedColors2 << 96)), // Thirteenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 120)), // Fourteenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 144)), // Fifteenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 168)) // Sixteenth color
 		];
 
 	}

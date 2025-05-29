@@ -1,9 +1,17 @@
 const fs = require("fs");
 const { ethers } = require("hardhat");
+const path = require("path");
 
 // Load the contract ABI
 
 const { abi } = JSON.parse(fs.readFileSync("./artifacts/contracts/SongBirdzHOF.sol/SongBirdzHOF.json"));
+
+// Load the encoded data
+
+const dataToUpload = JSON.parse(fs.readFileSync(path.join(
+	__dirname,
+	'../../private/development/hof-data.json'
+)));
 
 async function main() {
 
@@ -28,24 +36,41 @@ async function main() {
 		deployer,
 	);
 
-	// Add 1 trophy
-	await contract.publicGenerateTrophy(
-		owner,
-		1, // place
-		850, // points
-		"0xeab3081c1917b45309f5f3ff0000000000000000000000000000000000000000",
-		// 8 colors:
-		// "0x0000000000000000000011100000000000213231000000000221223310000000022103331000000000001111110000000000311111100000000333011111000000033301111100000003333111111000000033301111110000000333311111100000003333233300000000200020000000002220222000000000000000000000",
-		// 4 colors:
-		"0x000000000054000009ed000029af4000293f40000055500000d5540003f1550003f1550003fd554000fc5550003fd554000ffbf00008080000a8a80000000000",
-		"Big Onchain Spring 2025", // season
-		"Atlantic Puffin", // species
-	);
+	for (let i = 0; i < dataToUpload.length; i++) {
 
-	// Log the URL for the token
-	const result0 = await contract.tokenURI(0);
+		const trophy = dataToUpload[i];
 
-	console.log(result0);
+		// Add the trophy to the Hall of Fame
+		await contract.publicGenerateTrophy(
+			trophy.to,
+			trophy.place,
+			trophy.points,
+			trophy.colors1,
+			trophy.colors2,
+			trophy.pixels,
+			trophy.name,
+			trophy.season,
+			trophy.species
+		);
+
+		// Log the URL for the token
+		const resultURI = await contract.tokenURI(i);
+
+		fs.writeFileSync(
+			path.join(
+				__dirname,
+				`../../private/development/hof-token-uri-output-${i}.json`,
+			),
+			JSON.stringify(resultURI), (err) => {
+
+				if (err) {
+					throw new err;
+				}
+
+			},
+		);
+
+	}
 
 }
 
