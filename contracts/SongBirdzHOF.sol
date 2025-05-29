@@ -23,7 +23,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 		uint32 points; // 700, 1840, 2400, etc.
 		bytes32 colors1; // Store the hex color codes (each color = 3 bytes, first 8 colors)
 		bytes32 colors2; // Store the hex color codes (each color = 3 bytes, last 8 colors)
-		bytes pixels; // Store the image for each bird as a 16x16 pixel image (16 bit colors = 128 bytes)
+		bytes pixels; // Store the image for each bird as a 16x16 pixel image (0-15 value for each pixel = 128 bytes)
 		string name; // The birder's name
 		string season; // Big Onchain Summer 2024, Big Onchain Fall 2024, etc.
 		string species; // Brandt, Bald Eagle, etc.
