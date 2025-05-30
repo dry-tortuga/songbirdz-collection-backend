@@ -2,8 +2,8 @@ const { StandardMerkleTree } = require("@openzeppelin/merkle-tree");
 const fs = require("fs");
 const path = require("path");
 
-const abiPath = path.join(__dirname, "../../artifacts/contracts/SongBirdz.sol");
-const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
+const abiPath = path.join(__dirname, "../../../artifacts/contracts/SongBirdz.sol");
+const privatePath = path.join(__dirname, `../../../private/${process.env.NODE_ENV}`);
 
 let COLLECTIONS_TO_POPULATE = [{
 	name: "picasso-genesis-0",
@@ -47,7 +47,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const { abi } = JSON.parse(fs.readFileSync(`${abiPath}/SongBirdz.json`));
 
-const TASK_NAME = "populateCollection";
+const TASK_NAME = "populateMainCollection";
 const TASK_DESCRIPTION = "Populate a collection of birds in the SongBirdz contract";
 
 // Task action function receives the Hardhat Runtime Environment as second argument

@@ -12,7 +12,7 @@ const destinations = [{
 
 const { abi } = JSON.parse(fs.readFileSync(path.join(
 	__dirname,
-	"../../artifacts/contracts/SongBirdz.sol/SongBirdz.json")
+	"../../../artifacts/contracts/SongBirdz.sol/SongBirdz.json")
 ));
 
 // Create the hardhat task
