@@ -16,6 +16,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xa32fc2c4e09e71ec3a104f74ce4651117b4a90b7', // chewbs.base.eth
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
+		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 	],
 }, {
 	id: 1014,
