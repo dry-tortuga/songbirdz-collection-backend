@@ -8,14 +8,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-// TODO: Add max 99 cap on number of trophies in existence
-
 contract SongBirdzHOF is ERC721, Ownable {
 
-	string private svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
-	string private svgEndString = '</svg>';
+	// Maximum number of trophies that can EVER be minted
+	uint256 private constant MINT_TOTAL_SIZE = 333;
 
-	// Keep track of the hex symbols
+	string private constant svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
+	string private constant svgEndString = '</svg>';
+
 	bytes private constant HEX_SYMBOLS = "0123456789abcdef";
 
 	struct Trophy {
@@ -31,7 +31,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 
 	Trophy[] private trophies;
 
-	constructor(address originalOwner) Ownable(originalOwner) ERC721("SongbirdzHOF", "SongbirdzHOF") {}
+	constructor(address originalOwner) Ownable(originalOwner) ERC721("Songbirdz Hall of Fame", "SongbirdzHOF") {}
 
 	/*--------------------- PUBLIC METHODS ------------------------*/
 
@@ -52,11 +52,11 @@ contract SongBirdzHOF is ERC721, Ownable {
 		string memory species
 	) external onlyOwner {
 
-		// console.log("Colors %s", string(colors));
-		console.log("Place %s", place);
-		console.log("Points %s", points);
-		console.log("Season %s", season);
-		console.log("Species %s", species);
+		// Cannot create more than 333 trophies in total
+		require(
+			trophies.length < MINT_TOTAL_SIZE,
+			"total limit is 333"
+		);
 
 		Trophy memory newTrophy = Trophy(
 			place,
@@ -83,13 +83,8 @@ contract SongBirdzHOF is ERC721, Ownable {
 		// Get JSON attributes
 		string memory attributes = _buildAttributesJSON(tokenId);
 
-		// Log attributes in solidity console
-		console.log("Attributes: %s", attributes);
-
 		// Get image
 		string memory image = _buildSVG(tokenId);
-
-		console.log("Image: %s", image);
 
 		// Encode SVG data to base64
 		string memory base64Image = Base64.encode(bytes(image));
@@ -157,11 +152,6 @@ contract SongBirdzHOF is ERC721, Ownable {
 			trophyToRender.colors2
 		);
 
-		console.log("colorsToRender[0]=%s", colorsToRender[0]);
-		console.log("colorsToRender[1]=%s", colorsToRender[1]);
-		console.log("colorsToRender[2]=%s", colorsToRender[2]);
-		console.log("colorsToRender[3]=%s", colorsToRender[3]);
-
 		string memory svgContent = "";
 
 		for (uint256 i = 0; i < 256; i++) {
@@ -180,8 +170,6 @@ contract SongBirdzHOF is ERC721, Ownable {
 			uint8 colorIdx = (uint8(uint8(trophyToRender.pixels[byteIndex]) >> shift) & 0xf);
 
 			string memory pixelColor = colorsToRender[colorIdx];
-
-			console.log("%d", colorIdx);
 
 			if (keccak256(bytes(pixelColor)) != keccak256(bytes("000000"))) {
 				svgContent = string(
@@ -211,10 +199,6 @@ contract SongBirdzHOF is ERC721, Ownable {
 	 * @dev Parses the encoded value and converts to the 6 digit hex codes for each color.
 	 */
 	function _parseColorCode (bytes32 packedColors1, bytes32 packedColors2) private pure returns (string[16] memory) {
-
-		console.log("PARSING COLOR CODE");
-		console.logBytes32(packedColors1);
-		console.logBytes32(packedColors2);
 
 		// Build the final 6 hex chars for the color codes
 		return [
