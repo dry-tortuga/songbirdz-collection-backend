@@ -3,8 +3,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "hatchlings-7";
-const COLLECTION_START_INDEX = 7000;
+const COLLECTION_NAME = "masters-of-disguise-8";
+const COLLECTION_START_INDEX = 8000;
 const COLLECTION_SIZE = 1000;
 
 const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
