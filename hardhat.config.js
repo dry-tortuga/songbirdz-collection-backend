@@ -8,7 +8,7 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 // require("./scripts/solidity/main/bulkSend");
 // require("./scripts/solidity/main/fetchHolders");
 require("./scripts/solidity/main/populateCollection");
-require("./scripts/solidity/hof/populateCollectionHOF");
+require("./scripts/solidity/hof/populateCollection");
 
 // https://docs.base.org/guides/deploy-smart-contracts
 
