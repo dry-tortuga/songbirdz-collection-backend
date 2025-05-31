@@ -5,6 +5,7 @@ const {
 	UNIDENTIFIED_NAME,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
+	FIRST_ID_TO_IDENTIFY,
 	KEY_BIRD_DATA,
 	SOURCE_SPECIES_DATA,
 	MERKLE_TREE_DATA,
@@ -190,7 +191,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		}
 
 		// Check to make sure ID parameter is in the supported range of numbers
-		if (birdId < 2402 || birdId > MAX_BIRD_ID) {
+		if (birdId < FIRST_ID_TO_IDENTIFY || birdId > MAX_BIRD_ID) {
 
 			return next({
 				status: 400,
@@ -214,7 +215,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 
 		const options = [];
 
-		for (let i = 2402; i < MAX_BIRD_ID; i++) {
+		for (let i = FIRST_ID_TO_IDENTIFY; i < MAX_BIRD_ID; i++) {
 			if (!BIRD_ID_RESULTS[i]) {
 				options.push(i);
 			}
