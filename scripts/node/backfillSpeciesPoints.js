@@ -16,7 +16,7 @@ const OPENSEA_COLLECTION_SLUG = "songbirdz";
 const SEASON_GENESIS_BLOCK = 26997128;
 const SEASON_GENESIS_TIME = new Date("2025-02-28T23:00:03.000Z");
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 30840137;
+const CURRENT_BLOCK = 30958287;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
