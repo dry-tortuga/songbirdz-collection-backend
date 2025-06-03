@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "hardhat/console.sol";
-
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
@@ -93,7 +91,7 @@ contract SongBirdzHOF is ERC721, Ownable {
 		string memory json = string(
 			abi.encodePacked(
 				'{"name": "Songbirdz Hall of Fame #', Strings.toString(tokenId), '",',
-				'"description": "This collection honors the best onchain birders from past Songbirdz seasons. Pixel art by xPoli. Code by drytortuga.",',
+				'"description": "This collection honors the best onchain birders from past Songbirdz seasons. Pixel art by xPoli. Code by drytortuga. The art is stored fully onchain.",',
 				'"attributes":',
 				attributes,
 				',"image": "data:image/svg+xml;base64,',
