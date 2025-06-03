@@ -12,7 +12,7 @@ const getPointsLeaderboard = async (req, res, next) => {
     const address = req.query.address;
     const limit = LEADERBOARD_SIZE;
 
-    let dbCollectionId = DB_COLLECTION_IDS[3];
+    let dbCollectionId = DB_COLLECTION_IDS[4];
 
     if (req.query.season === "1") {
         dbCollectionId = DB_COLLECTION_IDS[0];
@@ -20,6 +20,8 @@ const getPointsLeaderboard = async (req, res, next) => {
         dbCollectionId = DB_COLLECTION_IDS[1];
     } else if (req.query.season === "3") {
         dbCollectionId = DB_COLLECTION_IDS[2];
+    } else if (req.query.season === "4") {
+        dbCollectionId = DB_COLLECTION_IDS[3];
     }
 
     // Fetch the results for the leaderboard
@@ -46,12 +48,14 @@ const getLifeListData = async (req, res, next) => {
     const resultsSeason2 = await db.fetchPointLogs(DB_COLLECTION_IDS[1], address);
     const resultsSeason3 = await db.fetchPointLogs(DB_COLLECTION_IDS[2], address);
     const resultsSeason4 = await db.fetchPointLogs(DB_COLLECTION_IDS[3], address);
+    const resultsSeason5 = await db.fetchPointLogs(DB_COLLECTION_IDS[4], address);
 
     res.send({
         season_1: resultsSeason1,
         season_2: resultsSeason2,
         season_3: resultsSeason3,
         season_4: resultsSeason4,
+        season_5: resultsSeason5,
     });
 
 };

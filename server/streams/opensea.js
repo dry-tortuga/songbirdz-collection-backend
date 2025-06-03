@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "staging") {
 
 }
 
-const SEASON_END_DATE = new Date('2025-05-31T23:00:00.000+00:00');
+const SEASON_END_DATE = new Date('2025-08-31T23:00:00.000+00:00');
 
 const initOpenseaStream = () => {
 
