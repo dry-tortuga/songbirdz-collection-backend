@@ -13,10 +13,11 @@ const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const SEASON_GENESIS_BLOCK = 26997128;
-const SEASON_GENESIS_TIME = new Date("2025-02-28T23:00:03.000Z");
+const SEASON_GENESIS_BLOCK = 30971527;
+const SEASON_GENESIS_TIME = new Date("2025-05-31T23:00:03.000Z");
+const SEASON_END_TIME = new Date('2025-08-31T23:00:00.000+00:00');
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 30971526;
+const CURRENT_BLOCK = 31095319;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
@@ -37,12 +38,14 @@ const alchemy = new Alchemy({
 });
 
 const fetchAlchemyEvents = async (after, before, results = {}) => {
-    let isLoadingMore = true;
+
+	let isLoadingMore = true;
     let nextBatchCursor = undefined;
 
     // Loop through each batch in this time period
     while (isLoadingMore) {
-        console.log(`-------- next=${nextBatchCursor} --------`);
+
+    console.log(`-------- next=${nextBatchCursor} --------`);
 
         const data = await alchemy.core.getAssetTransfers({
             fromBlock: after,
@@ -59,7 +62,8 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 
         // Loop through each event in this time period
         for (let i = 0, len = data.transfers.length; i < len; i++) {
-            const event = data.transfers[i];
+
+        	const event = data.transfers[i];
 
             console.log(event);
 
@@ -73,6 +77,8 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
             // Convert hex value to decimal value for the bird ID
             const id = parseInt(parsedHexId, 16);
 
+            const timestamp = new Date(event.metadata.blockTimestamp);
+
             if (event.category !== "erc721") {
                 throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
             }
@@ -80,6 +86,13 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
             if (event.erc721TokenId !== event.tokenId) {
                 throw new Error(`Encountered an invalid token id=${event.tokenId}!`);
             }
+
+            if (timestamp.valueOf() > SEASON_END_TIME.valueOf()) {
+
+				console.log(`Ignoring event sent after deadline, i.e. sent_at=${timestamp}`);
+				continue;
+
+			}
 
             const from = event.from.toLowerCase();
             const to = event.to.toLowerCase();
@@ -109,10 +122,10 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 
                 results[to][speciesID].bird_id = id;
                 results[to][speciesID].amount = pointsToAward;
-                results[to][speciesID].timestamp = new Date(
-                    event.metadata.blockTimestamp
-                );
+				results[to][speciesID].timestamp = timestamp;
+
             }
+
         }
 
         // Check the cursor for the next batch of results for this time period
@@ -122,20 +135,24 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
         if (!nextBatchCursor) {
             isLoadingMore = false;
         }
+
     }
 
     return results;
+
 };
 
 const fetchOpenseaEvents = async (after, before, results = {}) => {
-    const finalResults = Object.assign({}, results);
+
+	const finalResults = Object.assign({}, results);
 
     let isLoadingMore = true;
     let nextBatchCursor = undefined;
 
     // Loop through each batch in this time period
     while (isLoadingMore) {
-        console.log(`-------- next=${nextBatchCursor} --------`);
+
+    	console.log(`-------- next=${nextBatchCursor} --------`);
 
         // Fetch the events from the OpenSea API
         const { data } = await sdk.list_events_by_collection({
@@ -151,7 +168,8 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
         // Loop through each event in this time period
         for (let i = 0, len = data.asset_events.length; i < len; i++) {
-            const event = data.asset_events[i];
+
+        	const event = data.asset_events[i];
 
             console.log(event);
 
@@ -159,6 +177,8 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
             const from = event.seller.toLowerCase();
             const to = event.buyer.toLowerCase();
+
+            const timestamp = new Date(event.event_timestamp * 1000);
 
             if (event.event_type !== "sale") {
                 throw new Error(
@@ -194,6 +214,13 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
                 );
             }
 
+            if (timestamp.valueOf() > SEASON_END_TIME.valueOf()) {
+
+				console.log(`Ignoring event sent after deadline, i.e. sent_at=${timestamp}`);
+				continue;
+
+			}
+
             // Process the event to determine the amount of points to award
             const { pointsToAward, speciesID } = processPoints(id, from, to, {
                 type: "sale",
@@ -220,9 +247,7 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
 
                 finalResults[to][speciesID].bird_id = id;
                 finalResults[to][speciesID].amount = pointsToAward;
-                finalResults[to][speciesID].timestamp = new Date(
-                    event.event_timestamp * 1000
-                );
+				finalResults[to][speciesID].timestamp = timestamp;
             }
         }
 
@@ -233,9 +258,11 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
         if (!nextBatchCursor) {
             isLoadingMore = false;
         }
+
     }
 
     return finalResults;
+
 };
 
 // Re-calculate and update points related to species IDing for all users for the current season
@@ -256,11 +283,13 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
     let nextBatchCursor = undefined;
 
     try {
-        let result = {};
+
+    	let result = {};
 
         // Check if we've reached the current date
         while (after < CURRENT_TIME) {
-            console.log(
+
+        	console.log(
                 `-------- Fetching events from ${after} to ${before} --------`
             );
 
@@ -296,6 +325,7 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
             if (beforeBlock !== "latest") {
                 beforeBlock += ONE_WEEK_IN_BLOCKS;
             }
+
         }
 
         console.log("---------------- Final Point Results ------------------");
@@ -308,7 +338,9 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
         // Close the connection to the database
 
         await db.close();
+
     } catch (error) {
         console.error(error);
     }
+
 })();
