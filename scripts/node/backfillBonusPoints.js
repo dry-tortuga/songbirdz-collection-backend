@@ -16,6 +16,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0xa32fc2c4e09e71ec3a104f74ce4651117b4a90b7', // chewbs.base.eth
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
+		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 	],
 }, {
 	id: 1014,
@@ -85,6 +86,7 @@ const SEASON_4_BONUS_POINT_SPECIES = [{
 		'0x11415669286d998fd85a2a6146c41f6be41a794d', // reisub.base.eth
 		'0x9beadc1297f97fff916a487e49dea1004510c59e', // s0tric.base.eth
 		'0x8d888326e1e2b6a399b751105339f82476208d5d', // tomkey
+		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
 	],
 }, {
 	id: 1017,
