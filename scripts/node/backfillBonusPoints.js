@@ -85,7 +85,11 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 	id: 1024,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1025,
 	label: 'Hit 14 Day Streak',
