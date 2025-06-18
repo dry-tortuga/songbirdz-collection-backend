@@ -4,8 +4,19 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "masters-of-disguise-8";
-const COLLECTION_START_INDEX = 8000;
+/*
+
+"200 bird species resting, perched, or flying in serene, ethereal landscapes of soft sky blue, sapphire, cobalt, and turquoise.
+Artistic style should blend realism with painterly impressionism. Birds should evoke feelings
+of peace, memory, and finality—some in pairs, some alone, all still. Subtle glowing accents
+or halos can give a mythic, final chapter quality to the scene. Soft light, golden hour ambiance."
+
+"Create solemn yet radiant bird portraits with minimalist blue-toned backgrounds—deep cerulean skies, abstract Base-blue gradients, or twilight meadows. Each bird should feel sacred and symbolic, with soft shadows and ambient light. Artistic influences can include stained glass, celestial art, or Japanese ink illustrations—each image conveying finality, peace, and permanence."
+
+*/
+
+const COLLECTION_NAME = "final-roost-9";
+const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -46,6 +57,15 @@ function sleep(ms) {
 	});
 }
 
+const redoList = [
+	// FUTURE REDOS AT THE END
+	// 6,10,13
+];
+const todoList = [];
+const skipList = [ // Species that may not work...
+	22,24
+];
+
 // Generate and store the final image files for the collection
 (async () => {
 
@@ -72,13 +92,9 @@ function sleep(ms) {
 
 	console.log(`Generating images for the ${COLLECTION_NAME} collection:`);
 
-	const redoList = [];
-	const todoList = [];
-	const skipList = [];
-
     for (let i = 0; i < 1000; i += 1) {
 
-    	if (redoList.indexOf(i) === -1) { continue; }
+    	// if (redoList.indexOf(i) === -1) { continue; }
 
         if (skipList.indexOf(i) >= 0) { continue; }
 
@@ -115,9 +131,19 @@ async function runBatch(birdIds) {
 
 			const name = speciesNames[birdIds[i]];
 
-			// if (done[name]) { continue; } else { done[name] = true; }
+			if (done[name]) { continue; } else { done[name] = true; }
 
-			// if (skipList.indexOf(i) >= 0) { continue; }
+			const speciesID = speciesNames.findIndex((sBirdName) => sBirdName === name);
+
+			if (speciesID === -1) {
+				throw new Error('arghhhhhhhh no species ID found for ' + name);
+			}
+
+			if (speciesID < 50 || speciesID >= 100) {
+				continue;
+			}
+
+			console.log(`speciesId=${speciesID}`);
 
 			const promise = (async () => {
 
@@ -125,7 +151,7 @@ async function runBatch(birdIds) {
 
 					numImagesRequested += 1;
 
-					const imgResponse = await generateImage(birdIds[i]);
+					await generateImage(birdIds[i]);
 
 				} catch (error) {
 					console.error(error);
@@ -161,12 +187,13 @@ async function generateImage(i) {
 	const locationToFeature = speciesSourcePrompts[name];
 	const colorsToFeature = speciesSourceColors[name];
 
-	if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
-	if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
+	// if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
+	// if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
 
 	console.log(`---${finalIndex}---`);
 
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
+	// const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian.${colorsToFeature ? ` It should ${colorsToFeature}. ` : ' '}It should be resting, perched, looking for food, or flying in its natural habitat. Subtle glowing accents and soft light should give a mythic, final chapter quality to the scene. The background should use minimalist Coinbase blue-toned colors or Base-blue gradients that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian and the Coinbase blue color must be featured.`;
 
 	console.log(prompt);
 

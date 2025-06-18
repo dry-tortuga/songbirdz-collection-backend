@@ -3,8 +3,17 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "masters-of-disguise-8";
-const COLLECTION_START_INDEX = 8000;
+// A gentle resting place for the collection—this flock represents the last landing,
+// a culmination of every migration, every melody, every mint.
+// The journey ends where all birds return—home.
+// Final Roost is the 10th and final flock in the Songbirdz collection—1,000 birds across
+// 200 brand-new species, each appearing exactly five times. This flock marks the last stop
+// on the Songbirdz migration: a resting place, a remembrance, a celebration. As the chain
+// grows and the skies change, these birds hold the memory of all that came before.
+// Their feathers shimmer in shades of Base blue—a nod to the chain that made it all possible.
+// The background should be base blue in color
+const COLLECTION_NAME = "final-roost-9";
+const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
 
 const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
