@@ -52,6 +52,7 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // dabus.base.eth
 		'0x8030778eb83a4f6111bf600159d29b385478c443', // xPoli
 		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
+		'0x0000000000c2d145a2526bd8c716263bfebe1a72', // SBMweb3
 	],
 }, {
 	id: 1023,
@@ -94,7 +95,10 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 	id: 1025,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1026,
 	label: 'Hit 30 Day Streak',
