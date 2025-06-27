@@ -40,6 +40,7 @@ const COLLECTION_KEYS = [
     "love-birds-6",
     "hatchlings-7",
     "masters-of-disguise-8",
+    "final-roost-9",
 ];
 
 const COLLECTION_NAMES = [
@@ -52,6 +53,7 @@ const COLLECTION_NAMES = [
     "Lovebirds",
     "Hatchlings",
     "Masters of Disguise",
+    "Final Roost",
 ];
 
 const COLLECTION_SIZE = 1000;
@@ -129,44 +131,29 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 
     });
 
-    // Picasso Genesis collection had 200 unique species, all others will have 50
-    if (cIndex === 0) {
 
-        fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.txt`, "utf8")
-            .split(/\r?\n/)
-            .forEach((sName, sIndex) => {
-                const SPECIES_START_INDEX = 0;
+    // TODO: FIX THIS
+	let expectedSpeciesCount = 50;
 
-                // Get the unique ID of the species relative to the entire set
-                const finalIndex = SPECIES_START_INDEX + sIndex;
+	if (cIndex === 0 || cIndex === (COLLECTION_KEYS.length - 1)) {
+		expectedSpeciesCount = 200;
+	}
 
-                SOURCE_SPECIES_DATA[sName] = {
-                    id: finalIndex,
-                    family: getFamily(sName),
-                };
-            });
+    const sourceList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`);
 
-        if (Object.keys(SOURCE_SPECIES_DATA).length !== 200) {
-            throw new Error(`Invalid size received for SOURCE_SPECIES_DATA!`);
-        }
+    sourceList.forEach((sBird, sIndex) => {
 
-    } else {
+        const SPECIES_START_INDEX = 200 + 50 * (cIndex - 1);
 
-        const sourceList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`);
+        // Get the unique ID of the species relative to the entire set
+        const finalIndex = SPECIES_START_INDEX + sIndex;
 
-        sourceList.forEach((sBird, sIndex) => {
+        SOURCE_SPECIES_DATA[sBird.name] = {
+            id: finalIndex,
+            family: getFamily(sBird.name),
+        };
 
-            const SPECIES_START_INDEX = 200 + 50 * (cIndex - 1);
-
-            // Get the unique ID of the species relative to the entire set
-            const finalIndex = SPECIES_START_INDEX + sIndex;
-
-            SOURCE_SPECIES_DATA[sBird.name] = {
-                id: finalIndex,
-                family: getFamily(sBird.name),
-            };
-
-        });
+    });
 
         if (Object.keys(SOURCE_SPECIES_DATA).length !== 200 + 50 * cIndex) {
             throw new Error(

@@ -62,8 +62,8 @@ const redoList = [
 	// 6,10,13
 ];
 const todoList = [];
-const skipList = [ // Species that may not work...
-	22,24
+const skipList = [
+	// 22,24 -> Species that may not work...
 ];
 
 // Generate and store the final image files for the collection
@@ -133,15 +133,15 @@ async function runBatch(birdIds) {
 
 			if (done[name]) { continue; } else { done[name] = true; }
 
-			const speciesID = speciesNames.findIndex((sBirdName) => sBirdName === name);
+			const speciesID = speciesSourceBirds.findIndex((sBird) => sBird.name === name);
 
 			if (speciesID === -1) {
 				throw new Error('arghhhhhhhh no species ID found for ' + name);
 			}
 
-			if (speciesID < 50 || speciesID >= 100) {
-				continue;
-			}
+			if (i < 50) { continue; }
+
+			if (speciesID < 100 || speciesID > 150) { continue; }
 
 			console.log(`speciesId=${speciesID}`);
 
