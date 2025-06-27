@@ -52,6 +52,8 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // dabus.base.eth
 		'0x8030778eb83a4f6111bf600159d29b385478c443', // xPoli
 		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
+		'0x0000000000c2d145a2526bd8c716263bfebe1a72', // SBMweb3
+		'0x14b39a23288de637f5115bee1801b9443bd3765b', // jozzymentorz
 	],
 }, {
 	id: 1023,
@@ -80,17 +82,31 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x8d888326e1e2b6a399b751105339f82476208d5d', // tomkey
 		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
 		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
+		'0xaf1c69da79a71f82b9fbc1f72dca7f0ee70f8460', // 0xhanma
+		'0xc41ba732369ac17d1372542520247518c726ef0e', // brendannn
+		'0x92e05c3243266e94cd2d728fd9954eee05c4308c', // rnvnislmy
+		'0x41f4ddcc02c550a92336a027f248c7e2e0367dd0', // jenna
+		'0x056eb43118ffa352add9cdb9a7d2977a4842b936', // hankmoody
+		'0x6d7bb670765e2be191c1f6b91399db12c4fde911', // julex
+		'0x586eb1950b87bb4c9a80561d154d779c4ad872f8', // khayle8891
 	],
 }, {
 	id: 1024,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1025,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1026,
 	label: 'Hit 30 Day Streak',
