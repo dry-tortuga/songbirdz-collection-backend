@@ -58,13 +58,23 @@ function sleep(ms) {
 }
 
 const redoList = [
-	// FUTURE REDOS AT THE END
-	// 6,10,13
+	3,6,10,16,17,22,24,31,40,47,48,50,
+	52,53,54,57,58,59,61,63,64,65,66,70,71,72,77,78,79,82,83,84,87,88,89,90,91,92,93,94,95,97,
+	100,101,104,110,111,113,116,119,122,123,124,126,127,128,129,131,132,133,137,138,140,146,148,
+	151,152,154,159,160,161,162,164,167,171,174,175,176,177,178,184,185,186,187,195,196,197,198,
+	201,202,203,204,206,208,210,211,212,220,223,225,228,229,231,233,236,238,242,244,246,248,249,
+	251,253,263,265,267,268,269,270,278,279,288,290,291,292,293,297,
+	300,301,303,304,309,310,312,318,319,320,322,323,326,328,333,334,338,339,341,343,344,
+	351,352,
 ];
-const todoList = [];
-const skipList = [
-	// 22,24 -> Species that may not work...
+const todoList = [
+  114, 258, 282, 219, 281,
+  284, 276, 273, 266, 345,
+  379, 377, 511, 507, 487,
+  467, 593, 648, 726, 817,
+  764, 773, 858,
 ];
+const skipList = [];
 
 // Generate and store the final image files for the collection
 (async () => {
@@ -131,19 +141,13 @@ async function runBatch(birdIds) {
 
 			const name = speciesNames[birdIds[i]];
 
-			if (done[name]) { continue; } else { done[name] = true; }
+			// if (done[name]) { continue; } else { done[name] = true; }
 
 			const speciesID = speciesSourceBirds.findIndex((sBird) => sBird.name === name);
 
 			if (speciesID === -1) {
 				throw new Error('arghhhhhhhh no species ID found for ' + name);
 			}
-
-			if (i < 50) { continue; }
-
-			if (speciesID < 100 || speciesID > 150) { continue; }
-
-			console.log(`speciesId=${speciesID}`);
 
 			const promise = (async () => {
 
@@ -187,8 +191,22 @@ async function generateImage(i) {
 	const locationToFeature = speciesSourcePrompts[name];
 	const colorsToFeature = speciesSourceColors[name];
 
+	// Check if the image already exists in images-original folder
+	const originalImagePath = `${privatePath}/images-original/${finalIndex}.webp`;
+
+	if (fs.existsSync(originalImagePath)) {
+
+		// Copy existing image to images-to-verify folder
+		const verifyImagePath = `${privatePath}/images-to-verify/${i}-${name}.webp`;
+
+		fs.copyFileSync(originalImagePath, verifyImagePath);
+		console.log(`Copied existing image for ${finalIndex} to verify folder`);
+		return false;
+
+	}
+
 	// if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
-	// if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
+	if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
 
 	console.log(`---${finalIndex}---`);
 
