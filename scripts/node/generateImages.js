@@ -58,21 +58,20 @@ function sleep(ms) {
 }
 
 const redoList = [
-	3,6,10,16,17,22,24,31,40,47,48,50,
-	52,53,54,57,58,59,61,63,64,65,66,70,71,72,77,78,79,82,83,84,87,88,89,90,91,92,93,94,95,97,
-	100,101,104,110,111,113,116,119,122,123,124,126,127,128,129,131,132,133,137,138,140,146,148,
-	151,152,154,159,160,161,162,164,167,171,174,175,176,177,178,184,185,186,187,195,196,197,198,
-	201,202,203,204,206,208,210,211,212,220,223,225,228,229,231,233,236,238,242,244,246,248,249,
-	251,253,263,265,267,268,269,270,278,279,288,290,291,292,293,297,
-	300,301,303,304,309,310,312,318,319,320,322,323,326,328,333,334,338,339,341,343,344,
-	351,352,
+	16,53,57,63,92,116,
+	146,186,248,310,326,339,
+	357,403,434,554,572,581,
+	638,678,683,704,705,708,731,
+	743,774,801,816,817,820,
+	830,864,916,935,
+	949,977,992,
 ];
 const todoList = [
-  114, 258, 282, 219, 281,
-  284, 276, 273, 266, 345,
-  379, 377, 511, 507, 487,
-  467, 593, 648, 726, 817,
-  764, 773, 858,
+	//89,111,268,666,676=good  Chinese Hwamei
+	//90,128,449,784=good  White-eared Hummingbird
+	//24,300,341,639 White-cheeked pintail
+	//151,303,416,433,736 Crested auklet
+	//500,571,601,968,971 White-winged Scoter
 ];
 const skipList = [];
 
@@ -102,20 +101,20 @@ const skipList = [];
 
 	console.log(`Generating images for the ${COLLECTION_NAME} collection:`);
 
-    for (let i = 0; i < 1000; i += 1) {
+	for (let i = 0; i < 1000; i += 1) {
 
-    	// if (redoList.indexOf(i) === -1) { continue; }
+		if (redoList.indexOf(i) === -1) { continue; }
 
-        if (skipList.indexOf(i) >= 0) { continue; }
+		if (skipList.indexOf(i) >= 0) { continue; }
 
-        todoList.push(i);
+		todoList.push(i);
 
-    }
+	}
 
-    const initialErrors = await runBatch(todoList);
+	const initialErrors = await runBatch(todoList);
 
-   	// Attempt to re-generate any images that errored on the initial API call
-    const finalErrors = await runBatch(initialErrors);
+	// Attempt to re-generate any images that errored on the initial API call
+	const finalErrors = await runBatch(initialErrors);
 
 	console.log("------------- errors ---------------");
 	console.log(finalErrors);
@@ -125,12 +124,12 @@ const skipList = [];
 
 async function runBatch(birdIds) {
 
-    const done = {};
-    const errors = [];
+	const done = {};
+	const errors = [];
 
 	let numImagesRequested = 0;
 
-    // Process images in batches of 15
+	// Process images in batches of 15
 	for (let batchStart = 0; batchStart < birdIds.length; batchStart += 15) {
 
 		const batchEnd = Math.min(batchStart + 15, birdIds.length);
@@ -175,7 +174,7 @@ async function runBatch(birdIds) {
 
 	}
 
-    return errors;
+	return errors;
 
 }
 
@@ -190,20 +189,6 @@ async function generateImage(i) {
 	const promptName = speciesSourceNameOverrides[name] || name;
 	const locationToFeature = speciesSourcePrompts[name];
 	const colorsToFeature = speciesSourceColors[name];
-
-	// Check if the image already exists in images-original folder
-	const originalImagePath = `${privatePath}/images-original/${finalIndex}.webp`;
-
-	if (fs.existsSync(originalImagePath)) {
-
-		// Copy existing image to images-to-verify folder
-		const verifyImagePath = `${privatePath}/images-to-verify/${i}-${name}.webp`;
-
-		fs.copyFileSync(originalImagePath, verifyImagePath);
-		console.log(`Copied existing image for ${finalIndex} to verify folder`);
-		return false;
-
-	}
 
 	// if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
 	if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
