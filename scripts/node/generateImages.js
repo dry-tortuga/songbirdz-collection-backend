@@ -4,6 +4,18 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
+// TODO: Regenerate audio files + verify all final submissions in the tree for "redo" species
+// Williamson's Sapsucker (Chinese Hwamei)
+// 89,111,268,666,676,
+// La Sagra's Flycatcher (White-eared Hummingbird)
+// 90,109,128,449,784,
+// Siberian Accentor (White-cheeked Pintail)
+// 24,300,341,639,693,
+// Red-billed Leiothrix (Crested Auklet)
+// 151,303,416,433,736,
+// Oriental Greenfinch (White-winged Scoter)
+// 500,571,601,968,971,
+
 /*
 
 "200 bird species resting, perched, or flying in serene, ethereal landscapes of soft sky blue, sapphire, cobalt, and turquoise.
@@ -58,21 +70,20 @@ function sleep(ms) {
 }
 
 const redoList = [
-	16,53,57,63,92,116,
-	146,186,248,310,326,339,
-	357,403,434,554,572,581,
-	638,678,683,704,705,708,731,
-	743,774,801,816,817,820,
-	830,864,916,935,
-	949,977,992,
+	57,92,146,186,248,326,
+	357,554,581,
+	638,708,731,
+	774,817,830,949,
+	// Williamson's Sapsucker (Chinese Hwamei)
+	89,268,676,
+	// La Sagra's Flycatcher (White-eared Hummingbird)
+	90,109,128,784,
+	// Siberian Accentor (White-cheeked Pintail)
+	24,300,639,
+	// Red-billed Leiothrix (Crested Auklet)
+	303,736,
 ];
-const todoList = [
-	//89,111,268,666,676=good  Chinese Hwamei
-	//90,128,449,784=good  White-eared Hummingbird
-	//24,300,341,639 White-cheeked pintail
-	//151,303,416,433,736 Crested auklet
-	//500,571,601,968,971 White-winged Scoter
-];
+const todoList = [];
 const skipList = [];
 
 // Generate and store the final image files for the collection
