@@ -188,7 +188,8 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Hatchlings" flock.
 - [ ] Successfully mint all 1,000 birds (8000-8999) in the "Masters of Disguise" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Masters of Disguise" flock.
-- [ ] Repeat for final TBD collection with birds 9000-9999.
+- [ ] Successfully mint all 1,000 birds (9000-9999) in the "Final Roost" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Final Roost" flock.
 - [ ] Upload all (metadata, merkle-trees, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/).
 - [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/).
 - [ ] Deploy a 2nd Solidity Contract to store Life List and Points data onchain.

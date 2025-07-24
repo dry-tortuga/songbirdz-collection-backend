@@ -3,8 +3,20 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "masters-of-disguise-8";
-const COLLECTION_START_INDEX = 8000;
+// TODO: Regenerate audio files + verify all final submissions in the tree for "redo" species
+// Williamson's Sapsucker (Chinese Hwamei)
+// 89,111,268,666,676,
+// La Sagra's Flycatcher (White-eared Hummingbird)
+// 90,109,128,449,784,
+// Siberian Accentor (White-cheeked Pintail)
+// 24,300,341,639,693,
+// Red-billed Leiothrix (Crested Auklet)
+// 151,303,416,433,736,
+// Oriental Greenfinch (White-winged Scoter)
+// 500,571,601,968,971,
+
+const COLLECTION_NAME = "final-roost-9";
+const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
 
 const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
@@ -50,7 +62,13 @@ const speciesKeyNames = fs.readFileSync(
 
 	console.log(`Redoing audio for the ${COLLECTION_NAME} collection:`);
 
-	const redoList = ["Wood Sandpiper"];
+	const redoList = [
+		"Williamson's Sapsucker",
+		"La Sagra's Flycatcher",
+		"Siberian Accentor",
+		"Red-billed Leiothrix",
+		"Oriental Greenfinch"
+	];
 
 	let count = 0;
 

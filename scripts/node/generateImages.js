@@ -4,29 +4,6 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-// TODO: Regenerate audio files + verify all final submissions in the tree for "redo" species
-// Williamson's Sapsucker (Chinese Hwamei)
-// 89,111,268,666,676,
-// La Sagra's Flycatcher (White-eared Hummingbird)
-// 90,109,128,449,784,
-// Siberian Accentor (White-cheeked Pintail)
-// 24,300,341,639,693,
-// Red-billed Leiothrix (Crested Auklet)
-// 151,303,416,433,736,
-// Oriental Greenfinch (White-winged Scoter)
-// 500,571,601,968,971,
-
-/*
-
-"200 bird species resting, perched, or flying in serene, ethereal landscapes of soft sky blue, sapphire, cobalt, and turquoise.
-Artistic style should blend realism with painterly impressionism. Birds should evoke feelings
-of peace, memory, and finality—some in pairs, some alone, all still. Subtle glowing accents
-or halos can give a mythic, final chapter quality to the scene. Soft light, golden hour ambiance."
-
-"Create solemn yet radiant bird portraits with minimalist blue-toned backgrounds—deep cerulean skies, abstract Base-blue gradients, or twilight meadows. Each bird should feel sacred and symbolic, with soft shadows and ambient light. Artistic influences can include stained glass, celestial art, or Japanese ink illustrations—each image conveying finality, peace, and permanence."
-
-*/
-
 const COLLECTION_NAME = "final-roost-9";
 const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
@@ -69,20 +46,7 @@ function sleep(ms) {
 	});
 }
 
-const redoList = [
-	57,92,146,186,248,326,
-	357,554,581,
-	638,708,731,
-	774,817,830,949,
-	// Williamson's Sapsucker (Chinese Hwamei)
-	89,268,676,
-	// La Sagra's Flycatcher (White-eared Hummingbird)
-	90,109,128,784,
-	// Siberian Accentor (White-cheeked Pintail)
-	24,300,639,
-	// Red-billed Leiothrix (Crested Auklet)
-	303,736,
-];
+const redoList = []; // 731, 817 (potential for redos...)
 const todoList = [];
 const skipList = [];
 
@@ -207,7 +171,7 @@ async function generateImage(i) {
 	console.log(`---${finalIndex}---`);
 
 	// const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian.${colorsToFeature ? ` It should ${colorsToFeature}. ` : ' '}It should be resting, perched, looking for food, or flying in its natural habitat. Subtle glowing accents and soft light should give a mythic, final chapter quality to the scene. The background should use minimalist Coinbase blue-toned colors or Base-blue gradients that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian and the Coinbase blue color must be featured.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian.${colorsToFeature ? ` It should ${colorsToFeature}. ` : ' '}. Subtle glowing accents and soft light should give a mythic, final chapter quality to the scene. The background should use minimalist Coinbase blue-toned colors or Base-blue gradients that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
 
 	console.log(prompt);
 
