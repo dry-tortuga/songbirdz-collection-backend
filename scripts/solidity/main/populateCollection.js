@@ -44,7 +44,7 @@ let COLLECTIONS_TO_POPULATE = [{
 }, {
 	name: "final-roost-9",
 	number: 9,
-	merkleTreeRoot: "TBD",
+	merkleTreeRoot: "0x386ddd7d8be8918468d64f7c72b21c90ecaef6d835263c939eb229d32db72f8c",
 }];
 
 if (process.env.NODE_ENV === 'production') {
