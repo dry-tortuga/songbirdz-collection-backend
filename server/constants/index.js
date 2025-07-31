@@ -157,7 +157,7 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 
 	});
 
-	speciesStartIndex + expectedSpeciesCount;
+	speciesStartIndex = speciesStartIndex + expectedSpeciesCount;
 
 	if (Object.keys(SOURCE_SPECIES_DATA).length !== speciesStartIndex) {
 		throw new Error(
