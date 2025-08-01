@@ -9,6 +9,7 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 // require("./scripts/solidity/main/fetchHolders");
 require("./scripts/solidity/main/populateCollection");
 require("./scripts/solidity/hof/populateCollection");
+require("./scripts/solidity/lifeList/populateSpecies");
 
 // https://docs.base.org/guides/deploy-smart-contracts
 

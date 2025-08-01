@@ -10,7 +10,11 @@ async function main() {
 
 	console.log(`Deploying SongBirdz contract with account=${owner}...`);
 
-	const tx = await ethers.deployContract("SongBirdz", [owner]);
+	const tx = await ethers.deployContract(
+		"SongBirdz",
+		[owner],
+		{ to: process.env.SONGBIRDZ_CONTRACT_ADDRESS },
+	);
 
 	await tx.waitForDeployment();
 
