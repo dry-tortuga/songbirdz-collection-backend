@@ -1,13 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 
-const destFile = path.join(__dirname, "../../../sounds-of-summer-2024/constants/allowListInput.json");
+const destFile = path.join(__dirname, "../../../../sounds-of-summer-2024/constants/allowListInput.json");
 
 // Load the contract ABI
 
 const { abi } = JSON.parse(fs.readFileSync(path.join(
 	__dirname,
-	'../../artifacts/contracts/SongBirdz.sol/SongBirdz.json')
+	'../../../artifacts/contracts/SongBirdz.sol/SongBirdz.json')
 ));
 
 // Load the existing results

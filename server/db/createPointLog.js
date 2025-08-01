@@ -1,4 +1,4 @@
-const createOrUpdatePointLog = async (client, collectionId, data) => {
+const createPointLog = async (client, collectionId, data) => {
 
 	try {
 
@@ -16,8 +16,10 @@ const createOrUpdatePointLog = async (client, collectionId, data) => {
 			timestamp: data.timestamp,
 		});
 
-		// Print the ID of the inserted document
-		console.log(`A document was inserted with the _id: ${result.insertedId}`);
+		// Log the created document
+		console.log(`A document was created for address=${data.address},species_id=${data.species_id}`);
+
+		return result;
 
 	} catch (error) {
 
@@ -27,4 +29,4 @@ const createOrUpdatePointLog = async (client, collectionId, data) => {
 
 };
 
-module.exports = createOrUpdatePointLog;
+module.exports = createPointLog;

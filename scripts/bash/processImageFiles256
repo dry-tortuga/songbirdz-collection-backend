@@ -1,4 +1,4 @@
-for i in $(seq 5000 5999);
+for i in $(seq 8000 8999);
 do
 	convert ./private/development/images-original/$i.webp -resize 256x256! ./private/development/images-hidden/$i.jpg
 done

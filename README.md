@@ -182,13 +182,16 @@ You should now be able to succesfully run the front-end application!
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Fire & Ice" flock.
 - [ ] Successfully mint all 1,000 birds (5000-5999) in the "Predator & Prey" flock.
 - [ ] Make public the (merkle-tree, images, species, audio) files for the "Predator & Prey" flock.
-- [ ] Repeat for TBD collection with birds 6000-6999.
-- [ ] Repeat for TBD collection with birds 7000-7999.
-- [ ] Repeat for TBD collection with birds 8000-8999.
+- [ ] Successfully mint all 1,000 birds (6000-6999) in the "Lovebirds" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Lovebirds" flock.
+- [ ] Successfully mint all 1,000 birds (7000-7999) in the "Hatchlings" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Hatchlings" flock.
+- [ ] Successfully mint all 1,000 birds (8000-8999) in the "Masters of Disguise" flock.
+- [ ] Make public the (merkle-tree, images, species, audio) files for the "Masters of Disguise" flock.
 - [ ] Repeat for final TBD collection with birds 9000-9999.
-- [ ] Upload all (metadata, merkle-trees, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/) via [nft.storage](https://nft.storage/)).
-- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/). TBD: Freeze it permanently!
+- [ ] Upload all (metadata, merkle-trees, images, species, audio) files for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/).
+- [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/).
 - [ ] Deploy a 2nd Solidity Contract to store Life List and Points data onchain.
+- [ ] Roadmap is now complete!
 - [ ] TBD: Upload the web application to ipfs.
 - [ ] TBD: Shut down the back-end server.
-- [ ] Roadmap is now complete!

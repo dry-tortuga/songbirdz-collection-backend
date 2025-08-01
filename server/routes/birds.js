@@ -5,6 +5,7 @@ const {
 	UNIDENTIFIED_NAME,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
+	FIRST_ID_TO_IDENTIFY,
 	KEY_BIRD_DATA,
 	SOURCE_SPECIES_DATA,
 	MERKLE_TREE_DATA,
@@ -63,17 +64,13 @@ const getBirdMetadata = async (req, res, next) => {
 	res.send({
 		name: `Songbird #${birdId}`,
 		description,
-		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
-		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
-		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
-		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
+		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
+		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
+		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
+		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
 		species,
 		attributes: [{
-			trait_type: "Flock Number",
-			display_type: "number",
-			value: KEY_BIRD_DATA[birdId].collectionNumber,
-		}, {
-			trait_type: "Flock Name",
+			trait_type: "Flock",
 			value: KEY_BIRD_DATA[birdId].collectionName,
 		}, {
 			trait_type: "Species",
@@ -152,6 +149,10 @@ const getBirdProof = async (req, res, next) => {
 
 	}
 
+    if (process.env.NODE_ENV === 'development') {
+        console.log(`Merkle Proof Root: ${merkleTree.root}`);
+    }
+
 	// If no proof exists for the species guess, get a random proof from the tree
 	if (!proof) {
 
@@ -190,7 +191,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		}
 
 		// Check to make sure ID parameter is in the supported range of numbers
-		if (birdId < 2299 || birdId > MAX_BIRD_ID) {
+		if (birdId < FIRST_ID_TO_IDENTIFY || birdId > MAX_BIRD_ID) {
 
 			return next({
 				status: 400,
@@ -214,7 +215,7 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 
 		const options = [];
 
-		for (let i = 2335; i < MAX_BIRD_ID; i++) {
+		for (let i = FIRST_ID_TO_IDENTIFY; i < MAX_BIRD_ID; i++) {
 			if (!BIRD_ID_RESULTS[i]) {
 				options.push(i);
 			}
@@ -232,10 +233,10 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		id: birdId,
 		name: `Songbird #${birdId}`,
 		description: 'This bird has not been identified yet.',
-		animation_url: `${process.env.SONGBIRDZ_BACKEND_URL}/audio/${birdId}.mp3`,
-		external_url: `${process.env.SONGBIRDZ_BACKEND_URL}/collection/${birdId}`,
-		image: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}-lg.jpg`,
-		image_onchain: `${process.env.SONGBIRDZ_BACKEND_URL}/images/${birdId}.jpg`,
+		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
+		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
+		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
+		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
 		species: birdData?.name,
 		family,
 		flock: birdData?.collectionName,

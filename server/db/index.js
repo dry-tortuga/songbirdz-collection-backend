@@ -1,10 +1,18 @@
-const createOrUpdatePointLog = require("./createOrUpdatePointLog");
 const fetchPointLog = require("./fetchPointLog");
+const createPointLog = require("./createPointLog");
+const updatePointLog = require("./updatePointLog");
 const fetchPointLogs = require("./fetchPointLogs");
 const rankPointLogs = require("./rankPointLogs");
+
+const createMemoryMatchLog = require("./createMemoryMatchLog");
+const getMemoryMatchLeaderboard = require("./getMemoryMatchLeaderboard");
+const getMemoryMatchGamesPlayed = require("./getMemoryMatchGamesPlayed");
+
 const fetchDailyStreak = require("./fetchDailyStreak");
-const rankDailyStreaks = require("./rankDailyStreaks");
 const updateDailyStreak = require("./updateDailyStreak");
+const rankDailyStreaks = require("./rankDailyStreaks");
+
+const rankSpeciesCounts = require("./rankSpeciesCounts");
 
 const { MongoClient } = require("mongodb");
 
@@ -37,12 +45,28 @@ class DB {
 
 	}
 
-	async createOrUpdatePointLog(collectionId, data) {
-		return await createOrUpdatePointLog(this.client, collectionId, data);
+	async createMemoryMatchLog(data) {
+		return await createMemoryMatchLog(this.client, data);
+	}
+
+	async getMemoryMatchLeaderboard(data) {
+		return await getMemoryMatchLeaderboard(this.client, data);
+	}
+
+	async getMemoryMatchGamesPlayed(address) {
+		return await getMemoryMatchGamesPlayed(this.client, address);
 	}
 
 	async fetchPointLog(collectionId, address, birdID) {
 		return await fetchPointLog(this.client, collectionId, address, birdID);
+	}
+
+	async createPointLog(collectionId, data) {
+		return await createPointLog(this.client, collectionId, data);
+	}
+
+	async updatePointLog(collectionId, data) {
+		return await updatePointLog(this.client, collectionId, data);
 	}
 
 	async fetchPointLogs(collectionId, address) {
@@ -63,6 +87,10 @@ class DB {
 
 	async updateDailyStreak(address) {
 		return await updateDailyStreak(this.client, address);
+	}
+
+	async rankSpeciesCounts(address, limit = 50) {
+		return await rankSpeciesCounts(this.client, address, limit);
 	}
 
 };

@@ -5,9 +5,10 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 // Load our custom hardhat task scripts
-require("./scripts/solidity/bulkSend");
-require("./scripts/solidity/fetchHolders");
-require("./scripts/solidity/populateCollection");
+// require("./scripts/solidity/main/bulkSend");
+// require("./scripts/solidity/main/fetchHolders");
+require("./scripts/solidity/main/populateCollection");
+require("./scripts/solidity/hof/populateCollection");
 
 // https://docs.base.org/guides/deploy-smart-contracts
 

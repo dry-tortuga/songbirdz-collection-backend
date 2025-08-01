@@ -12,9 +12,15 @@ const {
 	updateDailyStreak,
 } = require("./dailyStreak");
 const {
-	getLeaderboard,
-	getLifeList,
+	getPointsLeaderboard,
+	getLifeListData,
+	getLifeListLeaderboard,
 } = require("./leaderboard");
+const {
+	createMemoryMatchLog,
+	getMemoryMatchLeaderboard,
+	getMemoryMatchGamesPlayed,
+} = require('./memoryMatch');
 
 const router = express.Router();
 
@@ -31,10 +37,13 @@ router.get("/already-identified-list", getBirdAlreadyIdentifiedList);
 router.get("/random-bird", getRandomUnidentifiedBird);
 
 // Get the leaderboard
-router.get("/leaderboard", getLeaderboard);
+router.get("/points/leaderboard", getPointsLeaderboard);
 
-// Get the life list for a specific user
-router.get("/life-list", getLifeList);
+// Get the leaderboard for the life list (i.e. species counts)
+router.get("/life-list/leaderboard", getLifeListLeaderboard);
+
+// Get the life list (i.e. species data) for a specific user
+router.get("/life-list/data", getLifeListData);
 
 // Get the daily streaks
 router.get("/daily-streaks/active", getDailyStreaks);
@@ -44,5 +53,14 @@ router.get("/daily-streak", getDailyStreak);
 
 // Update the daily streak for a specific user
 router.post("/daily-streak", updateDailyStreak);
+
+// Store the result of a memory match game for a specific user
+router.post("/memory-match/log", createMemoryMatchLog);
+
+// Get the leaderboard for the memory match game
+router.get("/memory-match/leaderboard", getMemoryMatchLeaderboard);
+
+// Get the games played (today) for a specific user for the memory match game
+router.get("/memory-match/games-played", getMemoryMatchGamesPlayed);
 
 module.exports = router;

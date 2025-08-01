@@ -16,7 +16,13 @@ const PRIVATE_PATH = {
     IMAGES: path.join(PRIVATE_FOLDER, "images-hidden"),
 };
 
-const DB_COLLECTION_IDS = ["point_logs", "point_logs_2", "point_logs_3"];
+const DB_COLLECTION_IDS = [
+    "point_logs",
+    "point_logs_2",
+    "point_logs_3",
+    "point_logs_4",
+    "point_logs_5"
+];
 
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
@@ -31,6 +37,9 @@ const COLLECTION_KEYS = [
     "night-and-day-3",
     "fire-and-ice-4",
     "predator-and-prey-5",
+    "love-birds-6",
+    "hatchlings-7",
+    "masters-of-disguise-8",
 ];
 
 const COLLECTION_NAMES = [
@@ -40,12 +49,17 @@ const COLLECTION_NAMES = [
     "Night & Day",
     "Fire & Ice",
     "Predator & Prey",
+    "Lovebirds",
+    "Hatchlings",
+    "Masters of Disguise",
 ];
 
 const COLLECTION_SIZE = 1000;
 
 const MIN_BIRD_ID = 0;
-const MAX_BIRD_ID = 5999;
+const MAX_BIRD_ID = (COLLECTION_NAMES.length * COLLECTION_SIZE) - 1;
+
+const FIRST_ID_TO_IDENTIFY = 2402;
 
 // Build data map of ID -> name|collection|answer-choices for all the birds
 
@@ -187,6 +201,7 @@ module.exports = {
     DB_COLLECTION_IDS,
     MIN_BIRD_ID,
     MAX_BIRD_ID,
+    FIRST_ID_TO_IDENTIFY,
     KEY_BIRD_DATA,
     SOURCE_SPECIES_DATA,
     MERKLE_TREE_DATA,

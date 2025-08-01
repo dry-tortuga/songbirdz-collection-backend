@@ -1,4 +1,4 @@
-for i in $(seq 5000 5999);
+for i in $(seq 8000 8999);
 do
 	ffmpeg -t 10 -i ./private/development/audio-original/$i-original.mp3 -codec copy -map 0 -map -v -metadata album_artist= -metadata comment= -metadata composer= -metadata genre= -metadata title= -metadata track= -metadata date= ./private/development/audio-hidden/$i.mp3
 done

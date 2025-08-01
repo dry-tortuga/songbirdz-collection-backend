@@ -4,42 +4,55 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "predator-and-prey-5";
-
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
-
-const finalFolder =  path.join(
-	__dirname,
-	`../../private/the-cornell-guide-to-bird-sounds--united-states-and-canada-v2021`,
-);
-
-// Get the list of species names that were used in the previous collection
-
-const speciesSourceNames = require(
-	`${privatePath}/collections/${COLLECTION_NAME}/source.json`
-);
 
 // Get the list of all species names remaining
 
-const originalNames = fs.readFileSync(
-	`${finalFolder}/remaining-names-future-flocks.txt.bak`, "utf8"
+const COLLECTION_KEYS = [
+    "picasso-genesis-0",
+    "deep-blue-1",
+    "small-and-mighty-2",
+    "night-and-day-3",
+    "fire-and-ice-4",
+    "predator-and-prey-5",
+    "love-birds-6",
+    "hatchlings-7",
+    "masters-of-disguise-8",
+];
+
+let results = fs.readFileSync(
+	`../../private/remaining-names.txt.bak`, "utf8"
 ).split(/\r?\n/);
 
-// Store the final list of species names remaining after removing those already used
+COLLECTION_KEYS.forEach((collectionName, index) => {
 
-const results = [];
+	// Get the list of species names that were used in the collection
 
-originalNames.forEach((name) => {
+	let speciesSourceNames = [];
 
-	if (speciesSourceNames.findIndex((species) => species.name === name) === -1) {
-		results.push(name);
+	if (index === 0) {
+
+		speciesSourceNames = fs.readFileSync(
+			`${privatePath}/collections/${collectionName}/source.txt`, "utf8"
+		).split(/\r?\n/);
+
+	} else {
+
+		speciesSourceNames = require(
+			`${privatePath}/collections/${collectionName}/source.json`
+		);
+
 	}
+
+	speciesSourceNames.forEach((species) => {
+		results = results.filter((name) => name !== species.name);
+	});
 
 });
 
 const finalResultsTxt = results.join("\n");
 
-const finalKeyFileName = `${finalFolder}/remaining-names-future-flocks.txt`;
+const finalKeyFileName = "../../private/remaining-names.txt";
 
 fs.writeFileSync(finalKeyFileName, finalResultsTxt, (err) => {
 
