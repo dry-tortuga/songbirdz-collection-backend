@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 import "hardhat/console.sol";
 
+import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
@@ -32,7 +33,23 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	uint8 private mask4 = 0x3;
 	uint8 private mask16 = 0xf;
 
-	string private svgRectWidthHeightFill = '" width="1" height="1" fill="#';
+	string private constant svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
+	string private constant svgEndString = '</svg>';
+
+	bytes private constant HEX_SYMBOLS = "0123456789abcdef";
+
+	string[10] private flocks = [
+		"Picasso Genesis",
+		"Deep Blue",
+		"Small & Mighty",
+		"Night & Day",
+		"Fire & Ice",
+		"Predator & Prey",
+		"Lovebirds",
+		"Hatchlings",
+		"Masters of Disguise",
+		"Final Roost"
+	];
 
 	// Store an instance of the original Songbirdz contract
 	ISongbirdz private songbirdzContract;
@@ -45,29 +62,13 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	//       Or should we just store the 0 color as the same for each of the flocks?
 
 	struct Species {
-		uint8 color1;
-		uint8 color2;
-		uint8 color3;
-		uint8 color4;
-		uint8 pixelsIdx; // Store the image for each species as a 16x16 pixel image (4 bit colors)
-		uint8 birdCount; // The number of birds in the collection that are this species (ranges from 1-50)
 		bool exists; // Flag to indicate if this species has been added
+		uint8 birdCount; // The number of birds in the collection that are this species (ranges from 1-50)
+		bytes32 colors1; // Store the hex color codes (each color = 3 bytes, first 8 colors)
+		bytes32 colors2; // Store the hex color codes (each color = 3 bytes, last 8 colors)
+		bytes pixels; // Store the image for each bird as a 16x16 pixel image (0-15 value for each pixel = 128 bytes)
 		string name; // The name of the species
 	}
-
-	string[4] private colors = [
-		"b45309",
-		"1c1917",
-		"eab308",
-		"f5f3ff"
-	];
-
-	uint256[4] private pixels = [
-		150732414786097918012925780350643604681995739222366989644131638409991028736,
-		17345289252808504828330377939953790932640638651206689124458516416,
-		37700789428126978039292795412084056903150611574107096543077489693585047552,
-		17345289789168474872486969613013828087497212657515620176766523264
-	];
 
 	// There are a total of 800 species in the collection
 	mapping(uint16 => Species) private species;
@@ -105,11 +106,9 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	 */
 	function publicGenerateSpecies(
 		uint16 speciesId,
-		uint8 color1,
-		uint8 color2,
-		uint8 color3,
-		uint8 color4,
-		uint8 pixelIdx,
+		bytes32 colors1,
+		bytes32 colors2,
+		bytes memory pixels,
 		uint16[] memory birdIds,
 		string memory name
 	) external onlyOwner {
@@ -128,13 +127,11 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 
 		// Create the new species
 		Species memory newSpecies = Species(
-			color1,
-			color2,
-			color3,
-			color4,
-			pixelIdx,
+			true,
 			uint8(birdIds.length), // set the bird count for this species
-			true, // set exists=true
+			colors1,
+			colors2,
+			pixels,
 			name
 		);
 
@@ -170,10 +167,10 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		);
 
 		// Check to make sure the msg.sender is the current owner of the bird
-		require(
-			songbirdzContract.ownerOf(birdId) == msg.sender,
-			"you are not the owner of this bird"
-		);
+		// require(
+		//	songbirdzContract.ownerOf(birdId) == msg.sender,
+		//	"you are not the owner of this bird"
+		// );
 
 		// Store the identification of this species for the user
 
@@ -211,6 +208,30 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	}
 
 	/**
+	 * Gets the flock name for the provided species ID.
+	 *
+	 * @param speciesId  The species ID.
+	 */
+	function publicGetSpeciesFlock(uint16 speciesId) public view returns (string memory) {
+
+		// Ensure the species ID is valid
+		require(
+			speciesId < NUMBER_OF_SPECIES,
+			"species id is invalid"
+		);
+
+		if (speciesId < 200) {
+			return flocks[0];
+		} else if (speciesId >= 600) {
+			return flocks[9];
+		} else {
+			uint16 flockIndex = ((speciesId - 200) / 50) + 1;
+			return flocks[flockIndex];
+		}
+
+	}
+
+	/**
 	 * Gets the species ID for the provided bird ID.
 	 *
 	 * @param birdId  The bird ID.
@@ -239,6 +260,9 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		// Get the species ID associated with this life list record
 		uint16 speciesId = tokenIdToSpeciesId[tokenId];
 
+		// Get JSON attributes
+		string memory attributes = _buildAttributesJSON(speciesId);
+
 		// Get image
 		string memory image = _buildSVG(speciesId);
 
@@ -249,8 +273,12 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		string memory json = string(
 			abi.encodePacked(
 				'{"name": "Songbirdz Identification #', Strings.toString(tokenId), '",',
-				'"description": "Keep track of the Songbirdz on your Life List",',
-				'"image": "data:image/svg+xml;base64,', base64Image, '"}'
+				'"description": "The Songbirdz Life List stores a permanent record of the species of birds a user has collected. Pixel art by xPoli. Code by drytortuga. The art and species data is stored fully onchain.",',
+				'"attributes":',
+				attributes,
+				',"image": "data:image/svg+xml;base64,',
+				base64Image,
+				'"}'
 			)
 		);
 
@@ -262,23 +290,67 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 
 	}
 
+	/* ------------------------ SOULBOUND ERC-721 METHODS -------------------------- */
+
+	function transferFrom(
+		address from,
+		address to,
+		uint256 tokenId
+	) public pure override(ERC721, IERC721) {
+		revert("SongBirdzLifeList: Tokens are non-transferable");
+	}
+
+	function safeTransferFrom(
+		address from,
+		address to,
+		uint256 tokenId,
+		bytes memory _data
+	) public pure override(ERC721, IERC721) {
+		revert("SongBirdzLifeList: Tokens are non-transferable");
+	}
+
+	function approve(address to, uint256 tokenId) public pure override(ERC721, IERC721) {
+		revert("SongBirdzLifeList: Tokens are non-transferable");
+	}
+
+	function setApprovalForAll(address operator, bool approved) public pure override(ERC721, IERC721) {
+		revert("SongBirdzLifeList: Tokens are non-transferable");
+	}
+
 	/* ------------------------ PRIVATE METHODS -------------------------- */
+
+	/**
+	 * @dev Build the JSON attributes for the token.
+	 */
+	function _buildAttributesJSON(uint16 speciesId) private view returns (string memory) {
+
+		Species memory speciesToRender = species[speciesId];
+
+		string memory attributes = string(
+			abi.encodePacked(
+				"[",
+				'{"trait_type":"Species Name","value":"',
+				speciesToRender.name,
+				'"},{"trait_type":"Species Id","value":"',
+				Strings.toString(speciesId),
+				'"},{"trait_type":"Species Bird Count","value":"',
+				Strings.toString(speciesToRender.birdCount),
+				'"}]'
+			)
+		);
+
+		return attributes;
+
+	}
 
 	function _buildSVG(uint16 speciesId) private view returns (string memory) {
 
 		Species memory speciesToRender = species[speciesId];
 
-		string[4] memory colorsToRender = [
-			colors[speciesToRender.color1],
-			colors[speciesToRender.color2],
-			colors[speciesToRender.color3],
-			colors[speciesToRender.color4]
-		];
-
-		uint256[2] memory pixelsToRender = [
-			pixels[speciesToRender.pixelsIdx],
-			pixels[speciesToRender.pixelsIdx + 1]
-		];
+		string[16] memory colorsToRender = _parseColorCode(
+			speciesToRender.colors1,
+			speciesToRender.colors2
+		);
 
 		string memory svgContent = "";
 
@@ -288,35 +360,78 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 			uint256 gridX = i % 16;
 			uint256 gridY = i / 16;
 
-			// Keep track of the index of the color for the current pixel
-			uint256 colorIdx = 0;
+			// Get the index of the color code for the current pixel
 
-			uint256 pixelArrayIndex = i / 128;
+			uint256 byteIndex = i / 2;
+			uint256 shiftIndex = i % 2;
 
-			colorIdx = pixelsToRender[pixelArrayIndex] & mask4;
+			uint256 shift = shiftIndex == 0 ? 4 : 0;
 
-			pixelsToRender[pixelArrayIndex] = pixelsToRender[pixelArrayIndex] >> 2;
+			uint8 colorIdx = (uint8(uint8(speciesToRender.pixels[byteIndex]) >> shift) & 0xf);
 
-			svgContent = string(
-				abi.encodePacked(
-					svgContent,
-					'<rect x="',
-					Strings.toString(gridX),
-					'" y="',
-					Strings.toString(gridY),
-					svgRectWidthHeightFill,
-					colorsToRender[colorIdx],
-					'" />'
-				)
-			);
+			string memory pixelColor = colorsToRender[colorIdx];
 
+			if (keccak256(bytes(pixelColor)) != keccak256(bytes("000000"))) {
+				svgContent = string(
+					abi.encodePacked(
+						svgContent,
+						'<rect x="',
+						Strings.toString(gridX),
+						'" y="',
+						Strings.toString(gridY),
+						'" width="1" height="1" fill="#',
+						pixelColor,
+						'" />'
+					)
+				);
+			}
 		}
 
 		return string(abi.encodePacked(
-			'<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">',
+			svgStartString,
 			svgContent,
-			'</svg>'
+			svgEndString
 		));
+
+	}
+
+	/**
+	 * @dev Parses the encoded value and converts to the 6 digit hex codes for each color.
+	 */
+	function _parseColorCode (bytes32 packedColors1, bytes32 packedColors2) private pure returns (string[16] memory) {
+
+		// Build the final 6 hex chars for the color codes
+		return [
+			_bytes3ToColorString(bytes3(packedColors1)), // First color
+			_bytes3ToColorString(bytes3(packedColors1 << 24)), // Second color
+			_bytes3ToColorString(bytes3(packedColors1 << 48)), // Third color
+			_bytes3ToColorString(bytes3(packedColors1 << 72)), // Fourth color
+			_bytes3ToColorString(bytes3(packedColors1 << 96)), // Fifth color
+			_bytes3ToColorString(bytes3(packedColors1 << 120)), // Sixth color
+			_bytes3ToColorString(bytes3(packedColors1 << 144)), // Seventh color
+			_bytes3ToColorString(bytes3(packedColors1 << 168)), // Eighth color
+			_bytes3ToColorString(bytes3(packedColors2)), // Ninth color
+			_bytes3ToColorString(bytes3(packedColors2 << 24)), // Tenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 48)), // Eleventh color
+			_bytes3ToColorString(bytes3(packedColors2 << 72)), // Twelfth color
+			_bytes3ToColorString(bytes3(packedColors2 << 96)), // Thirteenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 120)), // Fourteenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 144)), // Fifteenth color
+			_bytes3ToColorString(bytes3(packedColors2 << 168)) // Sixteenth color
+		];
+
+	}
+
+	function _bytes3ToColorString(bytes3 color) private pure returns (string memory) {
+
+		bytes memory s = new bytes(6);
+
+		for (uint256 i = 0; i < 3; i++) {
+			s[i*2] = HEX_SYMBOLS[(uint8(color[i]) >> 4) & 0xe];
+			s[(i*2)+1] = HEX_SYMBOLS[uint8(color[i]) & 0xe];
+		}
+
+		return string(s);
 
 	}
 
