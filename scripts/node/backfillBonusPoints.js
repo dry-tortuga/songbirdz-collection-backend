@@ -11,6 +11,7 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 	amount: 25,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0963
 	],
 }, {
 	id: 1021,
@@ -54,6 +55,14 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
 		'0x0000000000c2d145a2526bd8c716263bfebe1a72', // SBMweb3
 		'0x14b39a23288de637f5115bee1801b9443bd3765b', // jozzymentorz
+		'0x1796d7addeecb301692b0f16b19fd209af57ac31', // mackenzie
+		'0x4975eee83496c9c3df957c3196b0fcfc91f80c24', // riotffx
+		'0xbf9aea2f77059450f4de6c661dbeb3ef926d633d', // IMIDGIEI
+		'0x91c2232f8eab20b21aa95c325aaf9aad639ff486', // w3core
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x6989e6507dac1376502a5639e01259a778db35de', // spudnik
+		// violet.base
+		// mathburn666
 	],
 }, {
 	id: 1023,
@@ -89,6 +98,10 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x056eb43118ffa352add9cdb9a7d2977a4842b936', // hankmoody
 		'0x6d7bb670765e2be191c1f6b91399db12c4fde911', // julex
 		'0x586eb1950b87bb4c9a80561d154d779c4ad872f8', // khayle8891
+		'0xd6b69e58d44e523eb58645f1b78425c96dfa648c', // uniquebeing404
+		'0x10fc964ef70c8467cd8c53e9ed9347422adf96a8', // kenny
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // disciple
+		'0x1ace9e4df9de3af66e33170991617ab73de5dc1a', // wanderlustmom
 	],
 }, {
 	id: 1024,
@@ -96,8 +109,8 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 	amount: 50,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
 	id: 1025,
@@ -106,12 +119,16 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
 	id: 1026,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }];
 
 // Re-calculate and update points related to bonuses for all users for the current season
