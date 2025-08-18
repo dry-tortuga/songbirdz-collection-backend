@@ -335,6 +335,8 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 				Strings.toString(speciesId),
 				'"},{"trait_type":"Species Bird Count","value":"',
 				Strings.toString(speciesToRender.birdCount),
+				'"},{"trait_type":"Flock","value":"',
+				publicGetSpeciesFlock(speciesId),
 				'"}]'
 			)
 		);
