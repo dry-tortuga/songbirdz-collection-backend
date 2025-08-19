@@ -36,7 +36,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 	const allowListJSON = { addresses };
 
-	for (let i = 0; i < 2368; i++) {
+	for (let i = 0; i < 10000; i++) {
 
 		// Fetch the token by index from the contract
 		const tokenId = await contract.tokenByIndex(i);

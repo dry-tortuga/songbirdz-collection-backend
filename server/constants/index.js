@@ -40,7 +40,7 @@ const COLLECTION_KEYS = [
 	"love-birds-6",
 	"hatchlings-7",
 	"masters-of-disguise-8",
-	"final-roost-9",
+	"final-migration-9",
 ];
 
 const COLLECTION_NAMES = [
@@ -53,7 +53,7 @@ const COLLECTION_NAMES = [
 	"Lovebirds",
 	"Hatchlings",
 	"Masters of Disguise",
-	"Final Roost",
+	"Final Migration",
 ];
 
 const COLLECTION_SIZE = 1000;

@@ -42,7 +42,7 @@ let COLLECTIONS_TO_POPULATE = [{
 	number: 8,
 	merkleTreeRoot: "0x96931597d1e46bf69bad810d9aba52eb71b2353cb1451ba6c2823632c0116572",
 }, {
-	name: "final-roost-9",
+	name: "final-migration-9",
 	number: 9,
 	merkleTreeRoot: "0x386ddd7d8be8918468d64f7c72b21c90ecaef6d835263c939eb229d32db72f8c",
 }];
