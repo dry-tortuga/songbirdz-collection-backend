@@ -20,6 +20,7 @@ const existingResults = JSON.parse(fs.readFileSync(path.join(
 const TASK_NAME = "fetchIdentifiedBirds";
 const TASK_DESCRIPTION = "Fetch a list of all birds (IDs) that have been identified in the SongBirdz collection";
 
+const START_INDEX = 0;
 const TOTAL_SUPPLY = 5561;
 
 // Task action function receives the Hardhat Runtime Environment as second argument
@@ -39,7 +40,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 	console.log(result);
 
-	for (let i = 1000; i < TOTAL_SUPPLY; i++) {
+	for (let i = START_INDEX; i < TOTAL_SUPPLY; i++) {
 
 		// Fetch the token by index from the contract
 		const tokenId = await contract.tokenByIndex(i);
