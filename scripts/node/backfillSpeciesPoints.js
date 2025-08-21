@@ -17,7 +17,7 @@ const SEASON_GENESIS_BLOCK = 30971527;
 const SEASON_GENESIS_TIME = new Date("2025-05-31T23:00:03.000Z");
 const SEASON_END_TIME = new Date('2025-08-31T23:00:00.000+00:00');
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 31095319;
+const CURRENT_BLOCK = 34367018;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
