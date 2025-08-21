@@ -223,11 +223,6 @@ function getFamily(speciesName) {
 
     });
 
-    if (!match?.name) {
-   	console.log(speciesName);
-
-    }
-
     return match.name;
 
 }
