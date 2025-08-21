@@ -11,11 +11,11 @@ const {
 	MERKLE_TREE_DATA,
 	PRIVATE_PATH,
 } = require("../constants");
-const { isBirdIdentified } = require("../utils");
+const { isBirdIdentified, loadBirdCache } = require("../utils");
 
 // Store identification results locally in simple cache to
 // speed-up lookup for birds that are already identified
-const BIRD_ID_RESULTS = {};
+const BIRD_ID_RESULTS = loadBirdCache();
 
 const getBirdMetadata = async (req, res, next) => {
 

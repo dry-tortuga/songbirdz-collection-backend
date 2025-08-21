@@ -26,7 +26,8 @@
     "populate-mainnet": "NODE_ENV=production npx hardhat populateMainCollection --network base-mainnet",
     "populate-hof-mainnet": "NODE_ENV=production npx hardhat populateHOFCollection --network base-mainnet",
     "bulk-send-mainnet": "NODE_ENV=production npx hardhat bulkSend --network base-mainnet",
-    "fetch-holders-mainnet": "NODE_ENV=production npx hardhat fetchHolders --network base-mainnet"
+    "fetch-holders-mainnet": "NODE_ENV=production npx hardhat fetchHolders --network base-mainnet",
+    "fetch-identified-birds-mainnet": "NODE_ENV=production npx hardhat fetchIdentifiedBirds --network base-mainnet"
   },
   "keywords": [],
   "author": "dry-tortuga",

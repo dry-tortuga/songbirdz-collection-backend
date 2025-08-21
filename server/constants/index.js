@@ -132,19 +132,21 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
     // Picasso Genesis collection had 200 unique species, all others will have 50
     if (cIndex === 0) {
 
-        fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.txt`, "utf8")
-            .split(/\r?\n/)
-            .forEach((sName, sIndex) => {
-                const SPECIES_START_INDEX = 0;
+        const sourceList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`);
 
-                // Get the unique ID of the species relative to the entire set
-                const finalIndex = SPECIES_START_INDEX + sIndex;
+        sourceList.forEach((sBird, sIndex) => {
 
-                SOURCE_SPECIES_DATA[sName] = {
-                    id: finalIndex,
-                    family: getFamily(sName),
-                };
-            });
+        const SPECIES_START_INDEX = 0;
+
+            // Get the unique ID of the species relative to the entire set
+            const finalIndex = SPECIES_START_INDEX + sIndex;
+
+            SOURCE_SPECIES_DATA[sBird.name] = {
+                id: finalIndex,
+                family: getFamily(sBird.name),
+            };
+
+        });
 
         if (Object.keys(SOURCE_SPECIES_DATA).length !== 200) {
             throw new Error(`Invalid size received for SOURCE_SPECIES_DATA!`);
