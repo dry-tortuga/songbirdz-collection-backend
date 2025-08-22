@@ -21,6 +21,7 @@
     "populate-mainnet": "NODE_ENV=production npx hardhat populateMainCollection --network base-mainnet",
     "bulk-send-mainnet": "NODE_ENV=production npx hardhat bulkSend --network base-mainnet",
     "fetch-holders-mainnet": "NODE_ENV=production npx hardhat fetchHolders --network base-mainnet",
+    "fetch-identified-birds-mainnet": "NODE_ENV=production npx hardhat fetchIdentifiedBirds --network base-mainnet",
     "deploy-hof-local": "NODE_ENV=development npx hardhat run ./scripts/solidity/hof/deployContract.js --network base-local",
     "populate-hof-local": "NODE_ENV=development npx hardhat populateHOFCollection --network base-local",
     "deploy-hof-testnet": "NODE_ENV=staging npx hardhat run ./scripts/solidity/hof/deployContract.js --network base-sepolia",
