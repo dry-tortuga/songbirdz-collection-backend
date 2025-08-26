@@ -3,10 +3,6 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-// TODO: Regenerate audio files + verify all final submissions in the tree for "redo" species
-// Oriental Greenfinch (White-winged Scoter)
-// 500,571,601,968,971,
-
 const COLLECTION_NAME = "final-migration-9";
 const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;

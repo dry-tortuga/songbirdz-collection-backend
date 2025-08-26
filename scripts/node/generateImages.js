@@ -166,7 +166,7 @@ async function generateImage(i) {
 	const colorsToFeature = speciesSourceColors[name];
 
 	// if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
-	if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
+	// if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
 
 	console.log(`---${finalIndex}---`);
 
