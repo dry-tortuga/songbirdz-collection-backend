@@ -46,7 +46,7 @@ function sleep(ms) {
 	});
 }
 
-const redoList = []; // 731, 817 (potential for redos...)
+const redoList = [];
 const todoList = [];
 const skipList = [];
 
@@ -170,8 +170,7 @@ async function generateImage(i) {
 
 	console.log(`---${finalIndex}---`);
 
-	// const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian.${colorsToFeature ? ` It should ${colorsToFeature}. ` : ' '}. Subtle glowing accents and soft light should give a mythic, final chapter quality to the scene. The background should use minimalist Coinbase blue-toned colors or Base-blue gradients that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian.${colorsToFeature ? ` It should ${colorsToFeature}. ` : ' '}. Subtle glowing accents and soft light should give a mythic, final chapter quality to the scene. The background should blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
 
 	console.log(prompt);
 

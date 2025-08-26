@@ -54,13 +54,8 @@ const speciesKeyNames = fs.readFileSync(
 
 	console.log(`Redoing audio for the ${COLLECTION_NAME} collection:`);
 
-	const redoList = [
-		"Williamson's Sapsucker",
-		"La Sagra's Flycatcher",
-		"Siberian Accentor",
-		"Red-billed Leiothrix",
-		"Oriental Greenfinch"
-	];
+	// Add species names here to redo the audio
+	const redoList = [];
 
 	let count = 0;
 

@@ -19,6 +19,8 @@ const addresses = existingResults.addresses;
 const TASK_NAME = "fetchHolders";
 const TASK_DESCRIPTION = "Fetch a list of all holders for the SongBirdz collection";
 
+const TOTAL_SUPPLY = 5622;
+
 // Task action function receives the Hardhat Runtime Environment as second argument
 task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
@@ -36,7 +38,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 	const allowListJSON = { addresses };
 
-	for (let i = 0; i < 10000; i++) {
+	for (let i = 0; i < TOTAL_SUPPLY; i++) {
 
 		// Fetch the token by index from the contract
 		const tokenId = await contract.tokenByIndex(i);
