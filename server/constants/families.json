@@ -23,6 +23,10 @@
                 "label": "Black-bellied Whistling-Duck"
             },
             {
+                "id": 623,
+                "label": "Black Scoter"
+            },
+            {
                 "id": 29,
                 "label": "Blue-winged Teal"
             },
@@ -115,6 +119,14 @@
                 "label": "King Eider"
             },
             {
+                "id": 696,
+                "label": "Lesser Scaup"
+            },
+            {
+                "id": 700,
+                "label": "Long-tailed Duck"
+            },
+            {
                 "id": 115,
                 "label": "Mallard"
             },
@@ -123,12 +135,20 @@
                 "label": "Mandarin Duck"
             },
             {
+                "id": 702,
+                "label": "Masked Duck"
+            },
+            {
                 "label": "Mexican Duck",
                 "id": 537
             },
             {
                 "id": 582,
                 "label": "Mottled Duck"
+            },
+            {
+                "id": 707,
+                "label": "Muscovy Duck"
             },
             {
                 "id": 248,
@@ -171,12 +191,24 @@
                 "label": "Snow Goose"
             },
             {
+                "id": 751,
+                "label": "Surf Scoter"
+            },
+            {
                 "id": 178,
                 "label": "Trumpeter Swan"
             },
             {
+                "id": 761,
+                "label": "Tufted Duck"
+            },
+            {
                 "id": 222,
                 "label": "Tundra Swan"
+            },
+            {
+                "id": 774,
+                "label": "White-faced Whistling-Duck"
             },
             {
                 "id": 495,
@@ -205,8 +237,16 @@
                 "label": "Clark's Grebe"
             },
             {
+                "id": 660,
+                "label": "Eared Grebe"
+            },
+            {
                 "label": "Horned Grebe",
                 "id": 528
+            },
+            {
+                "id": 693,
+                "label": "Least Grebe"
             },
             {
                 "id": 133,
@@ -253,6 +293,19 @@
             {
                 "id": 592,
                 "label": "Red-throated Loon"
+            },
+            {
+                "id": 791,
+                "label": "Yellow-billed Loon"
+            }
+        ]
+    },
+    {
+        "name": "Storks",
+        "species": [
+            {
+                "id": 789,
+                "label": "Wood Stork"
             }
         ]
     },
@@ -264,12 +317,20 @@
                 "label": "American Avocet"
             },
             {
+                "id": 602,
+                "label": "American Golden-Plover"
+            },
+            {
                 "id": 9,
                 "label": "American Oystercatcher"
             },
             {
                 "id": 551,
                 "label": "American Woodcock"
+            },
+            {
+                "id": 610,
+                "label": "Baird's Sandpiper"
             },
             {
                 "id": 554,
@@ -304,8 +365,20 @@
                 "label": "Buff-breasted Sandpiper"
             },
             {
+                "id": 649,
+                "label": "Common Greenshank"
+            },
+            {
                 "label": "Common Ringed Plover",
                 "id": 514
+            },
+            {
+                "id": 653,
+                "label": "Common Sandpiper"
+            },
+            {
+                "id": 654,
+                "label": "Common Snipe"
             },
             {
                 "id": 562,
@@ -316,12 +389,28 @@
                 "label": "Dunlin"
             },
             {
+                "id": 662,
+                "label": "European Golden-Plover"
+            },
+            {
+                "id": 669,
+                "label": "Gray-tailed Tattler"
+            },
+            {
+                "id": 672,
+                "label": "Great Knot"
+            },
+            {
                 "label": "Greater Yellowlegs",
                 "id": 523
             },
             {
                 "id": 233,
                 "label": "Green Sandpiper"
+            },
+            {
+                "id": 680,
+                "label": "Hudsonian Godwit"
             },
             {
                 "id": 105,
@@ -340,8 +429,16 @@
                 "label": "Long-billed Curlew"
             },
             {
+                "id": 698,
+                "label": "Long-billed Dowitcher"
+            },
+            {
                 "id": 239,
                 "label": "Marbled Godwit"
+            },
+            {
+                "id": 706,
+                "label": "Mountain Plover"
             },
             {
                 "id": 124,
@@ -350,6 +447,10 @@
             {
                 "label": "Northern Lapwing",
                 "id": 540
+            },
+            {
+                "id": 716,
+                "label": "Pacific Golden-Plover"
             },
             {
                 "id": 587,
@@ -396,6 +497,18 @@
                 "id": 547
             },
             {
+                "id": 738,
+                "label": "Semipalmated Sandpiper"
+            },
+            {
+                "id": 740,
+                "label": "Short-billed Dowitcher"
+            },
+            {
+                "id": 747,
+                "label": "Spotted Redshank"
+            },
+            {
                 "id": 395,
                 "label": "Snowy Plover"
             },
@@ -408,12 +521,36 @@
                 "label": "Spotted Sandpiper"
             },
             {
+                "id": 749,
+                "label": "Stilt Sandpiper"
+            },
+            {
+                "id": 750,
+                "label": "Surfbird"
+            },
+            {
                 "id": 597,
                 "label": "Temminck's Stint"
             },
             {
+                "id": 764,
+                "label": "Upland Sandpiper"
+            },
+            {
                 "id": 444,
                 "label": "Wandering Tattler"
+            },
+            {
+                "id": 769,
+                "label": "Western Sandpiper"
+            },
+            {
+                "id": 770,
+                "label": "Whimbrel"
+            },
+            {
+                "id": 776,
+                "label": "White-rumped Sandpiper"
             },
             {
                 "id": 193,
@@ -422,6 +559,10 @@
             {
                 "id": 215,
                 "label": "Wilson's Phalarope"
+            },
+            {
+                "id": 787,
+                "label": "Wilson's Plover"
             },
             {
                 "id": 194,
@@ -477,6 +618,10 @@
             {
                 "id": 87,
                 "label": "Great Cormorant"
+            },
+            {
+                "id": 709,
+                "label": "Neotropic Cormorant"
             }
         ]
     },
@@ -593,6 +738,10 @@
                 "label": "White Ibis"
             },
             {
+                "id": 773,
+                "label": "White-faced Ibis"
+            },
+            {
                 "id": 199,
                 "label": "Yellow-crowned Night-Heron"
             }
@@ -621,12 +770,28 @@
             {
                 "id": 599,
                 "label": "Olive-backed Pipit"
+            },
+            {
+                "id": 748,
+                "label": "Sprague's Pipit"
+            },
+            {
+                "id": 781,
+                "label": "White Wagtail"
             }
         ]
     },
     {
         "name": "Pigeons & Doves",
         "species": [
+            {
+                "id": 601,
+                "label": "African Collared-Dove"
+            },
+            {
+                "id": 611,
+                "label": "Band-tailed Pigeon"
+            },
             {
                 "label": "Common Ground Dove",
                 "id": 512
@@ -636,8 +801,20 @@
                 "label": "Eurasian Collared-Dove"
             },
             {
+                "id": 682,
+                "label": "Inca Dove"
+            },
+            {
+                "id": 688,
+                "label": "Key West Quail-Dove"
+            },
+            {
                 "id": 119,
                 "label": "Mourning Dove"
+            },
+            {
+                "id": 725,
+                "label": "Red-billed Pigeon"
             },
             {
                 "id": 153,
@@ -652,8 +829,24 @@
                 "label": "Spotted Dove"
             },
             {
+                "id": 771,
+                "label": "White-crowned Pigeon"
+            },
+            {
+                "id": 780,
+                "label": "White-tipped Dove"
+            },
+            {
                 "id": 494,
                 "label": "White-winged Dove"
+            },
+            {
+                "id": 798,
+                "label": "Zebra Dove"
+            },
+            {
+                "id": 799,
+                "label": "Zenaida Dove"
             }
         ]
     },
@@ -663,6 +856,10 @@
             {
                 "id": 14,
                 "label": "Bald Eagle"
+            },
+            {
+                "id": 628,
+                "label": "Black Vulture"
             },
             {
                 "id": 334,
@@ -699,6 +896,10 @@
             {
                 "id": 428,
                 "label": "Hawaiian Hawk"
+            },
+            {
+                "id": 679,
+                "label": "Hook-billed Kite"
             },
             {
                 "id": 116,
@@ -928,6 +1129,10 @@
                 "label": "Eastern Whip-poor-will"
             },
             {
+                "id": 695,
+                "label": "Lesser Nighthawk"
+            },
+            {
                 "id": 580,
                 "label": "Mexican Whip-poor-will"
             }
@@ -957,8 +1162,20 @@
                 "label": "Blue-throated Mountain-gem"
             },
             {
+                "id": 632,
+                "label": "Broad-billed Hummingbird"
+            },
+            {
                 "id": 268,
                 "label": "Broad-tailed Hummingbird"
+            },
+            {
+                "id": 636,
+                "label": "Buff-bellied Hummingbird"
+            },
+            {
+                "id": 657,
+                "label": "Costa's Hummingbird"
             },
             {
                 "id": 422,
@@ -985,6 +1202,10 @@
                 "label": "Ruby-throated Hummingbird"
             },
             {
+                "id": 732,
+                "label": "Rufous Hummingbird"
+            },
+            {
                 "id": 443,
                 "label": "Violet-crowned Hummingbird"
             }
@@ -993,6 +1214,10 @@
     {
         "name": "Swifts",
         "species": [
+            {
+                "id": 624,
+                "label": "Black Swift"
+            },
             {
                 "id": 306,
                 "label": "Chimney Swift"
@@ -1021,6 +1246,14 @@
             {
                 "id": 17,
                 "label": "Barn Swallow"
+            },
+            {
+                "id": 642,
+                "label": "Cave Swallow"
+            },
+            {
+                "id": 646,
+                "label": "Cliff Swallow"
             },
             {
                 "label": "Northern Rough-winged Swallow",
@@ -1065,6 +1298,10 @@
                 "label": "Acorn Woodpecker"
             },
             {
+                "id": 603,
+                "label": "American Three-toed Woodpecker"
+            },
+            {
                 "id": 552,
                 "label": "Arizona Woodpecker"
             },
@@ -1081,12 +1318,24 @@
                 "label": "Gila Woodpecker"
             },
             {
+                "id": 665,
+                "label": "Gilded Flicker"
+            },
+            {
                 "id": 466,
                 "label": "Golden-fronted Woodpecker"
             },
             {
                 "id": 96,
                 "label": "Hairy Woodpecker"
+            },
+            {
+                "id": 689,
+                "label": "Ladder-backed Woodpecker"
+            },
+            {
+                "id": 697,
+                "label": "Lewis's Woodpecker"
             },
             {
                 "id": 122,
@@ -1111,6 +1360,14 @@
             {
                 "id": 591,
                 "label": "Red-naped Sapsucker"
+            },
+            {
+                "id": 775,
+                "label": "White-headed Woodpecker"
+            },
+            {
+                "id": 784,
+                "label": "Williamson's Sapsucker"
             },
             {
                 "id": 198,
@@ -1140,6 +1397,10 @@
             {
                 "id": 335,
                 "label": "Brown Jay"
+            },
+            {
+                "id": 639,
+                "label": "California Scrub-Jay"
             },
             {
                 "id": 359,
@@ -1182,12 +1443,42 @@
                 "label": "Mexican Jay"
             },
             {
+                "id": 721,
+                "label": "Pinyon Jay"
+            },
+            {
                 "id": 174,
                 "label": "Steller's Jay"
             },
             {
+                "id": 752,
+                "label": "Tamaulipas Crow"
+            },
+            {
                 "id": 196,
                 "label": "Woodhouse's Scrub-Jay"
+            },
+            {
+                "id": 792,
+                "label": "Yellow-billed Magpie"
+            }
+        ]
+    },
+    {
+        "name": "Accentors",
+        "species": [
+            {
+                "id": 741,
+                "label": "Siberian Accentor"
+            }
+        ]
+    },
+    {
+        "name": "Indigobirds, Whydahs, & Cuckoo-finch",
+        "species": [
+            {
+                "id": 720,
+                "label": "Pin-tailed Whydah"
             }
         ]
     },
@@ -1205,6 +1496,14 @@
             {
                 "id": 285,
                 "label": "Red-flanked Bluetail"
+            },
+            {
+                "id": 742,
+                "label": "Siberian Rubythroat"
+            },
+            {
+                "id": 777,
+                "label": "White-rumped Shama"
             }
         ]
     },
@@ -1212,8 +1511,28 @@
         "name": "Tyrant Flycatchers",
         "species": [
             {
+                "id": 600,
+                "label": "Acadian Flycatcher"
+            },
+            {
                 "id": 400,
                 "label": "Alder Flycatcher"
+            },
+            {
+                "id": 606,
+                "label": "Ash-throated Flycatcher"
+            },
+            {
+                "id": 621,
+                "label": "Black Phoebe"
+            },
+            {
+                "id": 633,
+                "label": "Brown-crested Flycatcher"
+            },
+            {
+                "id": 637,
+                "label": "Buff-breasted Flycatcher"
             },
             {
                 "id": 44,
@@ -1228,6 +1547,10 @@
                 "id": 517
             },
             {
+                "id": 658,
+                "label": "Dusky-capped Flycatcher"
+            },
+            {
                 "id": 65,
                 "label": "Eastern Kingbird"
             },
@@ -1240,16 +1563,44 @@
                 "label": "Eastern Wood-Pewee"
             },
             {
+                "id": 664,
+                "label": "Fork-tailed Flycatcher"
+            },
+            {
+                "id": 667,
+                "label": "Gray Flycatcher"
+            },
+            {
+                "id": 668,
+                "label": "Gray Kingbird"
+            },
+            {
                 "id": 468,
                 "label": "Great Kiskadee"
+            },
+            {
+                "id": 671,
+                "label": "Great Crested Flycatcher"
             },
             {
                 "label": "Greater Pewee",
                 "id": 522
             },
             {
+                "id": 674,
+                "label": "Hammond's Flycatcher"
+            },
+            {
+                "id": 691,
+                "label": "La Sagra's Flycatcher"
+            },
+            {
                 "id": 374,
                 "label": "Northern Beardless-Tyrannulet"
+            },
+            {
+                "id": 712,
+                "label": "Nutting's Flycatcher"
             },
             {
                 "id": 165,
@@ -1264,6 +1615,18 @@
                 "label": "Sulphur-bellied Flycatcher"
             },
             {
+                "id": 753,
+                "label": "Thick-billed Kingbird"
+            },
+            {
+                "id": 759,
+                "label": "Tropical Kingbird"
+            },
+            {
+                "id": 762,
+                "label": "Tufted Flycatcher"
+            },
+            {
                 "id": 181,
                 "label": "Vermilion Flycatcher"
             },
@@ -1274,12 +1637,28 @@
             {
                 "id": 187,
                 "label": "Western Wood-Pewee"
+            },
+            {
+                "id": 785,
+                "label": "Willow Flycatcher"
+            },
+            {
+                "id": 790,
+                "label": "Yellow-bellied Flycatcher"
             }
         ]
     },
     {
         "name": "Catbirds, Mockingbirds, & Thrashers",
         "species": [
+            {
+                "id": 609,
+                "label": "Bahama Mockingbird"
+            },
+            {
+                "id": 613,
+                "label": "Bendire's Thrasher"
+            },
             {
                 "id": 304,
                 "label": "Blue Mockingbird"
@@ -1305,8 +1684,38 @@
                 "label": "Gray Catbird"
             },
             {
+                "id": 694,
+                "label": "LeConte's Thrasher"
+            },
+            {
+                "id": 699,
+                "label": "Long-billed Thrasher"
+            },
+            {
                 "id": 125,
                 "label": "Northern Mockingbird"
+            },
+            {
+                "id": 735,
+                "label": "Sage Thrasher"
+            }
+        ]
+    },
+    {
+        "name": "Weavers & Allies",
+        "species": [
+            {
+                "id": 711,
+                "label": "Northern Red Bishop"
+            }
+        ]
+    },
+    {
+        "name": "Laughingthrushes & Allies",
+        "species": [
+            {
+                "id": 724,
+                "label": "Red-billed Leiothrix"
             }
         ]
     },
@@ -1318,12 +1727,20 @@
                 "label": "American Robin"
             },
             {
+                "id": 608,
+                "label": "Aztec Thrush"
+            },
+            {
                 "id": 22,
                 "label": "Bicknell's Thrush"
             },
             {
                 "id": 51,
                 "label": "Clay-colored Thrush"
+            },
+            {
+                "id": 659,
+                "label": "Dusky Thrush"
             },
             {
                 "id": 64,
@@ -1358,6 +1775,10 @@
                 "label": "Swainson's Thrush"
             },
             {
+                "id": 756,
+                "label": "Townsend's Solitaire"
+            },
+            {
                 "label": "Varied Thrush",
                 "id": 549
             },
@@ -1368,6 +1789,10 @@
             {
                 "id": 183,
                 "label": "Western Bluebird"
+            },
+            {
+                "id": 779,
+                "label": "White-throated Thrush"
             },
             {
                 "id": 197,
@@ -1383,8 +1808,16 @@
                 "label": "Altamira Oriole"
             },
             {
+                "id": 607,
+                "label": "Audubon's Oriole"
+            },
+            {
                 "id": 15,
                 "label": "Baltimore Oriole"
+            },
+            {
+                "id": 627,
+                "label": "Black-vented Oriole"
             },
             {
                 "id": 333,
@@ -1411,8 +1844,20 @@
                 "label": "Bullock's Oriole"
             },
             {
+                "id": 648,
+                "label": "Common Grackle"
+            },
+            {
                 "id": 66,
                 "label": "Eastern Meadowlark"
+            },
+            {
+                "id": 673,
+                "label": "Great-tailed Grackle"
+            },
+            {
+                "id": 677,
+                "label": "Hooded Oriole"
             },
             {
                 "id": 127,
@@ -1423,8 +1868,16 @@
                 "label": "Red-winged Blackbird"
             },
             {
+                "id": 734,
+                "label": "Rusty Blackbird"
+            },
+            {
                 "id": 339,
                 "label": "Scott's Oriole"
+            },
+            {
+                "id": 739,
+                "label": "Shiny Cowbird"
             },
             {
                 "id": 342,
@@ -1437,6 +1890,10 @@
             {
                 "id": 184,
                 "label": "Western Meadowlark"
+            },
+            {
+                "id": 794,
+                "label": "Yellow-headed Blackbird"
             }
         ]
     },
@@ -1464,12 +1921,24 @@
                 "label": "Black Rosy-Finch"
             },
             {
+                "id": 631,
+                "label": "Brambling"
+            },
+            {
                 "id": 270,
                 "label": "Brown-capped Rosy-Finch"
             },
             {
+                "id": 640,
+                "label": "Cassia Crossbill"
+            },
+            {
                 "id": 43,
                 "label": "Cassin's Finch"
+            },
+            {
+                "id": 652,
+                "label": "Common Redpoll"
             },
             {
                 "id": 458,
@@ -1478,6 +1947,10 @@
             {
                 "id": 564,
                 "label": "Eurasian Siskin"
+            },
+            {
+                "id": 663,
+                "label": "European Goldfinch"
             },
             {
                 "id": 463,
@@ -1496,6 +1969,10 @@
                 "label": "Hawaii Amakihi"
             },
             {
+                "id": 675,
+                "label": "Hawaii Creeper"
+            },
+            {
                 "id": 278,
                 "label": "Hoary Redpoll"
             },
@@ -1504,12 +1981,28 @@
                 "label": "House Finch"
             },
             {
+                "id": 681,
+                "label": "Iiwi"
+            },
+            {
                 "id": 573,
                 "label": "Kauai Amakihi"
             },
             {
+                "id": 690,
+                "label": "Lawrence's Goldfinch"
+            },
+            {
                 "label": "Lesser Goldfinch",
                 "id": 533
+            },
+            {
+                "id": 703,
+                "label": "Maui Parrotbill"
+            },
+            {
+                "id": 715,
+                "label": "Oriental Greenfinch"
             },
             {
                 "id": 586,
@@ -1534,6 +2027,10 @@
             {
                 "id": 144,
                 "label": "Red Crossbill"
+            },
+            {
+                "id": 782,
+                "label": "White-winged Crossbill"
             }
         ]
     },
@@ -1557,8 +2054,16 @@
                 "label": "Chestnut Munia"
             },
             {
+                "id": 684,
+                "label": "Java Sparrow"
+            },
+            {
                 "id": 472,
                 "label": "Lavender Waxbill"
+            },
+            {
+                "id": 714,
+                "label": "Orange-cheeked Waxbill"
             },
             {
                 "id": 284,
@@ -1614,6 +2119,10 @@
                 "label": "Kittlitz's Murrelet"
             },
             {
+                "id": 692,
+                "label": "Least Auklet"
+            },
+            {
                 "label": "Marbled Murrelet",
                 "id": 535
             },
@@ -1628,6 +2137,10 @@
             {
                 "id": 392,
                 "label": "Scripps's Murrelet"
+            },
+            {
+                "id": 755,
+                "label": "Thick-billed Murre"
             },
             {
                 "id": 493,
@@ -1673,6 +2186,10 @@
             {
                 "label": "Sedge Wren",
                 "id": 546
+            },
+            {
+                "id": 743,
+                "label": "Sinaloa Wren"
             },
             {
                 "id": 293,
@@ -1725,8 +2242,16 @@
                 "label": "Juniper Titmouse"
             },
             {
+                "id": 704,
+                "label": "Mexican Chickadee"
+            },
+            {
                 "id": 118,
                 "label": "Mountain Chickadee"
+            },
+            {
+                "id": 713,
+                "label": "Oak Titmouse"
             },
             {
                 "id": 179,
@@ -1751,6 +2276,10 @@
                 "label": "Blue-crowned Parakeet"
             },
             {
+                "id": 635,
+                "label": "Budgerigar"
+            },
+            {
                 "label": "Green Parakeet",
                 "id": 524
             },
@@ -1769,6 +2298,10 @@
             {
                 "id": 373,
                 "label": "Nanday Parakeet"
+            },
+            {
+                "id": 727,
+                "label": "Red-crowned Parrot"
             },
             {
                 "id": 381,
@@ -1791,12 +2324,24 @@
                 "label": "Thick-billed Parrot"
             },
             {
+                "id": 763,
+                "label": "Turquoise-fronted Parrot"
+            },
+            {
+                "id": 783,
+                "label": "White-winged Parakeet"
+            },
+            {
                 "id": 497,
                 "label": "Yellow-chevroned Parakeet"
             },
             {
                 "id": 498,
                 "label": "Yellow-collared Lovebird"
+            },
+            {
+                "id": 795,
+                "label": "Yellow-headed Parrot"
             }
         ]
     },
@@ -1864,6 +2409,10 @@
                 "id": 500
             },
             {
+                "id": 604,
+                "label": "American Tree Sparrow"
+            },
+            {
                 "id": 328,
                 "label": "Bachman's Sparrow"
             },
@@ -1892,8 +2441,16 @@
                 "label": "Canyon Towhee"
             },
             {
+                "id": 641,
+                "label": "Cassin's Sparrow"
+            },
+            {
                 "id": 47,
                 "label": "Chipping Sparrow"
+            },
+            {
+                "id": 645,
+                "label": "Clay-colored Sparrow"
             },
             {
                 "id": 61,
@@ -1944,6 +2501,10 @@
                 "label": "Lincoln's Sparrow"
             },
             {
+                "id": 708,
+                "label": "Nelson's Sparrow"
+            },
+            {
                 "label": "Olive Sparrow",
                 "id": 542
             },
@@ -1952,12 +2513,24 @@
                 "label": "Rufous-crowned Sparrow"
             },
             {
+                "id": 733,
+                "label": "Rustic Bunting"
+            },
+            {
                 "id": 390,
                 "label": "Sagebrush Sparrow"
             },
             {
+                "id": 736,
+                "label": "Saltmarsh Sparrow"
+            },
+            {
                 "id": 164,
                 "label": "Savannah Sparrow"
+            },
+            {
+                "id": 737,
+                "label": "Seaside Sparrow"
             },
             {
                 "id": 171,
@@ -1970,6 +2543,10 @@
             {
                 "id": 345,
                 "label": "Swamp Sparrow"
+            },
+            {
+                "id": 765,
+                "label": "Vesper Sparrow"
             },
             {
                 "id": 189,
@@ -2018,6 +2595,10 @@
                 "label": "Hepatic Tanager"
             },
             {
+                "id": 705,
+                "label": "Morelet's Seedeater"
+            },
+            {
                 "id": 479,
                 "label": "Red-crested Cardinal"
             },
@@ -2046,6 +2627,10 @@
     {
         "name": "Cardinals, Grosbeaks, & Allies",
         "species": [
+            {
+                "id": 617,
+                "label": "Black-headed Grosbeak"
+            },
             {
                 "id": 263,
                 "label": "Blue Bunting"
@@ -2093,6 +2678,10 @@
             {
                 "id": 289,
                 "label": "Varied Bunting"
+            },
+            {
+                "id": 793,
+                "label": "Yellow Grosbeak"
             }
         ]
     },
@@ -2131,6 +2720,10 @@
         "name": "Longspurs & Snow Buntings",
         "species": [
             {
+                "id": 643,
+                "label": "Chestnut-collared Longspur"
+            },
+            {
                 "label": "Lapland Longspur",
                 "id": 532
             },
@@ -2141,6 +2734,10 @@
             {
                 "id": 168,
                 "label": "Snow Bunting"
+            },
+            {
+                "id": 754,
+                "label": "Thick-billed Longspur"
             }
         ]
     },
@@ -2170,6 +2767,10 @@
             {
                 "id": 247,
                 "label": "Northern Gannet"
+            },
+            {
+                "id": 729,
+                "label": "Red-footed Booby"
             }
         ]
     },
@@ -2179,6 +2780,10 @@
             {
                 "id": 404,
                 "label": "Audubon's Shearwater"
+            },
+            {
+                "id": 614,
+                "label": "Bermuda Petrel"
             },
             {
                 "id": 555,
@@ -2207,6 +2812,18 @@
             {
                 "id": 476,
                 "label": "Pink-footed Shearwater"
+            },
+            {
+                "id": 745,
+                "label": "Sooty Shearwater"
+            },
+            {
+                "id": 758,
+                "label": "Trindade Petrel"
+            },
+            {
+                "id": 767,
+                "label": "Wedge-tailed Shearwater"
             }
         ]
     },
@@ -2247,8 +2864,36 @@
                 "id": 501
             },
             {
+                "id": 620,
+                "label": "Black Noddy"
+            },
+            {
                 "id": 452,
                 "label": "Black Skimmer"
+            },
+            {
+                "id": 626,
+                "label": "Black Tern"
+            },
+            {
+                "id": 618,
+                "label": "Black-headed Gull"
+            },
+            {
+                "id": 619,
+                "label": "Black-legged Kittiwake"
+            },
+            {
+                "id": 625,
+                "label": "Black-tailed Gull"
+            },
+            {
+                "id": 630,
+                "label": "Bonaparte's Gull"
+            },
+            {
+                "id": 634,
+                "label": "Brown Noddy"
             },
             {
                 "id": 236,
@@ -2257,6 +2902,14 @@
             {
                 "id": 226,
                 "label": "Caspian Tern"
+            },
+            {
+                "id": 650,
+                "label": "Common Gull"
+            },
+            {
+                "id": 655,
+                "label": "Common Tern"
             },
             {
                 "label": "Elegant Tern",
@@ -2295,6 +2948,10 @@
                 "id": 534
             },
             {
+                "id": 730,
+                "label": "Red-legged Kittiwake"
+            },
+            {
                 "id": 150,
                 "label": "Ring-billed Gull"
             },
@@ -2303,12 +2960,28 @@
                 "label": "Roseate Tern"
             },
             {
+                "id": 731,
+                "label": "Ross's Gull"
+            },
+            {
                 "id": 157,
                 "label": "Royal Tern"
             },
             {
                 "id": 227,
                 "label": "Sandwich Tern"
+            },
+            {
+                "id": 746,
+                "label": "Sooty Tern"
+            },
+            {
+                "id": 768,
+                "label": "Western Gull"
+            },
+            {
+                "id": 778,
+                "label": "White Tern"
             }
         ]
     },
@@ -2373,8 +3046,16 @@
         "name": "Grouse, Quail, & Allies",
         "species": [
             {
+                "id": 616,
+                "label": "Black Francolin"
+            },
+            {
                 "label": "California Quail",
                 "id": 509
+            },
+            {
+                "id": 644,
+                "label": "Chukar"
             },
             {
                 "id": 460,
@@ -2405,8 +3086,20 @@
                 "label": "Gunnison Sage-Grouse"
             },
             {
+                "id": 676,
+                "label": "Helmeted Guineafowl"
+            },
+            {
                 "id": 366,
                 "label": "Himalayan Snowcock"
+            },
+            {
+                "id": 683,
+                "label": "Indian Peafowl"
+            },
+            {
+                "id": 685,
+                "label": "Kalij Pheasant"
             },
             {
                 "id": 577,
@@ -2486,6 +3179,10 @@
                 "label": "Mangrove Cuckoo"
             },
             {
+                "id": 744,
+                "label": "Smooth-billed Ani"
+            },
+            {
                 "id": 323,
                 "label": "Yellow-billed Cuckoo"
             }
@@ -2504,6 +3201,10 @@
         "name": "Starlings & Mynas",
         "species": [
             {
+                "id": 651,
+                "label": "Common Myna"
+            },
+            {
                 "id": 73,
                 "label": "European Starling"
             }
@@ -2517,8 +3218,16 @@
                 "label": "American Redstart"
             },
             {
+                "id": 605,
+                "label": "Arctic Warbler"
+            },
+            {
                 "id": 252,
                 "label": "Bay-breasted Warbler"
+            },
+            {
+                "id": 622,
+                "label": "Blackpoll Warbler"
             },
             {
                 "id": 256,
@@ -2557,12 +3266,24 @@
                 "label": "Chestnut-sided Warbler"
             },
             {
+                "id": 647,
+                "label": "Colima Warbler"
+            },
+            {
+                "id": 656,
+                "label": "Common Yellowthroat"
+            },
+            {
                 "id": 560,
                 "label": "Connecticut Warbler"
             },
             {
                 "id": 563,
                 "label": "Dusky Warbler"
+            },
+            {
+                "id": 666,
+                "label": "Grace's Warbler"
             },
             {
                 "id": 276,
@@ -2573,8 +3294,20 @@
                 "label": "Golden-cheeked Warbler"
             },
             {
+                "id": 678,
+                "label": "Hooded Warbler"
+            },
+            {
                 "id": 572,
                 "label": "Japanese Bush Warbler"
+            },
+            {
+                "id": 686,
+                "label": "Kamchatka Leaf Warbler"
+            },
+            {
+                "id": 687,
+                "label": "Kentucky Warbler"
             },
             {
                 "label": "Kirtland's Warbler",
@@ -2585,12 +3318,20 @@
                 "label": "Louisiana Waterthrush"
             },
             {
+                "id": 701,
+                "label": "Lucy's Warbler"
+            },
+            {
                 "id": 280,
                 "label": "Magnolia Warbler"
             },
             {
                 "id": 581,
                 "label": "Millerbird"
+            },
+            {
+                "id": 710,
+                "label": "Northern Parula"
             },
             {
                 "id": 583,
@@ -2605,8 +3346,20 @@
                 "label": "Painted Redstart"
             },
             {
+                "id": 717,
+                "label": "Palm Warbler"
+            },
+            {
                 "label": "Pine Warbler",
                 "id": 544
+            },
+            {
+                "id": 722,
+                "label": "Prairie Warbler"
+            },
+            {
+                "id": 723,
+                "label": "Prothonotary Warbler"
             },
             {
                 "id": 480,
@@ -2621,16 +3374,40 @@
                 "label": "Tennessee Warbler"
             },
             {
+                "id": 757,
+                "label": "Townsend's Warbler"
+            },
+            {
+                "id": 760,
+                "label": "Tropical Parula"
+            },
+            {
                 "id": 291,
                 "label": "Virginia's Warbler"
+            },
+            {
+                "id": 786,
+                "label": "Willow Warbler"
+            },
+            {
+                "id": 788,
+                "label": "Wilson's Warbler"
             },
             {
                 "id": 294,
                 "label": "Worm-eating Warbler"
             },
             {
+                "id": 797,
+                "label": "Yellow Warbler"
+            },
+            {
                 "id": 298,
                 "label": "Yellow-rumped Warbler"
+            },
+            {
+                "id": 796,
+                "label": "Yellow-throated Warbler"
             }
         ]
     },
@@ -2657,6 +3434,10 @@
             {
                 "label": "Blue-gray Gnatcatcher",
                 "id": 503
+            },
+            {
+                "id": 638,
+                "label": "California Gnatcatcher"
             }
         ]
     },
@@ -2677,12 +3458,40 @@
         "name": "Vireos",
         "species": [
             {
+                "id": 612,
+                "label": "Bell's Vireo"
+            },
+            {
                 "label": "Black-capped Vireo",
                 "id": 502
             },
             {
+                "id": 629,
+                "label": "Blue-headed Vireo"
+            },
+            {
+                "id": 670,
+                "label": "Gray Vireo"
+            },
+            {
+                "id": 719,
+                "label": "Philadelphia Vireo"
+            },
+            {
+                "id": 728,
+                "label": "Red-eyed Vireo"
+            },
+            {
                 "id": 346,
                 "label": "Thick-billed Vireo"
+            },
+            {
+                "id": 766,
+                "label": "Warbling Vireo"
+            },
+            {
+                "id": 772,
+                "label": "White-eyed Vireo"
             },
             {
                 "id": 299,
@@ -2693,6 +3502,10 @@
     {
         "name": "Trogons & Quetzals",
         "species": [
+            {
+                "id": 661,
+                "label": "Eared Quetzal"
+            },
             {
                 "id": 362,
                 "label": "Elegant Trogon"
@@ -2705,6 +3518,10 @@
             {
                 "id": 569,
                 "label": "Great Skua"
+            },
+            {
+                "id": 718,
+                "label": "Parasitic Jaeger"
             },
             {
                 "id": 436,
@@ -2720,6 +3537,10 @@
         "name": "Tropicbirds",
         "species": [
             {
+                "id": 726,
+                "label": "Red-billed Tropicbird"
+            },
+            {
                 "id": 385,
                 "label": "Red-tailed Tropicbird"
             },
@@ -2732,6 +3553,10 @@
     {
         "name": "Albatrosses",
         "species": [
+            {
+                "id": 615,
+                "label": "Black-footed Albatross"
+            },
             {
                 "id": 369,
                 "label": "Laysan Albatross"

@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "masters-of-disguise-8";
-const COLLECTION_START_INDEX = 8000;
+const COLLECTION_NAME = "final-migration-9";
+const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -46,6 +46,10 @@ function sleep(ms) {
 	});
 }
 
+const redoList = [];
+const todoList = [];
+const skipList = [];
+
 // Generate and store the final image files for the collection
 (async () => {
 
@@ -72,24 +76,20 @@ function sleep(ms) {
 
 	console.log(`Generating images for the ${COLLECTION_NAME} collection:`);
 
-	const redoList = [];
-	const todoList = [];
-	const skipList = [];
+	for (let i = 0; i < 1000; i += 1) {
 
-    for (let i = 0; i < 1000; i += 1) {
+		if (redoList.indexOf(i) === -1) { continue; }
 
-    	if (redoList.indexOf(i) === -1) { continue; }
+		if (skipList.indexOf(i) >= 0) { continue; }
 
-        if (skipList.indexOf(i) >= 0) { continue; }
+		todoList.push(i);
 
-        todoList.push(i);
+	}
 
-    }
+	const initialErrors = await runBatch(todoList);
 
-    const initialErrors = await runBatch(todoList);
-
-   	// Attempt to re-generate any images that errored on the initial API call
-    const finalErrors = await runBatch(initialErrors);
+	// Attempt to re-generate any images that errored on the initial API call
+	const finalErrors = await runBatch(initialErrors);
 
 	console.log("------------- errors ---------------");
 	console.log(finalErrors);
@@ -99,12 +99,12 @@ function sleep(ms) {
 
 async function runBatch(birdIds) {
 
-    const done = {};
-    const errors = [];
+	const done = {};
+	const errors = [];
 
 	let numImagesRequested = 0;
 
-    // Process images in batches of 15
+	// Process images in batches of 15
 	for (let batchStart = 0; batchStart < birdIds.length; batchStart += 15) {
 
 		const batchEnd = Math.min(batchStart + 15, birdIds.length);
@@ -117,7 +117,11 @@ async function runBatch(birdIds) {
 
 			// if (done[name]) { continue; } else { done[name] = true; }
 
-			// if (skipList.indexOf(i) >= 0) { continue; }
+			const speciesID = speciesSourceBirds.findIndex((sBird) => sBird.name === name);
+
+			if (speciesID === -1) {
+				throw new Error('arghhhhhhhh no species ID found for ' + name);
+			}
 
 			const promise = (async () => {
 
@@ -125,7 +129,7 @@ async function runBatch(birdIds) {
 
 					numImagesRequested += 1;
 
-					const imgResponse = await generateImage(birdIds[i]);
+					await generateImage(birdIds[i]);
 
 				} catch (error) {
 					console.error(error);
@@ -145,7 +149,7 @@ async function runBatch(birdIds) {
 
 	}
 
-    return errors;
+	return errors;
 
 }
 
@@ -161,12 +165,12 @@ async function generateImage(i) {
 	const locationToFeature = speciesSourcePrompts[name];
 	const colorsToFeature = speciesSourceColors[name];
 
-	if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
-	if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
+	// if (!locationToFeature) { throw new Error('MISSING LOCATION TO FEATURE'); }
+	// if (!colorsToFeature) { throw new Error('MISSING COLORS TO FEATURE'); }
 
 	console.log(`---${finalIndex}---`);
 
-	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian. It should ${colorsToFeature}. It should be ${locationToFeature}. The background should integrate smoothly using natural, earthy tones with muted, camouflaged colors that blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
+	const prompt = `Create a vibrant, abstract illustration of a ${promptName} in a geometric style, influenced by Cubism and Piet Mondrian.${colorsToFeature ? ` It should ${colorsToFeature}. ` : ' '}. Subtle glowing accents and soft light should give a mythic, final chapter quality to the scene. The background should blend seamlessly into the surrounding environment to produce a visually striking and harmonious scene, but it must be abstract in the style of Cubism and/or Piet Mondrian.`;
 
 	console.log(prompt);
 
