@@ -1,5 +1,5 @@
 const {
-	DB_COLLECTION_IDS,
+	DB_COLLECTION_CURRENT_POINTS_SEASON,
 	KEY_BIRD_DATA,
 	SOURCE_SPECIES_DATA,
 } = require("../constants");
@@ -79,7 +79,7 @@ const storePoints = async (db, pointResults) => {
 			const birdIntegerID = data.hasOwnProperty('bird_id') ? parseInt(data.bird_id, 10) : null;
 
 			const existingLog = await db.fetchPointLog(
-				DB_COLLECTION_IDS[4],
+				DB_COLLECTION_CURRENT_POINTS_SEASON,
 				address,
 				speciesIntegerID
 			);
@@ -90,7 +90,7 @@ const storePoints = async (db, pointResults) => {
 				// Check if entry should be updated with higher point earned amount
 				if (existingLog.amount < data.amount) {
 
-					await db.updatePointLog(DB_COLLECTION_IDS[4], {
+					await db.updatePointLog(DB_COLLECTION_CURRENT_POINTS_SEASON, {
 						address,
 						species_id: speciesIntegerID,
 						bird_id: birdIntegerID,
@@ -103,7 +103,7 @@ const storePoints = async (db, pointResults) => {
 			// If not, then create a new entry for the user-species-id
 			} else {
 
-				await db.createPointLog(DB_COLLECTION_IDS[4], {
+				await db.createPointLog(DB_COLLECTION_CURRENT_POINTS_SEASON, {
 					address,
 					species_id: speciesIntegerID,
 					bird_id: birdIntegerID,

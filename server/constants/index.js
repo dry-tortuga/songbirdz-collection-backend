@@ -22,7 +22,13 @@ const DB_COLLECTION_IDS = [
 	"point_logs_3",
 	"point_logs_4",
 	"point_logs_5",
+	"point_logs_6",
 ];
+
+const DB_COLLECTION_CURRENT_POINTS_SEASON = DB_COLLECTION_IDS[DB_COLLECTION_IDS.length - 1];
+
+const CURRENT_POINTS_SEASON_START_DATE = new Date("2025-08-31T23:00:03.000Z");
+const CURRENT_POINTS_SEASON_END_DATE = new Date("2025-11-30T23:00:00.000+00:00");
 
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
@@ -61,7 +67,7 @@ const COLLECTION_SIZE = 1000;
 const MIN_BIRD_ID = 0;
 const MAX_BIRD_ID = (COLLECTION_NAMES.length * COLLECTION_SIZE) - 1;
 
-const FIRST_ID_TO_IDENTIFY = 2402;
+const FIRST_ID_TO_IDENTIFY = 2434;
 
 // Build data map of ID -> name|collection|answer-choices for all the birds
 
@@ -188,7 +194,10 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 module.exports = {
 	UNIDENTIFIED_NAME,
 	COLLECTION_SIZE,
+	CURRENT_POINTS_SEASON_START_DATE,
+	CURRENT_POINTS_SEASON_END_DATE,
 	DB_COLLECTION_IDS,
+	DB_COLLECTION_CURRENT_POINTS_SEASON,
 	MIN_BIRD_ID,
 	MAX_BIRD_ID,
 	FIRST_ID_TO_IDENTIFY,

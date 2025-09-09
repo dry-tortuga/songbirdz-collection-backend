@@ -5,28 +5,25 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const CURRENT_TIME = new Date();
 
-const SEASON_5_BONUS_POINT_SPECIES = [{
-	id: 1020,
+const SEASON_6_BONUS_POINT_SPECIES = [{
+	id: 1030,
 	label: 'Posted on X',
 	amount: 25,
-	users: [
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0963
-	],
+	users: [],
 }, {
-	id: 1021,
+	id: 1031,
 	label: 'Posted on Farcaster',
 	amount: 25,
 	users: [],
 }, {
-	id: 1022,
+	id: 1032,
 	label: 'Joined Telegram',
 	amount: 10,
 	users: [
 		// MISSING POINTS: tokyo, jamesberg, jibbmoslice, RandomEgg, Tonywithouti,
 		// My_name_is_mudd, Basedsuiguru, VENOMDSLAYER, @OxMisan, @Web3majo,
 		// @bullionape1914,  oeuk nikon, melanie, @DEGENCOBRA, satoshi-nakamoto,
-		// crypto-lady, refaund09, memekreator
+		// crypto-lady, refaund09, memekreator, violet
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 		'0xdd9c5b8893434da7a4ce0ada32db13d0770a0116', // krakencoke
@@ -61,11 +58,12 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x91c2232f8eab20b21aa95c325aaf9aad639ff486', // w3core
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
 		'0x6989e6507dac1376502a5639e01259a778db35de', // spudnik
-		// violet.base
-		// mathburn666
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // justforfreedom
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // whalestacking
+		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
 	],
 }, {
-	id: 1023,
+	id: 1033,
 	label: 'Joined Farcaster Channel',
 	amount: 10,
 	users: [
@@ -102,33 +100,28 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x10fc964ef70c8467cd8c53e9ed9347422adf96a8', // kenny
 		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // disciple
 		'0x1ace9e4df9de3af66e33170991617ab73de5dc1a', // wanderlustmom
+		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
 	],
 }, {
-	id: 1024,
+	id: 1034,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
-	],
+	users: [],
 }, {
-	id: 1025,
+	id: 1035,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
-	],
+	users: [],
 }, {
-	id: 1026,
+	id: 1036,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
-	users: [
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-	],
+	users: [],
+}, {
+	id: 1037,
+	label: 'Hit 75 Day Streak',
+	amount: 1000,
+	users: [],
 }];
 
 // Re-calculate and update points related to bonuses for all users for the current season
@@ -146,7 +139,7 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 
 		const results = {};
 
-		SEASON_5_BONUS_POINT_SPECIES.forEach((species) => {
+		SEASON_6_BONUS_POINT_SPECIES.forEach((species) => {
 
 			species.users.forEach((address) => {
 
