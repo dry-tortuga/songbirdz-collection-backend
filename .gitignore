@@ -50,3 +50,5 @@ private.zip
 /coverage.json
 
 .api/
+
+scripts/node/auditNpmCompromise20250909.js

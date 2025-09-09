@@ -1,7 +1,7 @@
-const { DB_COLLECTION_IDS } = require("../constants");
+const { DB_COLLECTION_CURRENT_POINTS_SEASON, DB_COLLECTION_IDS } = require("../constants");
 const DB = require("../db");
 
-const LEADERBOARD_SIZE = 54;
+const LEADERBOARD_SIZE = 55;
 
 // Create a new connection to the database
 
@@ -9,54 +9,53 @@ const db = new DB();
 
 const getPointsLeaderboard = async (req, res, next) => {
 
-    const address = req.query.address;
-    const limit = LEADERBOARD_SIZE;
+	const address = req.query.address;
+	const limit = LEADERBOARD_SIZE;
 
-    let dbCollectionId = DB_COLLECTION_IDS[4];
+	let dbCollectionId = DB_COLLECTION_CURRENT_POINTS_SEASON;
 
-    if (req.query.season === "1") {
-        dbCollectionId = DB_COLLECTION_IDS[0];
-    } else if (req.query.season === "2") {
-        dbCollectionId = DB_COLLECTION_IDS[1];
-    } else if (req.query.season === "3") {
-        dbCollectionId = DB_COLLECTION_IDS[2];
-    } else if (req.query.season === "4") {
-        dbCollectionId = DB_COLLECTION_IDS[3];
-    }
+	if (req.query.season === "1") {
+		dbCollectionId = DB_COLLECTION_IDS[0];
+	} else if (req.query.season === "2") {
+		dbCollectionId = DB_COLLECTION_IDS[1];
+	} else if (req.query.season === "3") {
+		dbCollectionId = DB_COLLECTION_IDS[2];
+	} else if (req.query.season === "4") {
+		dbCollectionId = DB_COLLECTION_IDS[3];
+	} else if (req.query.season === "5") {
+		dbCollectionId = DB_COLLECTION_IDS[4];
+	}
 
-    // Fetch the results for the leaderboard
-    const results = await db.rankPointLogs(dbCollectionId, address, limit);
+	// Fetch the results for the leaderboard
+	const results = await db.rankPointLogs(dbCollectionId, address, limit);
 
-    res.send(results);
+	res.send(results);
 
 };
 
 const getLifeListData = async (req, res, next) => {
 
-    const address = req.query.address;
+	const address = req.query.address;
 
-    if (!address) {
-        return next({
-            status: 400,
-            message: "The address is invalid",
-        });
-    }
+	if (!address) {
+		return next({
+			status: 400,
+			message: "The address is invalid",
+		});
+	}
 
-    // Fetch the results for the life list for the user
+	// Fetch the results for the life list for the user across all seasons
+	const results = {};
 
-    const resultsSeason1 = await db.fetchPointLogs(DB_COLLECTION_IDS[0], address);
-    const resultsSeason2 = await db.fetchPointLogs(DB_COLLECTION_IDS[1], address);
-    const resultsSeason3 = await db.fetchPointLogs(DB_COLLECTION_IDS[2], address);
-    const resultsSeason4 = await db.fetchPointLogs(DB_COLLECTION_IDS[3], address);
-    const resultsSeason5 = await db.fetchPointLogs(DB_COLLECTION_IDS[4], address);
+	for (let i = 0; i < DB_COLLECTION_IDS.length; i++) {
 
-    res.send({
-        season_1: resultsSeason1,
-        season_2: resultsSeason2,
-        season_3: resultsSeason3,
-        season_4: resultsSeason4,
-        season_5: resultsSeason5,
-    });
+		const seasonNumber = i + 1;
+
+		results[`season_${seasonNumber}`] = await db.fetchPointLogs(DB_COLLECTION_IDS[i], address);
+
+	}
+
+    res.send(results);
 
 };
 
@@ -74,7 +73,7 @@ const getLifeListLeaderboard = async (req, res, next) => {
 };
 
 module.exports = {
-    getPointsLeaderboard,
-    getLifeListData,
-    getLifeListLeaderboard,
+	getPointsLeaderboard,
+	getLifeListData,
+	getLifeListLeaderboard,
 };
