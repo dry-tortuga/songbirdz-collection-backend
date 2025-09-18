@@ -17,6 +17,9 @@ const dataToUpload = JSON.parse(fs.readFileSync(path.join(
 const TASK_NAME = "populateHOFCollection";
 const TASK_DESCRIPTION = "Populate the HOF trophies for the SongBirdz contract";
 
+const START_INDEX = 12;
+const END_INDEX = dataToUpload.length;
+
 // Task action function receives the Hardhat Runtime Environment as second argument
 task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
@@ -34,7 +37,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 		`---- populating ${process.env.NODE_ENV} trophies for the Hall of Fame ----`
 	);
 
-	for (let i = 12; i < dataToUpload.length; i++) {
+	for (let i = START_INDEX; i < END_INDEX; i++) {
 
 		console.log(`--------------------- i=${i} ----------------------------`);
 
@@ -60,7 +63,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 		// The transaction is now on chain!
 		console.log(`Tx=${receipt.hash}, gas=${receipt.gasUsed}, is mined in block ${receipt.blockNumber}`);
 
-		const tokenURI = await contract.tokenURI(i-12);
+		const tokenURI = await contract.tokenURI(i);
 
 		console.log(tokenURI);
 

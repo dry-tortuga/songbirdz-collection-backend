@@ -14,6 +14,8 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 // TODO: Make the user pay a small, nominal fee to be able to "own" a life list
 
 // TODO: Mint checkmarks as soulbound erc-721 tokens (MAKE IT SOULBOUND)
+//
+// 300k gas -> ~$.02
 
 interface ISongbirdz {
 	function ownerOf(uint256 tokenId) external view returns (address);
