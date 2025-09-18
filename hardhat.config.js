@@ -51,8 +51,8 @@ if (process.env.NODE_ENV === "development") {
 	config.networks["base-local"] = {
 		url: "http://localhost:8545",
 		accounts: [
-			process.env.WALLET_PRIVATE_KEY_OWNER,
-			process.env.WALLET_PRIVATE_KEY_NON_OWNER,
+			process.env.DEV_WALLET_PRIVATE_KEY_OWNER,
+			process.env.DEV_WALLET_PRIVATE_KEY_NON_OWNER,
 		],
 		gasPrice: "auto",
 		blockGasLimit: 30000000

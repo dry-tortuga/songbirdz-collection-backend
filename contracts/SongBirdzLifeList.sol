@@ -11,9 +11,6 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
-// TODO: When you've collected all species in a family (or all 800), you can mint
-// an item in the HOF????
-
 // TODO: Make the user pay a small, nominal fee to be able to "own" a life list
 
 // TODO: Mint checkmarks as soulbound erc-721 tokens (MAKE IT SOULBOUND)
@@ -30,9 +27,6 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	// The total number of species
 	uint16 private constant NUMBER_OF_SPECIES = 800;
 
-	uint8 private mask4 = 0x3;
-	uint8 private mask16 = 0xf;
-
 	string private constant svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
 	string private constant svgEndString = '</svg>';
 
@@ -48,7 +42,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		"Lovebirds",
 		"Hatchlings",
 		"Masters of Disguise",
-		"Final Roost"
+		"Final Migration"
 	];
 
 	// Store an instance of the original Songbirdz contract
@@ -64,9 +58,8 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	struct Species {
 		bool exists; // Flag to indicate if this species has been added
 		uint8 birdCount; // The number of birds in the collection that are this species (ranges from 1-50)
-		bytes32 colors1; // Store the hex color codes (each color = 3 bytes, first 8 colors)
-		bytes32 colors2; // Store the hex color codes (each color = 3 bytes, last 8 colors)
-		bytes pixels; // Store the image for each bird as a 16x16 pixel image (0-15 value for each pixel = 128 bytes)
+		bytes32 colors; // Store the hex color codes (each color = 3 bytes, 8 colors total)
+		bytes pixels; // Store the image for each bird as a 16x16 pixel image (0-8 value for each pixel = 64 bytes)
 		string name; // The name of the species
 	}
 
@@ -106,8 +99,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	 */
 	function publicGenerateSpecies(
 		uint16 speciesId,
-		bytes32 colors1,
-		bytes32 colors2,
+		bytes32 colors,
 		bytes memory pixels,
 		uint16[] memory birdIds,
 		string memory name
@@ -129,8 +121,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		Species memory newSpecies = Species(
 			true,
 			uint8(birdIds.length), // set the bird count for this species
-			colors1,
-			colors2,
+			colors,
 			pixels,
 			name
 		);
@@ -349,10 +340,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 
 		Species memory speciesToRender = species[speciesId];
 
-		string[16] memory colorsToRender = _parseColorCode(
-			speciesToRender.colors1,
-			speciesToRender.colors2
-		);
+		string[8] memory colorsToRender = _parseColorCode(speciesToRender.colors);
 
 		string memory svgContent = "";
 
@@ -367,26 +355,23 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 			uint256 byteIndex = i / 2;
 			uint256 shiftIndex = i % 2;
 
-			uint256 shift = shiftIndex == 0 ? 4 : 0;
+			uint256 shift = shiftIndex == 0 ? 3 : 0;
 
-			uint8 colorIdx = (uint8(uint8(speciesToRender.pixels[byteIndex]) >> shift) & 0xf);
+			uint8 colorIdx = (uint8(uint8(speciesToRender.pixels[byteIndex]) >> shift) & 0x8);
 
-			string memory pixelColor = colorsToRender[colorIdx];
+			svgContent = string(
+				abi.encodePacked(
+					svgContent,
+					'<rect x="',
+					Strings.toString(gridX),
+					'" y="',
+					Strings.toString(gridY),
+					'" width="1" height="1" fill="#',
+					colorsToRender[colorIdx],
+					'" />'
+				)
+			);
 
-			if (keccak256(bytes(pixelColor)) != keccak256(bytes("000000"))) {
-				svgContent = string(
-					abi.encodePacked(
-						svgContent,
-						'<rect x="',
-						Strings.toString(gridX),
-						'" y="',
-						Strings.toString(gridY),
-						'" width="1" height="1" fill="#',
-						pixelColor,
-						'" />'
-					)
-				);
-			}
 		}
 
 		return string(abi.encodePacked(
@@ -400,26 +385,18 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	/**
 	 * @dev Parses the encoded value and converts to the 6 digit hex codes for each color.
 	 */
-	function _parseColorCode (bytes32 packedColors1, bytes32 packedColors2) private pure returns (string[16] memory) {
+	function _parseColorCode (bytes32 packedColors) private pure returns (string[8] memory) {
 
 		// Build the final 6 hex chars for the color codes
 		return [
-			_bytes3ToColorString(bytes3(packedColors1)), // First color
-			_bytes3ToColorString(bytes3(packedColors1 << 24)), // Second color
-			_bytes3ToColorString(bytes3(packedColors1 << 48)), // Third color
-			_bytes3ToColorString(bytes3(packedColors1 << 72)), // Fourth color
-			_bytes3ToColorString(bytes3(packedColors1 << 96)), // Fifth color
-			_bytes3ToColorString(bytes3(packedColors1 << 120)), // Sixth color
-			_bytes3ToColorString(bytes3(packedColors1 << 144)), // Seventh color
-			_bytes3ToColorString(bytes3(packedColors1 << 168)), // Eighth color
-			_bytes3ToColorString(bytes3(packedColors2)), // Ninth color
-			_bytes3ToColorString(bytes3(packedColors2 << 24)), // Tenth color
-			_bytes3ToColorString(bytes3(packedColors2 << 48)), // Eleventh color
-			_bytes3ToColorString(bytes3(packedColors2 << 72)), // Twelfth color
-			_bytes3ToColorString(bytes3(packedColors2 << 96)), // Thirteenth color
-			_bytes3ToColorString(bytes3(packedColors2 << 120)), // Fourteenth color
-			_bytes3ToColorString(bytes3(packedColors2 << 144)), // Fifteenth color
-			_bytes3ToColorString(bytes3(packedColors2 << 168)) // Sixteenth color
+			_bytes3ToColorString(bytes3(packedColors)), // First color
+			_bytes3ToColorString(bytes3(packedColors << 24)), // Second color
+			_bytes3ToColorString(bytes3(packedColors << 48)), // Third color
+			_bytes3ToColorString(bytes3(packedColors << 72)), // Fourth color
+			_bytes3ToColorString(bytes3(packedColors << 96)), // Fifth color
+			_bytes3ToColorString(bytes3(packedColors << 120)), // Sixth color
+			_bytes3ToColorString(bytes3(packedColors << 144)), // Seventh color
+			_bytes3ToColorString(bytes3(packedColors << 168)) // Eighth color
 		];
 
 	}

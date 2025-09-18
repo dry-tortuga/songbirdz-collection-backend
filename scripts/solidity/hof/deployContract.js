@@ -14,12 +14,12 @@ async function main() {
 
 	console.log("---------------------------------------------------------------")
 
-	console.log(`Deploying HOF contract with account=${owner} to ${HOF_CONTRACT_ADDRESS}...`);
+	console.log(`Deploying HOF contract with account=${owner} to ${process.env.HOF_CONTRACT_ADDRESS}...`);
 
 	const tx = await ethers.deployContract(
 		"SongBirdzHOF",
 		[owner],
-		{ to: process.env.HOF_CONTRACT_ADDRESS },
+		{ address: process.env.HOF_CONTRACT_ADDRESS },
 	);
 
 	await tx.waitForDeployment();
