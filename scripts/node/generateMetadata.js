@@ -44,10 +44,10 @@ for (let i = 0; i < COLLECTION_KEYS.length; i++) {
 
 		const metadataJSON = {
 			name: `Songbird #${birdId}`,
-			description: 'One of the 10,000 birds in the Songbirdz collection that is bringing bird watching to Base',
+			description: 'One of the 10,000 birds in the Songbirdz collection that is bringing bird watching onchain',
+			image: `ipfs://${IPFS_ROOT_IMAGES}/${birdId}.jpg`,
 			animation_url: `ipfs://${IPFS_ROOT_AUDIO}/${birdId}.mp3`,
 			external_url: `https://songbirdz.cc/collection/${birdId}`,
-			image: `ipfs://${IPFS_ROOT_IMAGES}/${birdId}.jpg`,
 			species,
 			attributes: [{
 				trait_type: "Flock",
