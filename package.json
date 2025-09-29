@@ -41,6 +41,7 @@
     "@openzeppelin/test-helpers": "^0.5.15",
     "chai": "^4.3.4",
     "hardhat": "^2.19.1",
+    "jsdom": "^27.0.0",
     "openai": "^4.4.0"
   },
   "dependencies": {

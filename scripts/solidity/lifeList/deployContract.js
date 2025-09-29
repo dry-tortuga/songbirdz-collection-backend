@@ -19,7 +19,6 @@ async function main() {
 	const tx = await ethers.deployContract(
 		"SongBirdzLifeList",
 		[
-			owner,
 			process.env.SONGBIRDZ_CONTRACT_ADDRESS,
 		],
 		{

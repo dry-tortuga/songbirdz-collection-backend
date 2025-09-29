@@ -8,10 +8,10 @@ const abiPath = path.join(__dirname, "../../../artifacts/contracts/SongBirdzLife
 const { abi } = JSON.parse(fs.readFileSync(`${abiPath}/SongBirdzLifeList.json`));
 
 // Load the encoded data
-//const dataToUpload = JSON.parse(fs.readFileSync(path.join(
-//	__dirname,
-//	'../../../private/life-list-data/species-parsed.json'
-//)));
+const dataToUpload = JSON.parse(fs.readFileSync(path.join(
+	__dirname,
+	'../../../private/life-list-data/final.json'
+)));
 
 const TASK_NAME = "populateLifeListSpecies";
 const TASK_DESCRIPTION = "Populate the 800 species for the SongBirdz Life List contract";
@@ -33,20 +33,41 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 		`---- populating ${process.env.NODE_ENV} species for the Life List ----`
 	);
 
-	const speciesId = 0;
+	for (let i = 0; i < dataToUpload.length; i++) {
 
-	const tx = await contract.publicGenerateSpecies(
-		speciesId,
-		"0x000000AD2F451B1F21F5FFE8A3A7C2DFE0E82C354D0000000000000000000000",
-		"0x0000000000000000000000000111000000000000112310000000000011221444000000001111100000000001111100000000002225111000000002222251100000002222225510000002322222552000000233222255000000223332255500002222233555500000000225555200000000000600600000000000066066000000",
-		[1, 2, 3, 4, 5],
-		"Red-bellied Woodpecker",
-	);
+		const species = dataToUpload[i];
 
-	const receipt = await tx.wait();
+		if (!species.colors1 ||
+			!species.colors2 ||
+			!species.pixels ||
+			!species.birdIds ||
+			species.birdIds.length === 0) {
+			continue;
+		}
 
-	// The transaction is now on chain!
-	console.log(`Tx=${receipt.hash}, gas=${receipt.gasUsed}, is mined in block ${receipt.blockNumber}`);
+		console.log(`--------------------- i=${i} ----------------------------`);
+
+		console.log(species);
+
+		// Publish the transaction
+		const tx = await contract.publicGenerateSpecies(
+			species.id,
+			species.colors1,
+			species.colors2,
+			species.pixels,
+			species.birdIds,
+			species.name,
+			species.family
+		);
+
+		const receipt = await tx.wait();
+
+		// The transaction is now on chain!
+		console.log(`Tx=${receipt.hash}, gas=${receipt.gasUsed}, is mined in block ${receipt.blockNumber}`);
+
+		console.log('-------------------------------------------------------');
+
+	}
 
 	console.log('-------------------------------------------------------');
 
@@ -60,38 +81,6 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 	const tokenURI = await contract.tokenURI(0);
 
 	console.log(tokenURI);
-
-	/*
-	for (let i = 0; i < dataToUpload.length; i++) {
-
-		console.log(`--------------------- i=${i} ----------------------------`);
-
-		const trophy = dataToUpload[i];
-
-		console.log(trophy);
-
-		// Publish the transaction
-		const tx = await contract.publicGenerateTrophy(
-			trophy.to,
-			trophy.place,
-			trophy.points,
-			trophy.colors1,
-			trophy.colors2,
-			trophy.pixels,
-			trophy.name,
-			trophy.season,
-			trophy.species
-		);
-
-		const receipt = await tx.wait();
-
-		// The transaction is now on chain!
-		console.log(`Tx=${receipt.hash}, gas=${receipt.gasUsed}, is mined in block ${receipt.blockNumber}`);
-
-		console.log('-------------------------------------------------------');
-
-	}
-	*/
 
 });
 
