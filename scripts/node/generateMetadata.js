@@ -18,8 +18,8 @@ const {
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
-const IPFS_ROOT_IMAGES = "bafybeicjzy2uaenpe3my4ns6ma5ihotru4o26jadbx5ijpj5op4bux5nha";
-const IPFS_ROOT_AUDIO = "babcbeicjzy2uaenpe3my4ns6ma5ihotru4o26jadbx5ijpj5op4bux1ccc";
+const IPFS_ROOT_IMAGES = "bafybeifyldneumm7t3rh6oliryha7uc7bswjxbag7pvll3cpnwcpybehjq";
+const IPFS_ROOT_AUDIO = "bafybeicpfg4slta5eqtqctxlh6l22kq543yiewr3kdjplevc5rolkrzqrq";
 
 console.log(`---- generating metadata for the songbirdz collection ----`);
 
@@ -33,7 +33,6 @@ for (let i = 0; i < COLLECTION_KEYS.length; i++) {
 		const birdId = (i * COLLECTION_SIZE) + j;
 
 		const species = KEY_BIRD_DATA[birdId].name;
-		const description = null;
 		const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
 
 		if (!species || !family) {
