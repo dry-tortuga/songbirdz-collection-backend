@@ -7,6 +7,9 @@ const {
 	getRandomUnidentifiedBird,
 } = require("./birds");
 const {
+	getBirdOfTheWeek,
+} = require("./birdOfTheWeek")
+const {
 	getDailyStreaks,
 	getDailyStreak,
 	updateDailyStreak,
@@ -62,5 +65,8 @@ router.get("/memory-match/leaderboard", getMemoryMatchLeaderboard);
 
 // Get the games played (today) for a specific user for the memory match game
 router.get("/memory-match/games-played", getMemoryMatchGamesPlayed);
+
+// Get the information about the bird of the week
+router.get("/bird-of-the-week", getBirdOfTheWeek);
 
 module.exports = router;
