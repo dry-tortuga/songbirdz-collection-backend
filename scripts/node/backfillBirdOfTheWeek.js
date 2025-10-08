@@ -4,6 +4,8 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const REQUIRED_FIELDS = ['species', 'family', 'flock', 'ids', 'facts', 'links'];
 
+// Sourced from bookmarked posts from April 1st 2025 onwards...
+
 // 10/06/25: Sedge Wren
 // 10/13/25: Common Black Hawk
 // 10/20/25: White-crowned Pigeon
