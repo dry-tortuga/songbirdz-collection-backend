@@ -8,6 +8,11 @@ const logger = require("morgan");
 const indexRouter = require("./routes");
 const indexStreamer = require("./streams");
 
+// Set up the cronjobs to start running...
+if (process.env.NODE_ENV === 'production') {
+	require("./cron");
+}
+
 const app = express();
 
 app.use(cors({ origin: "*" }));
