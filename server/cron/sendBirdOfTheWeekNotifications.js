@@ -2,6 +2,8 @@ const cron = require('node-cron');
 
 const DB = require("../db");
 
+console.log("Scheduled cronjob for 'Bird of the Week' every Monday at 4pm UTC");
+
 // Run every Monday at 4:00 PM UTC
 cron.schedule('0 16 * * 1', async () => {
 
@@ -37,6 +39,7 @@ cron.schedule('0 16 * * 1', async () => {
 			const url = 'https://api.neynar.com/v2/farcaster/frame/notifications/';
 
 			const body = {
+				target_fids: [], // SEND TO EVERYONE
 				notification: {
 					title: "New Bird of the Week!",
 					body: `Learn about the ${currentBird.species} (${currentBird.family})`,
