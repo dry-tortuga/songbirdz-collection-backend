@@ -9,12 +9,22 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 	id: 1030,
 	label: 'Posted on X',
 	amount: 25,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // whalestacking
+		'0xd4b896413742ea782e3a9f1108171f5bb4d9dbaa', // leosharkpark
+		'0x0682f146b16e7c428a092106db430126a3766ec0', // bastr
+		'0x0de101737fafd0eb7cf0c986a1fc66137f1ece6f', // jimbey
+		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
+		'0x0bb618d7c55ce7fed637164cf45d577c03979d9a', // cryptomouse
+		'0x393b57b89c67349e0fc184b7b57e44e28ef3b29c', // tamara
+	],
 }, {
 	id: 1031,
 	label: 'Posted on Farcaster',
 	amount: 25,
-	users: [],
+	users: [
+	],
 }, {
 	id: 1032,
 	label: 'Joined Telegram',
@@ -61,6 +71,10 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // justforfreedom
 		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // whalestacking
 		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
+		'0xef4993567ec1df8aec7beba836135efb0652c2ef', // turtles
+		'0xd4b896413742ea782e3a9f1108171f5bb4d9dbaa', // leosharkpark
+		'0x0de101737fafd0eb7cf0c986a1fc66137f1ece6f', // jimbey
+		'0x211b25a4ed2cb5bbf8c36cc7872a13a1d00ca840', // great uxie ovey (nobodythere5)
 	],
 }, {
 	id: 1033,
@@ -101,17 +115,25 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // disciple
 		'0x1ace9e4df9de3af66e33170991617ab73de5dc1a', // wanderlustmom
 		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
+		'0xab56c668b2c49f319fc5c4c0d27b2c564c3bd810', // john snow (cancersucks)
+		'0x80843e69308a594c40194ad414c3b77f606ee770', // virtualcat
+		'0xc8115c770efaaf0de401898e4b86f3be36eb2f42', // jonnybravo
 	],
 }, {
 	id: 1034,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [],
+	users: [
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+	],
 }, {
 	id: 1035,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [],
+	users: [
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+	],
 }, {
 	id: 1036,
 	label: 'Hit 30 Day Streak',
