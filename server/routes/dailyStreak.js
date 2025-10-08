@@ -3,7 +3,6 @@ const DB = require("../db");
 const RESULTS_SIZE = 53;
 
 // Create a new connection to the database
-
 const db = new DB();
 
 const getDailyStreaks = async (req, res, next) => {
