@@ -13,7 +13,7 @@ const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`
 
 const audioFolder =  path.join(
 	__dirname,
-	`../../private/the-cornell-guide-to-bird-sounds--united-states-and-canada-v2021/`,
+	`../../private/audio-original/`,
 );
 
 // Get the audio files to use as source for the collection
