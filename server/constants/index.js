@@ -32,6 +32,7 @@ const CURRENT_POINTS_SEASON_END_DATE = new Date("2025-11-30T23:00:00.000+00:00")
 
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
+const AUDIO_CONTRIBUTORS = require("./audio-contributors.json");
 const FAMILIES_DATA = require("./families.json");
 
 const UNIDENTIFIED_NAME = "UNIDENTIFIED";
@@ -92,8 +93,12 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 			// Get the unique ID of the bird relative to the entire 10,000
 			const finalIndex = cIndex * COLLECTION_SIZE + birdIndex;
 
+			const audioContributionData = AUDIO_CONTRIBUTORS[finalIndex];
+
 			KEY_BIRD_DATA[finalIndex] = {
 				name: speciesName,
+				audioContributor: audioContributionData.author,
+				audioSpecies: audioContributionData.species,
 				collectionName: COLLECTION_NAMES[cIndex],
 				collectionNumber: cIndex,
 				options: [],
