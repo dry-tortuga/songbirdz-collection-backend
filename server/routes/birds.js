@@ -63,7 +63,7 @@ const getBirdMetadata = async (req, res, next) => {
 
 	res.send({
 		name: `Songbird #${birdId}`,
-		description: 'One of the 10,000 birds in the Songbirdz collection that is bringing bird watching onchain',
+		description: 'One of the 10,000 birds in the Songbirdz collection',
 		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
