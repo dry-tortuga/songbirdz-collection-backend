@@ -6,2598 +6,2598 @@
   },
   {
     "birdId": 1,
-    "author": "William W. H. Gunn",
-    "species": "Swainson's Hawk"
+    "author": "Jay McGowan",
+    "species": "Rose-breasted Grosbeak"
   },
   {
     "birdId": 2,
-    "author": "Matthew D. Medler",
-    "species": "Purple Martin"
+    "author": "Wil Hershberger",
+    "species": "Red-winged Blackbird"
   },
   {
     "birdId": 3,
-    "author": "Bob McGuire",
-    "species": "Anna's Hummingbird"
+    "author": "Wil Hershberger",
+    "species": "Western Wood-Pewee"
   },
   {
     "birdId": 4,
-    "author": "Nick Tepper",
-    "species": "Willet"
-  },
-  {
-    "birdId": 5,
-    "author": "Jay McGowan",
-    "species": "Red-breasted Merganser"
-  },
-  {
-    "birdId": 6,
-    "author": "Randolph Little",
-    "species": "Lark Sparrow"
-  },
-  {
-    "birdId": 7,
-    "author": "Bob McGuire",
-    "species": "Acorn Woodpecker"
-  },
-  {
-    "birdId": 8,
-    "author": "Wil Hershberger",
-    "species": "Indigo Bunting"
-  },
-  {
-    "birdId": 9,
-    "author": "Leonard J. Peyton",
-    "species": "Steller's Jay"
-  },
-  {
-    "birdId": 10,
-    "author": "Gerrit Vyn",
-    "species": "Snowy Owl"
-  },
-  {
-    "birdId": 11,
-    "author": "Matthew D. Medler",
-    "species": "Baltimore Oriole"
-  },
-  {
-    "birdId": 12,
-    "author": "Wil Hershberger",
-    "species": "Western Meadowlark"
-  },
-  {
-    "birdId": 13,
-    "author": "Hope Batcheller",
-    "species": "Juniper Titmouse"
-  },
-  {
-    "birdId": 14,
-    "author": "Wil Hershberger",
-    "species": "Wood Thrush"
-  },
-  {
-    "birdId": 15,
-    "author": "Tom Johnson",
-    "species": "Chuck-will's-widow"
-  },
-  {
-    "birdId": 16,
-    "author": "Wil Hershberger",
-    "species": "Bicknell's Thrush"
-  },
-  {
-    "birdId": 17,
-    "author": "Matthew D. Medler",
-    "species": "Bronzed Cowbird"
-  },
-  {
-    "birdId": 18,
-    "author": "Bob McGuire",
-    "species": "Black-crowned Night-Heron"
-  },
-  {
-    "birdId": 19,
-    "author": "Paul Marvin",
-    "species": "Common Gallinule"
-  },
-  {
-    "birdId": 20,
-    "author": "Geoffrey A. Keller",
-    "species": "Scissor-tailed Flycatcher"
-  },
-  {
-    "birdId": 21,
-    "author": "Jay McGowan",
-    "species": "Ovenbird"
-  },
-  {
-    "birdId": 22,
-    "author": "Bob McGuire",
-    "species": "American Black Duck"
-  },
-  {
-    "birdId": 23,
-    "author": "Glenn Seeholzer",
-    "species": "Eastern Towhee"
-  },
-  {
-    "birdId": 24,
-    "author": "Tom Johnson",
-    "species": "Gadwall"
-  },
-  {
-    "birdId": 25,
-    "author": "Martha Fischer",
-    "species": "Great Egret"
-  },
-  {
-    "birdId": 26,
-    "author": "Andrew Spencer",
-    "species": "Mountain Bluebird"
-  },
-  {
-    "birdId": 27,
-    "author": "William W. H. Gunn",
-    "species": "Common Goldeneye"
-  },
-  {
-    "birdId": 28,
-    "author": "Wil Hershberger",
-    "species": "Bewick's Wren"
-  },
-  {
-    "birdId": 29,
-    "author": "Wil Hershberger",
-    "species": "Northern Mockingbird"
-  },
-  {
-    "birdId": 30,
-    "author": "Michael Andersen",
-    "species": "Roseate Spoonbill"
-  },
-  {
-    "birdId": 31,
-    "author": "Andrew Spencer",
-    "species": "Clay-colored Thrush"
-  },
-  {
-    "birdId": 32,
-    "author": "Matthew D. Medler",
-    "species": "Golden-crowned Kinglet"
-  },
-  {
-    "birdId": 33,
-    "author": "Robert C. Stein",
-    "species": "Bufflehead"
-  },
-  {
-    "birdId": 34,
-    "author": "Andrew Spencer",
-    "species": "Redhead"
-  },
-  {
-    "birdId": 35,
-    "author": "Leonard J. Peyton",
-    "species": "Steller's Jay"
-  },
-  {
-    "birdId": 36,
-    "author": "Nathan Pieplow",
-    "species": "Clark's Nutcracker"
-  },
-  {
-    "birdId": 37,
-    "author": "Gregory Budney",
-    "species": "Florida Scrub-Jay"
-  },
-  {
-    "birdId": 38,
-    "author": "Peter Boesman",
-    "species": "Common Pochard"
-  },
-  {
-    "birdId": 39,
-    "author": "Bob McGuire",
-    "species": "Burrowing Owl"
-  },
-  {
-    "birdId": 40,
-    "author": "Wil Hershberger",
-    "species": "Indigo Bunting"
-  },
-  {
-    "birdId": 41,
-    "author": "Wil Hershberger",
-    "species": "Eastern Screech-Owl"
-  },
-  {
-    "birdId": 42,
-    "author": "Wil Hershberger",
-    "species": "Northern Mockingbird"
-  },
-  {
-    "birdId": 43,
-    "author": "Arthur A. Allen",
-    "species": "Purple Gallinule"
-  },
-  {
-    "birdId": 44,
-    "author": "Wil Hershberger",
-    "species": "Carolina Chickadee"
-  },
-  {
-    "birdId": 45,
-    "author": "David C. Evers",
-    "species": "Common Loon"
-  },
-  {
-    "birdId": 46,
-    "author": "George B. Reynard",
-    "species": "Brant"
-  },
-  {
-    "birdId": 47,
-    "author": "Nick Tepper",
-    "species": "Willet"
-  },
-  {
-    "birdId": 48,
-    "author": "Matthew D. Medler",
-    "species": "Gray Catbird"
-  },
-  {
-    "birdId": 49,
-    "author": "Jay McGowan",
-    "species": "Ovenbird"
-  },
-  {
-    "birdId": 50,
-    "author": "Lucas DeCicco",
-    "species": "Fox Sparrow"
-  },
-  {
-    "birdId": 51,
-    "author": "Randolph Little",
-    "species": "Clapper Rail"
-  },
-  {
-    "birdId": 52,
-    "author": "Christopher McPherson",
-    "species": "Eastern Wood-Pewee"
-  },
-  {
-    "birdId": 53,
-    "author": "Brad Walker",
-    "species": "House Sparrow"
-  },
-  {
-    "birdId": 54,
-    "author": "Matthew Wistrand",
-    "species": "Red-headed Woodpecker"
-  },
-  {
-    "birdId": 55,
-    "author": "Randolph Little",
-    "species": "Lark Sparrow"
-  },
-  {
-    "birdId": 56,
-    "author": "Bob McGuire",
-    "species": "Common Pauraque"
-  },
-  {
-    "birdId": 57,
-    "author": "Matthew D. Medler",
-    "species": "Song Sparrow"
-  },
-  {
-    "birdId": 58,
-    "author": "Robert Bethel",
-    "species": "Eastern Meadowlark"
-  },
-  {
-    "birdId": 59,
-    "author": "Robert C. Stein",
-    "species": "Bufflehead"
-  },
-  {
-    "birdId": 60,
-    "author": "Jay McGowan",
-    "species": "Black-capped Chickadee"
-  },
-  {
-    "birdId": 61,
-    "author": "Vincent Gerwe",
-    "species": "California Condor"
-  },
-  {
-    "birdId": 62,
-    "author": "Tom Johnson",
-    "species": "Northern Bobwhite"
-  },
-  {
-    "birdId": 63,
-    "author": "Matthew Wistrand",
-    "species": "Red-headed Woodpecker"
-  },
-  {
-    "birdId": 64,
-    "author": "Michael Andersen",
-    "species": "Wood Duck"
-  },
-  {
-    "birdId": 65,
-    "author": "William R. Fish",
-    "species": "Great Horned Owl"
-  },
-  {
-    "birdId": 66,
-    "author": "Paul Marvin",
-    "species": "Barn Owl"
-  },
-  {
-    "birdId": 67,
-    "author": "Paul Fenwick",
-    "species": "Red-shouldered Hawk"
-  },
-  {
-    "birdId": 68,
-    "author": "Paul Marvin",
-    "species": "Great Blue Heron"
-  },
-  {
-    "birdId": 69,
-    "author": "Andrew Spencer",
-    "species": "Woodhouse's Scrub-Jay"
-  },
-  {
-    "birdId": 70,
-    "author": "Robert C. Stein",
-    "species": "Laughing Gull"
-  },
-  {
-    "birdId": 71,
-    "author": "Jay McGowan",
-    "species": "Common Merganser"
-  },
-  {
-    "birdId": 72,
-    "author": "Arthur A. Allen",
-    "species": "Pileated Woodpecker"
-  },
-  {
-    "birdId": 73,
-    "author": "Brad Walker",
-    "species": "Tufted Titmouse"
-  },
-  {
-    "birdId": 74,
-    "author": "Jay McGowan",
-    "species": "Eastern Whip-poor-will"
-  },
-  {
-    "birdId": 75,
-    "author": "William W. H. Gunn",
-    "species": "Common Goldeneye"
-  },
-  {
-    "birdId": 76,
-    "author": "Wil Hershberger",
-    "species": "Bicknell's Thrush"
-  },
-  {
-    "birdId": 77,
-    "author": "Hope Batcheller",
-    "species": "Juniper Titmouse"
-  },
-  {
-    "birdId": 78,
-    "author": "Jay McGowan",
-    "species": "Northern Cardinal"
-  },
-  {
-    "birdId": 79,
-    "author": "William W. H. Gunn",
-    "species": "American Coot"
-  },
-  {
-    "birdId": 80,
-    "author": "Wil Hershberger",
-    "species": "Western Wood-Pewee"
-  },
-  {
-    "birdId": 81,
-    "author": "Forrest Baublitz",
-    "species": "Yellow-crowned Night-Heron"
-  },
-  {
-    "birdId": 82,
-    "author": "Mark Gardiner",
-    "species": "Western Tanager"
-  },
-  {
-    "birdId": 83,
-    "author": "Wil Hershberger",
-    "species": "Indigo Bunting"
-  },
-  {
-    "birdId": 84,
-    "author": "Paul Marvin",
-    "species": "Red-tailed Hawk"
-  },
-  {
-    "birdId": 85,
-    "author": "John Patterson",
-    "species": "Virginia Rail"
-  },
-  {
-    "birdId": 86,
-    "author": "Bob McGuire",
-    "species": "Painted Bunting"
-  },
-  {
-    "birdId": 87,
-    "author": "Wil Hershberger",
-    "species": "Wood Thrush"
-  },
-  {
-    "birdId": 88,
-    "author": "Gregory Budney",
-    "species": "Canada Goose"
-  },
-  {
-    "birdId": 89,
-    "author": "Wil Hershberger",
-    "species": "Carolina Wren"
-  },
-  {
-    "birdId": 90,
-    "author": "Andrew Spencer",
-    "species": "Rock Wren"
-  },
-  {
-    "birdId": 91,
-    "author": "Matthew D. Medler",
-    "species": "Blue Jay"
-  },
-  {
-    "birdId": 92,
-    "author": "Jay McGowan",
-    "species": "Ovenbird"
-  },
-  {
-    "birdId": 93,
-    "author": "Robert C. Stein",
-    "species": "Bufflehead"
-  },
-  {
-    "birdId": 94,
-    "author": "Bob McGuire",
-    "species": "Great Cormorant"
-  },
-  {
-    "birdId": 95,
-    "author": "Jay McGowan",
-    "species": "Savannah Sparrow"
-  },
-  {
-    "birdId": 96,
-    "author": "David C. Evers",
-    "species": "Common Loon"
-  },
-  {
-    "birdId": 97,
-    "author": "Vincent Gerwe",
-    "species": "California Condor"
-  },
-  {
-    "birdId": 98,
-    "author": "Paul Marvin",
-    "species": "Hepatic Tanager"
-  },
-  {
-    "birdId": 99,
-    "author": "William W. H. Gunn",
-    "species": "Blue-winged Teal"
-  },
-  {
-    "birdId": 100,
-    "author": "Paul Marvin",
-    "species": "Green Heron"
-  },
-  {
-    "birdId": 101,
-    "author": "Glen Chapman",
-    "species": "Downy Woodpecker"
-  },
-  {
-    "birdId": 102,
-    "author": "Nick Tepper",
-    "species": "Sandhill Crane"
-  },
-  {
-    "birdId": 103,
-    "author": "Jay McGowan",
-    "species": "Common Merganser"
-  },
-  {
-    "birdId": 104,
-    "author": "Glenn Seeholzer",
-    "species": "Eastern Towhee"
-  },
-  {
-    "birdId": 105,
-    "author": "William W. H. Gunn",
-    "species": "American Coot"
-  },
-  {
-    "birdId": 106,
-    "author": "John Patterson",
-    "species": "Virginia Rail"
-  },
-  {
-    "birdId": 107,
-    "author": "Matthew D. Medler",
-    "species": "Scarlet Tanager"
-  },
-  {
-    "birdId": 108,
-    "author": "Gerrit Vyn",
-    "species": "Snow Bunting"
-  },
-  {
-    "birdId": 109,
-    "author": "Gregory Budney",
-    "species": "Black-necked Stilt"
-  },
-  {
-    "birdId": 110,
-    "author": "Wil Hershberger",
-    "species": "Eastern Screech-Owl"
-  },
-  {
-    "birdId": 111,
-    "author": "Jay McGowan",
-    "species": "Rose-breasted Grosbeak"
-  },
-  {
-    "birdId": 112,
-    "author": "Nathaniel H. Taylor",
-    "species": "Ruffed Grouse"
-  },
-  {
-    "birdId": 113,
-    "author": "Gregory Budney",
-    "species": "Pied-billed Grebe"
-  },
-  {
-    "birdId": 114,
-    "author": "Gerrit Vyn",
-    "species": "King Rail"
-  },
-  {
-    "birdId": 115,
-    "author": "Curtis Marantz",
-    "species": "Green Kingfisher"
-  },
-  {
-    "birdId": 116,
-    "author": "Geoffrey A. Keller",
-    "species": "Green Jay"
-  },
-  {
-    "birdId": 117,
-    "author": "Wil Hershberger",
-    "species": "Blue Grosbeak"
-  },
-  {
-    "birdId": 118,
-    "author": "Michael Andersen",
-    "species": "Forster's Tern"
-  },
-  {
-    "birdId": 119,
-    "author": "Michael Andersen",
-    "species": "Forster's Tern"
-  },
-  {
-    "birdId": 120,
-    "author": "Wil Hershberger",
-    "species": "Eastern Screech-Owl"
-  },
-  {
-    "birdId": 121,
-    "author": "Wil Hershberger",
-    "species": "Blue Grosbeak"
-  },
-  {
-    "birdId": 122,
-    "author": "Geoffrey A. Keller",
-    "species": "Phainopepla"
-  },
-  {
-    "birdId": 123,
-    "author": "Nathan Pieplow",
-    "species": "Western Bluebird"
-  },
-  {
-    "birdId": 124,
-    "author": "Paul Marvin",
-    "species": "Hepatic Tanager"
-  },
-  {
-    "birdId": 125,
-    "author": "Tayler Brooks",
-    "species": "Canyon Wren"
-  },
-  {
-    "birdId": 126,
-    "author": "Terri Gallion",
-    "species": "Golden Eagle"
-  },
-  {
-    "birdId": 127,
-    "author": "Geoffrey A. Keller",
-    "species": "Osprey"
-  },
-  {
-    "birdId": 128,
-    "author": "Wil Hershberger",
-    "species": "Killdeer"
-  },
-  {
-    "birdId": 129,
-    "author": "Jay McGowan",
-    "species": "Plain Chachalaca"
-  },
-  {
-    "birdId": 130,
-    "author": "Sarah Toner",
-    "species": "Snowy Egret"
-  },
-  {
-    "birdId": 131,
-    "author": "David L. Ross, Jr.",
-    "species": "Roadside Hawk"
-  },
-  {
-    "birdId": 132,
-    "author": "Brad Walker",
-    "species": "House Sparrow"
-  },
-  {
-    "birdId": 133,
-    "author": "Jay McGowan",
-    "species": "Red-bellied Woodpecker"
-  },
-  {
-    "birdId": 134,
-    "author": "Paul Marvin",
-    "species": "American Oystercatcher"
-  },
-  {
-    "birdId": 135,
-    "author": "Gregory Budney",
-    "species": "Red Crossbill"
-  },
-  {
-    "birdId": 136,
-    "author": "Wil Hershberger",
-    "species": "Carolina Chickadee"
-  },
-  {
-    "birdId": 137,
-    "author": "Michael Andersen",
-    "species": "Wood Duck"
-  },
-  {
-    "birdId": 138,
-    "author": "Nathan Pieplow",
-    "species": "Clark's Nutcracker"
-  },
-  {
-    "birdId": 139,
-    "author": "Nathan Pieplow",
-    "species": "Peregrine Falcon"
-  },
-  {
-    "birdId": 140,
-    "author": "Wil Hershberger",
-    "species": "Blue Grosbeak"
-  },
-  {
-    "birdId": 141,
-    "author": "Gerrit Vyn",
-    "species": "Greater Prairie-Chicken"
-  },
-  {
-    "birdId": 142,
-    "author": "Bob McGuire",
-    "species": "Vermilion Flycatcher"
-  },
-  {
-    "birdId": 143,
-    "author": "Geoffrey A. Keller",
-    "species": "Scissor-tailed Flycatcher"
-  },
-  {
-    "birdId": 144,
-    "author": "Gregory Budney",
-    "species": "Orchard Oriole"
-  },
-  {
-    "birdId": 145,
-    "author": "Paul Marvin",
-    "species": "Rock Pigeon"
-  },
-  {
-    "birdId": 146,
-    "author": "Steven Biggers",
-    "species": "Yellow-bellied Sapsucker"
-  },
-  {
-    "birdId": 147,
-    "author": "Nathan Pieplow",
-    "species": "Western Bluebird"
-  },
-  {
-    "birdId": 148,
-    "author": "Kevin J. Colver",
-    "species": "Lazuli Bunting"
-  },
-  {
-    "birdId": 149,
-    "author": "Jay McGowan",
-    "species": "Rose-breasted Grosbeak"
-  },
-  {
-    "birdId": 150,
-    "author": "Matthew D. Medler",
-    "species": "Hermit Thrush"
-  },
-  {
-    "birdId": 151,
-    "author": "Gerrit Vyn",
-    "species": "Northern Jacana"
-  },
-  {
-    "birdId": 152,
-    "author": "Nathan Pieplow",
-    "species": "Western Bluebird"
-  },
-  {
-    "birdId": 153,
-    "author": "Paul Marvin",
-    "species": "Hepatic Tanager"
-  },
-  {
-    "birdId": 154,
-    "author": "Brad Walker",
-    "species": "House Wren"
-  },
-  {
-    "birdId": 155,
-    "author": "Dave Herr",
-    "species": "Barn Swallow"
-  },
-  {
-    "birdId": 156,
-    "author": "Mark Robbins",
-    "species": "Greater Roadrunner"
-  },
-  {
-    "birdId": 157,
-    "author": "William W. H. Gunn",
-    "species": "Common Goldeneye"
-  },
-  {
-    "birdId": 158,
-    "author": "Matthew D. Medler",
-    "species": "Blue Jay"
-  },
-  {
-    "birdId": 159,
-    "author": "Martha Fischer",
-    "species": "Great Egret"
-  },
-  {
-    "birdId": 160,
-    "author": "Thomas G. Sander",
-    "species": "Barred Owl"
-  },
-  {
-    "birdId": 161,
-    "author": "Gerrit Vyn",
-    "species": "Black-bellied Whistling-Duck"
-  },
-  {
-    "birdId": 162,
-    "author": "Lucas DeCicco",
-    "species": "Wilson's Snipe"
-  },
-  {
-    "birdId": 163,
-    "author": "Brad Walker",
-    "species": "House Wren"
-  },
-  {
-    "birdId": 164,
-    "author": "John Patterson",
-    "species": "Virginia Rail"
-  },
-  {
-    "birdId": 165,
-    "author": "Matthew D. Medler",
-    "species": "Scarlet Tanager"
-  },
-  {
-    "birdId": 166,
-    "author": "Jay McGowan",
-    "species": "Eastern Kingbird"
-  },
-  {
-    "birdId": 167,
-    "author": "Michael Andersen",
-    "species": "American Crow"
-  },
-  {
-    "birdId": 168,
-    "author": "Paul Marvin",
-    "species": "Rock Pigeon"
-  },
-  {
-    "birdId": 169,
-    "author": "Jocelyn Lauzon",
-    "species": "White-throated Sparrow"
-  },
-  {
-    "birdId": 170,
-    "author": "Gregory Budney",
-    "species": "Brown-headed Nuthatch"
-  },
-  {
-    "birdId": 171,
-    "author": "Bob McGuire",
-    "species": "Anna's Hummingbird"
-  },
-  {
-    "birdId": 172,
-    "author": "Peter Paul Kellogg",
-    "species": "European Starling"
-  },
-  {
-    "birdId": 173,
-    "author": "William W. H. Gunn",
-    "species": "Swainson's Hawk"
-  },
-  {
-    "birdId": 174,
-    "author": "Jay McGowan",
-    "species": "Brown Pelican"
-  },
-  {
-    "birdId": 175,
-    "author": "Paul Marvin",
-    "species": "Green Heron"
-  },
-  {
-    "birdId": 176,
-    "author": "John Patterson",
-    "species": "Franklin's Gull"
-  },
-  {
-    "birdId": 177,
-    "author": "Matthew D. Medler",
-    "species": "Purple Martin"
-  },
-  {
-    "birdId": 178,
-    "author": "David McQuade",
-    "species": "Altamira Oriole"
-  },
-  {
-    "birdId": 179,
-    "author": "Wil Hershberger",
-    "species": "Western Meadowlark"
-  },
-  {
-    "birdId": 180,
-    "author": "Christopher McPherson",
-    "species": "Cedar Waxwing"
-  },
-  {
-    "birdId": 181,
-    "author": "Gerrit Vyn",
-    "species": "Snowy Owl"
-  },
-  {
-    "birdId": 182,
-    "author": "Dave Herr",
-    "species": "Barn Swallow"
-  },
-  {
-    "birdId": 183,
-    "author": "Christopher McPherson",
-    "species": "Cedar Waxwing"
-  },
-  {
-    "birdId": 184,
-    "author": "Matthew D. Medler",
-    "species": "Gray Catbird"
-  },
-  {
-    "birdId": 185,
-    "author": "Gerrit Vyn",
-    "species": "King Rail"
-  },
-  {
-    "birdId": 186,
-    "author": "Bob McGuire",
-    "species": "Acorn Woodpecker"
-  },
-  {
-    "birdId": 187,
-    "author": "Michael Andersen",
-    "species": "American Crow"
-  },
-  {
-    "birdId": 188,
-    "author": "Bob McGuire",
-    "species": "Field Sparrow"
-  },
-  {
-    "birdId": 189,
-    "author": "Nick Tepper",
-    "species": "Sandhill Crane"
-  },
-  {
-    "birdId": 190,
-    "author": "Wil Hershberger",
-    "species": "Eastern Screech-Owl"
-  },
-  {
-    "birdId": 191,
-    "author": "Andrew Spencer",
-    "species": "Redhead"
-  },
-  {
-    "birdId": 192,
-    "author": "Joe B. Guinn",
-    "species": "Mississippi Kite"
-  },
-  {
-    "birdId": 193,
-    "author": "Paul Marvin",
-    "species": "Barn Owl"
-  },
-  {
-    "birdId": 194,
-    "author": "Bob McGuire",
-    "species": "Summer Tanager"
-  },
-  {
-    "birdId": 195,
-    "author": "Gregory Budney",
-    "species": "American Avocet"
-  },
-  {
-    "birdId": 196,
-    "author": "Jay McGowan",
-    "species": "Brown Pelican"
-  },
-  {
-    "birdId": 197,
-    "author": "Jay McGowan",
-    "species": "Northern Cardinal"
-  },
-  {
-    "birdId": 198,
-    "author": "Nathan Pieplow",
-    "species": "Peregrine Falcon"
-  },
-  {
-    "birdId": 199,
-    "author": "Andrew Spencer",
-    "species": "Loggerhead Shrike"
-  },
-  {
-    "birdId": 200,
-    "author": "Paul Fenwick",
-    "species": "Red-shouldered Hawk"
-  },
-  {
-    "birdId": 201,
-    "author": "Gregory Budney",
-    "species": "Red Crossbill"
-  },
-  {
-    "birdId": 202,
-    "author": "Bob McGuire",
-    "species": "Black-crowned Night-Heron"
-  },
-  {
-    "birdId": 203,
-    "author": "Jay McGowan",
-    "species": "Eurasian Collared-Dove"
-  },
-  {
-    "birdId": 204,
-    "author": "Randolph Little",
-    "species": "Clapper Rail"
-  },
-  {
-    "birdId": 205,
-    "author": "Bob McGuire",
-    "species": "Chipping Sparrow"
-  },
-  {
-    "birdId": 206,
-    "author": "Andrew Spencer",
-    "species": "Loggerhead Shrike"
-  },
-  {
-    "birdId": 207,
-    "author": "Wil Hershberger",
-    "species": "Blue Grosbeak"
-  },
-  {
-    "birdId": 208,
-    "author": "Bob McGuire",
-    "species": "Chipping Sparrow"
-  },
-  {
-    "birdId": 209,
-    "author": "Gerrit Vyn",
-    "species": "King Rail"
-  },
-  {
-    "birdId": 210,
-    "author": "Dave Herr",
-    "species": "American Kestrel"
-  },
-  {
-    "birdId": 211,
-    "author": "Steven Biggers",
-    "species": "Yellow-bellied Sapsucker"
-  },
-  {
-    "birdId": 212,
-    "author": "Jay McGowan",
-    "species": "Black-capped Chickadee"
-  },
-  {
-    "birdId": 213,
-    "author": "Jay McGowan",
-    "species": "Northern Cardinal"
-  },
-  {
-    "birdId": 214,
-    "author": "William W. H. Gunn",
-    "species": "Sora"
-  },
-  {
-    "birdId": 215,
-    "author": "Brian Sullivan",
-    "species": "Wild Turkey"
-  },
-  {
-    "birdId": 216,
-    "author": "Glen Chapman",
-    "species": "Downy Woodpecker"
-  },
-  {
-    "birdId": 217,
-    "author": "Gregory Budney",
-    "species": "Orchard Oriole"
-  },
-  {
-    "birdId": 218,
-    "author": "Leonard J. Peyton",
-    "species": "Tree Swallow"
-  },
-  {
-    "birdId": 219,
-    "author": "Wil Hershberger",
-    "species": "Eastern Phoebe"
-  },
-  {
-    "birdId": 220,
-    "author": "Andrew Spencer",
-    "species": "Mountain Bluebird"
-  },
-  {
-    "birdId": 221,
-    "author": "Andrew Spencer",
-    "species": "Rock Wren"
-  },
-  {
-    "birdId": 222,
-    "author": "Wil Hershberger",
-    "species": "Red-winged Blackbird"
-  },
-  {
-    "birdId": 223,
-    "author": "Tom Johnson",
-    "species": "Gadwall"
-  },
-  {
-    "birdId": 224,
-    "author": "Wil Hershberger",
-    "species": "Northern Mockingbird"
-  },
-  {
-    "birdId": 225,
-    "author": "Matthew D. Medler",
-    "species": "Hermit Thrush"
-  },
-  {
-    "birdId": 226,
-    "author": "Robert C. Stein",
-    "species": "Laughing Gull"
-  },
-  {
-    "birdId": 227,
-    "author": "Randolph Little",
-    "species": "Ruby-throated Hummingbird"
-  },
-  {
-    "birdId": 228,
-    "author": "Wil Hershberger",
-    "species": "White-breasted Nuthatch"
-  },
-  {
-    "birdId": 229,
-    "author": "Bob McGuire",
-    "species": "Common Pauraque"
-  },
-  {
-    "birdId": 230,
-    "author": "Michael Andersen",
-    "species": "Forster's Tern"
-  },
-  {
-    "birdId": 231,
-    "author": "Paul Marvin",
-    "species": "Barn Owl"
-  },
-  {
-    "birdId": 232,
-    "author": "Michael Andersen",
-    "species": "Anhinga"
-  },
-  {
-    "birdId": 233,
-    "author": "Jay McGowan",
-    "species": "Louisiana Waterthrush"
-  },
-  {
-    "birdId": 234,
-    "author": "Arthur A. Allen",
-    "species": "Pileated Woodpecker"
-  },
-  {
-    "birdId": 235,
-    "author": "Jay McGowan",
-    "species": "Eastern Kingbird"
-  },
-  {
-    "birdId": 236,
-    "author": "Randolph Little",
-    "species": "Ruby-throated Hummingbird"
-  },
-  {
-    "birdId": 237,
-    "author": "Jay McGowan",
-    "species": "Brown Pelican"
-  },
-  {
-    "birdId": 238,
-    "author": "William W. H. Gunn",
-    "species": "Sora"
-  },
-  {
-    "birdId": 239,
-    "author": "Glen Chapman",
-    "species": "Brown-headed Cowbird"
-  },
-  {
-    "birdId": 240,
-    "author": "Andrew Spencer",
-    "species": "Glossy Ibis"
-  },
-  {
-    "birdId": 241,
-    "author": "Ian Davies",
-    "species": "Northern Flicker"
-  },
-  {
-    "birdId": 242,
-    "author": "Jay McGowan",
-    "species": "Common Merganser"
-  },
-  {
-    "birdId": 243,
-    "author": "Jay McGowan",
-    "species": "Dark-eyed Junco"
-  },
-  {
-    "birdId": 244,
-    "author": "Wil Hershberger",
-    "species": "Carolina Chickadee"
-  },
-  {
-    "birdId": 245,
-    "author": "Wil Hershberger",
-    "species": "Belted Kingfisher"
-  },
-  {
-    "birdId": 246,
-    "author": "William R. Fish",
-    "species": "Great Horned Owl"
-  },
-  {
-    "birdId": 247,
-    "author": "Kevin J. Colver",
-    "species": "Lazuli Bunting"
-  },
-  {
-    "birdId": 248,
-    "author": "Bob McGuire",
-    "species": "Black-crowned Night-Heron"
-  },
-  {
-    "birdId": 249,
-    "author": "Gregory Budney",
-    "species": "Orchard Oriole"
-  },
-  {
-    "birdId": 250,
-    "author": "Wil Hershberger",
-    "species": "Mourning Dove"
-  },
-  {
-    "birdId": 251,
-    "author": "Leonard J. Peyton",
-    "species": "Horned Lark"
-  },
-  {
-    "birdId": 252,
-    "author": "Jay McGowan",
-    "species": "Eurasian Collared-Dove"
-  },
-  {
-    "birdId": 253,
-    "author": "Bob McGuire",
-    "species": "Field Sparrow"
-  },
-  {
-    "birdId": 254,
-    "author": "Bob McGuire",
-    "species": "Acorn Woodpecker"
-  },
-  {
-    "birdId": 255,
-    "author": "Geoffrey A. Keller",
-    "species": "Green Jay"
-  },
-  {
-    "birdId": 256,
-    "author": "Geoffrey A. Keller",
-    "species": "Scissor-tailed Flycatcher"
-  },
-  {
-    "birdId": 257,
-    "author": "Gregory Budney",
-    "species": "Florida Scrub-Jay"
-  },
-  {
-    "birdId": 258,
-    "author": "Matthew D. Medler",
-    "species": "Song Sparrow"
-  },
-  {
-    "birdId": 259,
-    "author": "Ian Davies",
-    "species": "Northern Flicker"
-  },
-  {
-    "birdId": 260,
-    "author": "Mark Robbins",
-    "species": "Greater Roadrunner"
-  },
-  {
-    "birdId": 261,
-    "author": "Andrew Spencer",
-    "species": "Common Eider"
-  },
-  {
-    "birdId": 262,
-    "author": "Bob McGuire",
-    "species": "Burrowing Owl"
-  },
-  {
-    "birdId": 263,
-    "author": "Bob McGuire",
-    "species": "Western Screech-Owl"
-  },
-  {
-    "birdId": 264,
-    "author": "Matthew D. Medler",
-    "species": "Gray Catbird"
-  },
-  {
-    "birdId": 265,
-    "author": "Robert C. Stein",
-    "species": "Laughing Gull"
-  },
-  {
-    "birdId": 266,
-    "author": "Gerrit Vyn",
-    "species": "Black-bellied Whistling-Duck"
-  },
-  {
-    "birdId": 267,
-    "author": "John Patterson",
-    "species": "Franklin's Gull"
-  },
-  {
-    "birdId": 268,
-    "author": "Robert Bethel",
-    "species": "Eastern Meadowlark"
-  },
-  {
-    "birdId": 269,
-    "author": "Peter Boesman",
-    "species": "Common Pochard"
-  },
-  {
-    "birdId": 270,
-    "author": "Bob McGuire",
-    "species": "Chipping Sparrow"
-  },
-  {
-    "birdId": 271,
-    "author": "Andrew Spencer",
-    "species": "Cassin's Kingbird"
-  },
-  {
-    "birdId": 272,
-    "author": "Jay McGowan",
-    "species": "Grasshopper Sparrow"
-  },
-  {
-    "birdId": 273,
-    "author": "Wil Hershberger",
-    "species": "Red-winged Blackbird"
-  },
-  {
-    "birdId": 274,
-    "author": "Geoffrey A. Keller",
-    "species": "Phainopepla"
-  },
-  {
-    "birdId": 275,
-    "author": "Andrew Spencer",
-    "species": "Clay-colored Thrush"
-  },
-  {
-    "birdId": 276,
-    "author": "Paul Marvin",
-    "species": "Common Gallinule"
-  },
-  {
-    "birdId": 277,
-    "author": "Paul Marvin",
-    "species": "Rock Pigeon"
-  },
-  {
-    "birdId": 278,
-    "author": "Matthew D. Medler",
-    "species": "Golden-crowned Kinglet"
-  },
-  {
-    "birdId": 279,
-    "author": "Paul Marvin",
-    "species": "Ruddy Turnstone"
-  },
-  {
-    "birdId": 280,
-    "author": "John Patterson",
-    "species": "Whooping Crane"
-  },
-  {
-    "birdId": 281,
-    "author": "Andrew Spencer",
-    "species": "Redhead"
-  },
-  {
-    "birdId": 282,
-    "author": "Matthew D. Medler",
-    "species": "Purple Finch"
-  },
-  {
-    "birdId": 283,
-    "author": "Andrew Spencer",
-    "species": "Woodhouse's Scrub-Jay"
-  },
-  {
-    "birdId": 284,
-    "author": "Paul Marvin",
-    "species": "Ruddy Turnstone"
-  },
-  {
-    "birdId": 285,
-    "author": "Jay McGowan",
-    "species": "Fish Crow"
-  },
-  {
-    "birdId": 286,
-    "author": "Jay McGowan",
-    "species": "Hairy Woodpecker"
-  },
-  {
-    "birdId": 287,
-    "author": "Paul Marvin",
-    "species": "Green Heron"
-  },
-  {
-    "birdId": 288,
-    "author": "Jessie Barry",
-    "species": "Common Raven"
-  },
-  {
-    "birdId": 289,
-    "author": "Martha Fischer",
-    "species": "Red-breasted Nuthatch"
-  },
-  {
-    "birdId": 290,
-    "author": "Andrew Spencer",
-    "species": "Common Eider"
-  },
-  {
-    "birdId": 291,
-    "author": "Bob McGuire",
-    "species": "Limpkin"
-  },
-  {
-    "birdId": 292,
-    "author": "Gerrit Vyn",
-    "species": "Black-bellied Whistling-Duck"
-  },
-  {
-    "birdId": 293,
-    "author": "Leonard J. Peyton",
-    "species": "Steller's Jay"
-  },
-  {
-    "birdId": 294,
-    "author": "Nathaniel H. Taylor",
-    "species": "Ruffed Grouse"
-  },
-  {
-    "birdId": 295,
-    "author": "John Patterson",
-    "species": "American Bittern"
-  },
-  {
-    "birdId": 296,
-    "author": "Matthew D. Medler",
-    "species": "Blue Jay"
-  },
-  {
-    "birdId": 297,
-    "author": "William R. Fish",
-    "species": "House Finch"
-  },
-  {
-    "birdId": 298,
-    "author": "Andrew Spencer",
-    "species": "Redhead"
-  },
-  {
-    "birdId": 299,
-    "author": "Bob McGuire",
-    "species": "Acorn Woodpecker"
-  },
-  {
-    "birdId": 300,
-    "author": "Brad Walker",
-    "species": "House Sparrow"
-  },
-  {
-    "birdId": 301,
-    "author": "Vincent Gerwe",
-    "species": "California Condor"
-  },
-  {
-    "birdId": 302,
-    "author": "Jay McGowan",
-    "species": "Eastern Whip-poor-will"
-  },
-  {
-    "birdId": 303,
-    "author": "Matthew D. Medler",
-    "species": "Blue Jay"
-  },
-  {
-    "birdId": 304,
-    "author": "William W. H. Gunn",
-    "species": "Swainson's Hawk"
-  },
-  {
-    "birdId": 305,
-    "author": "William R. Fish",
-    "species": "Great Horned Owl"
-  },
-  {
-    "birdId": 306,
-    "author": "Jay McGowan",
-    "species": "American Goldfinch"
-  },
-  {
-    "birdId": 307,
-    "author": "Bob McGuire",
-    "species": "Common Pauraque"
-  },
-  {
-    "birdId": 308,
-    "author": "George B. Reynard",
-    "species": "Brant"
-  },
-  {
-    "birdId": 309,
-    "author": "Paul Marvin",
-    "species": "Great Blue Heron"
-  },
-  {
-    "birdId": 310,
-    "author": "Blaine Carnes",
-    "species": "Dickcissel"
-  },
-  {
-    "birdId": 311,
-    "author": "Robert Bethel",
-    "species": "Eastern Meadowlark"
-  },
-  {
-    "birdId": 312,
-    "author": "Gregory Budney",
-    "species": "Black-necked Stilt"
-  },
-  {
-    "birdId": 313,
-    "author": "Jessie Barry",
-    "species": "Common Raven"
-  },
-  {
-    "birdId": 314,
-    "author": "George B. Reynard",
-    "species": "Brant"
-  },
-  {
-    "birdId": 315,
-    "author": "Kevin J. Colver",
-    "species": "Spotted Towhee"
-  },
-  {
-    "birdId": 316,
-    "author": "Jay McGowan",
-    "species": "Eastern Whip-poor-will"
-  },
-  {
-    "birdId": 317,
-    "author": "Bob McGuire",
-    "species": "American Black Duck"
-  },
-  {
-    "birdId": 318,
-    "author": "Paul Marvin",
-    "species": "American Oystercatcher"
-  },
-  {
-    "birdId": 319,
-    "author": "Gregory Budney",
-    "species": "Orchard Oriole"
-  },
-  {
-    "birdId": 320,
-    "author": "William W. H. Gunn",
-    "species": "Common Goldeneye"
-  },
-  {
-    "birdId": 321,
-    "author": "David C. Evers",
-    "species": "Common Loon"
-  },
-  {
-    "birdId": 322,
-    "author": "Gregory Budney",
-    "species": "Red Crossbill"
-  },
-  {
-    "birdId": 323,
-    "author": "Gregory Budney",
-    "species": "American Avocet"
-  },
-  {
-    "birdId": 324,
-    "author": "Wil Hershberger",
-    "species": "Carolina Wren"
-  },
-  {
-    "birdId": 325,
-    "author": "William W. H. Gunn",
-    "species": "Northern Shoveler"
-  },
-  {
-    "birdId": 326,
-    "author": "John Patterson",
-    "species": "Whooping Crane"
-  },
-  {
-    "birdId": 327,
-    "author": "Nathan Pieplow",
-    "species": "Clark's Nutcracker"
-  },
-  {
-    "birdId": 328,
-    "author": "Gerrit Vyn",
-    "species": "King Rail"
-  },
-  {
-    "birdId": 329,
-    "author": "Glen Chapman",
-    "species": "Pine Siskin"
-  },
-  {
-    "birdId": 330,
-    "author": "Wil Hershberger",
-    "species": "Wood Thrush"
-  },
-  {
-    "birdId": 331,
-    "author": "Gregory Budney",
-    "species": "Cassin's Finch"
-  },
-  {
-    "birdId": 332,
-    "author": "Andrew Spencer",
-    "species": "Cooper's Hawk"
-  },
-  {
-    "birdId": 333,
-    "author": "Wil Hershberger",
-    "species": "Western Wood-Pewee"
-  },
-  {
-    "birdId": 334,
-    "author": "Wil Hershberger",
-    "species": "American Robin"
-  },
-  {
-    "birdId": 335,
-    "author": "Nick Tepper",
-    "species": "Willet"
-  },
-  {
-    "birdId": 336,
-    "author": "Tom Johnson",
-    "species": "Northern Bobwhite"
-  },
-  {
-    "birdId": 337,
-    "author": "Lucas DeCicco",
-    "species": "Wilson's Snipe"
-  },
-  {
-    "birdId": 338,
-    "author": "Paul Marvin",
-    "species": "Royal Tern"
-  },
-  {
-    "birdId": 339,
-    "author": "Randolph Little",
-    "species": "Ruddy Duck"
-  },
-  {
-    "birdId": 340,
-    "author": "Terri Gallion",
-    "species": "Golden Eagle"
-  },
-  {
-    "birdId": 341,
-    "author": "Gerrit Vyn",
-    "species": "Northern Jacana"
-  },
-  {
-    "birdId": 342,
-    "author": "Wil Hershberger",
-    "species": "Red-winged Blackbird"
-  },
-  {
-    "birdId": 343,
-    "author": "William W. H. Gunn",
-    "species": "White-crowned Sparrow"
-  },
-  {
-    "birdId": 344,
-    "author": "Kevin J. Colver",
-    "species": "Lazuli Bunting"
-  },
-  {
-    "birdId": 345,
-    "author": "Michael Andersen",
-    "species": "Mallard"
-  },
-  {
-    "birdId": 346,
-    "author": "Curtis Marantz",
-    "species": "Green Kingfisher"
-  },
-  {
-    "birdId": 347,
-    "author": "Andrew Spencer",
-    "species": "Common Eider"
-  },
-  {
-    "birdId": 348,
-    "author": "Michael Andersen",
-    "species": "Roseate Spoonbill"
-  },
-  {
-    "birdId": 349,
-    "author": "Gregory Budney",
-    "species": "Florida Scrub-Jay"
-  },
-  {
-    "birdId": 350,
-    "author": "Andrew Spencer",
-    "species": "Glossy Ibis"
-  },
-  {
-    "birdId": 351,
-    "author": "Paul Marvin",
-    "species": "Bald Eagle"
-  },
-  {
-    "birdId": 352,
-    "author": "Gregory Budney",
-    "species": "Brown-headed Nuthatch"
-  },
-  {
-    "birdId": 353,
-    "author": "Glen Chapman",
-    "species": "Brown-headed Cowbird"
-  },
-  {
-    "birdId": 354,
-    "author": "Michael Andersen",
-    "species": "Mallard"
-  },
-  {
-    "birdId": 355,
-    "author": "David McQuade",
-    "species": "Altamira Oriole"
-  },
-  {
-    "birdId": 356,
-    "author": "Mark Robbins",
-    "species": "Greater Roadrunner"
-  },
-  {
-    "birdId": 357,
-    "author": "Glen Chapman",
-    "species": "Pine Siskin"
-  },
-  {
-    "birdId": 358,
-    "author": "Jay McGowan",
-    "species": "Eastern Bluebird"
-  },
-  {
-    "birdId": 359,
-    "author": "Greg Clark",
-    "species": "Turkey Vulture"
-  },
-  {
-    "birdId": 360,
-    "author": "Wil Hershberger",
-    "species": "Wood Thrush"
-  },
-  {
-    "birdId": 361,
-    "author": "Nathan Pieplow",
-    "species": "Peregrine Falcon"
-  },
-  {
-    "birdId": 362,
-    "author": "Andrew Spencer",
-    "species": "Glossy Ibis"
-  },
-  {
-    "birdId": 363,
-    "author": "Wil Hershberger",
-    "species": "Bobolink"
-  },
-  {
-    "birdId": 364,
-    "author": "Gregory Budney",
-    "species": "Black-necked Stilt"
-  },
-  {
-    "birdId": 365,
-    "author": "Gregory Budney",
-    "species": "Brown-headed Nuthatch"
-  },
-  {
-    "birdId": 366,
-    "author": "Jay McGowan",
-    "species": "Red-breasted Merganser"
-  },
-  {
-    "birdId": 367,
     "author": "Nathan Pieplow",
     "species": "Rivoli's Hummingbird"
   },
   {
-    "birdId": 368,
-    "author": "Greg Clark",
-    "species": "Turkey Vulture"
+    "birdId": 5,
+    "author": "Sarah Toner",
+    "species": "Snowy Egret"
   },
   {
-    "birdId": 369,
-    "author": "Tom Johnson",
-    "species": "Chuck-will's-widow"
-  },
-  {
-    "birdId": 370,
-    "author": "Matthew D. Medler",
-    "species": "Purple Finch"
-  },
-  {
-    "birdId": 371,
-    "author": "Andrew Spencer",
-    "species": "Cassin's Kingbird"
-  },
-  {
-    "birdId": 372,
-    "author": "Gerrit Vyn",
-    "species": "Snow Bunting"
-  },
-  {
-    "birdId": 373,
-    "author": "Paul Marvin",
-    "species": "Ruddy Turnstone"
-  },
-  {
-    "birdId": 374,
-    "author": "Jay McGowan",
-    "species": "Ovenbird"
-  },
-  {
-    "birdId": 375,
-    "author": "John Patterson",
-    "species": "American Bittern"
-  },
-  {
-    "birdId": 376,
-    "author": "Paul Marvin",
-    "species": "Great Blue Heron"
-  },
-  {
-    "birdId": 377,
-    "author": "Forrest Baublitz",
-    "species": "Yellow-crowned Night-Heron"
-  },
-  {
-    "birdId": 378,
-    "author": "Gregory Budney",
-    "species": "Red Crossbill"
-  },
-  {
-    "birdId": 379,
-    "author": "Randolph Little",
-    "species": "Ruddy Duck"
-  },
-  {
-    "birdId": 380,
-    "author": "Geoffrey A. Keller",
-    "species": "Phainopepla"
-  },
-  {
-    "birdId": 381,
-    "author": "Jay McGowan",
-    "species": "Hairy Woodpecker"
-  },
-  {
-    "birdId": 382,
-    "author": "Geoffrey A. Keller",
-    "species": "Scissor-tailed Flycatcher"
-  },
-  {
-    "birdId": 383,
-    "author": "Glenn Seeholzer",
-    "species": "Eastern Towhee"
-  },
-  {
-    "birdId": 384,
-    "author": "Leonard J. Peyton",
-    "species": "Horned Lark"
-  },
-  {
-    "birdId": 385,
-    "author": "Nathaniel H. Taylor",
-    "species": "Ruffed Grouse"
-  },
-  {
-    "birdId": 386,
-    "author": "Gerrit Vyn",
-    "species": "Greater Prairie-Chicken"
-  },
-  {
-    "birdId": 387,
-    "author": "Nathan Pieplow",
-    "species": "Pygmy Nuthatch"
-  },
-  {
-    "birdId": 388,
-    "author": "Bob McGuire",
-    "species": "Barrow's Goldeneye"
-  },
-  {
-    "birdId": 389,
-    "author": "Randolph Little",
-    "species": "Ruby-throated Hummingbird"
-  },
-  {
-    "birdId": 390,
-    "author": "Bob McGuire",
-    "species": "Summer Tanager"
-  },
-  {
-    "birdId": 391,
-    "author": "Geoffrey A. Keller",
-    "species": "Osprey"
-  },
-  {
-    "birdId": 392,
+    "birdId": 6,
     "author": "Martha Fischer",
     "species": "Green-winged Teal"
   },
   {
-    "birdId": 393,
-    "author": "Christopher McPherson",
-    "species": "Eastern Wood-Pewee"
-  },
-  {
-    "birdId": 394,
-    "author": "Lucas DeCicco",
-    "species": "Fox Sparrow"
-  },
-  {
-    "birdId": 395,
-    "author": "Dave Herr",
-    "species": "Barn Swallow"
-  },
-  {
-    "birdId": 396,
-    "author": "Michael Andersen",
-    "species": "Mallard"
-  },
-  {
-    "birdId": 397,
-    "author": "Jay McGowan",
-    "species": "Hairy Woodpecker"
-  },
-  {
-    "birdId": 398,
-    "author": "Jay McGowan",
-    "species": "Dark-eyed Junco"
-  },
-  {
-    "birdId": 399,
-    "author": "Jay McGowan",
-    "species": "Grasshopper Sparrow"
-  },
-  {
-    "birdId": 400,
-    "author": "Steven Biggers",
-    "species": "Yellow-bellied Sapsucker"
-  },
-  {
-    "birdId": 401,
-    "author": "David C. Evers",
-    "species": "Common Loon"
-  },
-  {
-    "birdId": 402,
-    "author": "Dave Herr",
-    "species": "Barn Swallow"
-  },
-  {
-    "birdId": 403,
-    "author": "Tom Johnson",
-    "species": "Gadwall"
-  },
-  {
-    "birdId": 404,
-    "author": "Gregory Budney",
-    "species": "American Avocet"
-  },
-  {
-    "birdId": 405,
-    "author": "Jay McGowan",
-    "species": "Black-capped Chickadee"
-  },
-  {
-    "birdId": 406,
-    "author": "Paul Marvin",
-    "species": "Royal Tern"
-  },
-  {
-    "birdId": 407,
-    "author": "Wil Hershberger",
-    "species": "Bobolink"
-  },
-  {
-    "birdId": 408,
-    "author": "Peter Paul Kellogg",
-    "species": "European Starling"
-  },
-  {
-    "birdId": 409,
-    "author": "Jay McGowan",
-    "species": "Plain Chachalaca"
-  },
-  {
-    "birdId": 410,
-    "author": "Matthew D. Medler",
-    "species": "Purple Martin"
-  },
-  {
-    "birdId": 411,
-    "author": "Leonard J. Peyton",
-    "species": "Steller's Jay"
-  },
-  {
-    "birdId": 412,
-    "author": "William W. H. Gunn",
-    "species": "American Coot"
-  },
-  {
-    "birdId": 413,
-    "author": "Michael Andersen",
-    "species": "American Crow"
-  },
-  {
-    "birdId": 414,
-    "author": "Charles A. Sutherland",
-    "species": "Cattle Egret"
-  },
-  {
-    "birdId": 415,
-    "author": "Paul Fenwick",
-    "species": "Red-shouldered Hawk"
-  },
-  {
-    "birdId": 416,
-    "author": "Gregory Budney",
-    "species": "Pied-billed Grebe"
-  },
-  {
-    "birdId": 417,
+    "birdId": 7,
     "author": "Bob McGuire",
-    "species": "Field Sparrow"
+    "species": "American Black Duck"
   },
   {
-    "birdId": 418,
-    "author": "Wil Hershberger",
-    "species": "Belted Kingfisher"
-  },
-  {
-    "birdId": 419,
-    "author": "Wil Hershberger",
-    "species": "Bewick's Wren"
-  },
-  {
-    "birdId": 420,
-    "author": "Gerrit Vyn",
-    "species": "Magnificent Frigatebird"
-  },
-  {
-    "birdId": 421,
-    "author": "Bob McGuire",
-    "species": "Burrowing Owl"
-  },
-  {
-    "birdId": 422,
-    "author": "Jay McGowan",
-    "species": "Savannah Sparrow"
-  },
-  {
-    "birdId": 423,
+    "birdId": 8,
     "author": "Andrew Spencer",
-    "species": "Glossy Ibis"
+    "species": "Loggerhead Shrike"
   },
   {
-    "birdId": 424,
-    "author": "Andrew Spencer",
-    "species": "Cooper's Hawk"
+    "birdId": 9,
+    "author": "Forrest Baublitz",
+    "species": "Yellow-crowned Night-Heron"
   },
   {
-    "birdId": 425,
-    "author": "Robert C. Stein",
-    "species": "Laughing Gull"
-  },
-  {
-    "birdId": 426,
-    "author": "Matthew D. Medler",
-    "species": "Hermit Thrush"
-  },
-  {
-    "birdId": 427,
-    "author": "Paul Marvin",
-    "species": "American Oystercatcher"
-  },
-  {
-    "birdId": 428,
-    "author": "Joe B. Guinn",
-    "species": "Mississippi Kite"
-  },
-  {
-    "birdId": 429,
-    "author": "Paul Marvin",
-    "species": "American Oystercatcher"
-  },
-  {
-    "birdId": 430,
-    "author": "Bob McGuire",
-    "species": "Great Cormorant"
-  },
-  {
-    "birdId": 431,
-    "author": "Matthew Wistrand",
-    "species": "Red-headed Woodpecker"
-  },
-  {
-    "birdId": 432,
-    "author": "Jocelyn Lauzon",
-    "species": "White-throated Sparrow"
-  },
-  {
-    "birdId": 433,
-    "author": "Terri Gallion",
-    "species": "Golden Eagle"
-  },
-  {
-    "birdId": 434,
-    "author": "Glen Chapman",
-    "species": "Pine Siskin"
-  },
-  {
-    "birdId": 435,
-    "author": "Jay McGowan",
-    "species": "Dark-eyed Junco"
-  },
-  {
-    "birdId": 436,
-    "author": "Ian Davies",
-    "species": "Northern Flicker"
-  },
-  {
-    "birdId": 437,
-    "author": "Wil Hershberger",
-    "species": "Killdeer"
-  },
-  {
-    "birdId": 438,
-    "author": "Jay McGowan",
-    "species": "Fish Crow"
-  },
-  {
-    "birdId": 439,
-    "author": "Jessie Barry",
-    "species": "Ring-billed Gull"
-  },
-  {
-    "birdId": 440,
-    "author": "Wil Hershberger",
-    "species": "Western Meadowlark"
-  },
-  {
-    "birdId": 441,
-    "author": "Bob McGuire",
-    "species": "Painted Bunting"
-  },
-  {
-    "birdId": 442,
-    "author": "William R. Fish",
-    "species": "House Finch"
-  },
-  {
-    "birdId": 443,
-    "author": "Kevin J. Colver",
-    "species": "Lazuli Bunting"
-  },
-  {
-    "birdId": 444,
-    "author": "Nathan Pieplow",
-    "species": "Rivoli's Hummingbird"
-  },
-  {
-    "birdId": 445,
-    "author": "Wil Hershberger",
-    "species": "Lincoln's Sparrow"
-  },
-  {
-    "birdId": 446,
-    "author": "Tayler Brooks",
-    "species": "Canyon Wren"
-  },
-  {
-    "birdId": 447,
-    "author": "Gerrit Vyn",
-    "species": "Black-bellied Whistling-Duck"
-  },
-  {
-    "birdId": 448,
-    "author": "Randolph Little",
-    "species": "Clapper Rail"
-  },
-  {
-    "birdId": 449,
-    "author": "Wil Hershberger",
-    "species": "Mourning Dove"
-  },
-  {
-    "birdId": 450,
-    "author": "Michael Andersen",
-    "species": "Wood Duck"
-  },
-  {
-    "birdId": 451,
-    "author": "Nick Tepper",
-    "species": "Sandhill Crane"
-  },
-  {
-    "birdId": 452,
-    "author": "Jay McGowan",
-    "species": "Red-breasted Merganser"
-  },
-  {
-    "birdId": 453,
-    "author": "Brad Walker",
-    "species": "Tufted Titmouse"
-  },
-  {
-    "birdId": 454,
-    "author": "Gregory Budney",
-    "species": "Brown-headed Nuthatch"
-  },
-  {
-    "birdId": 455,
-    "author": "Matthew D. Medler",
-    "species": "Scarlet Tanager"
-  },
-  {
-    "birdId": 456,
-    "author": "Bob McGuire",
-    "species": "Black-crowned Night-Heron"
-  },
-  {
-    "birdId": 457,
-    "author": "Gregory Budney",
-    "species": "Florida Scrub-Jay"
-  },
-  {
-    "birdId": 458,
-    "author": "Wil Hershberger",
-    "species": "American Robin"
-  },
-  {
-    "birdId": 459,
-    "author": "Gregory Budney",
-    "species": "Cassin's Finch"
-  },
-  {
-    "birdId": 460,
-    "author": "Matthew Wistrand",
-    "species": "Red-headed Woodpecker"
-  },
-  {
-    "birdId": 461,
-    "author": "Glenn Seeholzer",
-    "species": "Eastern Towhee"
-  },
-  {
-    "birdId": 462,
-    "author": "William W. H. Gunn",
-    "species": "Sora"
-  },
-  {
-    "birdId": 463,
-    "author": "Arthur A. Allen",
-    "species": "Northern Harrier"
-  },
-  {
-    "birdId": 464,
-    "author": "Andrew Spencer",
-    "species": "Cooper's Hawk"
-  },
-  {
-    "birdId": 465,
-    "author": "Thomas G. Sander",
-    "species": "Barred Owl"
-  },
-  {
-    "birdId": 466,
-    "author": "Bob McGuire",
-    "species": "Great Cormorant"
-  },
-  {
-    "birdId": 467,
-    "author": "Peter Boesman",
-    "species": "Common Pochard"
-  },
-  {
-    "birdId": 468,
-    "author": "Christopher McPherson",
-    "species": "Cedar Waxwing"
-  },
-  {
-    "birdId": 469,
-    "author": "Nick Tepper",
-    "species": "Sandhill Crane"
-  },
-  {
-    "birdId": 470,
-    "author": "Christopher McPherson",
-    "species": "Cedar Waxwing"
-  },
-  {
-    "birdId": 471,
-    "author": "Paul Marvin",
-    "species": "Great Blue Heron"
-  },
-  {
-    "birdId": 472,
-    "author": "John Patterson",
-    "species": "American Bittern"
-  },
-  {
-    "birdId": 473,
-    "author": "Paul Marvin",
-    "species": "Say's Phoebe"
-  },
-  {
-    "birdId": 474,
-    "author": "William W. H. Gunn",
-    "species": "Common Goldeneye"
-  },
-  {
-    "birdId": 475,
-    "author": "Geoffrey A. Keller",
-    "species": "Osprey"
-  },
-  {
-    "birdId": 476,
-    "author": "Wil Hershberger",
-    "species": "Eastern Screech-Owl"
-  },
-  {
-    "birdId": 477,
-    "author": "John Patterson",
-    "species": "American Bittern"
-  },
-  {
-    "birdId": 478,
-    "author": "Jay McGowan",
-    "species": "Red-bellied Woodpecker"
-  },
-  {
-    "birdId": 479,
-    "author": "Bob McGuire",
-    "species": "Western Screech-Owl"
-  },
-  {
-    "birdId": 480,
-    "author": "Wil Hershberger",
-    "species": "Bewick's Wren"
-  },
-  {
-    "birdId": 481,
-    "author": "Jay McGowan",
-    "species": "Eastern Whip-poor-will"
-  },
-  {
-    "birdId": 482,
-    "author": "Paul Marvin",
-    "species": "Barn Owl"
-  },
-  {
-    "birdId": 483,
-    "author": "Randolph Little",
-    "species": "Ruby-throated Hummingbird"
-  },
-  {
-    "birdId": 484,
-    "author": "Michael Andersen",
-    "species": "Anhinga"
-  },
-  {
-    "birdId": 485,
-    "author": "Arthur A. Allen",
-    "species": "Purple Gallinule"
-  },
-  {
-    "birdId": 486,
-    "author": "Sarah Toner",
-    "species": "Snowy Egret"
-  },
-  {
-    "birdId": 487,
-    "author": "Andrew Spencer",
-    "species": "Woodhouse's Scrub-Jay"
-  },
-  {
-    "birdId": 488,
-    "author": "Robert C. Stein",
-    "species": "Laughing Gull"
-  },
-  {
-    "birdId": 489,
-    "author": "Bob McGuire",
-    "species": "Western Screech-Owl"
-  },
-  {
-    "birdId": 490,
-    "author": "Brad Walker",
-    "species": "Tufted Titmouse"
-  },
-  {
-    "birdId": 491,
-    "author": "William W. H. Gunn",
-    "species": "Atlantic Puffin"
-  },
-  {
-    "birdId": 492,
-    "author": "Bob McGuire",
-    "species": "Common Pauraque"
-  },
-  {
-    "birdId": 493,
-    "author": "Bob McGuire",
-    "species": "Painted Bunting"
-  },
-  {
-    "birdId": 494,
-    "author": "Wil Hershberger",
-    "species": "Indigo Bunting"
-  },
-  {
-    "birdId": 495,
-    "author": "William W. H. Gunn",
-    "species": "Northern Shoveler"
-  },
-  {
-    "birdId": 496,
-    "author": "William W. H. Gunn",
-    "species": "Blue-winged Teal"
-  },
-  {
-    "birdId": 497,
-    "author": "Gregory Budney",
-    "species": "Canada Goose"
-  },
-  {
-    "birdId": 498,
-    "author": "Jessie Barry",
-    "species": "Common Raven"
-  },
-  {
-    "birdId": 499,
-    "author": "Sarah Toner",
-    "species": "Snowy Egret"
-  },
-  {
-    "birdId": 500,
-    "author": "Wil Hershberger",
-    "species": "Trumpeter Swan"
-  },
-  {
-    "birdId": 501,
-    "author": "Michael Andersen",
-    "species": "Wood Duck"
-  },
-  {
-    "birdId": 502,
+    "birdId": 10,
     "author": "Matthew D. Medler",
     "species": "Baltimore Oriole"
   },
   {
-    "birdId": 503,
+    "birdId": 11,
     "author": "Bob McGuire",
-    "species": "Burrowing Owl"
+    "species": "American Black Duck"
   },
   {
-    "birdId": 504,
-    "author": "Andrew Spencer",
-    "species": "Common Eider"
+    "birdId": 12,
+    "author": "Robert C. Stein",
+    "species": "Bufflehead"
   },
   {
-    "birdId": 505,
-    "author": "Tom Johnson",
-    "species": "Chuck-will's-widow"
+    "birdId": 13,
+    "author": "Wil Hershberger",
+    "species": "Carolina Chickadee"
   },
   {
-    "birdId": 506,
-    "author": "Jocelyn Lauzon",
-    "species": "White-throated Sparrow"
+    "birdId": 14,
+    "author": "Randolph Little",
+    "species": "Lark Sparrow"
   },
   {
-    "birdId": 507,
-    "author": "Paul Fenwick",
-    "species": "Red-shouldered Hawk"
+    "birdId": 15,
+    "author": "Paul Marvin",
+    "species": "Barn Owl"
   },
   {
-    "birdId": 508,
-    "author": "Andrew Spencer",
-    "species": "Clay-colored Thrush"
-  },
-  {
-    "birdId": 509,
+    "birdId": 16,
     "author": "Hope Batcheller",
     "species": "Juniper Titmouse"
   },
   {
-    "birdId": 510,
-    "author": "Matthew D. Medler",
-    "species": "Golden-crowned Kinglet"
-  },
-  {
-    "birdId": 511,
-    "author": "Wil Hershberger",
-    "species": "Bicknell's Thrush"
-  },
-  {
-    "birdId": 512,
-    "author": "Wil Hershberger",
-    "species": "Western Meadowlark"
-  },
-  {
-    "birdId": 513,
-    "author": "John Patterson",
-    "species": "Franklin's Gull"
-  },
-  {
-    "birdId": 514,
-    "author": "Paul Marvin",
-    "species": "Say's Phoebe"
-  },
-  {
-    "birdId": 515,
-    "author": "Gerrit Vyn",
-    "species": "Magnificent Frigatebird"
-  },
-  {
-    "birdId": 516,
+    "birdId": 17,
     "author": "Gregory Budney",
     "species": "Canada Goose"
   },
   {
-    "birdId": 517,
+    "birdId": 18,
+    "author": "William W. H. Gunn",
+    "species": "Blue-winged Teal"
+  },
+  {
+    "birdId": 19,
+    "author": "Wil Hershberger",
+    "species": "Eastern Screech-Owl"
+  },
+  {
+    "birdId": 20,
+    "author": "Geoffrey A. Keller",
+    "species": "Phainopepla"
+  },
+  {
+    "birdId": 21,
+    "author": "Jay McGowan",
+    "species": "Red-bellied Woodpecker"
+  },
+  {
+    "birdId": 22,
+    "author": "Gregory Budney",
+    "species": "Orchard Oriole"
+  },
+  {
+    "birdId": 23,
+    "author": "Dave Herr",
+    "species": "Barn Swallow"
+  },
+  {
+    "birdId": 24,
+    "author": "Jay McGowan",
+    "species": "Eastern Kingbird"
+  },
+  {
+    "birdId": 25,
+    "author": "Matthew D. Medler",
+    "species": "Purple Martin"
+  },
+  {
+    "birdId": 26,
+    "author": "Bob McGuire",
+    "species": "Field Sparrow"
+  },
+  {
+    "birdId": 27,
+    "author": "Andrew Spencer",
+    "species": "Loggerhead Shrike"
+  },
+  {
+    "birdId": 28,
+    "author": "Dave Herr",
+    "species": "American Kestrel"
+  },
+  {
+    "birdId": 29,
+    "author": "Andrew Spencer",
+    "species": "Rock Wren"
+  },
+  {
+    "birdId": 30,
+    "author": "Jay McGowan",
+    "species": "Louisiana Waterthrush"
+  },
+  {
+    "birdId": 31,
+    "author": "Wil Hershberger",
+    "species": "Carolina Chickadee"
+  },
+  {
+    "birdId": 32,
+    "author": "Geoffrey A. Keller",
+    "species": "Green Jay"
+  },
+  {
+    "birdId": 33,
+    "author": "Gerrit Vyn",
+    "species": "Black-bellied Whistling-Duck"
+  },
+  {
+    "birdId": 34,
+    "author": "Paul Marvin",
+    "species": "Rock Pigeon"
+  },
+  {
+    "birdId": 35,
+    "author": "Jessie Barry",
+    "species": "Common Raven"
+  },
+  {
+    "birdId": 36,
+    "author": "Bob McGuire",
+    "species": "Acorn Woodpecker"
+  },
+  {
+    "birdId": 37,
+    "author": "Blaine Carnes",
+    "species": "Dickcissel"
+  },
+  {
+    "birdId": 38,
+    "author": "David C. Evers",
+    "species": "Common Loon"
+  },
+  {
+    "birdId": 39,
+    "author": "Andrew Spencer",
+    "species": "Cooper's Hawk"
+  },
+  {
+    "birdId": 40,
+    "author": "Kevin J. Colver",
+    "species": "Lazuli Bunting"
+  },
+  {
+    "birdId": 41,
+    "author": "David McQuade",
+    "species": "Altamira Oriole"
+  },
+  {
+    "birdId": 42,
+    "author": "Jay McGowan",
+    "species": "Red-breasted Merganser"
+  },
+  {
+    "birdId": 43,
+    "author": "Forrest Baublitz",
+    "species": "Yellow-crowned Night-Heron"
+  },
+  {
+    "birdId": 44,
+    "author": "Bob McGuire",
+    "species": "Barrow's Goldeneye"
+  },
+  {
+    "birdId": 45,
+    "author": "Jay McGowan",
+    "species": "Grasshopper Sparrow"
+  },
+  {
+    "birdId": 46,
+    "author": "Matthew D. Medler",
+    "species": "Purple Martin"
+  },
+  {
+    "birdId": 47,
+    "author": "Bob McGuire",
+    "species": "Burrowing Owl"
+  },
+  {
+    "birdId": 48,
+    "author": "Jocelyn Lauzon",
+    "species": "White-throated Sparrow"
+  },
+  {
+    "birdId": 49,
+    "author": "Kevin J. Colver",
+    "species": "Lazuli Bunting"
+  },
+  {
+    "birdId": 50,
+    "author": "Matthew D. Medler",
+    "species": "Scarlet Tanager"
+  },
+  {
+    "birdId": 51,
+    "author": "Bob McGuire",
+    "species": "Great Cormorant"
+  },
+  {
+    "birdId": 52,
+    "author": "John Patterson",
+    "species": "American Bittern"
+  },
+  {
+    "birdId": 53,
+    "author": "Robert C. Stein",
+    "species": "Laughing Gull"
+  },
+  {
+    "birdId": 54,
+    "author": "Sarah Toner",
+    "species": "Snowy Egret"
+  },
+  {
+    "birdId": 55,
+    "author": "Matthew D. Medler",
+    "species": "Golden-crowned Kinglet"
+  },
+  {
+    "birdId": 56,
+    "author": "Hope Batcheller",
+    "species": "Juniper Titmouse"
+  },
+  {
+    "birdId": 57,
+    "author": "Geoffrey A. Keller",
+    "species": "Green Jay"
+  },
+  {
+    "birdId": 58,
+    "author": "Geoffrey A. Keller",
+    "species": "Osprey"
+  },
+  {
+    "birdId": 59,
+    "author": "Paul Marvin",
+    "species": "Common Gallinule"
+  },
+  {
+    "birdId": 60,
+    "author": "Bob McGuire",
+    "species": "Burrowing Owl"
+  },
+  {
+    "birdId": 61,
+    "author": "Gregory Budney",
+    "species": "Pied-billed Grebe"
+  },
+  {
+    "birdId": 62,
+    "author": "Geoffrey A. Keller",
+    "species": "Phainopepla"
+  },
+  {
+    "birdId": 63,
+    "author": "Blaine Carnes",
+    "species": "Dickcissel"
+  },
+  {
+    "birdId": 64,
+    "author": "Arthur A. Allen",
+    "species": "Northern Harrier"
+  },
+  {
+    "birdId": 65,
+    "author": "Andrew Spencer",
+    "species": "Mountain Bluebird"
+  },
+  {
+    "birdId": 66,
+    "author": "Wil Hershberger",
+    "species": "Mourning Dove"
+  },
+  {
+    "birdId": 67,
+    "author": "John Patterson",
+    "species": "Franklin's Gull"
+  },
+  {
+    "birdId": 68,
+    "author": "John Patterson",
+    "species": "Whooping Crane"
+  },
+  {
+    "birdId": 69,
+    "author": "Bob McGuire",
+    "species": "Field Sparrow"
+  },
+  {
+    "birdId": 70,
+    "author": "Paul Marvin",
+    "species": "Hepatic Tanager"
+  },
+  {
+    "birdId": 71,
+    "author": "Matthew D. Medler",
+    "species": "Scarlet Tanager"
+  },
+  {
+    "birdId": 72,
+    "author": "Bob McGuire",
+    "species": "Acorn Woodpecker"
+  },
+  {
+    "birdId": 73,
+    "author": "Dave Herr",
+    "species": "American Kestrel"
+  },
+  {
+    "birdId": 74,
+    "author": "Martha Fischer",
+    "species": "Green-winged Teal"
+  },
+  {
+    "birdId": 75,
+    "author": "Forrest Baublitz",
+    "species": "Yellow-crowned Night-Heron"
+  },
+  {
+    "birdId": 76,
+    "author": "Tom Johnson",
+    "species": "Northern Bobwhite"
+  },
+  {
+    "birdId": 77,
+    "author": "Jay McGowan",
+    "species": "Northern Cardinal"
+  },
+  {
+    "birdId": 78,
+    "author": "Gregory Budney",
+    "species": "Canada Goose"
+  },
+  {
+    "birdId": 79,
+    "author": "Christopher McPherson",
+    "species": "Cedar Waxwing"
+  },
+  {
+    "birdId": 80,
+    "author": "Leonard J. Peyton",
+    "species": "Horned Lark"
+  },
+  {
+    "birdId": 81,
+    "author": "Nathan Pieplow",
+    "species": "Peregrine Falcon"
+  },
+  {
+    "birdId": 82,
+    "author": "Wil Hershberger",
+    "species": "Western Wood-Pewee"
+  },
+  {
+    "birdId": 83,
+    "author": "Glen Chapman",
+    "species": "Brown-headed Cowbird"
+  },
+  {
+    "birdId": 84,
+    "author": "Mark Gardiner",
+    "species": "Western Tanager"
+  },
+  {
+    "birdId": 85,
+    "author": "Joe B. Guinn",
+    "species": "Mississippi Kite"
+  },
+  {
+    "birdId": 86,
+    "author": "Jay McGowan",
+    "species": "Eurasian Collared-Dove"
+  },
+  {
+    "birdId": 87,
+    "author": "Jay McGowan",
+    "species": "Northern Cardinal"
+  },
+  {
+    "birdId": 88,
+    "author": "Gerrit Vyn",
+    "species": "Magnificent Frigatebird"
+  },
+  {
+    "birdId": 89,
+    "author": "Bob McGuire",
+    "species": "Barrow's Goldeneye"
+  },
+  {
+    "birdId": 90,
+    "author": "Geoffrey A. Keller",
+    "species": "Green Jay"
+  },
+  {
+    "birdId": 91,
+    "author": "Leonard J. Peyton",
+    "species": "Tree Swallow"
+  },
+  {
+    "birdId": 92,
+    "author": "Nathaniel H. Taylor",
+    "species": "Ruffed Grouse"
+  },
+  {
+    "birdId": 93,
+    "author": "Jay McGowan",
+    "species": "Rose-breasted Grosbeak"
+  },
+  {
+    "birdId": 94,
+    "author": "Dave Herr",
+    "species": "American Kestrel"
+  },
+  {
+    "birdId": 95,
+    "author": "Bob McGuire",
+    "species": "Vermilion Flycatcher"
+  },
+  {
+    "birdId": 96,
+    "author": "Mark Robbins",
+    "species": "Greater Roadrunner"
+  },
+  {
+    "birdId": 97,
+    "author": "William W. H. Gunn",
+    "species": "Northern Shoveler"
+  },
+  {
+    "birdId": 98,
+    "author": "William R. Fish",
+    "species": "House Finch"
+  },
+  {
+    "birdId": 99,
+    "author": "Wil Hershberger",
+    "species": "American Robin"
+  },
+  {
+    "birdId": 100,
+    "author": "William W. H. Gunn",
+    "species": "Swainson's Hawk"
+  },
+  {
+    "birdId": 101,
+    "author": "Matthew D. Medler",
+    "species": "Purple Martin"
+  },
+  {
+    "birdId": 102,
+    "author": "Bob McGuire",
+    "species": "Anna's Hummingbird"
+  },
+  {
+    "birdId": 103,
+    "author": "Nick Tepper",
+    "species": "Willet"
+  },
+  {
+    "birdId": 104,
+    "author": "Jay McGowan",
+    "species": "Red-breasted Merganser"
+  },
+  {
+    "birdId": 105,
+    "author": "Randolph Little",
+    "species": "Lark Sparrow"
+  },
+  {
+    "birdId": 106,
+    "author": "Bob McGuire",
+    "species": "Acorn Woodpecker"
+  },
+  {
+    "birdId": 107,
+    "author": "Wil Hershberger",
+    "species": "Indigo Bunting"
+  },
+  {
+    "birdId": 108,
+    "author": "Leonard J. Peyton",
+    "species": "Steller's Jay"
+  },
+  {
+    "birdId": 109,
+    "author": "Gerrit Vyn",
+    "species": "Snowy Owl"
+  },
+  {
+    "birdId": 110,
+    "author": "Wil Hershberger",
+    "species": "Western Meadowlark"
+  },
+  {
+    "birdId": 111,
+    "author": "Hope Batcheller",
+    "species": "Juniper Titmouse"
+  },
+  {
+    "birdId": 112,
+    "author": "Wil Hershberger",
+    "species": "Wood Thrush"
+  },
+  {
+    "birdId": 113,
+    "author": "Tom Johnson",
+    "species": "Chuck-will's-widow"
+  },
+  {
+    "birdId": 114,
+    "author": "Wil Hershberger",
+    "species": "Bicknell's Thrush"
+  },
+  {
+    "birdId": 115,
+    "author": "Matthew D. Medler",
+    "species": "Bronzed Cowbird"
+  },
+  {
+    "birdId": 116,
+    "author": "Bob McGuire",
+    "species": "Black-crowned Night-Heron"
+  },
+  {
+    "birdId": 117,
+    "author": "Paul Marvin",
+    "species": "Common Gallinule"
+  },
+  {
+    "birdId": 118,
+    "author": "Geoffrey A. Keller",
+    "species": "Scissor-tailed Flycatcher"
+  },
+  {
+    "birdId": 119,
+    "author": "Jay McGowan",
+    "species": "Ovenbird"
+  },
+  {
+    "birdId": 120,
+    "author": "Glenn Seeholzer",
+    "species": "Eastern Towhee"
+  },
+  {
+    "birdId": 121,
+    "author": "Tom Johnson",
+    "species": "Gadwall"
+  },
+  {
+    "birdId": 122,
+    "author": "Martha Fischer",
+    "species": "Great Egret"
+  },
+  {
+    "birdId": 123,
+    "author": "Andrew Spencer",
+    "species": "Mountain Bluebird"
+  },
+  {
+    "birdId": 124,
+    "author": "William W. H. Gunn",
+    "species": "Common Goldeneye"
+  },
+  {
+    "birdId": 125,
+    "author": "Wil Hershberger",
+    "species": "Bewick's Wren"
+  },
+  {
+    "birdId": 126,
+    "author": "Wil Hershberger",
+    "species": "Northern Mockingbird"
+  },
+  {
+    "birdId": 127,
+    "author": "Michael Andersen",
+    "species": "Roseate Spoonbill"
+  },
+  {
+    "birdId": 128,
+    "author": "Andrew Spencer",
+    "species": "Clay-colored Thrush"
+  },
+  {
+    "birdId": 129,
+    "author": "Matthew D. Medler",
+    "species": "Golden-crowned Kinglet"
+  },
+  {
+    "birdId": 130,
+    "author": "Andrew Spencer",
+    "species": "Redhead"
+  },
+  {
+    "birdId": 131,
+    "author": "Leonard J. Peyton",
+    "species": "Steller's Jay"
+  },
+  {
+    "birdId": 132,
+    "author": "Nathan Pieplow",
+    "species": "Clark's Nutcracker"
+  },
+  {
+    "birdId": 133,
+    "author": "Gregory Budney",
+    "species": "Florida Scrub-Jay"
+  },
+  {
+    "birdId": 134,
+    "author": "Peter Boesman",
+    "species": "Common Pochard"
+  },
+  {
+    "birdId": 135,
+    "author": "Bob McGuire",
+    "species": "Burrowing Owl"
+  },
+  {
+    "birdId": 136,
+    "author": "Wil Hershberger",
+    "species": "Indigo Bunting"
+  },
+  {
+    "birdId": 137,
+    "author": "Wil Hershberger",
+    "species": "Eastern Screech-Owl"
+  },
+  {
+    "birdId": 138,
+    "author": "Wil Hershberger",
+    "species": "Northern Mockingbird"
+  },
+  {
+    "birdId": 139,
+    "author": "Arthur A. Allen",
+    "species": "Purple Gallinule"
+  },
+  {
+    "birdId": 140,
+    "author": "David C. Evers",
+    "species": "Common Loon"
+  },
+  {
+    "birdId": 141,
+    "author": "George B. Reynard",
+    "species": "Brant"
+  },
+  {
+    "birdId": 142,
+    "author": "Nick Tepper",
+    "species": "Willet"
+  },
+  {
+    "birdId": 143,
+    "author": "Matthew D. Medler",
+    "species": "Gray Catbird"
+  },
+  {
+    "birdId": 144,
+    "author": "Jay McGowan",
+    "species": "Ovenbird"
+  },
+  {
+    "birdId": 145,
+    "author": "Lucas DeCicco",
+    "species": "Fox Sparrow"
+  },
+  {
+    "birdId": 146,
+    "author": "Randolph Little",
+    "species": "Clapper Rail"
+  },
+  {
+    "birdId": 147,
+    "author": "Christopher McPherson",
+    "species": "Eastern Wood-Pewee"
+  },
+  {
+    "birdId": 148,
+    "author": "Brad Walker",
+    "species": "House Sparrow"
+  },
+  {
+    "birdId": 149,
+    "author": "Matthew Wistrand",
+    "species": "Red-headed Woodpecker"
+  },
+  {
+    "birdId": 150,
+    "author": "Bob McGuire",
+    "species": "Common Pauraque"
+  },
+  {
+    "birdId": 151,
+    "author": "Matthew D. Medler",
+    "species": "Song Sparrow"
+  },
+  {
+    "birdId": 152,
+    "author": "Robert Bethel",
+    "species": "Eastern Meadowlark"
+  },
+  {
+    "birdId": 153,
+    "author": "Robert C. Stein",
+    "species": "Bufflehead"
+  },
+  {
+    "birdId": 154,
+    "author": "Jay McGowan",
+    "species": "Black-capped Chickadee"
+  },
+  {
+    "birdId": 155,
+    "author": "Vincent Gerwe",
+    "species": "California Condor"
+  },
+  {
+    "birdId": 156,
+    "author": "Tom Johnson",
+    "species": "Northern Bobwhite"
+  },
+  {
+    "birdId": 157,
+    "author": "Matthew Wistrand",
+    "species": "Red-headed Woodpecker"
+  },
+  {
+    "birdId": 158,
+    "author": "Michael Andersen",
+    "species": "Wood Duck"
+  },
+  {
+    "birdId": 159,
+    "author": "William R. Fish",
+    "species": "Great Horned Owl"
+  },
+  {
+    "birdId": 160,
+    "author": "Paul Fenwick",
+    "species": "Red-shouldered Hawk"
+  },
+  {
+    "birdId": 161,
+    "author": "Paul Marvin",
+    "species": "Great Blue Heron"
+  },
+  {
+    "birdId": 162,
+    "author": "Andrew Spencer",
+    "species": "Woodhouse's Scrub-Jay"
+  },
+  {
+    "birdId": 163,
+    "author": "Robert C. Stein",
+    "species": "Laughing Gull"
+  },
+  {
+    "birdId": 164,
+    "author": "Jay McGowan",
+    "species": "Common Merganser"
+  },
+  {
+    "birdId": 165,
+    "author": "Arthur A. Allen",
+    "species": "Pileated Woodpecker"
+  },
+  {
+    "birdId": 166,
+    "author": "Brad Walker",
+    "species": "Tufted Titmouse"
+  },
+  {
+    "birdId": 167,
+    "author": "Jay McGowan",
+    "species": "Eastern Whip-poor-will"
+  },
+  {
+    "birdId": 168,
+    "author": "William W. H. Gunn",
+    "species": "Common Goldeneye"
+  },
+  {
+    "birdId": 169,
+    "author": "Wil Hershberger",
+    "species": "Bicknell's Thrush"
+  },
+  {
+    "birdId": 170,
+    "author": "Jay McGowan",
+    "species": "Northern Cardinal"
+  },
+  {
+    "birdId": 171,
+    "author": "William W. H. Gunn",
+    "species": "American Coot"
+  },
+  {
+    "birdId": 172,
+    "author": "Wil Hershberger",
+    "species": "Western Wood-Pewee"
+  },
+  {
+    "birdId": 173,
+    "author": "Forrest Baublitz",
+    "species": "Yellow-crowned Night-Heron"
+  },
+  {
+    "birdId": 174,
+    "author": "Mark Gardiner",
+    "species": "Western Tanager"
+  },
+  {
+    "birdId": 175,
+    "author": "Wil Hershberger",
+    "species": "Indigo Bunting"
+  },
+  {
+    "birdId": 176,
     "author": "Paul Marvin",
     "species": "Red-tailed Hawk"
   },
   {
-    "birdId": 518,
+    "birdId": 177,
+    "author": "John Patterson",
+    "species": "Virginia Rail"
+  },
+  {
+    "birdId": 178,
+    "author": "Bob McGuire",
+    "species": "Painted Bunting"
+  },
+  {
+    "birdId": 179,
+    "author": "Wil Hershberger",
+    "species": "Wood Thrush"
+  },
+  {
+    "birdId": 180,
+    "author": "Wil Hershberger",
+    "species": "Carolina Wren"
+  },
+  {
+    "birdId": 181,
+    "author": "Andrew Spencer",
+    "species": "Rock Wren"
+  },
+  {
+    "birdId": 182,
+    "author": "Matthew D. Medler",
+    "species": "Blue Jay"
+  },
+  {
+    "birdId": 183,
+    "author": "Jay McGowan",
+    "species": "Ovenbird"
+  },
+  {
+    "birdId": 184,
+    "author": "Robert C. Stein",
+    "species": "Bufflehead"
+  },
+  {
+    "birdId": 185,
+    "author": "Bob McGuire",
+    "species": "Great Cormorant"
+  },
+  {
+    "birdId": 186,
+    "author": "Jay McGowan",
+    "species": "Savannah Sparrow"
+  },
+  {
+    "birdId": 187,
+    "author": "David C. Evers",
+    "species": "Common Loon"
+  },
+  {
+    "birdId": 188,
+    "author": "Vincent Gerwe",
+    "species": "California Condor"
+  },
+  {
+    "birdId": 189,
+    "author": "Paul Marvin",
+    "species": "Hepatic Tanager"
+  },
+  {
+    "birdId": 190,
+    "author": "Paul Marvin",
+    "species": "Green Heron"
+  },
+  {
+    "birdId": 191,
+    "author": "Glen Chapman",
+    "species": "Downy Woodpecker"
+  },
+  {
+    "birdId": 192,
+    "author": "Nick Tepper",
+    "species": "Sandhill Crane"
+  },
+  {
+    "birdId": 193,
+    "author": "Jay McGowan",
+    "species": "Common Merganser"
+  },
+  {
+    "birdId": 194,
+    "author": "Glenn Seeholzer",
+    "species": "Eastern Towhee"
+  },
+  {
+    "birdId": 195,
+    "author": "William W. H. Gunn",
+    "species": "American Coot"
+  },
+  {
+    "birdId": 196,
+    "author": "John Patterson",
+    "species": "Virginia Rail"
+  },
+  {
+    "birdId": 197,
+    "author": "Matthew D. Medler",
+    "species": "Scarlet Tanager"
+  },
+  {
+    "birdId": 198,
+    "author": "Gerrit Vyn",
+    "species": "Snow Bunting"
+  },
+  {
+    "birdId": 199,
+    "author": "Gregory Budney",
+    "species": "Black-necked Stilt"
+  },
+  {
+    "birdId": 200,
+    "author": "Nathaniel H. Taylor",
+    "species": "Ruffed Grouse"
+  },
+  {
+    "birdId": 201,
+    "author": "Gregory Budney",
+    "species": "Pied-billed Grebe"
+  },
+  {
+    "birdId": 202,
+    "author": "Gerrit Vyn",
+    "species": "King Rail"
+  },
+  {
+    "birdId": 203,
+    "author": "Curtis Marantz",
+    "species": "Green Kingfisher"
+  },
+  {
+    "birdId": 204,
+    "author": "Geoffrey A. Keller",
+    "species": "Green Jay"
+  },
+  {
+    "birdId": 205,
+    "author": "Wil Hershberger",
+    "species": "Blue Grosbeak"
+  },
+  {
+    "birdId": 206,
+    "author": "Michael Andersen",
+    "species": "Forster's Tern"
+  },
+  {
+    "birdId": 207,
+    "author": "Michael Andersen",
+    "species": "Forster's Tern"
+  },
+  {
+    "birdId": 208,
+    "author": "Wil Hershberger",
+    "species": "Eastern Screech-Owl"
+  },
+  {
+    "birdId": 209,
+    "author": "Wil Hershberger",
+    "species": "Blue Grosbeak"
+  },
+  {
+    "birdId": 210,
+    "author": "Nathan Pieplow",
+    "species": "Western Bluebird"
+  },
+  {
+    "birdId": 211,
+    "author": "Paul Marvin",
+    "species": "Hepatic Tanager"
+  },
+  {
+    "birdId": 212,
+    "author": "Tayler Brooks",
+    "species": "Canyon Wren"
+  },
+  {
+    "birdId": 213,
+    "author": "Terri Gallion",
+    "species": "Golden Eagle"
+  },
+  {
+    "birdId": 214,
+    "author": "Geoffrey A. Keller",
+    "species": "Osprey"
+  },
+  {
+    "birdId": 215,
+    "author": "Wil Hershberger",
+    "species": "Killdeer"
+  },
+  {
+    "birdId": 216,
     "author": "Jay McGowan",
     "species": "Plain Chachalaca"
   },
   {
-    "birdId": 519,
+    "birdId": 217,
+    "author": "Sarah Toner",
+    "species": "Snowy Egret"
+  },
+  {
+    "birdId": 218,
+    "author": "David L. Ross, Jr.",
+    "species": "Roadside Hawk"
+  },
+  {
+    "birdId": 219,
+    "author": "Brad Walker",
+    "species": "House Sparrow"
+  },
+  {
+    "birdId": 220,
+    "author": "Paul Marvin",
+    "species": "American Oystercatcher"
+  },
+  {
+    "birdId": 221,
+    "author": "Gregory Budney",
+    "species": "Red Crossbill"
+  },
+  {
+    "birdId": 222,
+    "author": "Wil Hershberger",
+    "species": "Carolina Chickadee"
+  },
+  {
+    "birdId": 223,
+    "author": "Michael Andersen",
+    "species": "Wood Duck"
+  },
+  {
+    "birdId": 224,
+    "author": "Nathan Pieplow",
+    "species": "Clark's Nutcracker"
+  },
+  {
+    "birdId": 225,
+    "author": "Nathan Pieplow",
+    "species": "Peregrine Falcon"
+  },
+  {
+    "birdId": 226,
+    "author": "Wil Hershberger",
+    "species": "Blue Grosbeak"
+  },
+  {
+    "birdId": 227,
+    "author": "Gerrit Vyn",
+    "species": "Greater Prairie-Chicken"
+  },
+  {
+    "birdId": 228,
+    "author": "Bob McGuire",
+    "species": "Vermilion Flycatcher"
+  },
+  {
+    "birdId": 229,
+    "author": "Geoffrey A. Keller",
+    "species": "Scissor-tailed Flycatcher"
+  },
+  {
+    "birdId": 230,
+    "author": "Paul Marvin",
+    "species": "Rock Pigeon"
+  },
+  {
+    "birdId": 231,
+    "author": "Steven Biggers",
+    "species": "Yellow-bellied Sapsucker"
+  },
+  {
+    "birdId": 232,
+    "author": "Nathan Pieplow",
+    "species": "Western Bluebird"
+  },
+  {
+    "birdId": 233,
+    "author": "Kevin J. Colver",
+    "species": "Lazuli Bunting"
+  },
+  {
+    "birdId": 234,
+    "author": "Jay McGowan",
+    "species": "Rose-breasted Grosbeak"
+  },
+  {
+    "birdId": 235,
+    "author": "Matthew D. Medler",
+    "species": "Hermit Thrush"
+  },
+  {
+    "birdId": 236,
+    "author": "Gerrit Vyn",
+    "species": "Northern Jacana"
+  },
+  {
+    "birdId": 237,
+    "author": "Nathan Pieplow",
+    "species": "Western Bluebird"
+  },
+  {
+    "birdId": 238,
+    "author": "Paul Marvin",
+    "species": "Hepatic Tanager"
+  },
+  {
+    "birdId": 239,
+    "author": "Brad Walker",
+    "species": "House Wren"
+  },
+  {
+    "birdId": 240,
+    "author": "Mark Robbins",
+    "species": "Greater Roadrunner"
+  },
+  {
+    "birdId": 241,
+    "author": "William W. H. Gunn",
+    "species": "Common Goldeneye"
+  },
+  {
+    "birdId": 242,
+    "author": "Matthew D. Medler",
+    "species": "Blue Jay"
+  },
+  {
+    "birdId": 243,
+    "author": "Martha Fischer",
+    "species": "Great Egret"
+  },
+  {
+    "birdId": 244,
+    "author": "Thomas G. Sander",
+    "species": "Barred Owl"
+  },
+  {
+    "birdId": 245,
+    "author": "Gerrit Vyn",
+    "species": "Black-bellied Whistling-Duck"
+  },
+  {
+    "birdId": 246,
+    "author": "Lucas DeCicco",
+    "species": "Wilson's Snipe"
+  },
+  {
+    "birdId": 247,
+    "author": "Brad Walker",
+    "species": "House Wren"
+  },
+  {
+    "birdId": 248,
+    "author": "John Patterson",
+    "species": "Virginia Rail"
+  },
+  {
+    "birdId": 249,
+    "author": "Matthew D. Medler",
+    "species": "Scarlet Tanager"
+  },
+  {
+    "birdId": 250,
+    "author": "Michael Andersen",
+    "species": "American Crow"
+  },
+  {
+    "birdId": 251,
+    "author": "Paul Marvin",
+    "species": "Rock Pigeon"
+  },
+  {
+    "birdId": 252,
+    "author": "Jocelyn Lauzon",
+    "species": "White-throated Sparrow"
+  },
+  {
+    "birdId": 253,
+    "author": "Gregory Budney",
+    "species": "Brown-headed Nuthatch"
+  },
+  {
+    "birdId": 254,
+    "author": "Bob McGuire",
+    "species": "Anna's Hummingbird"
+  },
+  {
+    "birdId": 255,
+    "author": "Peter Paul Kellogg",
+    "species": "European Starling"
+  },
+  {
+    "birdId": 256,
+    "author": "William W. H. Gunn",
+    "species": "Swainson's Hawk"
+  },
+  {
+    "birdId": 257,
+    "author": "Jay McGowan",
+    "species": "Brown Pelican"
+  },
+  {
+    "birdId": 258,
+    "author": "Paul Marvin",
+    "species": "Green Heron"
+  },
+  {
+    "birdId": 259,
+    "author": "John Patterson",
+    "species": "Franklin's Gull"
+  },
+  {
+    "birdId": 260,
+    "author": "David McQuade",
+    "species": "Altamira Oriole"
+  },
+  {
+    "birdId": 261,
+    "author": "Wil Hershberger",
+    "species": "Western Meadowlark"
+  },
+  {
+    "birdId": 262,
+    "author": "Christopher McPherson",
+    "species": "Cedar Waxwing"
+  },
+  {
+    "birdId": 263,
+    "author": "Gerrit Vyn",
+    "species": "Snowy Owl"
+  },
+  {
+    "birdId": 264,
+    "author": "Dave Herr",
+    "species": "Barn Swallow"
+  },
+  {
+    "birdId": 265,
+    "author": "Christopher McPherson",
+    "species": "Cedar Waxwing"
+  },
+  {
+    "birdId": 266,
+    "author": "Matthew D. Medler",
+    "species": "Gray Catbird"
+  },
+  {
+    "birdId": 267,
+    "author": "Gerrit Vyn",
+    "species": "King Rail"
+  },
+  {
+    "birdId": 268,
+    "author": "Bob McGuire",
+    "species": "Acorn Woodpecker"
+  },
+  {
+    "birdId": 269,
+    "author": "Michael Andersen",
+    "species": "American Crow"
+  },
+  {
+    "birdId": 270,
     "author": "Nick Tepper",
     "species": "Sandhill Crane"
+  },
+  {
+    "birdId": 271,
+    "author": "Wil Hershberger",
+    "species": "Eastern Screech-Owl"
+  },
+  {
+    "birdId": 272,
+    "author": "Andrew Spencer",
+    "species": "Redhead"
+  },
+  {
+    "birdId": 273,
+    "author": "Joe B. Guinn",
+    "species": "Mississippi Kite"
+  },
+  {
+    "birdId": 274,
+    "author": "Paul Marvin",
+    "species": "Barn Owl"
+  },
+  {
+    "birdId": 275,
+    "author": "Bob McGuire",
+    "species": "Summer Tanager"
+  },
+  {
+    "birdId": 276,
+    "author": "Gregory Budney",
+    "species": "American Avocet"
+  },
+  {
+    "birdId": 277,
+    "author": "Jay McGowan",
+    "species": "Brown Pelican"
+  },
+  {
+    "birdId": 278,
+    "author": "Jay McGowan",
+    "species": "Northern Cardinal"
+  },
+  {
+    "birdId": 279,
+    "author": "Nathan Pieplow",
+    "species": "Peregrine Falcon"
+  },
+  {
+    "birdId": 280,
+    "author": "Paul Fenwick",
+    "species": "Red-shouldered Hawk"
+  },
+  {
+    "birdId": 281,
+    "author": "Gregory Budney",
+    "species": "Red Crossbill"
+  },
+  {
+    "birdId": 282,
+    "author": "Bob McGuire",
+    "species": "Black-crowned Night-Heron"
+  },
+  {
+    "birdId": 283,
+    "author": "Jay McGowan",
+    "species": "Eurasian Collared-Dove"
+  },
+  {
+    "birdId": 284,
+    "author": "Randolph Little",
+    "species": "Clapper Rail"
+  },
+  {
+    "birdId": 285,
+    "author": "Bob McGuire",
+    "species": "Chipping Sparrow"
+  },
+  {
+    "birdId": 286,
+    "author": "Andrew Spencer",
+    "species": "Loggerhead Shrike"
+  },
+  {
+    "birdId": 287,
+    "author": "Wil Hershberger",
+    "species": "Blue Grosbeak"
+  },
+  {
+    "birdId": 288,
+    "author": "Bob McGuire",
+    "species": "Chipping Sparrow"
+  },
+  {
+    "birdId": 289,
+    "author": "Gerrit Vyn",
+    "species": "King Rail"
+  },
+  {
+    "birdId": 290,
+    "author": "Steven Biggers",
+    "species": "Yellow-bellied Sapsucker"
+  },
+  {
+    "birdId": 291,
+    "author": "Jay McGowan",
+    "species": "Black-capped Chickadee"
+  },
+  {
+    "birdId": 292,
+    "author": "Jay McGowan",
+    "species": "Northern Cardinal"
+  },
+  {
+    "birdId": 293,
+    "author": "William W. H. Gunn",
+    "species": "Sora"
+  },
+  {
+    "birdId": 294,
+    "author": "Brian Sullivan",
+    "species": "Wild Turkey"
+  },
+  {
+    "birdId": 295,
+    "author": "Glen Chapman",
+    "species": "Downy Woodpecker"
+  },
+  {
+    "birdId": 296,
+    "author": "Gregory Budney",
+    "species": "Orchard Oriole"
+  },
+  {
+    "birdId": 297,
+    "author": "Leonard J. Peyton",
+    "species": "Tree Swallow"
+  },
+  {
+    "birdId": 298,
+    "author": "Wil Hershberger",
+    "species": "Eastern Phoebe"
+  },
+  {
+    "birdId": 299,
+    "author": "Andrew Spencer",
+    "species": "Mountain Bluebird"
+  },
+  {
+    "birdId": 300,
+    "author": "Tom Johnson",
+    "species": "Gadwall"
+  },
+  {
+    "birdId": 301,
+    "author": "Wil Hershberger",
+    "species": "Northern Mockingbird"
+  },
+  {
+    "birdId": 302,
+    "author": "Matthew D. Medler",
+    "species": "Hermit Thrush"
+  },
+  {
+    "birdId": 303,
+    "author": "Robert C. Stein",
+    "species": "Laughing Gull"
+  },
+  {
+    "birdId": 304,
+    "author": "Randolph Little",
+    "species": "Ruby-throated Hummingbird"
+  },
+  {
+    "birdId": 305,
+    "author": "Wil Hershberger",
+    "species": "White-breasted Nuthatch"
+  },
+  {
+    "birdId": 306,
+    "author": "Bob McGuire",
+    "species": "Common Pauraque"
+  },
+  {
+    "birdId": 307,
+    "author": "Michael Andersen",
+    "species": "Forster's Tern"
+  },
+  {
+    "birdId": 308,
+    "author": "Paul Marvin",
+    "species": "Barn Owl"
+  },
+  {
+    "birdId": 309,
+    "author": "Michael Andersen",
+    "species": "Anhinga"
+  },
+  {
+    "birdId": 310,
+    "author": "Arthur A. Allen",
+    "species": "Pileated Woodpecker"
+  },
+  {
+    "birdId": 311,
+    "author": "Jay McGowan",
+    "species": "Eastern Kingbird"
+  },
+  {
+    "birdId": 312,
+    "author": "Randolph Little",
+    "species": "Ruby-throated Hummingbird"
+  },
+  {
+    "birdId": 313,
+    "author": "Jay McGowan",
+    "species": "Brown Pelican"
+  },
+  {
+    "birdId": 314,
+    "author": "William W. H. Gunn",
+    "species": "Sora"
+  },
+  {
+    "birdId": 315,
+    "author": "Glen Chapman",
+    "species": "Brown-headed Cowbird"
+  },
+  {
+    "birdId": 316,
+    "author": "Andrew Spencer",
+    "species": "Glossy Ibis"
+  },
+  {
+    "birdId": 317,
+    "author": "Ian Davies",
+    "species": "Northern Flicker"
+  },
+  {
+    "birdId": 318,
+    "author": "Jay McGowan",
+    "species": "Common Merganser"
+  },
+  {
+    "birdId": 319,
+    "author": "Jay McGowan",
+    "species": "Dark-eyed Junco"
+  },
+  {
+    "birdId": 320,
+    "author": "Wil Hershberger",
+    "species": "Belted Kingfisher"
+  },
+  {
+    "birdId": 321,
+    "author": "William R. Fish",
+    "species": "Great Horned Owl"
+  },
+  {
+    "birdId": 322,
+    "author": "Kevin J. Colver",
+    "species": "Lazuli Bunting"
+  },
+  {
+    "birdId": 323,
+    "author": "Bob McGuire",
+    "species": "Black-crowned Night-Heron"
+  },
+  {
+    "birdId": 324,
+    "author": "Gregory Budney",
+    "species": "Orchard Oriole"
+  },
+  {
+    "birdId": 325,
+    "author": "Wil Hershberger",
+    "species": "Mourning Dove"
+  },
+  {
+    "birdId": 326,
+    "author": "Leonard J. Peyton",
+    "species": "Horned Lark"
+  },
+  {
+    "birdId": 327,
+    "author": "Jay McGowan",
+    "species": "Eurasian Collared-Dove"
+  },
+  {
+    "birdId": 328,
+    "author": "Bob McGuire",
+    "species": "Field Sparrow"
+  },
+  {
+    "birdId": 329,
+    "author": "Bob McGuire",
+    "species": "Acorn Woodpecker"
+  },
+  {
+    "birdId": 330,
+    "author": "Geoffrey A. Keller",
+    "species": "Scissor-tailed Flycatcher"
+  },
+  {
+    "birdId": 331,
+    "author": "Gregory Budney",
+    "species": "Florida Scrub-Jay"
+  },
+  {
+    "birdId": 332,
+    "author": "Matthew D. Medler",
+    "species": "Song Sparrow"
+  },
+  {
+    "birdId": 333,
+    "author": "Ian Davies",
+    "species": "Northern Flicker"
+  },
+  {
+    "birdId": 334,
+    "author": "Mark Robbins",
+    "species": "Greater Roadrunner"
+  },
+  {
+    "birdId": 335,
+    "author": "Andrew Spencer",
+    "species": "Common Eider"
+  },
+  {
+    "birdId": 336,
+    "author": "Bob McGuire",
+    "species": "Burrowing Owl"
+  },
+  {
+    "birdId": 337,
+    "author": "Bob McGuire",
+    "species": "Western Screech-Owl"
+  },
+  {
+    "birdId": 338,
+    "author": "Matthew D. Medler",
+    "species": "Gray Catbird"
+  },
+  {
+    "birdId": 339,
+    "author": "Robert C. Stein",
+    "species": "Laughing Gull"
+  },
+  {
+    "birdId": 340,
+    "author": "John Patterson",
+    "species": "Franklin's Gull"
+  },
+  {
+    "birdId": 341,
+    "author": "Robert Bethel",
+    "species": "Eastern Meadowlark"
+  },
+  {
+    "birdId": 342,
+    "author": "Peter Boesman",
+    "species": "Common Pochard"
+  },
+  {
+    "birdId": 343,
+    "author": "Bob McGuire",
+    "species": "Chipping Sparrow"
+  },
+  {
+    "birdId": 344,
+    "author": "Andrew Spencer",
+    "species": "Cassin's Kingbird"
+  },
+  {
+    "birdId": 345,
+    "author": "Jay McGowan",
+    "species": "Grasshopper Sparrow"
+  },
+  {
+    "birdId": 346,
+    "author": "Wil Hershberger",
+    "species": "Red-winged Blackbird"
+  },
+  {
+    "birdId": 347,
+    "author": "Geoffrey A. Keller",
+    "species": "Phainopepla"
+  },
+  {
+    "birdId": 348,
+    "author": "Andrew Spencer",
+    "species": "Clay-colored Thrush"
+  },
+  {
+    "birdId": 349,
+    "author": "Paul Marvin",
+    "species": "Common Gallinule"
+  },
+  {
+    "birdId": 350,
+    "author": "Matthew D. Medler",
+    "species": "Golden-crowned Kinglet"
+  },
+  {
+    "birdId": 351,
+    "author": "Paul Marvin",
+    "species": "Ruddy Turnstone"
+  },
+  {
+    "birdId": 352,
+    "author": "John Patterson",
+    "species": "Whooping Crane"
+  },
+  {
+    "birdId": 353,
+    "author": "Andrew Spencer",
+    "species": "Redhead"
+  },
+  {
+    "birdId": 354,
+    "author": "Matthew D. Medler",
+    "species": "Purple Finch"
+  },
+  {
+    "birdId": 355,
+    "author": "Andrew Spencer",
+    "species": "Woodhouse's Scrub-Jay"
+  },
+  {
+    "birdId": 356,
+    "author": "Paul Marvin",
+    "species": "Ruddy Turnstone"
+  },
+  {
+    "birdId": 357,
+    "author": "Jay McGowan",
+    "species": "Fish Crow"
+  },
+  {
+    "birdId": 358,
+    "author": "Jay McGowan",
+    "species": "Hairy Woodpecker"
+  },
+  {
+    "birdId": 359,
+    "author": "Paul Marvin",
+    "species": "Green Heron"
+  },
+  {
+    "birdId": 360,
+    "author": "Martha Fischer",
+    "species": "Red-breasted Nuthatch"
+  },
+  {
+    "birdId": 361,
+    "author": "Andrew Spencer",
+    "species": "Common Eider"
+  },
+  {
+    "birdId": 362,
+    "author": "Bob McGuire",
+    "species": "Limpkin"
+  },
+  {
+    "birdId": 363,
+    "author": "Gerrit Vyn",
+    "species": "Black-bellied Whistling-Duck"
+  },
+  {
+    "birdId": 364,
+    "author": "Leonard J. Peyton",
+    "species": "Steller's Jay"
+  },
+  {
+    "birdId": 365,
+    "author": "Nathaniel H. Taylor",
+    "species": "Ruffed Grouse"
+  },
+  {
+    "birdId": 366,
+    "author": "John Patterson",
+    "species": "American Bittern"
+  },
+  {
+    "birdId": 367,
+    "author": "Matthew D. Medler",
+    "species": "Blue Jay"
+  },
+  {
+    "birdId": 368,
+    "author": "William R. Fish",
+    "species": "House Finch"
+  },
+  {
+    "birdId": 369,
+    "author": "Andrew Spencer",
+    "species": "Redhead"
+  },
+  {
+    "birdId": 370,
+    "author": "Brad Walker",
+    "species": "House Sparrow"
+  },
+  {
+    "birdId": 371,
+    "author": "Vincent Gerwe",
+    "species": "California Condor"
+  },
+  {
+    "birdId": 372,
+    "author": "Jay McGowan",
+    "species": "Eastern Whip-poor-will"
+  },
+  {
+    "birdId": 373,
+    "author": "Matthew D. Medler",
+    "species": "Blue Jay"
+  },
+  {
+    "birdId": 374,
+    "author": "William W. H. Gunn",
+    "species": "Swainson's Hawk"
+  },
+  {
+    "birdId": 375,
+    "author": "William R. Fish",
+    "species": "Great Horned Owl"
+  },
+  {
+    "birdId": 376,
+    "author": "Jay McGowan",
+    "species": "American Goldfinch"
+  },
+  {
+    "birdId": 377,
+    "author": "Bob McGuire",
+    "species": "Common Pauraque"
+  },
+  {
+    "birdId": 378,
+    "author": "George B. Reynard",
+    "species": "Brant"
+  },
+  {
+    "birdId": 379,
+    "author": "Paul Marvin",
+    "species": "Great Blue Heron"
+  },
+  {
+    "birdId": 380,
+    "author": "Robert Bethel",
+    "species": "Eastern Meadowlark"
+  },
+  {
+    "birdId": 381,
+    "author": "Gregory Budney",
+    "species": "Black-necked Stilt"
+  },
+  {
+    "birdId": 382,
+    "author": "Jessie Barry",
+    "species": "Common Raven"
+  },
+  {
+    "birdId": 383,
+    "author": "George B. Reynard",
+    "species": "Brant"
+  },
+  {
+    "birdId": 384,
+    "author": "Kevin J. Colver",
+    "species": "Spotted Towhee"
+  },
+  {
+    "birdId": 385,
+    "author": "Jay McGowan",
+    "species": "Eastern Whip-poor-will"
+  },
+  {
+    "birdId": 386,
+    "author": "Bob McGuire",
+    "species": "American Black Duck"
+  },
+  {
+    "birdId": 387,
+    "author": "Paul Marvin",
+    "species": "American Oystercatcher"
+  },
+  {
+    "birdId": 388,
+    "author": "Gregory Budney",
+    "species": "Orchard Oriole"
+  },
+  {
+    "birdId": 389,
+    "author": "William W. H. Gunn",
+    "species": "Common Goldeneye"
+  },
+  {
+    "birdId": 390,
+    "author": "Gregory Budney",
+    "species": "Red Crossbill"
+  },
+  {
+    "birdId": 391,
+    "author": "Gregory Budney",
+    "species": "American Avocet"
+  },
+  {
+    "birdId": 392,
+    "author": "Wil Hershberger",
+    "species": "Carolina Wren"
+  },
+  {
+    "birdId": 393,
+    "author": "William W. H. Gunn",
+    "species": "Northern Shoveler"
+  },
+  {
+    "birdId": 394,
+    "author": "John Patterson",
+    "species": "Whooping Crane"
+  },
+  {
+    "birdId": 395,
+    "author": "Nathan Pieplow",
+    "species": "Clark's Nutcracker"
+  },
+  {
+    "birdId": 396,
+    "author": "Gerrit Vyn",
+    "species": "King Rail"
+  },
+  {
+    "birdId": 397,
+    "author": "Glen Chapman",
+    "species": "Pine Siskin"
+  },
+  {
+    "birdId": 398,
+    "author": "Wil Hershberger",
+    "species": "Wood Thrush"
+  },
+  {
+    "birdId": 399,
+    "author": "Gregory Budney",
+    "species": "Cassin's Finch"
+  },
+  {
+    "birdId": 400,
+    "author": "Wil Hershberger",
+    "species": "American Robin"
+  },
+  {
+    "birdId": 401,
+    "author": "Nick Tepper",
+    "species": "Willet"
+  },
+  {
+    "birdId": 402,
+    "author": "Tom Johnson",
+    "species": "Northern Bobwhite"
+  },
+  {
+    "birdId": 403,
+    "author": "Lucas DeCicco",
+    "species": "Wilson's Snipe"
+  },
+  {
+    "birdId": 404,
+    "author": "Paul Marvin",
+    "species": "Royal Tern"
+  },
+  {
+    "birdId": 405,
+    "author": "Randolph Little",
+    "species": "Ruddy Duck"
+  },
+  {
+    "birdId": 406,
+    "author": "Terri Gallion",
+    "species": "Golden Eagle"
+  },
+  {
+    "birdId": 407,
+    "author": "Gerrit Vyn",
+    "species": "Northern Jacana"
+  },
+  {
+    "birdId": 408,
+    "author": "Wil Hershberger",
+    "species": "Red-winged Blackbird"
+  },
+  {
+    "birdId": 409,
+    "author": "William W. H. Gunn",
+    "species": "White-crowned Sparrow"
+  },
+  {
+    "birdId": 410,
+    "author": "Michael Andersen",
+    "species": "Mallard"
+  },
+  {
+    "birdId": 411,
+    "author": "Curtis Marantz",
+    "species": "Green Kingfisher"
+  },
+  {
+    "birdId": 412,
+    "author": "Andrew Spencer",
+    "species": "Common Eider"
+  },
+  {
+    "birdId": 413,
+    "author": "Michael Andersen",
+    "species": "Roseate Spoonbill"
+  },
+  {
+    "birdId": 414,
+    "author": "Gregory Budney",
+    "species": "Florida Scrub-Jay"
+  },
+  {
+    "birdId": 415,
+    "author": "Andrew Spencer",
+    "species": "Glossy Ibis"
+  },
+  {
+    "birdId": 416,
+    "author": "Paul Marvin",
+    "species": "Bald Eagle"
+  },
+  {
+    "birdId": 417,
+    "author": "Gregory Budney",
+    "species": "Brown-headed Nuthatch"
+  },
+  {
+    "birdId": 418,
+    "author": "Glen Chapman",
+    "species": "Brown-headed Cowbird"
+  },
+  {
+    "birdId": 419,
+    "author": "Michael Andersen",
+    "species": "Mallard"
+  },
+  {
+    "birdId": 420,
+    "author": "Mark Robbins",
+    "species": "Greater Roadrunner"
+  },
+  {
+    "birdId": 421,
+    "author": "Glen Chapman",
+    "species": "Pine Siskin"
+  },
+  {
+    "birdId": 422,
+    "author": "Jay McGowan",
+    "species": "Eastern Bluebird"
+  },
+  {
+    "birdId": 423,
+    "author": "Greg Clark",
+    "species": "Turkey Vulture"
+  },
+  {
+    "birdId": 424,
+    "author": "Wil Hershberger",
+    "species": "Wood Thrush"
+  },
+  {
+    "birdId": 425,
+    "author": "Nathan Pieplow",
+    "species": "Peregrine Falcon"
+  },
+  {
+    "birdId": 426,
+    "author": "Andrew Spencer",
+    "species": "Glossy Ibis"
+  },
+  {
+    "birdId": 427,
+    "author": "Wil Hershberger",
+    "species": "Bobolink"
+  },
+  {
+    "birdId": 428,
+    "author": "Gregory Budney",
+    "species": "Black-necked Stilt"
+  },
+  {
+    "birdId": 429,
+    "author": "Gregory Budney",
+    "species": "Brown-headed Nuthatch"
+  },
+  {
+    "birdId": 430,
+    "author": "Nathan Pieplow",
+    "species": "Rivoli's Hummingbird"
+  },
+  {
+    "birdId": 431,
+    "author": "Greg Clark",
+    "species": "Turkey Vulture"
+  },
+  {
+    "birdId": 432,
+    "author": "Tom Johnson",
+    "species": "Chuck-will's-widow"
+  },
+  {
+    "birdId": 433,
+    "author": "Matthew D. Medler",
+    "species": "Purple Finch"
+  },
+  {
+    "birdId": 434,
+    "author": "Andrew Spencer",
+    "species": "Cassin's Kingbird"
+  },
+  {
+    "birdId": 435,
+    "author": "Gerrit Vyn",
+    "species": "Snow Bunting"
+  },
+  {
+    "birdId": 436,
+    "author": "Paul Marvin",
+    "species": "Ruddy Turnstone"
+  },
+  {
+    "birdId": 437,
+    "author": "Jay McGowan",
+    "species": "Ovenbird"
+  },
+  {
+    "birdId": 438,
+    "author": "John Patterson",
+    "species": "American Bittern"
+  },
+  {
+    "birdId": 439,
+    "author": "Paul Marvin",
+    "species": "Great Blue Heron"
+  },
+  {
+    "birdId": 440,
+    "author": "Gregory Budney",
+    "species": "Red Crossbill"
+  },
+  {
+    "birdId": 441,
+    "author": "Randolph Little",
+    "species": "Ruddy Duck"
+  },
+  {
+    "birdId": 442,
+    "author": "Geoffrey A. Keller",
+    "species": "Phainopepla"
+  },
+  {
+    "birdId": 443,
+    "author": "Jay McGowan",
+    "species": "Hairy Woodpecker"
+  },
+  {
+    "birdId": 444,
+    "author": "Geoffrey A. Keller",
+    "species": "Scissor-tailed Flycatcher"
+  },
+  {
+    "birdId": 445,
+    "author": "Glenn Seeholzer",
+    "species": "Eastern Towhee"
+  },
+  {
+    "birdId": 446,
+    "author": "Leonard J. Peyton",
+    "species": "Horned Lark"
+  },
+  {
+    "birdId": 447,
+    "author": "Nathaniel H. Taylor",
+    "species": "Ruffed Grouse"
+  },
+  {
+    "birdId": 448,
+    "author": "Gerrit Vyn",
+    "species": "Greater Prairie-Chicken"
+  },
+  {
+    "birdId": 449,
+    "author": "Nathan Pieplow",
+    "species": "Pygmy Nuthatch"
+  },
+  {
+    "birdId": 450,
+    "author": "Randolph Little",
+    "species": "Ruby-throated Hummingbird"
+  },
+  {
+    "birdId": 451,
+    "author": "Bob McGuire",
+    "species": "Summer Tanager"
+  },
+  {
+    "birdId": 452,
+    "author": "Geoffrey A. Keller",
+    "species": "Osprey"
+  },
+  {
+    "birdId": 453,
+    "author": "Martha Fischer",
+    "species": "Green-winged Teal"
+  },
+  {
+    "birdId": 454,
+    "author": "Christopher McPherson",
+    "species": "Eastern Wood-Pewee"
+  },
+  {
+    "birdId": 455,
+    "author": "Lucas DeCicco",
+    "species": "Fox Sparrow"
+  },
+  {
+    "birdId": 456,
+    "author": "Dave Herr",
+    "species": "Barn Swallow"
+  },
+  {
+    "birdId": 457,
+    "author": "Michael Andersen",
+    "species": "Mallard"
+  },
+  {
+    "birdId": 458,
+    "author": "Jay McGowan",
+    "species": "Hairy Woodpecker"
+  },
+  {
+    "birdId": 459,
+    "author": "Jay McGowan",
+    "species": "Dark-eyed Junco"
+  },
+  {
+    "birdId": 460,
+    "author": "Steven Biggers",
+    "species": "Yellow-bellied Sapsucker"
+  },
+  {
+    "birdId": 461,
+    "author": "David C. Evers",
+    "species": "Common Loon"
+  },
+  {
+    "birdId": 462,
+    "author": "Dave Herr",
+    "species": "Barn Swallow"
+  },
+  {
+    "birdId": 463,
+    "author": "Tom Johnson",
+    "species": "Gadwall"
+  },
+  {
+    "birdId": 464,
+    "author": "Gregory Budney",
+    "species": "American Avocet"
+  },
+  {
+    "birdId": 465,
+    "author": "Jay McGowan",
+    "species": "Black-capped Chickadee"
+  },
+  {
+    "birdId": 466,
+    "author": "Paul Marvin",
+    "species": "Royal Tern"
+  },
+  {
+    "birdId": 467,
+    "author": "Wil Hershberger",
+    "species": "Bobolink"
+  },
+  {
+    "birdId": 468,
+    "author": "Peter Paul Kellogg",
+    "species": "European Starling"
+  },
+  {
+    "birdId": 469,
+    "author": "Jay McGowan",
+    "species": "Plain Chachalaca"
+  },
+  {
+    "birdId": 470,
+    "author": "Leonard J. Peyton",
+    "species": "Steller's Jay"
+  },
+  {
+    "birdId": 471,
+    "author": "William W. H. Gunn",
+    "species": "American Coot"
+  },
+  {
+    "birdId": 472,
+    "author": "Michael Andersen",
+    "species": "American Crow"
+  },
+  {
+    "birdId": 473,
+    "author": "Charles A. Sutherland",
+    "species": "Cattle Egret"
+  },
+  {
+    "birdId": 474,
+    "author": "Paul Fenwick",
+    "species": "Red-shouldered Hawk"
+  },
+  {
+    "birdId": 475,
+    "author": "Gregory Budney",
+    "species": "Pied-billed Grebe"
+  },
+  {
+    "birdId": 476,
+    "author": "Bob McGuire",
+    "species": "Field Sparrow"
+  },
+  {
+    "birdId": 477,
+    "author": "Wil Hershberger",
+    "species": "Belted Kingfisher"
+  },
+  {
+    "birdId": 478,
+    "author": "Wil Hershberger",
+    "species": "Bewick's Wren"
+  },
+  {
+    "birdId": 479,
+    "author": "Gerrit Vyn",
+    "species": "Magnificent Frigatebird"
+  },
+  {
+    "birdId": 480,
+    "author": "Jay McGowan",
+    "species": "Savannah Sparrow"
+  },
+  {
+    "birdId": 481,
+    "author": "Andrew Spencer",
+    "species": "Glossy Ibis"
+  },
+  {
+    "birdId": 482,
+    "author": "Andrew Spencer",
+    "species": "Cooper's Hawk"
+  },
+  {
+    "birdId": 483,
+    "author": "Robert C. Stein",
+    "species": "Laughing Gull"
+  },
+  {
+    "birdId": 484,
+    "author": "Matthew D. Medler",
+    "species": "Hermit Thrush"
+  },
+  {
+    "birdId": 485,
+    "author": "Paul Marvin",
+    "species": "American Oystercatcher"
+  },
+  {
+    "birdId": 486,
+    "author": "Joe B. Guinn",
+    "species": "Mississippi Kite"
+  },
+  {
+    "birdId": 487,
+    "author": "Paul Marvin",
+    "species": "American Oystercatcher"
+  },
+  {
+    "birdId": 488,
+    "author": "Bob McGuire",
+    "species": "Great Cormorant"
+  },
+  {
+    "birdId": 489,
+    "author": "Matthew Wistrand",
+    "species": "Red-headed Woodpecker"
+  },
+  {
+    "birdId": 490,
+    "author": "Terri Gallion",
+    "species": "Golden Eagle"
+  },
+  {
+    "birdId": 491,
+    "author": "Glen Chapman",
+    "species": "Pine Siskin"
+  },
+  {
+    "birdId": 492,
+    "author": "Jay McGowan",
+    "species": "Dark-eyed Junco"
+  },
+  {
+    "birdId": 493,
+    "author": "Ian Davies",
+    "species": "Northern Flicker"
+  },
+  {
+    "birdId": 494,
+    "author": "Wil Hershberger",
+    "species": "Killdeer"
+  },
+  {
+    "birdId": 495,
+    "author": "Jay McGowan",
+    "species": "Fish Crow"
+  },
+  {
+    "birdId": 496,
+    "author": "Jessie Barry",
+    "species": "Ring-billed Gull"
+  },
+  {
+    "birdId": 497,
+    "author": "Wil Hershberger",
+    "species": "Western Meadowlark"
+  },
+  {
+    "birdId": 498,
+    "author": "Bob McGuire",
+    "species": "Painted Bunting"
+  },
+  {
+    "birdId": 499,
+    "author": "William R. Fish",
+    "species": "House Finch"
+  },
+  {
+    "birdId": 500,
+    "author": "Wil Hershberger",
+    "species": "Lincoln's Sparrow"
+  },
+  {
+    "birdId": 501,
+    "author": "Tayler Brooks",
+    "species": "Canyon Wren"
+  },
+  {
+    "birdId": 502,
+    "author": "Gerrit Vyn",
+    "species": "Black-bellied Whistling-Duck"
+  },
+  {
+    "birdId": 503,
+    "author": "Randolph Little",
+    "species": "Clapper Rail"
+  },
+  {
+    "birdId": 504,
+    "author": "Wil Hershberger",
+    "species": "Mourning Dove"
+  },
+  {
+    "birdId": 505,
+    "author": "Michael Andersen",
+    "species": "Wood Duck"
+  },
+  {
+    "birdId": 506,
+    "author": "Nick Tepper",
+    "species": "Sandhill Crane"
+  },
+  {
+    "birdId": 507,
+    "author": "Jay McGowan",
+    "species": "Red-breasted Merganser"
+  },
+  {
+    "birdId": 508,
+    "author": "Brad Walker",
+    "species": "Tufted Titmouse"
+  },
+  {
+    "birdId": 509,
+    "author": "Gregory Budney",
+    "species": "Brown-headed Nuthatch"
+  },
+  {
+    "birdId": 510,
+    "author": "Bob McGuire",
+    "species": "Black-crowned Night-Heron"
+  },
+  {
+    "birdId": 511,
+    "author": "Gregory Budney",
+    "species": "Florida Scrub-Jay"
+  },
+  {
+    "birdId": 512,
+    "author": "Wil Hershberger",
+    "species": "American Robin"
+  },
+  {
+    "birdId": 513,
+    "author": "Gregory Budney",
+    "species": "Cassin's Finch"
+  },
+  {
+    "birdId": 514,
+    "author": "Matthew Wistrand",
+    "species": "Red-headed Woodpecker"
+  },
+  {
+    "birdId": 515,
+    "author": "Glenn Seeholzer",
+    "species": "Eastern Towhee"
+  },
+  {
+    "birdId": 516,
+    "author": "William W. H. Gunn",
+    "species": "Sora"
+  },
+  {
+    "birdId": 517,
+    "author": "Arthur A. Allen",
+    "species": "Northern Harrier"
+  },
+  {
+    "birdId": 518,
+    "author": "Andrew Spencer",
+    "species": "Cooper's Hawk"
+  },
+  {
+    "birdId": 519,
+    "author": "Thomas G. Sander",
+    "species": "Barred Owl"
   },
   {
     "birdId": 520,
@@ -2606,668 +2606,668 @@
   },
   {
     "birdId": 521,
-    "author": "Hope Batcheller",
-    "species": "Juniper Titmouse"
+    "author": "Christopher McPherson",
+    "species": "Cedar Waxwing"
   },
   {
     "birdId": 522,
-    "author": "Paul Marvin",
-    "species": "Red-tailed Hawk"
+    "author": "Nick Tepper",
+    "species": "Sandhill Crane"
   },
   {
     "birdId": 523,
-    "author": "Gregory Budney",
-    "species": "Pied-billed Grebe"
+    "author": "Christopher McPherson",
+    "species": "Cedar Waxwing"
   },
   {
     "birdId": 524,
     "author": "Paul Marvin",
-    "species": "Bald Eagle"
+    "species": "Great Blue Heron"
   },
   {
     "birdId": 525,
-    "author": "Randolph Little",
-    "species": "Ruddy Duck"
+    "author": "John Patterson",
+    "species": "American Bittern"
   },
   {
     "birdId": 526,
-    "author": "Jay McGowan",
-    "species": "Savannah Sparrow"
+    "author": "Paul Marvin",
+    "species": "Say's Phoebe"
   },
   {
     "birdId": 527,
-    "author": "Tayler Brooks",
-    "species": "Canyon Wren"
+    "author": "William W. H. Gunn",
+    "species": "Common Goldeneye"
   },
   {
     "birdId": 528,
-    "author": "Robert C. Stein",
-    "species": "Bufflehead"
-  },
-  {
-    "birdId": 529,
-    "author": "Michael Andersen",
-    "species": "American Crow"
-  },
-  {
-    "birdId": 530,
-    "author": "Matthew D. Medler",
-    "species": "Ruby-crowned Kinglet"
-  },
-  {
-    "birdId": 531,
-    "author": "William W. H. Gunn",
-    "species": "American Coot"
-  },
-  {
-    "birdId": 532,
-    "author": "Geoffrey A. Keller",
-    "species": "Green Jay"
-  },
-  {
-    "birdId": 533,
-    "author": "Blaine Carnes",
-    "species": "Dickcissel"
-  },
-  {
-    "birdId": 534,
-    "author": "Mark Robbins",
-    "species": "Greater Roadrunner"
-  },
-  {
-    "birdId": 535,
-    "author": "Gerrit Vyn",
-    "species": "Snowy Owl"
-  },
-  {
-    "birdId": 536,
-    "author": "Wil Hershberger",
-    "species": "Mountain Chickadee"
-  },
-  {
-    "birdId": 537,
-    "author": "Andrew Spencer",
-    "species": "Cassin's Kingbird"
-  },
-  {
-    "birdId": 538,
-    "author": "Jay McGowan",
-    "species": "Louisiana Waterthrush"
-  },
-  {
-    "birdId": 539,
-    "author": "William W. H. Gunn",
-    "species": "Atlantic Puffin"
-  },
-  {
-    "birdId": 540,
-    "author": "Leonard J. Peyton",
-    "species": "Horned Lark"
-  },
-  {
-    "birdId": 541,
-    "author": "Brian Sullivan",
-    "species": "Wild Turkey"
-  },
-  {
-    "birdId": 542,
-    "author": "Andrew Spencer",
-    "species": "Loggerhead Shrike"
-  },
-  {
-    "birdId": 543,
     "author": "Geoffrey A. Keller",
     "species": "Osprey"
   },
   {
-    "birdId": 544,
-    "author": "Tom Johnson",
-    "species": "Gadwall"
-  },
-  {
-    "birdId": 545,
-    "author": "Matthew D. Medler",
-    "species": "Hermit Thrush"
-  },
-  {
-    "birdId": 546,
-    "author": "Nathan Pieplow",
-    "species": "Pygmy Nuthatch"
-  },
-  {
-    "birdId": 547,
-    "author": "Michael Andersen",
-    "species": "Wood Duck"
-  },
-  {
-    "birdId": 548,
-    "author": "Gerrit Vyn",
-    "species": "Greater Prairie-Chicken"
-  },
-  {
-    "birdId": 549,
-    "author": "Arthur A. Allen",
-    "species": "Northern Harrier"
-  },
-  {
-    "birdId": 550,
-    "author": "Jay McGowan",
-    "species": "Black-capped Chickadee"
-  },
-  {
-    "birdId": 551,
-    "author": "William W. H. Gunn",
-    "species": "Sora"
-  },
-  {
-    "birdId": 552,
-    "author": "Gerrit Vyn",
-    "species": "Northern Jacana"
-  },
-  {
-    "birdId": 553,
-    "author": "Thomas G. Sander",
-    "species": "Barred Owl"
-  },
-  {
-    "birdId": 554,
-    "author": "Paul Marvin",
-    "species": "Common Gallinule"
-  },
-  {
-    "birdId": 555,
-    "author": "Sarah Toner",
-    "species": "Snowy Egret"
-  },
-  {
-    "birdId": 556,
+    "birdId": 529,
     "author": "Wil Hershberger",
-    "species": "American Robin"
+    "species": "Eastern Screech-Owl"
   },
   {
-    "birdId": 557,
-    "author": "Arthur A. Allen",
-    "species": "Purple Gallinule"
-  },
-  {
-    "birdId": 558,
-    "author": "Jay McGowan",
-    "species": "Plain Chachalaca"
-  },
-  {
-    "birdId": 559,
-    "author": "Brad Walker",
-    "species": "Tufted Titmouse"
-  },
-  {
-    "birdId": 560,
-    "author": "Michael Andersen",
-    "species": "Mallard"
-  },
-  {
-    "birdId": 561,
-    "author": "Jay McGowan",
-    "species": "Fish Crow"
-  },
-  {
-    "birdId": 562,
-    "author": "Wil Hershberger",
-    "species": "Bicknell's Thrush"
-  },
-  {
-    "birdId": 563,
-    "author": "William W. H. Gunn",
-    "species": "Blue-winged Teal"
-  },
-  {
-    "birdId": 564,
-    "author": "Nathan Pieplow",
-    "species": "Pygmy Nuthatch"
-  },
-  {
-    "birdId": 565,
-    "author": "Wil Hershberger",
-    "species": "Killdeer"
-  },
-  {
-    "birdId": 566,
-    "author": "Bob McGuire",
-    "species": "Burrowing Owl"
-  },
-  {
-    "birdId": 567,
-    "author": "Bob McGuire",
-    "species": "Field Sparrow"
-  },
-  {
-    "birdId": 568,
-    "author": "Nathan Pieplow",
-    "species": "Peregrine Falcon"
-  },
-  {
-    "birdId": 569,
-    "author": "Paul Marvin",
-    "species": "Ruddy Turnstone"
-  },
-  {
-    "birdId": 570,
-    "author": "Kevin J. Colver",
-    "species": "Spotted Towhee"
-  },
-  {
-    "birdId": 571,
-    "author": "Gregory Budney",
-    "species": "Cassin's Finch"
-  },
-  {
-    "birdId": 572,
-    "author": "David McQuade",
-    "species": "Altamira Oriole"
-  },
-  {
-    "birdId": 573,
-    "author": "Wil Hershberger",
-    "species": "Carolina Wren"
-  },
-  {
-    "birdId": 574,
-    "author": "Vincent Gerwe",
-    "species": "California Condor"
-  },
-  {
-    "birdId": 575,
-    "author": "Michael Andersen",
-    "species": "Roseate Spoonbill"
-  },
-  {
-    "birdId": 576,
-    "author": "Michael Andersen",
-    "species": "Anhinga"
-  },
-  {
-    "birdId": 577,
-    "author": "Gregory Budney",
-    "species": "Pied-billed Grebe"
-  },
-  {
-    "birdId": 578,
-    "author": "Randolph Little",
-    "species": "Ruddy Duck"
-  },
-  {
-    "birdId": 579,
-    "author": "Thomas G. Sander",
-    "species": "Barred Owl"
-  },
-  {
-    "birdId": 580,
-    "author": "Gregory Budney",
-    "species": "Orchard Oriole"
-  },
-  {
-    "birdId": 581,
-    "author": "Bob McGuire",
-    "species": "Anna's Hummingbird"
-  },
-  {
-    "birdId": 582,
-    "author": "Brian Sullivan",
-    "species": "Wild Turkey"
-  },
-  {
-    "birdId": 583,
-    "author": "Jay McGowan",
-    "species": "Plain Chachalaca"
-  },
-  {
-    "birdId": 584,
-    "author": "Leonard J. Peyton",
-    "species": "Tree Swallow"
-  },
-  {
-    "birdId": 585,
-    "author": "Gerrit Vyn",
-    "species": "King Rail"
-  },
-  {
-    "birdId": 586,
-    "author": "Blaine Carnes",
-    "species": "Dickcissel"
-  },
-  {
-    "birdId": 587,
-    "author": "Martha Fischer",
-    "species": "Red-breasted Nuthatch"
-  },
-  {
-    "birdId": 588,
-    "author": "Geoffrey A. Keller",
-    "species": "Phainopepla"
-  },
-  {
-    "birdId": 589,
-    "author": "Nathan Pieplow",
-    "species": "Pygmy Nuthatch"
-  },
-  {
-    "birdId": 590,
-    "author": "Wil Hershberger",
-    "species": "Bobolink"
-  },
-  {
-    "birdId": 591,
-    "author": "Jay McGowan",
-    "species": "Eurasian Collared-Dove"
-  },
-  {
-    "birdId": 592,
-    "author": "Randolph Little",
-    "species": "Lark Sparrow"
-  },
-  {
-    "birdId": 593,
-    "author": "Jay McGowan",
-    "species": "Eastern Kingbird"
-  },
-  {
-    "birdId": 594,
-    "author": "Matthew D. Medler",
-    "species": "Gray Catbird"
-  },
-  {
-    "birdId": 595,
-    "author": "Paul Marvin",
-    "species": "Rock Pigeon"
-  },
-  {
-    "birdId": 596,
-    "author": "Michael Andersen",
-    "species": "Roseate Spoonbill"
-  },
-  {
-    "birdId": 597,
-    "author": "Jay McGowan",
-    "species": "Common Merganser"
-  },
-  {
-    "birdId": 598,
-    "author": "Gerrit Vyn",
-    "species": "Magnificent Frigatebird"
-  },
-  {
-    "birdId": 599,
-    "author": "Blaine Carnes",
-    "species": "Dickcissel"
-  },
-  {
-    "birdId": 600,
-    "author": "Bob McGuire",
-    "species": "Barrow's Goldeneye"
-  },
-  {
-    "birdId": 601,
-    "author": "Wil Hershberger",
-    "species": "Red-winged Blackbird"
-  },
-  {
-    "birdId": 602,
-    "author": "Steven Biggers",
-    "species": "Yellow-bellied Sapsucker"
-  },
-  {
-    "birdId": 603,
-    "author": "William R. Fish",
-    "species": "House Finch"
-  },
-  {
-    "birdId": 604,
-    "author": "Paul Marvin",
-    "species": "Royal Tern"
-  },
-  {
-    "birdId": 605,
-    "author": "Michael Andersen",
-    "species": "Anhinga"
-  },
-  {
-    "birdId": 606,
-    "author": "Paul Marvin",
-    "species": "Red-tailed Hawk"
-  },
-  {
-    "birdId": 607,
-    "author": "Martha Fischer",
-    "species": "Great Egret"
-  },
-  {
-    "birdId": 608,
-    "author": "Mark Gardiner",
-    "species": "Western Tanager"
-  },
-  {
-    "birdId": 609,
-    "author": "Jay McGowan",
-    "species": "American Goldfinch"
-  },
-  {
-    "birdId": 610,
-    "author": "Arthur A. Allen",
-    "species": "Northern Harrier"
-  },
-  {
-    "birdId": 611,
-    "author": "Steven Biggers",
-    "species": "Yellow-bellied Sapsucker"
-  },
-  {
-    "birdId": 612,
-    "author": "Michael Andersen",
-    "species": "American Crow"
-  },
-  {
-    "birdId": 613,
-    "author": "Ian Davies",
-    "species": "Northern Flicker"
-  },
-  {
-    "birdId": 614,
-    "author": "Paul Marvin",
-    "species": "American Oystercatcher"
-  },
-  {
-    "birdId": 615,
-    "author": "John Patterson",
-    "species": "Whooping Crane"
-  },
-  {
-    "birdId": 616,
-    "author": "Martha Fischer",
-    "species": "Red-breasted Nuthatch"
-  },
-  {
-    "birdId": 617,
-    "author": "Jay McGowan",
-    "species": "Eurasian Collared-Dove"
-  },
-  {
-    "birdId": 618,
-    "author": "Matthew D. Medler",
-    "species": "Bronzed Cowbird"
-  },
-  {
-    "birdId": 619,
-    "author": "Bob McGuire",
-    "species": "Great Cormorant"
-  },
-  {
-    "birdId": 620,
-    "author": "Michael Andersen",
-    "species": "Forster's Tern"
-  },
-  {
-    "birdId": 621,
-    "author": "Andrew Spencer",
-    "species": "Mountain Bluebird"
-  },
-  {
-    "birdId": 622,
-    "author": "Wil Hershberger",
-    "species": "White-breasted Nuthatch"
-  },
-  {
-    "birdId": 623,
-    "author": "Nathan Pieplow",
-    "species": "Western Bluebird"
-  },
-  {
-    "birdId": 624,
-    "author": "Glenn Seeholzer",
-    "species": "Eastern Towhee"
-  },
-  {
-    "birdId": 625,
-    "author": "Gerrit Vyn",
-    "species": "Snow Bunting"
-  },
-  {
-    "birdId": 626,
-    "author": "Wil Hershberger",
-    "species": "Bobolink"
-  },
-  {
-    "birdId": 627,
-    "author": "Bob McGuire",
-    "species": "American Black Duck"
-  },
-  {
-    "birdId": 628,
-    "author": "Wil Hershberger",
-    "species": "Lincoln's Sparrow"
-  },
-  {
-    "birdId": 629,
-    "author": "John Patterson",
-    "species": "Whooping Crane"
-  },
-  {
-    "birdId": 630,
-    "author": "Martha Fischer",
-    "species": "Great Egret"
-  },
-  {
-    "birdId": 631,
-    "author": "Andrew Spencer",
-    "species": "Rock Wren"
-  },
-  {
-    "birdId": 632,
-    "author": "Wil Hershberger",
-    "species": "Mourning Dove"
-  },
-  {
-    "birdId": 633,
-    "author": "Matthew D. Medler",
-    "species": "Purple Finch"
-  },
-  {
-    "birdId": 634,
-    "author": "William W. H. Gunn",
-    "species": "Blue-winged Teal"
-  },
-  {
-    "birdId": 635,
-    "author": "Leonard J. Peyton",
-    "species": "Steller's Jay"
-  },
-  {
-    "birdId": 636,
-    "author": "Paul Marvin",
-    "species": "Barn Owl"
-  },
-  {
-    "birdId": 637,
-    "author": "Lucas DeCicco",
-    "species": "Wilson's Snipe"
-  },
-  {
-    "birdId": 638,
-    "author": "William W. H. Gunn",
-    "species": "American Coot"
-  },
-  {
-    "birdId": 639,
-    "author": "William W. H. Gunn",
-    "species": "White-crowned Sparrow"
-  },
-  {
-    "birdId": 640,
-    "author": "Andrew Spencer",
-    "species": "Woodhouse's Scrub-Jay"
-  },
-  {
-    "birdId": 641,
-    "author": "Wil Hershberger",
-    "species": "Eastern Phoebe"
-  },
-  {
-    "birdId": 642,
-    "author": "Bob McGuire",
-    "species": "Anna's Hummingbird"
-  },
-  {
-    "birdId": 643,
-    "author": "John Patterson",
-    "species": "Franklin's Gull"
-  },
-  {
-    "birdId": 644,
-    "author": "David McQuade",
-    "species": "Altamira Oriole"
-  },
-  {
-    "birdId": 645,
-    "author": "Matthew D. Medler",
-    "species": "Bronzed Cowbird"
-  },
-  {
-    "birdId": 646,
+    "birdId": 530,
     "author": "Jay McGowan",
     "species": "Red-bellied Woodpecker"
   },
   {
-    "birdId": 647,
-    "author": "David L. Ross, Jr.",
-    "species": "Roadside Hawk"
+    "birdId": 531,
+    "author": "Bob McGuire",
+    "species": "Western Screech-Owl"
   },
   {
-    "birdId": 648,
+    "birdId": 532,
     "author": "Wil Hershberger",
-    "species": "Carolina Wren"
+    "species": "Bewick's Wren"
   },
   {
-    "birdId": 649,
+    "birdId": 533,
+    "author": "Jay McGowan",
+    "species": "Eastern Whip-poor-will"
+  },
+  {
+    "birdId": 534,
+    "author": "Paul Marvin",
+    "species": "Barn Owl"
+  },
+  {
+    "birdId": 535,
+    "author": "Randolph Little",
+    "species": "Ruby-throated Hummingbird"
+  },
+  {
+    "birdId": 536,
+    "author": "Michael Andersen",
+    "species": "Anhinga"
+  },
+  {
+    "birdId": 537,
+    "author": "Arthur A. Allen",
+    "species": "Purple Gallinule"
+  },
+  {
+    "birdId": 538,
+    "author": "Sarah Toner",
+    "species": "Snowy Egret"
+  },
+  {
+    "birdId": 539,
+    "author": "Andrew Spencer",
+    "species": "Woodhouse's Scrub-Jay"
+  },
+  {
+    "birdId": 540,
+    "author": "Bob McGuire",
+    "species": "Western Screech-Owl"
+  },
+  {
+    "birdId": 541,
     "author": "Brad Walker",
-    "species": "House Sparrow"
+    "species": "Tufted Titmouse"
   },
   {
-    "birdId": 650,
+    "birdId": 542,
+    "author": "William W. H. Gunn",
+    "species": "Atlantic Puffin"
+  },
+  {
+    "birdId": 543,
+    "author": "Bob McGuire",
+    "species": "Common Pauraque"
+  },
+  {
+    "birdId": 544,
+    "author": "Bob McGuire",
+    "species": "Painted Bunting"
+  },
+  {
+    "birdId": 545,
+    "author": "Wil Hershberger",
+    "species": "Indigo Bunting"
+  },
+  {
+    "birdId": 546,
+    "author": "William W. H. Gunn",
+    "species": "Northern Shoveler"
+  },
+  {
+    "birdId": 547,
+    "author": "William W. H. Gunn",
+    "species": "Blue-winged Teal"
+  },
+  {
+    "birdId": 548,
+    "author": "Gregory Budney",
+    "species": "Canada Goose"
+  },
+  {
+    "birdId": 549,
+    "author": "Jessie Barry",
+    "species": "Common Raven"
+  },
+  {
+    "birdId": 550,
+    "author": "Wil Hershberger",
+    "species": "Trumpeter Swan"
+  },
+  {
+    "birdId": 551,
+    "author": "Michael Andersen",
+    "species": "Wood Duck"
+  },
+  {
+    "birdId": 552,
     "author": "Matthew D. Medler",
-    "species": "Ruby-crowned Kinglet"
+    "species": "Baltimore Oriole"
   },
   {
-    "birdId": 651,
-    "author": "Robert Bethel",
-    "species": "Eastern Meadowlark"
+    "birdId": 553,
+    "author": "Bob McGuire",
+    "species": "Burrowing Owl"
   },
   {
-    "birdId": 652,
+    "birdId": 554,
+    "author": "Andrew Spencer",
+    "species": "Common Eider"
+  },
+  {
+    "birdId": 555,
+    "author": "Tom Johnson",
+    "species": "Chuck-will's-widow"
+  },
+  {
+    "birdId": 556,
+    "author": "Jocelyn Lauzon",
+    "species": "White-throated Sparrow"
+  },
+  {
+    "birdId": 557,
+    "author": "Paul Fenwick",
+    "species": "Red-shouldered Hawk"
+  },
+  {
+    "birdId": 558,
     "author": "Andrew Spencer",
     "species": "Clay-colored Thrush"
   },
   {
-    "birdId": 653,
+    "birdId": 559,
+    "author": "Hope Batcheller",
+    "species": "Juniper Titmouse"
+  },
+  {
+    "birdId": 560,
+    "author": "Wil Hershberger",
+    "species": "Bicknell's Thrush"
+  },
+  {
+    "birdId": 561,
+    "author": "Wil Hershberger",
+    "species": "Western Meadowlark"
+  },
+  {
+    "birdId": 562,
+    "author": "John Patterson",
+    "species": "Franklin's Gull"
+  },
+  {
+    "birdId": 563,
+    "author": "Paul Marvin",
+    "species": "Say's Phoebe"
+  },
+  {
+    "birdId": 564,
+    "author": "Gerrit Vyn",
+    "species": "Magnificent Frigatebird"
+  },
+  {
+    "birdId": 565,
+    "author": "Gregory Budney",
+    "species": "Canada Goose"
+  },
+  {
+    "birdId": 566,
+    "author": "Paul Marvin",
+    "species": "Red-tailed Hawk"
+  },
+  {
+    "birdId": 567,
+    "author": "Jay McGowan",
+    "species": "Plain Chachalaca"
+  },
+  {
+    "birdId": 568,
+    "author": "Nick Tepper",
+    "species": "Sandhill Crane"
+  },
+  {
+    "birdId": 569,
+    "author": "Peter Boesman",
+    "species": "Common Pochard"
+  },
+  {
+    "birdId": 570,
+    "author": "Paul Marvin",
+    "species": "Red-tailed Hawk"
+  },
+  {
+    "birdId": 571,
+    "author": "Gregory Budney",
+    "species": "Pied-billed Grebe"
+  },
+  {
+    "birdId": 572,
+    "author": "Paul Marvin",
+    "species": "Bald Eagle"
+  },
+  {
+    "birdId": 573,
+    "author": "Randolph Little",
+    "species": "Ruddy Duck"
+  },
+  {
+    "birdId": 574,
+    "author": "Jay McGowan",
+    "species": "Savannah Sparrow"
+  },
+  {
+    "birdId": 575,
+    "author": "Tayler Brooks",
+    "species": "Canyon Wren"
+  },
+  {
+    "birdId": 576,
+    "author": "Robert C. Stein",
+    "species": "Bufflehead"
+  },
+  {
+    "birdId": 577,
+    "author": "Michael Andersen",
+    "species": "American Crow"
+  },
+  {
+    "birdId": 578,
+    "author": "Matthew D. Medler",
+    "species": "Ruby-crowned Kinglet"
+  },
+  {
+    "birdId": 579,
+    "author": "William W. H. Gunn",
+    "species": "American Coot"
+  },
+  {
+    "birdId": 580,
+    "author": "Blaine Carnes",
+    "species": "Dickcissel"
+  },
+  {
+    "birdId": 581,
+    "author": "Mark Robbins",
+    "species": "Greater Roadrunner"
+  },
+  {
+    "birdId": 582,
+    "author": "Gerrit Vyn",
+    "species": "Snowy Owl"
+  },
+  {
+    "birdId": 583,
+    "author": "Wil Hershberger",
+    "species": "Mountain Chickadee"
+  },
+  {
+    "birdId": 584,
     "author": "Andrew Spencer",
-    "species": "Glossy Ibis"
+    "species": "Cassin's Kingbird"
+  },
+  {
+    "birdId": 585,
+    "author": "Jay McGowan",
+    "species": "Louisiana Waterthrush"
+  },
+  {
+    "birdId": 586,
+    "author": "William W. H. Gunn",
+    "species": "Atlantic Puffin"
+  },
+  {
+    "birdId": 587,
+    "author": "Leonard J. Peyton",
+    "species": "Horned Lark"
+  },
+  {
+    "birdId": 588,
+    "author": "Brian Sullivan",
+    "species": "Wild Turkey"
+  },
+  {
+    "birdId": 589,
+    "author": "Andrew Spencer",
+    "species": "Loggerhead Shrike"
+  },
+  {
+    "birdId": 590,
+    "author": "Tom Johnson",
+    "species": "Gadwall"
+  },
+  {
+    "birdId": 591,
+    "author": "Matthew D. Medler",
+    "species": "Hermit Thrush"
+  },
+  {
+    "birdId": 592,
+    "author": "Nathan Pieplow",
+    "species": "Pygmy Nuthatch"
+  },
+  {
+    "birdId": 593,
+    "author": "Michael Andersen",
+    "species": "Wood Duck"
+  },
+  {
+    "birdId": 594,
+    "author": "Gerrit Vyn",
+    "species": "Greater Prairie-Chicken"
+  },
+  {
+    "birdId": 595,
+    "author": "Arthur A. Allen",
+    "species": "Northern Harrier"
+  },
+  {
+    "birdId": 596,
+    "author": "Jay McGowan",
+    "species": "Black-capped Chickadee"
+  },
+  {
+    "birdId": 597,
+    "author": "William W. H. Gunn",
+    "species": "Sora"
+  },
+  {
+    "birdId": 598,
+    "author": "Gerrit Vyn",
+    "species": "Northern Jacana"
+  },
+  {
+    "birdId": 599,
+    "author": "Thomas G. Sander",
+    "species": "Barred Owl"
+  },
+  {
+    "birdId": 600,
+    "author": "Wil Hershberger",
+    "species": "American Robin"
+  },
+  {
+    "birdId": 601,
+    "author": "Arthur A. Allen",
+    "species": "Purple Gallinule"
+  },
+  {
+    "birdId": 602,
+    "author": "Jay McGowan",
+    "species": "Plain Chachalaca"
+  },
+  {
+    "birdId": 603,
+    "author": "Brad Walker",
+    "species": "Tufted Titmouse"
+  },
+  {
+    "birdId": 604,
+    "author": "Michael Andersen",
+    "species": "Mallard"
+  },
+  {
+    "birdId": 605,
+    "author": "Jay McGowan",
+    "species": "Fish Crow"
+  },
+  {
+    "birdId": 606,
+    "author": "Wil Hershberger",
+    "species": "Bicknell's Thrush"
+  },
+  {
+    "birdId": 607,
+    "author": "William W. H. Gunn",
+    "species": "Blue-winged Teal"
+  },
+  {
+    "birdId": 608,
+    "author": "Nathan Pieplow",
+    "species": "Pygmy Nuthatch"
+  },
+  {
+    "birdId": 609,
+    "author": "Wil Hershberger",
+    "species": "Killdeer"
+  },
+  {
+    "birdId": 610,
+    "author": "Bob McGuire",
+    "species": "Field Sparrow"
+  },
+  {
+    "birdId": 611,
+    "author": "Nathan Pieplow",
+    "species": "Peregrine Falcon"
+  },
+  {
+    "birdId": 612,
+    "author": "Paul Marvin",
+    "species": "Ruddy Turnstone"
+  },
+  {
+    "birdId": 613,
+    "author": "Kevin J. Colver",
+    "species": "Spotted Towhee"
+  },
+  {
+    "birdId": 614,
+    "author": "Gregory Budney",
+    "species": "Cassin's Finch"
+  },
+  {
+    "birdId": 615,
+    "author": "David McQuade",
+    "species": "Altamira Oriole"
+  },
+  {
+    "birdId": 616,
+    "author": "Wil Hershberger",
+    "species": "Carolina Wren"
+  },
+  {
+    "birdId": 617,
+    "author": "Vincent Gerwe",
+    "species": "California Condor"
+  },
+  {
+    "birdId": 618,
+    "author": "Michael Andersen",
+    "species": "Roseate Spoonbill"
+  },
+  {
+    "birdId": 619,
+    "author": "Michael Andersen",
+    "species": "Anhinga"
+  },
+  {
+    "birdId": 620,
+    "author": "Randolph Little",
+    "species": "Ruddy Duck"
+  },
+  {
+    "birdId": 621,
+    "author": "Thomas G. Sander",
+    "species": "Barred Owl"
+  },
+  {
+    "birdId": 622,
+    "author": "Gregory Budney",
+    "species": "Orchard Oriole"
+  },
+  {
+    "birdId": 623,
+    "author": "Bob McGuire",
+    "species": "Anna's Hummingbird"
+  },
+  {
+    "birdId": 624,
+    "author": "Brian Sullivan",
+    "species": "Wild Turkey"
+  },
+  {
+    "birdId": 625,
+    "author": "Jay McGowan",
+    "species": "Plain Chachalaca"
+  },
+  {
+    "birdId": 626,
+    "author": "Leonard J. Peyton",
+    "species": "Tree Swallow"
+  },
+  {
+    "birdId": 627,
+    "author": "Gerrit Vyn",
+    "species": "King Rail"
+  },
+  {
+    "birdId": 628,
+    "author": "Blaine Carnes",
+    "species": "Dickcissel"
+  },
+  {
+    "birdId": 629,
+    "author": "Martha Fischer",
+    "species": "Red-breasted Nuthatch"
+  },
+  {
+    "birdId": 630,
+    "author": "Nathan Pieplow",
+    "species": "Pygmy Nuthatch"
+  },
+  {
+    "birdId": 631,
+    "author": "Wil Hershberger",
+    "species": "Bobolink"
+  },
+  {
+    "birdId": 632,
+    "author": "Jay McGowan",
+    "species": "Eurasian Collared-Dove"
+  },
+  {
+    "birdId": 633,
+    "author": "Randolph Little",
+    "species": "Lark Sparrow"
+  },
+  {
+    "birdId": 634,
+    "author": "Jay McGowan",
+    "species": "Eastern Kingbird"
+  },
+  {
+    "birdId": 635,
+    "author": "Matthew D. Medler",
+    "species": "Gray Catbird"
+  },
+  {
+    "birdId": 636,
+    "author": "Paul Marvin",
+    "species": "Rock Pigeon"
+  },
+  {
+    "birdId": 637,
+    "author": "Michael Andersen",
+    "species": "Roseate Spoonbill"
+  },
+  {
+    "birdId": 638,
+    "author": "Jay McGowan",
+    "species": "Common Merganser"
+  },
+  {
+    "birdId": 639,
+    "author": "Gerrit Vyn",
+    "species": "Magnificent Frigatebird"
+  },
+  {
+    "birdId": 640,
+    "author": "Bob McGuire",
+    "species": "Barrow's Goldeneye"
+  },
+  {
+    "birdId": 641,
+    "author": "Wil Hershberger",
+    "species": "Red-winged Blackbird"
+  },
+  {
+    "birdId": 642,
+    "author": "Steven Biggers",
+    "species": "Yellow-bellied Sapsucker"
+  },
+  {
+    "birdId": 643,
+    "author": "William R. Fish",
+    "species": "House Finch"
+  },
+  {
+    "birdId": 644,
+    "author": "Paul Marvin",
+    "species": "Royal Tern"
+  },
+  {
+    "birdId": 645,
+    "author": "Michael Andersen",
+    "species": "Anhinga"
+  },
+  {
+    "birdId": 646,
+    "author": "Paul Marvin",
+    "species": "Red-tailed Hawk"
+  },
+  {
+    "birdId": 647,
+    "author": "Martha Fischer",
+    "species": "Great Egret"
+  },
+  {
+    "birdId": 648,
+    "author": "Mark Gardiner",
+    "species": "Western Tanager"
+  },
+  {
+    "birdId": 649,
+    "author": "Jay McGowan",
+    "species": "American Goldfinch"
+  },
+  {
+    "birdId": 650,
+    "author": "Steven Biggers",
+    "species": "Yellow-bellied Sapsucker"
+  },
+  {
+    "birdId": 651,
+    "author": "Michael Andersen",
+    "species": "American Crow"
+  },
+  {
+    "birdId": 652,
+    "author": "Ian Davies",
+    "species": "Northern Flicker"
+  },
+  {
+    "birdId": 653,
+    "author": "Paul Marvin",
+    "species": "American Oystercatcher"
   },
   {
     "birdId": 654,
@@ -3276,108 +3276,108 @@
   },
   {
     "birdId": 655,
-    "author": "Jay McGowan",
-    "species": "Black-capped Chickadee"
+    "author": "Martha Fischer",
+    "species": "Red-breasted Nuthatch"
   },
   {
     "birdId": 656,
-    "author": "Nathan Pieplow",
-    "species": "Pygmy Nuthatch"
+    "author": "Jay McGowan",
+    "species": "Eurasian Collared-Dove"
   },
   {
     "birdId": 657,
-    "author": "Leonard J. Peyton",
-    "species": "Tree Swallow"
+    "author": "Matthew D. Medler",
+    "species": "Bronzed Cowbird"
   },
   {
     "birdId": 658,
-    "author": "Sarah Toner",
-    "species": "Snowy Egret"
+    "author": "Bob McGuire",
+    "species": "Great Cormorant"
   },
   {
     "birdId": 659,
-    "author": "Mark Gardiner",
-    "species": "Western Tanager"
+    "author": "Michael Andersen",
+    "species": "Forster's Tern"
   },
   {
     "birdId": 660,
-    "author": "William W. H. Gunn",
-    "species": "Blue-winged Teal"
+    "author": "Wil Hershberger",
+    "species": "White-breasted Nuthatch"
   },
   {
     "birdId": 661,
-    "author": "Wil Hershberger",
-    "species": "Northern Mockingbird"
+    "author": "Nathan Pieplow",
+    "species": "Western Bluebird"
   },
   {
     "birdId": 662,
-    "author": "Gerrit Vyn",
-    "species": "Northern Jacana"
+    "author": "Glenn Seeholzer",
+    "species": "Eastern Towhee"
   },
   {
     "birdId": 663,
-    "author": "David L. Ross, Jr.",
-    "species": "Roadside Hawk"
+    "author": "Gerrit Vyn",
+    "species": "Snow Bunting"
   },
   {
     "birdId": 664,
     "author": "Wil Hershberger",
-    "species": "Carolina Chickadee"
+    "species": "Bobolink"
   },
   {
     "birdId": 665,
     "author": "Bob McGuire",
-    "species": "Field Sparrow"
+    "species": "American Black Duck"
   },
   {
     "birdId": 666,
-    "author": "Martha Fischer",
-    "species": "Green-winged Teal"
+    "author": "Wil Hershberger",
+    "species": "Lincoln's Sparrow"
   },
   {
     "birdId": 667,
-    "author": "William W. H. Gunn",
-    "species": "Atlantic Puffin"
+    "author": "John Patterson",
+    "species": "Whooping Crane"
   },
   {
     "birdId": 668,
-    "author": "Bob McGuire",
-    "species": "Limpkin"
+    "author": "Martha Fischer",
+    "species": "Great Egret"
   },
   {
     "birdId": 669,
-    "author": "Bob McGuire",
-    "species": "Summer Tanager"
+    "author": "Andrew Spencer",
+    "species": "Rock Wren"
   },
   {
     "birdId": 670,
-    "author": "William W. H. Gunn",
-    "species": "Northern Shoveler"
+    "author": "Matthew D. Medler",
+    "species": "Purple Finch"
   },
   {
     "birdId": 671,
-    "author": "Gerrit Vyn",
-    "species": "Greater Prairie-Chicken"
+    "author": "William W. H. Gunn",
+    "species": "Blue-winged Teal"
   },
   {
     "birdId": 672,
-    "author": "Charles A. Sutherland",
-    "species": "Cattle Egret"
+    "author": "Leonard J. Peyton",
+    "species": "Steller's Jay"
   },
   {
     "birdId": 673,
-    "author": "Jay McGowan",
-    "species": "Grasshopper Sparrow"
+    "author": "Paul Marvin",
+    "species": "Barn Owl"
   },
   {
     "birdId": 674,
-    "author": "Jay McGowan",
-    "species": "Louisiana Waterthrush"
+    "author": "Lucas DeCicco",
+    "species": "Wilson's Snipe"
   },
   {
     "birdId": 675,
     "author": "William W. H. Gunn",
-    "species": "White-crowned Sparrow"
+    "species": "American Coot"
   },
   {
     "birdId": 676,
@@ -3386,193 +3386,193 @@
   },
   {
     "birdId": 677,
-    "author": "Paul Marvin",
-    "species": "Hepatic Tanager"
+    "author": "Andrew Spencer",
+    "species": "Woodhouse's Scrub-Jay"
   },
   {
     "birdId": 678,
-    "author": "Jessie Barry",
-    "species": "Ring-billed Gull"
+    "author": "Wil Hershberger",
+    "species": "Eastern Phoebe"
   },
   {
     "birdId": 679,
-    "author": "Wil Hershberger",
-    "species": "Western Meadowlark"
+    "author": "Bob McGuire",
+    "species": "Anna's Hummingbird"
   },
   {
     "birdId": 680,
-    "author": "Bob McGuire",
-    "species": "American Black Duck"
+    "author": "David McQuade",
+    "species": "Altamira Oriole"
   },
   {
     "birdId": 681,
-    "author": "William W. H. Gunn",
-    "species": "Swainson's Hawk"
-  },
-  {
-    "birdId": 682,
-    "author": "Martha Fischer",
-    "species": "Great Egret"
-  },
-  {
-    "birdId": 683,
-    "author": "Brian Sullivan",
-    "species": "Wild Turkey"
-  },
-  {
-    "birdId": 684,
-    "author": "Bob McGuire",
-    "species": "Chipping Sparrow"
-  },
-  {
-    "birdId": 685,
-    "author": "Martha Fischer",
-    "species": "Green-winged Teal"
-  },
-  {
-    "birdId": 686,
-    "author": "Andrew Spencer",
-    "species": "Common Eider"
-  },
-  {
-    "birdId": 687,
-    "author": "Jessie Barry",
-    "species": "Common Raven"
-  },
-  {
-    "birdId": 688,
-    "author": "Matthew D. Medler",
-    "species": "Scarlet Tanager"
-  },
-  {
-    "birdId": 689,
-    "author": "Gerrit Vyn",
-    "species": "Snow Bunting"
-  },
-  {
-    "birdId": 690,
     "author": "Matthew D. Medler",
     "species": "Bronzed Cowbird"
   },
   {
-    "birdId": 691,
-    "author": "Jocelyn Lauzon",
-    "species": "White-throated Sparrow"
-  },
-  {
-    "birdId": 692,
-    "author": "Nick Tepper",
-    "species": "Willet"
-  },
-  {
-    "birdId": 693,
-    "author": "Gregory Budney",
-    "species": "American Avocet"
-  },
-  {
-    "birdId": 694,
-    "author": "Hope Batcheller",
-    "species": "Juniper Titmouse"
-  },
-  {
-    "birdId": 695,
-    "author": "Paul Marvin",
-    "species": "Great Blue Heron"
-  },
-  {
-    "birdId": 696,
-    "author": "Bob McGuire",
-    "species": "Barrow's Goldeneye"
-  },
-  {
-    "birdId": 697,
-    "author": "John Patterson",
-    "species": "Virginia Rail"
-  },
-  {
-    "birdId": 698,
+    "birdId": 682,
     "author": "Jay McGowan",
-    "species": "Rose-breasted Grosbeak"
+    "species": "Red-bellied Woodpecker"
   },
   {
-    "birdId": 699,
-    "author": "Bob McGuire",
-    "species": "Acorn Woodpecker"
+    "birdId": 683,
+    "author": "David L. Ross, Jr.",
+    "species": "Roadside Hawk"
   },
   {
-    "birdId": 700,
-    "author": "Geoffrey A. Keller",
-    "species": "Osprey"
+    "birdId": 684,
+    "author": "Wil Hershberger",
+    "species": "Carolina Wren"
   },
   {
-    "birdId": 701,
-    "author": "William W. H. Gunn",
-    "species": "Sora"
-  },
-  {
-    "birdId": 702,
-    "author": "Randolph Little",
-    "species": "Lark Sparrow"
-  },
-  {
-    "birdId": 703,
-    "author": "Matthew D. Medler",
-    "species": "Purple Finch"
-  },
-  {
-    "birdId": 704,
-    "author": "Jay McGowan",
-    "species": "Grasshopper Sparrow"
-  },
-  {
-    "birdId": 705,
-    "author": "Matthew Wistrand",
-    "species": "Red-headed Woodpecker"
-  },
-  {
-    "birdId": 706,
-    "author": "Paul Marvin",
-    "species": "Green Heron"
-  },
-  {
-    "birdId": 707,
-    "author": "Jessie Barry",
-    "species": "Ring-billed Gull"
-  },
-  {
-    "birdId": 708,
-    "author": "George B. Reynard",
-    "species": "Brant"
-  },
-  {
-    "birdId": 709,
-    "author": "Tom Johnson",
-    "species": "Northern Bobwhite"
-  },
-  {
-    "birdId": 710,
-    "author": "Dave Herr",
-    "species": "American Kestrel"
-  },
-  {
-    "birdId": 711,
-    "author": "Bob McGuire",
-    "species": "Painted Bunting"
-  },
-  {
-    "birdId": 712,
-    "author": "Forrest Baublitz",
-    "species": "Yellow-crowned Night-Heron"
-  },
-  {
-    "birdId": 713,
+    "birdId": 685,
     "author": "Brad Walker",
     "species": "House Sparrow"
   },
   {
-    "birdId": 714,
+    "birdId": 686,
+    "author": "Matthew D. Medler",
+    "species": "Ruby-crowned Kinglet"
+  },
+  {
+    "birdId": 687,
+    "author": "Robert Bethel",
+    "species": "Eastern Meadowlark"
+  },
+  {
+    "birdId": 688,
+    "author": "Andrew Spencer",
+    "species": "Clay-colored Thrush"
+  },
+  {
+    "birdId": 689,
+    "author": "Andrew Spencer",
+    "species": "Glossy Ibis"
+  },
+  {
+    "birdId": 690,
+    "author": "Jay McGowan",
+    "species": "Black-capped Chickadee"
+  },
+  {
+    "birdId": 691,
+    "author": "Nathan Pieplow",
+    "species": "Pygmy Nuthatch"
+  },
+  {
+    "birdId": 692,
+    "author": "Leonard J. Peyton",
+    "species": "Tree Swallow"
+  },
+  {
+    "birdId": 693,
+    "author": "Sarah Toner",
+    "species": "Snowy Egret"
+  },
+  {
+    "birdId": 694,
+    "author": "Mark Gardiner",
+    "species": "Western Tanager"
+  },
+  {
+    "birdId": 695,
+    "author": "William W. H. Gunn",
+    "species": "Blue-winged Teal"
+  },
+  {
+    "birdId": 696,
     "author": "Wil Hershberger",
-    "species": "Eastern Phoebe"
+    "species": "Northern Mockingbird"
+  },
+  {
+    "birdId": 697,
+    "author": "Gerrit Vyn",
+    "species": "Northern Jacana"
+  },
+  {
+    "birdId": 698,
+    "author": "David L. Ross, Jr.",
+    "species": "Roadside Hawk"
+  },
+  {
+    "birdId": 699,
+    "author": "Wil Hershberger",
+    "species": "Carolina Chickadee"
+  },
+  {
+    "birdId": 700,
+    "author": "William W. H. Gunn",
+    "species": "Atlantic Puffin"
+  },
+  {
+    "birdId": 701,
+    "author": "Bob McGuire",
+    "species": "Limpkin"
+  },
+  {
+    "birdId": 702,
+    "author": "Bob McGuire",
+    "species": "Summer Tanager"
+  },
+  {
+    "birdId": 703,
+    "author": "William W. H. Gunn",
+    "species": "Northern Shoveler"
+  },
+  {
+    "birdId": 704,
+    "author": "Gerrit Vyn",
+    "species": "Greater Prairie-Chicken"
+  },
+  {
+    "birdId": 705,
+    "author": "Charles A. Sutherland",
+    "species": "Cattle Egret"
+  },
+  {
+    "birdId": 706,
+    "author": "Jay McGowan",
+    "species": "Grasshopper Sparrow"
+  },
+  {
+    "birdId": 707,
+    "author": "Jay McGowan",
+    "species": "Louisiana Waterthrush"
+  },
+  {
+    "birdId": 708,
+    "author": "William W. H. Gunn",
+    "species": "White-crowned Sparrow"
+  },
+  {
+    "birdId": 709,
+    "author": "William W. H. Gunn",
+    "species": "White-crowned Sparrow"
+  },
+  {
+    "birdId": 710,
+    "author": "Jessie Barry",
+    "species": "Ring-billed Gull"
+  },
+  {
+    "birdId": 711,
+    "author": "Wil Hershberger",
+    "species": "Western Meadowlark"
+  },
+  {
+    "birdId": 712,
+    "author": "Bob McGuire",
+    "species": "American Black Duck"
+  },
+  {
+    "birdId": 713,
+    "author": "William W. H. Gunn",
+    "species": "Swainson's Hawk"
+  },
+  {
+    "birdId": 714,
+    "author": "Martha Fischer",
+    "species": "Great Egret"
   },
   {
     "birdId": 715,
@@ -3581,528 +3581,528 @@
   },
   {
     "birdId": 716,
-    "author": "Wil Hershberger",
-    "species": "Belted Kingfisher"
-  },
-  {
-    "birdId": 717,
-    "author": "John Patterson",
-    "species": "American Bittern"
-  },
-  {
-    "birdId": 718,
-    "author": "Wil Hershberger",
-    "species": "Mountain Chickadee"
-  },
-  {
-    "birdId": 719,
-    "author": "Jay McGowan",
-    "species": "American Goldfinch"
-  },
-  {
-    "birdId": 720,
-    "author": "Arthur A. Allen",
-    "species": "Pileated Woodpecker"
-  },
-  {
-    "birdId": 721,
-    "author": "Martha Fischer",
-    "species": "Green-winged Teal"
-  },
-  {
-    "birdId": 722,
-    "author": "Peter Paul Kellogg",
-    "species": "European Starling"
-  },
-  {
-    "birdId": 723,
-    "author": "Greg Clark",
-    "species": "Turkey Vulture"
-  },
-  {
-    "birdId": 724,
-    "author": "Wil Hershberger",
-    "species": "Mourning Dove"
-  },
-  {
-    "birdId": 725,
-    "author": "Paul Marvin",
-    "species": "Common Gallinule"
-  },
-  {
-    "birdId": 726,
-    "author": "Paul Marvin",
-    "species": "Bald Eagle"
-  },
-  {
-    "birdId": 727,
-    "author": "Brad Walker",
-    "species": "Tufted Titmouse"
-  },
-  {
-    "birdId": 728,
-    "author": "Tom Johnson",
-    "species": "Gadwall"
-  },
-  {
-    "birdId": 729,
-    "author": "Wil Hershberger",
-    "species": "Eastern Phoebe"
-  },
-  {
-    "birdId": 730,
-    "author": "Andrew Spencer",
-    "species": "Clay-colored Thrush"
-  },
-  {
-    "birdId": 731,
-    "author": "Glen Chapman",
-    "species": "Brown-headed Cowbird"
-  },
-  {
-    "birdId": 732,
-    "author": "Forrest Baublitz",
-    "species": "Yellow-crowned Night-Heron"
-  },
-  {
-    "birdId": 733,
-    "author": "Bob McGuire",
-    "species": "Limpkin"
-  },
-  {
-    "birdId": 734,
-    "author": "Jay McGowan",
-    "species": "Brown Pelican"
-  },
-  {
-    "birdId": 735,
-    "author": "Gregory Budney",
-    "species": "Cassin's Finch"
-  },
-  {
-    "birdId": 736,
-    "author": "Bob McGuire",
-    "species": "Barrow's Goldeneye"
-  },
-  {
-    "birdId": 737,
-    "author": "Wil Hershberger",
-    "species": "White-breasted Nuthatch"
-  },
-  {
-    "birdId": 738,
-    "author": "Terri Gallion",
-    "species": "Golden Eagle"
-  },
-  {
-    "birdId": 739,
-    "author": "Matthew D. Medler",
-    "species": "Golden-crowned Kinglet"
-  },
-  {
-    "birdId": 740,
-    "author": "Jay McGowan",
-    "species": "American Goldfinch"
-  },
-  {
-    "birdId": 741,
-    "author": "George B. Reynard",
-    "species": "Brant"
-  },
-  {
-    "birdId": 742,
-    "author": "Christopher McPherson",
-    "species": "Eastern Wood-Pewee"
-  },
-  {
-    "birdId": 743,
-    "author": "Tom Johnson",
-    "species": "Northern Bobwhite"
-  },
-  {
-    "birdId": 744,
-    "author": "Paul Marvin",
-    "species": "Bald Eagle"
-  },
-  {
-    "birdId": 745,
-    "author": "Lucas DeCicco",
-    "species": "Fox Sparrow"
-  },
-  {
-    "birdId": 746,
-    "author": "Gerrit Vyn",
-    "species": "Black-bellied Whistling-Duck"
-  },
-  {
-    "birdId": 747,
-    "author": "Kevin J. Colver",
-    "species": "Spotted Towhee"
-  },
-  {
-    "birdId": 748,
-    "author": "Michael Andersen",
-    "species": "Forster's Tern"
-  },
-  {
-    "birdId": 749,
-    "author": "Paul Marvin",
-    "species": "Royal Tern"
-  },
-  {
-    "birdId": 750,
-    "author": "Matthew D. Medler",
-    "species": "Baltimore Oriole"
-  },
-  {
-    "birdId": 751,
-    "author": "William W. H. Gunn",
-    "species": "Swainson's Hawk"
-  },
-  {
-    "birdId": 752,
-    "author": "Wil Hershberger",
-    "species": "Bobolink"
-  },
-  {
-    "birdId": 753,
-    "author": "William W. H. Gunn",
-    "species": "Atlantic Puffin"
-  },
-  {
-    "birdId": 754,
-    "author": "Jay McGowan",
-    "species": "Northern Cardinal"
-  },
-  {
-    "birdId": 755,
-    "author": "Paul Marvin",
-    "species": "Rock Pigeon"
-  },
-  {
-    "birdId": 756,
-    "author": "Lucas DeCicco",
-    "species": "Fox Sparrow"
-  },
-  {
-    "birdId": 757,
-    "author": "Gerrit Vyn",
-    "species": "Greater Prairie-Chicken"
-  },
-  {
-    "birdId": 758,
-    "author": "Christopher McPherson",
-    "species": "Eastern Wood-Pewee"
-  },
-  {
-    "birdId": 759,
-    "author": "Gerrit Vyn",
-    "species": "Snowy Owl"
-  },
-  {
-    "birdId": 760,
-    "author": "Nathan Pieplow",
-    "species": "Western Bluebird"
-  },
-  {
-    "birdId": 761,
-    "author": "Greg Clark",
-    "species": "Turkey Vulture"
-  },
-  {
-    "birdId": 762,
-    "author": "Matthew D. Medler",
-    "species": "Song Sparrow"
-  },
-  {
-    "birdId": 763,
-    "author": "Wil Hershberger",
-    "species": "Lincoln's Sparrow"
-  },
-  {
-    "birdId": 764,
-    "author": "Charles A. Sutherland",
-    "species": "Cattle Egret"
-  },
-  {
-    "birdId": 765,
-    "author": "Gregory Budney",
-    "species": "Canada Goose"
-  },
-  {
-    "birdId": 766,
-    "author": "Jay McGowan",
-    "species": "Louisiana Waterthrush"
-  },
-  {
-    "birdId": 767,
-    "author": "Bob McGuire",
-    "species": "Summer Tanager"
-  },
-  {
-    "birdId": 768,
-    "author": "Jay McGowan",
-    "species": "Dark-eyed Junco"
-  },
-  {
-    "birdId": 769,
-    "author": "Lucas DeCicco",
-    "species": "Wilson's Snipe"
-  },
-  {
-    "birdId": 770,
-    "author": "Curtis Marantz",
-    "species": "Green Kingfisher"
-  },
-  {
-    "birdId": 771,
-    "author": "Vincent Gerwe",
-    "species": "California Condor"
-  },
-  {
-    "birdId": 772,
-    "author": "David C. Evers",
-    "species": "Common Loon"
-  },
-  {
-    "birdId": 773,
-    "author": "Matthew D. Medler",
-    "species": "Purple Martin"
-  },
-  {
-    "birdId": 774,
-    "author": "Wil Hershberger",
-    "species": "Belted Kingfisher"
-  },
-  {
-    "birdId": 775,
-    "author": "Jessie Barry",
-    "species": "Ring-billed Gull"
-  },
-  {
-    "birdId": 776,
-    "author": "Christopher McPherson",
-    "species": "Cedar Waxwing"
-  },
-  {
-    "birdId": 777,
-    "author": "Bob McGuire",
-    "species": "American Black Duck"
-  },
-  {
-    "birdId": 778,
-    "author": "Nathan Pieplow",
-    "species": "Rivoli's Hummingbird"
-  },
-  {
-    "birdId": 779,
-    "author": "Wil Hershberger",
-    "species": "Bicknell's Thrush"
-  },
-  {
-    "birdId": 780,
-    "author": "Wil Hershberger",
-    "species": "Western Wood-Pewee"
-  },
-  {
-    "birdId": 781,
-    "author": "Curtis Marantz",
-    "species": "Green Kingfisher"
-  },
-  {
-    "birdId": 782,
-    "author": "William R. Fish",
-    "species": "Great Horned Owl"
-  },
-  {
-    "birdId": 783,
-    "author": "Gerrit Vyn",
-    "species": "Northern Jacana"
-  },
-  {
-    "birdId": 784,
-    "author": "Jay McGowan",
-    "species": "Eastern Bluebird"
-  },
-  {
-    "birdId": 785,
-    "author": "Jay McGowan",
-    "species": "Common Merganser"
-  },
-  {
-    "birdId": 786,
-    "author": "Leonard J. Peyton",
-    "species": "Horned Lark"
-  },
-  {
-    "birdId": 787,
-    "author": "Wil Hershberger",
-    "species": "Red-winged Blackbird"
-  },
-  {
-    "birdId": 788,
-    "author": "Leonard J. Peyton",
-    "species": "Horned Lark"
-  },
-  {
-    "birdId": 789,
-    "author": "Arthur A. Allen",
-    "species": "Pileated Woodpecker"
-  },
-  {
-    "birdId": 790,
-    "author": "Jay McGowan",
-    "species": "Fish Crow"
-  },
-  {
-    "birdId": 791,
-    "author": "Robert Bethel",
-    "species": "Eastern Meadowlark"
-  },
-  {
-    "birdId": 792,
     "author": "Bob McGuire",
     "species": "Chipping Sparrow"
   },
   {
-    "birdId": 793,
-    "author": "Brad Walker",
-    "species": "House Wren"
+    "birdId": 717,
+    "author": "Martha Fischer",
+    "species": "Green-winged Teal"
   },
   {
-    "birdId": 794,
-    "author": "Wil Hershberger",
-    "species": "Trumpeter Swan"
-  },
-  {
-    "birdId": 795,
+    "birdId": 718,
     "author": "Andrew Spencer",
-    "species": "Rock Wren"
+    "species": "Common Eider"
   },
   {
-    "birdId": 796,
+    "birdId": 719,
+    "author": "Jessie Barry",
+    "species": "Common Raven"
+  },
+  {
+    "birdId": 720,
     "author": "Gerrit Vyn",
     "species": "Snow Bunting"
   },
   {
-    "birdId": 797,
-    "author": "Gregory Budney",
-    "species": "Red Crossbill"
-  },
-  {
-    "birdId": 798,
-    "author": "Wil Hershberger",
-    "species": "Lincoln's Sparrow"
-  },
-  {
-    "birdId": 799,
-    "author": "Nathan Pieplow",
-    "species": "Peregrine Falcon"
-  },
-  {
-    "birdId": 800,
-    "author": "Wil Hershberger",
-    "species": "Carolina Wren"
-  },
-  {
-    "birdId": 801,
-    "author": "Glen Chapman",
-    "species": "Brown-headed Cowbird"
-  },
-  {
-    "birdId": 802,
-    "author": "Glen Chapman",
-    "species": "Downy Woodpecker"
-  },
-  {
-    "birdId": 803,
+    "birdId": 721,
     "author": "Matthew D. Medler",
-    "species": "Scarlet Tanager"
+    "species": "Bronzed Cowbird"
   },
   {
-    "birdId": 804,
-    "author": "Michael Andersen",
-    "species": "Roseate Spoonbill"
-  },
-  {
-    "birdId": 805,
-    "author": "William W. H. Gunn",
-    "species": "Atlantic Puffin"
-  },
-  {
-    "birdId": 806,
-    "author": "Jay McGowan",
-    "species": "Savannah Sparrow"
-  },
-  {
-    "birdId": 807,
-    "author": "Brad Walker",
-    "species": "House Wren"
-  },
-  {
-    "birdId": 808,
-    "author": "Bob McGuire",
-    "species": "Limpkin"
-  },
-  {
-    "birdId": 809,
-    "author": "Glen Chapman",
-    "species": "Pine Siskin"
-  },
-  {
-    "birdId": 810,
-    "author": "Wil Hershberger",
-    "species": "Western Wood-Pewee"
-  },
-  {
-    "birdId": 811,
+    "birdId": 722,
     "author": "Jocelyn Lauzon",
     "species": "White-throated Sparrow"
   },
   {
-    "birdId": 812,
+    "birdId": 723,
+    "author": "Nick Tepper",
+    "species": "Willet"
+  },
+  {
+    "birdId": 724,
+    "author": "Gregory Budney",
+    "species": "American Avocet"
+  },
+  {
+    "birdId": 725,
+    "author": "Hope Batcheller",
+    "species": "Juniper Titmouse"
+  },
+  {
+    "birdId": 726,
+    "author": "Paul Marvin",
+    "species": "Great Blue Heron"
+  },
+  {
+    "birdId": 727,
+    "author": "Bob McGuire",
+    "species": "Barrow's Goldeneye"
+  },
+  {
+    "birdId": 728,
+    "author": "John Patterson",
+    "species": "Virginia Rail"
+  },
+  {
+    "birdId": 729,
+    "author": "Jay McGowan",
+    "species": "Rose-breasted Grosbeak"
+  },
+  {
+    "birdId": 730,
+    "author": "Geoffrey A. Keller",
+    "species": "Osprey"
+  },
+  {
+    "birdId": 731,
+    "author": "William W. H. Gunn",
+    "species": "Sora"
+  },
+  {
+    "birdId": 732,
+    "author": "Randolph Little",
+    "species": "Lark Sparrow"
+  },
+  {
+    "birdId": 733,
+    "author": "Matthew D. Medler",
+    "species": "Purple Finch"
+  },
+  {
+    "birdId": 734,
+    "author": "Jay McGowan",
+    "species": "Grasshopper Sparrow"
+  },
+  {
+    "birdId": 735,
+    "author": "Matthew Wistrand",
+    "species": "Red-headed Woodpecker"
+  },
+  {
+    "birdId": 736,
+    "author": "Paul Marvin",
+    "species": "Green Heron"
+  },
+  {
+    "birdId": 737,
+    "author": "Jessie Barry",
+    "species": "Ring-billed Gull"
+  },
+  {
+    "birdId": 738,
+    "author": "George B. Reynard",
+    "species": "Brant"
+  },
+  {
+    "birdId": 739,
+    "author": "Tom Johnson",
+    "species": "Northern Bobwhite"
+  },
+  {
+    "birdId": 740,
+    "author": "Bob McGuire",
+    "species": "Painted Bunting"
+  },
+  {
+    "birdId": 741,
+    "author": "Forrest Baublitz",
+    "species": "Yellow-crowned Night-Heron"
+  },
+  {
+    "birdId": 742,
+    "author": "Brad Walker",
+    "species": "House Sparrow"
+  },
+  {
+    "birdId": 743,
+    "author": "Wil Hershberger",
+    "species": "Eastern Phoebe"
+  },
+  {
+    "birdId": 744,
+    "author": "Brian Sullivan",
+    "species": "Wild Turkey"
+  },
+  {
+    "birdId": 745,
     "author": "Wil Hershberger",
     "species": "Belted Kingfisher"
   },
   {
-    "birdId": 813,
-    "author": "Wil Hershberger",
-    "species": "White-breasted Nuthatch"
+    "birdId": 746,
+    "author": "John Patterson",
+    "species": "American Bittern"
   },
   {
-    "birdId": 814,
+    "birdId": 747,
     "author": "Wil Hershberger",
     "species": "Mountain Chickadee"
   },
   {
-    "birdId": 815,
-    "author": "Paul Marvin",
-    "species": "Ruddy Turnstone"
+    "birdId": 748,
+    "author": "Jay McGowan",
+    "species": "American Goldfinch"
   },
   {
-    "birdId": 816,
-    "author": "Wil Hershberger",
-    "species": "American Robin"
-  },
-  {
-    "birdId": 817,
+    "birdId": 749,
     "author": "Arthur A. Allen",
-    "species": "Northern Harrier"
+    "species": "Pileated Woodpecker"
   },
   {
-    "birdId": 818,
+    "birdId": 750,
+    "author": "Peter Paul Kellogg",
+    "species": "European Starling"
+  },
+  {
+    "birdId": 751,
+    "author": "Greg Clark",
+    "species": "Turkey Vulture"
+  },
+  {
+    "birdId": 752,
+    "author": "Wil Hershberger",
+    "species": "Mourning Dove"
+  },
+  {
+    "birdId": 753,
+    "author": "Paul Marvin",
+    "species": "Common Gallinule"
+  },
+  {
+    "birdId": 754,
+    "author": "Paul Marvin",
+    "species": "Bald Eagle"
+  },
+  {
+    "birdId": 755,
+    "author": "Brad Walker",
+    "species": "Tufted Titmouse"
+  },
+  {
+    "birdId": 756,
+    "author": "Tom Johnson",
+    "species": "Gadwall"
+  },
+  {
+    "birdId": 757,
+    "author": "Wil Hershberger",
+    "species": "Eastern Phoebe"
+  },
+  {
+    "birdId": 758,
+    "author": "Andrew Spencer",
+    "species": "Clay-colored Thrush"
+  },
+  {
+    "birdId": 759,
+    "author": "Glen Chapman",
+    "species": "Brown-headed Cowbird"
+  },
+  {
+    "birdId": 760,
+    "author": "Bob McGuire",
+    "species": "Limpkin"
+  },
+  {
+    "birdId": 761,
+    "author": "Jay McGowan",
+    "species": "Brown Pelican"
+  },
+  {
+    "birdId": 762,
+    "author": "Gregory Budney",
+    "species": "Cassin's Finch"
+  },
+  {
+    "birdId": 763,
+    "author": "Bob McGuire",
+    "species": "Barrow's Goldeneye"
+  },
+  {
+    "birdId": 764,
+    "author": "Wil Hershberger",
+    "species": "White-breasted Nuthatch"
+  },
+  {
+    "birdId": 765,
+    "author": "Terri Gallion",
+    "species": "Golden Eagle"
+  },
+  {
+    "birdId": 766,
+    "author": "Matthew D. Medler",
+    "species": "Golden-crowned Kinglet"
+  },
+  {
+    "birdId": 767,
+    "author": "Jay McGowan",
+    "species": "American Goldfinch"
+  },
+  {
+    "birdId": 768,
+    "author": "George B. Reynard",
+    "species": "Brant"
+  },
+  {
+    "birdId": 769,
+    "author": "Christopher McPherson",
+    "species": "Eastern Wood-Pewee"
+  },
+  {
+    "birdId": 770,
+    "author": "Paul Marvin",
+    "species": "Bald Eagle"
+  },
+  {
+    "birdId": 771,
+    "author": "Lucas DeCicco",
+    "species": "Fox Sparrow"
+  },
+  {
+    "birdId": 772,
+    "author": "Gerrit Vyn",
+    "species": "Black-bellied Whistling-Duck"
+  },
+  {
+    "birdId": 773,
+    "author": "Kevin J. Colver",
+    "species": "Spotted Towhee"
+  },
+  {
+    "birdId": 774,
+    "author": "Michael Andersen",
+    "species": "Forster's Tern"
+  },
+  {
+    "birdId": 775,
+    "author": "Paul Marvin",
+    "species": "Royal Tern"
+  },
+  {
+    "birdId": 776,
+    "author": "Matthew D. Medler",
+    "species": "Baltimore Oriole"
+  },
+  {
+    "birdId": 777,
+    "author": "William W. H. Gunn",
+    "species": "Swainson's Hawk"
+  },
+  {
+    "birdId": 778,
+    "author": "Wil Hershberger",
+    "species": "Bobolink"
+  },
+  {
+    "birdId": 779,
+    "author": "William W. H. Gunn",
+    "species": "Atlantic Puffin"
+  },
+  {
+    "birdId": 780,
+    "author": "Paul Marvin",
+    "species": "Rock Pigeon"
+  },
+  {
+    "birdId": 781,
+    "author": "Lucas DeCicco",
+    "species": "Fox Sparrow"
+  },
+  {
+    "birdId": 782,
+    "author": "Gerrit Vyn",
+    "species": "Greater Prairie-Chicken"
+  },
+  {
+    "birdId": 783,
+    "author": "Christopher McPherson",
+    "species": "Eastern Wood-Pewee"
+  },
+  {
+    "birdId": 784,
+    "author": "Gerrit Vyn",
+    "species": "Snowy Owl"
+  },
+  {
+    "birdId": 785,
+    "author": "Nathan Pieplow",
+    "species": "Western Bluebird"
+  },
+  {
+    "birdId": 786,
+    "author": "Greg Clark",
+    "species": "Turkey Vulture"
+  },
+  {
+    "birdId": 787,
+    "author": "Matthew D. Medler",
+    "species": "Song Sparrow"
+  },
+  {
+    "birdId": 788,
+    "author": "Wil Hershberger",
+    "species": "Lincoln's Sparrow"
+  },
+  {
+    "birdId": 789,
+    "author": "Charles A. Sutherland",
+    "species": "Cattle Egret"
+  },
+  {
+    "birdId": 790,
+    "author": "Jay McGowan",
+    "species": "Louisiana Waterthrush"
+  },
+  {
+    "birdId": 791,
+    "author": "Bob McGuire",
+    "species": "Summer Tanager"
+  },
+  {
+    "birdId": 792,
+    "author": "Jay McGowan",
+    "species": "Dark-eyed Junco"
+  },
+  {
+    "birdId": 793,
+    "author": "Lucas DeCicco",
+    "species": "Wilson's Snipe"
+  },
+  {
+    "birdId": 794,
+    "author": "Curtis Marantz",
+    "species": "Green Kingfisher"
+  },
+  {
+    "birdId": 795,
+    "author": "Vincent Gerwe",
+    "species": "California Condor"
+  },
+  {
+    "birdId": 796,
+    "author": "David C. Evers",
+    "species": "Common Loon"
+  },
+  {
+    "birdId": 797,
+    "author": "Matthew D. Medler",
+    "species": "Purple Martin"
+  },
+  {
+    "birdId": 798,
+    "author": "Wil Hershberger",
+    "species": "Belted Kingfisher"
+  },
+  {
+    "birdId": 799,
+    "author": "Jessie Barry",
+    "species": "Ring-billed Gull"
+  },
+  {
+    "birdId": 800,
+    "author": "Nathan Pieplow",
+    "species": "Rivoli's Hummingbird"
+  },
+  {
+    "birdId": 801,
+    "author": "Wil Hershberger",
+    "species": "Bicknell's Thrush"
+  },
+  {
+    "birdId": 802,
+    "author": "Wil Hershberger",
+    "species": "Western Wood-Pewee"
+  },
+  {
+    "birdId": 803,
+    "author": "Curtis Marantz",
+    "species": "Green Kingfisher"
+  },
+  {
+    "birdId": 804,
+    "author": "William R. Fish",
+    "species": "Great Horned Owl"
+  },
+  {
+    "birdId": 805,
+    "author": "Gerrit Vyn",
+    "species": "Northern Jacana"
+  },
+  {
+    "birdId": 806,
+    "author": "Jay McGowan",
+    "species": "Eastern Bluebird"
+  },
+  {
+    "birdId": 807,
+    "author": "Jay McGowan",
+    "species": "Common Merganser"
+  },
+  {
+    "birdId": 808,
+    "author": "Leonard J. Peyton",
+    "species": "Horned Lark"
+  },
+  {
+    "birdId": 809,
+    "author": "Wil Hershberger",
+    "species": "Red-winged Blackbird"
+  },
+  {
+    "birdId": 810,
+    "author": "Arthur A. Allen",
+    "species": "Pileated Woodpecker"
+  },
+  {
+    "birdId": 811,
+    "author": "Jay McGowan",
+    "species": "Fish Crow"
+  },
+  {
+    "birdId": 812,
+    "author": "Robert Bethel",
+    "species": "Eastern Meadowlark"
+  },
+  {
+    "birdId": 813,
+    "author": "Bob McGuire",
+    "species": "Chipping Sparrow"
+  },
+  {
+    "birdId": 814,
     "author": "Brad Walker",
     "species": "House Wren"
   },
   {
-    "birdId": 819,
+    "birdId": 815,
+    "author": "Wil Hershberger",
+    "species": "Trumpeter Swan"
+  },
+  {
+    "birdId": 816,
     "author": "Andrew Spencer",
-    "species": "Redhead"
+    "species": "Rock Wren"
+  },
+  {
+    "birdId": 817,
+    "author": "Gerrit Vyn",
+    "species": "Snow Bunting"
+  },
+  {
+    "birdId": 818,
+    "author": "Gregory Budney",
+    "species": "Red Crossbill"
+  },
+  {
+    "birdId": 819,
+    "author": "Wil Hershberger",
+    "species": "Lincoln's Sparrow"
   },
   {
     "birdId": 820,
-    "author": "John Patterson",
-    "species": "Virginia Rail"
+    "author": "Wil Hershberger",
+    "species": "Carolina Wren"
   },
   {
     "birdId": 821,
@@ -4111,893 +4111,893 @@
   },
   {
     "birdId": 822,
-    "author": "Wil Hershberger",
-    "species": "Trumpeter Swan"
+    "author": "Glen Chapman",
+    "species": "Downy Woodpecker"
   },
   {
     "birdId": 823,
-    "author": "David McQuade",
-    "species": "Altamira Oriole"
+    "author": "Matthew D. Medler",
+    "species": "Scarlet Tanager"
   },
   {
     "birdId": 824,
-    "author": "Randolph Little",
-    "species": "Ruby-throated Hummingbird"
+    "author": "Michael Andersen",
+    "species": "Roseate Spoonbill"
   },
   {
     "birdId": 825,
-    "author": "Gregory Budney",
-    "species": "Florida Scrub-Jay"
+    "author": "William W. H. Gunn",
+    "species": "Atlantic Puffin"
   },
   {
     "birdId": 826,
-    "author": "Matthew D. Medler",
-    "species": "Hermit Thrush"
-  },
-  {
-    "birdId": 827,
-    "author": "Andrew Spencer",
-    "species": "Mountain Bluebird"
-  },
-  {
-    "birdId": 828,
-    "author": "Wil Hershberger",
-    "species": "Killdeer"
-  },
-  {
-    "birdId": 829,
-    "author": "Nick Tepper",
-    "species": "Willet"
-  },
-  {
-    "birdId": 830,
-    "author": "Wil Hershberger",
-    "species": "Lincoln's Sparrow"
-  },
-  {
-    "birdId": 831,
-    "author": "Arthur A. Allen",
-    "species": "Purple Gallinule"
-  },
-  {
-    "birdId": 832,
-    "author": "Mark Gardiner",
-    "species": "Western Tanager"
-  },
-  {
-    "birdId": 833,
-    "author": "Wil Hershberger",
-    "species": "Eastern Phoebe"
-  },
-  {
-    "birdId": 834,
-    "author": "Nathan Pieplow",
-    "species": "Rivoli's Hummingbird"
-  },
-  {
-    "birdId": 835,
-    "author": "Gregory Budney",
-    "species": "Canada Goose"
-  },
-  {
-    "birdId": 836,
-    "author": "Wil Hershberger",
-    "species": "Carolina Chickadee"
-  },
-  {
-    "birdId": 837,
-    "author": "Matthew D. Medler",
-    "species": "Ruby-crowned Kinglet"
-  },
-  {
-    "birdId": 838,
-    "author": "Paul Marvin",
-    "species": "Bald Eagle"
-  },
-  {
-    "birdId": 839,
-    "author": "Paul Marvin",
-    "species": "Say's Phoebe"
-  },
-  {
-    "birdId": 840,
-    "author": "Wil Hershberger",
-    "species": "Mountain Chickadee"
-  },
-  {
-    "birdId": 841,
-    "author": "Michael Andersen",
-    "species": "Mallard"
-  },
-  {
-    "birdId": 842,
-    "author": "William R. Fish",
-    "species": "House Finch"
-  },
-  {
-    "birdId": 843,
-    "author": "Joe B. Guinn",
-    "species": "Mississippi Kite"
-  },
-  {
-    "birdId": 844,
-    "author": "Bob McGuire",
-    "species": "Great Cormorant"
-  },
-  {
-    "birdId": 845,
-    "author": "Jessie Barry",
-    "species": "Ring-billed Gull"
-  },
-  {
-    "birdId": 846,
-    "author": "Wil Hershberger",
-    "species": "Bewick's Wren"
-  },
-  {
-    "birdId": 847,
-    "author": "Tayler Brooks",
-    "species": "Canyon Wren"
-  },
-  {
-    "birdId": 848,
-    "author": "Geoffrey A. Keller",
-    "species": "Phainopepla"
-  },
-  {
-    "birdId": 849,
-    "author": "Wil Hershberger",
-    "species": "Northern Mockingbird"
-  },
-  {
-    "birdId": 850,
-    "author": "Matthew D. Medler",
-    "species": "Golden-crowned Kinglet"
-  },
-  {
-    "birdId": 851,
-    "author": "Charles A. Sutherland",
-    "species": "Cattle Egret"
-  },
-  {
-    "birdId": 852,
-    "author": "Peter Paul Kellogg",
-    "species": "European Starling"
-  },
-  {
-    "birdId": 853,
-    "author": "Michael Andersen",
-    "species": "Anhinga"
-  },
-  {
-    "birdId": 854,
-    "author": "Jay McGowan",
-    "species": "Eurasian Collared-Dove"
-  },
-  {
-    "birdId": 855,
-    "author": "Jay McGowan",
-    "species": "Eastern Whip-poor-will"
-  },
-  {
-    "birdId": 856,
-    "author": "Wil Hershberger",
-    "species": "Blue Grosbeak"
-  },
-  {
-    "birdId": 857,
-    "author": "Dave Herr",
-    "species": "Barn Swallow"
-  },
-  {
-    "birdId": 858,
-    "author": "Glen Chapman",
-    "species": "Downy Woodpecker"
-  },
-  {
-    "birdId": 859,
-    "author": "Arthur A. Allen",
-    "species": "Pileated Woodpecker"
-  },
-  {
-    "birdId": 860,
-    "author": "Gregory Budney",
-    "species": "American Avocet"
-  },
-  {
-    "birdId": 861,
-    "author": "Nathaniel H. Taylor",
-    "species": "Ruffed Grouse"
-  },
-  {
-    "birdId": 862,
-    "author": "Mark Gardiner",
-    "species": "Western Tanager"
-  },
-  {
-    "birdId": 863,
-    "author": "Gregory Budney",
-    "species": "Black-necked Stilt"
-  },
-  {
-    "birdId": 864,
-    "author": "Randolph Little",
-    "species": "Lark Sparrow"
-  },
-  {
-    "birdId": 865,
-    "author": "Jay McGowan",
-    "species": "Northern Cardinal"
-  },
-  {
-    "birdId": 866,
-    "author": "Jessie Barry",
-    "species": "Common Raven"
-  },
-  {
-    "birdId": 867,
-    "author": "Bob McGuire",
-    "species": "Black-crowned Night-Heron"
-  },
-  {
-    "birdId": 868,
-    "author": "Ian Davies",
-    "species": "Northern Flicker"
-  },
-  {
-    "birdId": 869,
-    "author": "Jay McGowan",
-    "species": "Rose-breasted Grosbeak"
-  },
-  {
-    "birdId": 870,
-    "author": "Martha Fischer",
-    "species": "Red-breasted Nuthatch"
-  },
-  {
-    "birdId": 871,
-    "author": "Jay McGowan",
-    "species": "Grasshopper Sparrow"
-  },
-  {
-    "birdId": 872,
-    "author": "Gerrit Vyn",
-    "species": "Magnificent Frigatebird"
-  },
-  {
-    "birdId": 873,
-    "author": "Jay McGowan",
-    "species": "Red-bellied Woodpecker"
-  },
-  {
-    "birdId": 874,
-    "author": "Andrew Spencer",
-    "species": "Cooper's Hawk"
-  },
-  {
-    "birdId": 875,
-    "author": "Jay McGowan",
-    "species": "Red-breasted Merganser"
-  },
-  {
-    "birdId": 876,
-    "author": "Gerrit Vyn",
-    "species": "Magnificent Frigatebird"
-  },
-  {
-    "birdId": 877,
-    "author": "Thomas G. Sander",
-    "species": "Barred Owl"
-  },
-  {
-    "birdId": 878,
-    "author": "Jay McGowan",
-    "species": "Fish Crow"
-  },
-  {
-    "birdId": 879,
-    "author": "Kevin J. Colver",
-    "species": "Spotted Towhee"
-  },
-  {
-    "birdId": 880,
-    "author": "William W. H. Gunn",
-    "species": "White-crowned Sparrow"
-  },
-  {
-    "birdId": 881,
-    "author": "Gregory Budney",
-    "species": "Black-necked Stilt"
-  },
-  {
-    "birdId": 882,
-    "author": "Matthew D. Medler",
-    "species": "Purple Finch"
-  },
-  {
-    "birdId": 883,
-    "author": "Paul Marvin",
-    "species": "Green Heron"
-  },
-  {
-    "birdId": 884,
-    "author": "Lucas DeCicco",
-    "species": "Fox Sparrow"
-  },
-  {
-    "birdId": 885,
-    "author": "Jay McGowan",
-    "species": "Eastern Bluebird"
-  },
-  {
-    "birdId": 886,
-    "author": "David L. Ross, Jr.",
-    "species": "Roadside Hawk"
-  },
-  {
-    "birdId": 887,
-    "author": "Bob McGuire",
-    "species": "Barrow's Goldeneye"
-  },
-  {
-    "birdId": 888,
-    "author": "Andrew Spencer",
-    "species": "Loggerhead Shrike"
-  },
-  {
-    "birdId": 889,
-    "author": "Andrew Spencer",
-    "species": "Mountain Bluebird"
-  },
-  {
-    "birdId": 890,
-    "author": "Jay McGowan",
-    "species": "Ovenbird"
-  },
-  {
-    "birdId": 891,
-    "author": "Andrew Spencer",
-    "species": "Rock Wren"
-  },
-  {
-    "birdId": 892,
-    "author": "Bob McGuire",
-    "species": "Vermilion Flycatcher"
-  },
-  {
-    "birdId": 893,
-    "author": "Wil Hershberger",
-    "species": "Killdeer"
-  },
-  {
-    "birdId": 894,
-    "author": "Christopher McPherson",
-    "species": "Eastern Wood-Pewee"
-  },
-  {
-    "birdId": 895,
-    "author": "Gregory Budney",
-    "species": "Brown-headed Nuthatch"
-  },
-  {
-    "birdId": 896,
-    "author": "Jay McGowan",
-    "species": "Eastern Kingbird"
-  },
-  {
-    "birdId": 897,
-    "author": "Jay McGowan",
-    "species": "Louisiana Waterthrush"
-  },
-  {
-    "birdId": 898,
-    "author": "Jay McGowan",
-    "species": "Hairy Woodpecker"
-  },
-  {
-    "birdId": 899,
-    "author": "Geoffrey A. Keller",
-    "species": "Green Jay"
-  },
-  {
-    "birdId": 900,
-    "author": "Kevin J. Colver",
-    "species": "Lazuli Bunting"
-  },
-  {
-    "birdId": 901,
-    "author": "Dave Herr",
-    "species": "American Kestrel"
-  },
-  {
-    "birdId": 902,
-    "author": "Nathan Pieplow",
-    "species": "Rivoli's Hummingbird"
-  },
-  {
-    "birdId": 903,
-    "author": "Jay McGowan",
-    "species": "Eastern Kingbird"
-  },
-  {
-    "birdId": 904,
-    "author": "Tom Johnson",
-    "species": "Chuck-will's-widow"
-  },
-  {
-    "birdId": 905,
-    "author": "Geoffrey A. Keller",
-    "species": "Green Jay"
-  },
-  {
-    "birdId": 906,
-    "author": "Matthew D. Medler",
-    "species": "Gray Catbird"
-  },
-  {
-    "birdId": 907,
-    "author": "Jay McGowan",
-    "species": "Red-bellied Woodpecker"
-  },
-  {
-    "birdId": 908,
-    "author": "William W. H. Gunn",
-    "species": "Northern Shoveler"
-  },
-  {
-    "birdId": 909,
-    "author": "Martha Fischer",
-    "species": "Green-winged Teal"
-  },
-  {
-    "birdId": 910,
-    "author": "Leonard J. Peyton",
-    "species": "Tree Swallow"
-  },
-  {
-    "birdId": 911,
-    "author": "Jay McGowan",
-    "species": "Dark-eyed Junco"
-  },
-  {
-    "birdId": 912,
-    "author": "Andrew Spencer",
-    "species": "Cooper's Hawk"
-  },
-  {
-    "birdId": 913,
-    "author": "Matthew D. Medler",
-    "species": "Bronzed Cowbird"
-  },
-  {
-    "birdId": 914,
-    "author": "Bob McGuire",
-    "species": "Common Pauraque"
-  },
-  {
-    "birdId": 915,
-    "author": "William R. Fish",
-    "species": "Great Horned Owl"
-  },
-  {
-    "birdId": 916,
-    "author": "Paul Marvin",
-    "species": "Royal Tern"
-  },
-  {
-    "birdId": 917,
-    "author": "Paul Marvin",
-    "species": "Say's Phoebe"
-  },
-  {
-    "birdId": 918,
-    "author": "Bob McGuire",
-    "species": "Western Screech-Owl"
-  },
-  {
-    "birdId": 919,
-    "author": "Paul Marvin",
-    "species": "Hepatic Tanager"
-  },
-  {
-    "birdId": 920,
-    "author": "Blaine Carnes",
-    "species": "Dickcissel"
-  },
-  {
-    "birdId": 921,
-    "author": "Nathaniel H. Taylor",
-    "species": "Ruffed Grouse"
-  },
-  {
-    "birdId": 922,
-    "author": "Bob McGuire",
-    "species": "Anna's Hummingbird"
-  },
-  {
-    "birdId": 923,
-    "author": "Leonard J. Peyton",
-    "species": "Tree Swallow"
-  },
-  {
-    "birdId": 924,
-    "author": "Tayler Brooks",
-    "species": "Canyon Wren"
-  },
-  {
-    "birdId": 925,
-    "author": "Tom Johnson",
-    "species": "Chuck-will's-widow"
-  },
-  {
-    "birdId": 926,
-    "author": "Paul Marvin",
-    "species": "Common Gallinule"
-  },
-  {
-    "birdId": 927,
-    "author": "Andrew Spencer",
-    "species": "Cassin's Kingbird"
-  },
-  {
-    "birdId": 928,
-    "author": "Peter Paul Kellogg",
-    "species": "European Starling"
-  },
-  {
-    "birdId": 929,
-    "author": "Matthew D. Medler",
-    "species": "Baltimore Oriole"
-  },
-  {
-    "birdId": 930,
-    "author": "Bob McGuire",
-    "species": "Summer Tanager"
-  },
-  {
-    "birdId": 931,
-    "author": "Andrew Spencer",
-    "species": "Loggerhead Shrike"
-  },
-  {
-    "birdId": 932,
-    "author": "Jay McGowan",
-    "species": "Rose-breasted Grosbeak"
-  },
-  {
-    "birdId": 933,
-    "author": "Bob McGuire",
-    "species": "Western Screech-Owl"
-  },
-  {
-    "birdId": 934,
-    "author": "Matthew D. Medler",
-    "species": "Ruby-crowned Kinglet"
-  },
-  {
-    "birdId": 935,
-    "author": "Andrew Spencer",
-    "species": "Woodhouse's Scrub-Jay"
-  },
-  {
-    "birdId": 936,
-    "author": "Bob McGuire",
-    "species": "Vermilion Flycatcher"
-  },
-  {
-    "birdId": 937,
-    "author": "Peter Boesman",
-    "species": "Common Pochard"
-  },
-  {
-    "birdId": 938,
-    "author": "Gregory Budney",
-    "species": "Pied-billed Grebe"
-  },
-  {
-    "birdId": 939,
-    "author": "Andrew Spencer",
-    "species": "Cassin's Kingbird"
-  },
-  {
-    "birdId": 940,
-    "author": "Kevin J. Colver",
-    "species": "Spotted Towhee"
-  },
-  {
-    "birdId": 941,
-    "author": "Wil Hershberger",
-    "species": "Bewick's Wren"
-  },
-  {
-    "birdId": 942,
-    "author": "Wil Hershberger",
-    "species": "Trumpeter Swan"
-  },
-  {
-    "birdId": 943,
-    "author": "Dave Herr",
-    "species": "American Kestrel"
-  },
-  {
-    "birdId": 944,
-    "author": "Nathan Pieplow",
-    "species": "Clark's Nutcracker"
-  },
-  {
-    "birdId": 945,
-    "author": "Matthew D. Medler",
-    "species": "Blue Jay"
-  },
-  {
-    "birdId": 946,
-    "author": "Wil Hershberger",
-    "species": "Trumpeter Swan"
-  },
-  {
-    "birdId": 947,
-    "author": "Martha Fischer",
-    "species": "Red-breasted Nuthatch"
-  },
-  {
-    "birdId": 948,
-    "author": "Joe B. Guinn",
-    "species": "Mississippi Kite"
-  },
-  {
-    "birdId": 949,
-    "author": "Randolph Little",
-    "species": "Ruddy Duck"
-  },
-  {
-    "birdId": 950,
-    "author": "Terri Gallion",
-    "species": "Golden Eagle"
-  },
-  {
-    "birdId": 951,
-    "author": "Glen Chapman",
-    "species": "Downy Woodpecker"
-  },
-  {
-    "birdId": 952,
-    "author": "Randolph Little",
-    "species": "Clapper Rail"
-  },
-  {
-    "birdId": 953,
-    "author": "Wil Hershberger",
-    "species": "Mourning Dove"
-  },
-  {
-    "birdId": 954,
-    "author": "Bob McGuire",
-    "species": "Vermilion Flycatcher"
-  },
-  {
-    "birdId": 955,
-    "author": "Tom Johnson",
-    "species": "Northern Bobwhite"
-  },
-  {
-    "birdId": 956,
-    "author": "Glen Chapman",
-    "species": "Pine Siskin"
-  },
-  {
-    "birdId": 957,
-    "author": "Jay McGowan",
-    "species": "Eastern Bluebird"
-  },
-  {
-    "birdId": 958,
-    "author": "Jay McGowan",
-    "species": "Red-breasted Merganser"
-  },
-  {
-    "birdId": 959,
-    "author": "Arthur A. Allen",
-    "species": "Northern Harrier"
-  },
-  {
-    "birdId": 960,
-    "author": "Gerrit Vyn",
-    "species": "Snowy Owl"
-  },
-  {
-    "birdId": 961,
-    "author": "Paul Fenwick",
-    "species": "Red-shouldered Hawk"
-  },
-  {
-    "birdId": 962,
-    "author": "Wil Hershberger",
-    "species": "Indigo Bunting"
-  },
-  {
-    "birdId": 963,
-    "author": "Geoffrey A. Keller",
-    "species": "Scissor-tailed Flycatcher"
-  },
-  {
-    "birdId": 964,
-    "author": "Gregory Budney",
-    "species": "Cassin's Finch"
-  },
-  {
-    "birdId": 965,
-    "author": "Mark Robbins",
-    "species": "Greater Roadrunner"
-  },
-  {
-    "birdId": 966,
-    "author": "Jay McGowan",
-    "species": "Brown Pelican"
-  },
-  {
-    "birdId": 967,
-    "author": "David L. Ross, Jr.",
-    "species": "Roadside Hawk"
-  },
-  {
-    "birdId": 968,
-    "author": "Jay McGowan",
-    "species": "Hairy Woodpecker"
-  },
-  {
-    "birdId": 969,
-    "author": "Curtis Marantz",
-    "species": "Green Kingfisher"
-  },
-  {
-    "birdId": 970,
-    "author": "Matthew D. Medler",
-    "species": "Song Sparrow"
-  },
-  {
-    "birdId": 971,
-    "author": "Jay McGowan",
-    "species": "Eastern Bluebird"
-  },
-  {
-    "birdId": 972,
-    "author": "Bob McGuire",
-    "species": "Vermilion Flycatcher"
-  },
-  {
-    "birdId": 973,
-    "author": "Dave Herr",
-    "species": "American Kestrel"
-  },
-  {
-    "birdId": 974,
-    "author": "John Patterson",
-    "species": "Franklin's Gull"
-  },
-  {
-    "birdId": 975,
-    "author": "Joe B. Guinn",
-    "species": "Mississippi Kite"
-  },
-  {
-    "birdId": 976,
-    "author": "William W. H. Gunn",
-    "species": "Northern Shoveler"
-  },
-  {
-    "birdId": 977,
-    "author": "Jay McGowan",
-    "species": "American Goldfinch"
-  },
-  {
-    "birdId": 978,
-    "author": "Randolph Little",
-    "species": "Clapper Rail"
-  },
-  {
-    "birdId": 979,
-    "author": "Matthew D. Medler",
-    "species": "Baltimore Oriole"
-  },
-  {
-    "birdId": 980,
-    "author": "Wil Hershberger",
-    "species": "Western Wood-Pewee"
-  },
-  {
-    "birdId": 981,
-    "author": "Matthew D. Medler",
-    "species": "Song Sparrow"
-  },
-  {
-    "birdId": 982,
-    "author": "Paul Marvin",
-    "species": "Say's Phoebe"
-  },
-  {
-    "birdId": 983,
-    "author": "Wil Hershberger",
-    "species": "White-breasted Nuthatch"
-  },
-  {
-    "birdId": 984,
-    "author": "Matthew D. Medler",
-    "species": "Ruby-crowned Kinglet"
-  },
-  {
-    "birdId": 985,
-    "author": "Charles A. Sutherland",
-    "species": "Cattle Egret"
-  },
-  {
-    "birdId": 986,
-    "author": "Wil Hershberger",
-    "species": "Wood Thrush"
-  },
-  {
-    "birdId": 987,
-    "author": "William R. Fish",
-    "species": "House Finch"
-  },
-  {
-    "birdId": 988,
-    "author": "Bob McGuire",
-    "species": "Limpkin"
-  },
-  {
-    "birdId": 989,
-    "author": "Wil Hershberger",
-    "species": "Mountain Chickadee"
-  },
-  {
-    "birdId": 990,
-    "author": "Lucas DeCicco",
-    "species": "Wilson's Snipe"
-  },
-  {
-    "birdId": 991,
-    "author": "Paul Marvin",
-    "species": "Red-tailed Hawk"
-  },
-  {
-    "birdId": 992,
-    "author": "Nathan Pieplow",
-    "species": "Clark's Nutcracker"
-  },
-  {
-    "birdId": 993,
-    "author": "Robert C. Stein",
-    "species": "Bufflehead"
-  },
-  {
-    "birdId": 994,
-    "author": "Greg Clark",
-    "species": "Turkey Vulture"
-  },
-  {
-    "birdId": 995,
     "author": "Jay McGowan",
     "species": "Savannah Sparrow"
   },
   {
-    "birdId": 996,
-    "author": "Arthur A. Allen",
-    "species": "Purple Gallinule"
+    "birdId": 827,
+    "author": "Brad Walker",
+    "species": "House Wren"
   },
   {
-    "birdId": 997,
+    "birdId": 828,
     "author": "Bob McGuire",
-    "species": "Painted Bunting"
+    "species": "Limpkin"
   },
   {
-    "birdId": 998,
+    "birdId": 829,
+    "author": "Glen Chapman",
+    "species": "Pine Siskin"
+  },
+  {
+    "birdId": 830,
+    "author": "Jocelyn Lauzon",
+    "species": "White-throated Sparrow"
+  },
+  {
+    "birdId": 831,
+    "author": "Wil Hershberger",
+    "species": "Belted Kingfisher"
+  },
+  {
+    "birdId": 832,
+    "author": "Wil Hershberger",
+    "species": "White-breasted Nuthatch"
+  },
+  {
+    "birdId": 833,
+    "author": "Wil Hershberger",
+    "species": "Mountain Chickadee"
+  },
+  {
+    "birdId": 834,
+    "author": "Paul Marvin",
+    "species": "Ruddy Turnstone"
+  },
+  {
+    "birdId": 835,
     "author": "Wil Hershberger",
     "species": "American Robin"
   },
   {
+    "birdId": 836,
+    "author": "Arthur A. Allen",
+    "species": "Northern Harrier"
+  },
+  {
+    "birdId": 837,
+    "author": "Brad Walker",
+    "species": "House Wren"
+  },
+  {
+    "birdId": 838,
+    "author": "Andrew Spencer",
+    "species": "Redhead"
+  },
+  {
+    "birdId": 839,
+    "author": "John Patterson",
+    "species": "Virginia Rail"
+  },
+  {
+    "birdId": 840,
+    "author": "Wil Hershberger",
+    "species": "Trumpeter Swan"
+  },
+  {
+    "birdId": 841,
+    "author": "David McQuade",
+    "species": "Altamira Oriole"
+  },
+  {
+    "birdId": 842,
+    "author": "Randolph Little",
+    "species": "Ruby-throated Hummingbird"
+  },
+  {
+    "birdId": 843,
+    "author": "Gregory Budney",
+    "species": "Florida Scrub-Jay"
+  },
+  {
+    "birdId": 844,
+    "author": "Matthew D. Medler",
+    "species": "Hermit Thrush"
+  },
+  {
+    "birdId": 845,
+    "author": "Andrew Spencer",
+    "species": "Mountain Bluebird"
+  },
+  {
+    "birdId": 846,
+    "author": "Wil Hershberger",
+    "species": "Killdeer"
+  },
+  {
+    "birdId": 847,
+    "author": "Nick Tepper",
+    "species": "Willet"
+  },
+  {
+    "birdId": 848,
+    "author": "Wil Hershberger",
+    "species": "Lincoln's Sparrow"
+  },
+  {
+    "birdId": 849,
+    "author": "Arthur A. Allen",
+    "species": "Purple Gallinule"
+  },
+  {
+    "birdId": 850,
+    "author": "Wil Hershberger",
+    "species": "Eastern Phoebe"
+  },
+  {
+    "birdId": 851,
+    "author": "Nathan Pieplow",
+    "species": "Rivoli's Hummingbird"
+  },
+  {
+    "birdId": 852,
+    "author": "Gregory Budney",
+    "species": "Canada Goose"
+  },
+  {
+    "birdId": 853,
+    "author": "Wil Hershberger",
+    "species": "Carolina Chickadee"
+  },
+  {
+    "birdId": 854,
+    "author": "Matthew D. Medler",
+    "species": "Ruby-crowned Kinglet"
+  },
+  {
+    "birdId": 855,
+    "author": "Paul Marvin",
+    "species": "Bald Eagle"
+  },
+  {
+    "birdId": 856,
+    "author": "Paul Marvin",
+    "species": "Say's Phoebe"
+  },
+  {
+    "birdId": 857,
+    "author": "Wil Hershberger",
+    "species": "Mountain Chickadee"
+  },
+  {
+    "birdId": 858,
+    "author": "Michael Andersen",
+    "species": "Mallard"
+  },
+  {
+    "birdId": 859,
+    "author": "William R. Fish",
+    "species": "House Finch"
+  },
+  {
+    "birdId": 860,
+    "author": "Bob McGuire",
+    "species": "Great Cormorant"
+  },
+  {
+    "birdId": 861,
+    "author": "Jessie Barry",
+    "species": "Ring-billed Gull"
+  },
+  {
+    "birdId": 862,
+    "author": "Wil Hershberger",
+    "species": "Bewick's Wren"
+  },
+  {
+    "birdId": 863,
+    "author": "Tayler Brooks",
+    "species": "Canyon Wren"
+  },
+  {
+    "birdId": 864,
+    "author": "Geoffrey A. Keller",
+    "species": "Phainopepla"
+  },
+  {
+    "birdId": 865,
+    "author": "Wil Hershberger",
+    "species": "Northern Mockingbird"
+  },
+  {
+    "birdId": 866,
+    "author": "Matthew D. Medler",
+    "species": "Golden-crowned Kinglet"
+  },
+  {
+    "birdId": 867,
+    "author": "Charles A. Sutherland",
+    "species": "Cattle Egret"
+  },
+  {
+    "birdId": 868,
+    "author": "Peter Paul Kellogg",
+    "species": "European Starling"
+  },
+  {
+    "birdId": 869,
+    "author": "Michael Andersen",
+    "species": "Anhinga"
+  },
+  {
+    "birdId": 870,
+    "author": "Jay McGowan",
+    "species": "Eastern Whip-poor-will"
+  },
+  {
+    "birdId": 871,
+    "author": "Wil Hershberger",
+    "species": "Blue Grosbeak"
+  },
+  {
+    "birdId": 872,
+    "author": "Dave Herr",
+    "species": "Barn Swallow"
+  },
+  {
+    "birdId": 873,
+    "author": "Glen Chapman",
+    "species": "Downy Woodpecker"
+  },
+  {
+    "birdId": 874,
+    "author": "Arthur A. Allen",
+    "species": "Pileated Woodpecker"
+  },
+  {
+    "birdId": 875,
+    "author": "Gregory Budney",
+    "species": "American Avocet"
+  },
+  {
+    "birdId": 876,
+    "author": "Nathaniel H. Taylor",
+    "species": "Ruffed Grouse"
+  },
+  {
+    "birdId": 877,
+    "author": "Mark Gardiner",
+    "species": "Western Tanager"
+  },
+  {
+    "birdId": 878,
+    "author": "Gregory Budney",
+    "species": "Black-necked Stilt"
+  },
+  {
+    "birdId": 879,
+    "author": "Randolph Little",
+    "species": "Lark Sparrow"
+  },
+  {
+    "birdId": 880,
+    "author": "Jessie Barry",
+    "species": "Common Raven"
+  },
+  {
+    "birdId": 881,
+    "author": "Bob McGuire",
+    "species": "Black-crowned Night-Heron"
+  },
+  {
+    "birdId": 882,
+    "author": "Ian Davies",
+    "species": "Northern Flicker"
+  },
+  {
+    "birdId": 883,
+    "author": "Jay McGowan",
+    "species": "Rose-breasted Grosbeak"
+  },
+  {
+    "birdId": 884,
+    "author": "Martha Fischer",
+    "species": "Red-breasted Nuthatch"
+  },
+  {
+    "birdId": 885,
+    "author": "Jay McGowan",
+    "species": "Grasshopper Sparrow"
+  },
+  {
+    "birdId": 886,
+    "author": "Gerrit Vyn",
+    "species": "Magnificent Frigatebird"
+  },
+  {
+    "birdId": 887,
+    "author": "Jay McGowan",
+    "species": "Red-bellied Woodpecker"
+  },
+  {
+    "birdId": 888,
+    "author": "Andrew Spencer",
+    "species": "Cooper's Hawk"
+  },
+  {
+    "birdId": 889,
+    "author": "Jay McGowan",
+    "species": "Red-breasted Merganser"
+  },
+  {
+    "birdId": 890,
+    "author": "Thomas G. Sander",
+    "species": "Barred Owl"
+  },
+  {
+    "birdId": 891,
+    "author": "Jay McGowan",
+    "species": "Fish Crow"
+  },
+  {
+    "birdId": 892,
+    "author": "Kevin J. Colver",
+    "species": "Spotted Towhee"
+  },
+  {
+    "birdId": 893,
+    "author": "William W. H. Gunn",
+    "species": "White-crowned Sparrow"
+  },
+  {
+    "birdId": 894,
+    "author": "Gregory Budney",
+    "species": "Black-necked Stilt"
+  },
+  {
+    "birdId": 895,
+    "author": "Matthew D. Medler",
+    "species": "Purple Finch"
+  },
+  {
+    "birdId": 896,
+    "author": "Paul Marvin",
+    "species": "Green Heron"
+  },
+  {
+    "birdId": 897,
+    "author": "Lucas DeCicco",
+    "species": "Fox Sparrow"
+  },
+  {
+    "birdId": 898,
+    "author": "Jay McGowan",
+    "species": "Eastern Bluebird"
+  },
+  {
+    "birdId": 899,
+    "author": "David L. Ross, Jr.",
+    "species": "Roadside Hawk"
+  },
+  {
+    "birdId": 900,
+    "author": "Andrew Spencer",
+    "species": "Mountain Bluebird"
+  },
+  {
+    "birdId": 901,
+    "author": "Jay McGowan",
+    "species": "Ovenbird"
+  },
+  {
+    "birdId": 902,
+    "author": "Andrew Spencer",
+    "species": "Rock Wren"
+  },
+  {
+    "birdId": 903,
+    "author": "Bob McGuire",
+    "species": "Vermilion Flycatcher"
+  },
+  {
+    "birdId": 904,
+    "author": "Wil Hershberger",
+    "species": "Killdeer"
+  },
+  {
+    "birdId": 905,
+    "author": "Christopher McPherson",
+    "species": "Eastern Wood-Pewee"
+  },
+  {
+    "birdId": 906,
+    "author": "Gregory Budney",
+    "species": "Brown-headed Nuthatch"
+  },
+  {
+    "birdId": 907,
+    "author": "Jay McGowan",
+    "species": "Eastern Kingbird"
+  },
+  {
+    "birdId": 908,
+    "author": "Jay McGowan",
+    "species": "Louisiana Waterthrush"
+  },
+  {
+    "birdId": 909,
+    "author": "Jay McGowan",
+    "species": "Hairy Woodpecker"
+  },
+  {
+    "birdId": 910,
+    "author": "Kevin J. Colver",
+    "species": "Lazuli Bunting"
+  },
+  {
+    "birdId": 911,
+    "author": "Dave Herr",
+    "species": "American Kestrel"
+  },
+  {
+    "birdId": 912,
+    "author": "Nathan Pieplow",
+    "species": "Rivoli's Hummingbird"
+  },
+  {
+    "birdId": 913,
+    "author": "Jay McGowan",
+    "species": "Eastern Kingbird"
+  },
+  {
+    "birdId": 914,
+    "author": "Tom Johnson",
+    "species": "Chuck-will's-widow"
+  },
+  {
+    "birdId": 915,
+    "author": "Geoffrey A. Keller",
+    "species": "Green Jay"
+  },
+  {
+    "birdId": 916,
+    "author": "Matthew D. Medler",
+    "species": "Gray Catbird"
+  },
+  {
+    "birdId": 917,
+    "author": "Jay McGowan",
+    "species": "Red-bellied Woodpecker"
+  },
+  {
+    "birdId": 918,
+    "author": "William W. H. Gunn",
+    "species": "Northern Shoveler"
+  },
+  {
+    "birdId": 919,
+    "author": "Martha Fischer",
+    "species": "Green-winged Teal"
+  },
+  {
+    "birdId": 920,
+    "author": "Jay McGowan",
+    "species": "Dark-eyed Junco"
+  },
+  {
+    "birdId": 921,
+    "author": "Andrew Spencer",
+    "species": "Cooper's Hawk"
+  },
+  {
+    "birdId": 922,
+    "author": "Matthew D. Medler",
+    "species": "Bronzed Cowbird"
+  },
+  {
+    "birdId": 923,
+    "author": "Bob McGuire",
+    "species": "Common Pauraque"
+  },
+  {
+    "birdId": 924,
+    "author": "William R. Fish",
+    "species": "Great Horned Owl"
+  },
+  {
+    "birdId": 925,
+    "author": "Paul Marvin",
+    "species": "Royal Tern"
+  },
+  {
+    "birdId": 926,
+    "author": "Paul Marvin",
+    "species": "Say's Phoebe"
+  },
+  {
+    "birdId": 927,
+    "author": "Bob McGuire",
+    "species": "Western Screech-Owl"
+  },
+  {
+    "birdId": 928,
+    "author": "Paul Marvin",
+    "species": "Hepatic Tanager"
+  },
+  {
+    "birdId": 929,
+    "author": "Blaine Carnes",
+    "species": "Dickcissel"
+  },
+  {
+    "birdId": 930,
+    "author": "Bob McGuire",
+    "species": "Anna's Hummingbird"
+  },
+  {
+    "birdId": 931,
+    "author": "Leonard J. Peyton",
+    "species": "Tree Swallow"
+  },
+  {
+    "birdId": 932,
+    "author": "Tayler Brooks",
+    "species": "Canyon Wren"
+  },
+  {
+    "birdId": 933,
+    "author": "Tom Johnson",
+    "species": "Chuck-will's-widow"
+  },
+  {
+    "birdId": 934,
+    "author": "Paul Marvin",
+    "species": "Common Gallinule"
+  },
+  {
+    "birdId": 935,
+    "author": "Andrew Spencer",
+    "species": "Cassin's Kingbird"
+  },
+  {
+    "birdId": 936,
+    "author": "Peter Paul Kellogg",
+    "species": "European Starling"
+  },
+  {
+    "birdId": 937,
+    "author": "Matthew D. Medler",
+    "species": "Baltimore Oriole"
+  },
+  {
+    "birdId": 938,
+    "author": "Bob McGuire",
+    "species": "Summer Tanager"
+  },
+  {
+    "birdId": 939,
+    "author": "Andrew Spencer",
+    "species": "Loggerhead Shrike"
+  },
+  {
+    "birdId": 940,
+    "author": "Bob McGuire",
+    "species": "Western Screech-Owl"
+  },
+  {
+    "birdId": 941,
+    "author": "Matthew D. Medler",
+    "species": "Ruby-crowned Kinglet"
+  },
+  {
+    "birdId": 942,
+    "author": "Andrew Spencer",
+    "species": "Woodhouse's Scrub-Jay"
+  },
+  {
+    "birdId": 943,
+    "author": "Bob McGuire",
+    "species": "Vermilion Flycatcher"
+  },
+  {
+    "birdId": 944,
+    "author": "Peter Boesman",
+    "species": "Common Pochard"
+  },
+  {
+    "birdId": 945,
+    "author": "Gregory Budney",
+    "species": "Pied-billed Grebe"
+  },
+  {
+    "birdId": 946,
+    "author": "Andrew Spencer",
+    "species": "Cassin's Kingbird"
+  },
+  {
+    "birdId": 947,
+    "author": "Kevin J. Colver",
+    "species": "Spotted Towhee"
+  },
+  {
+    "birdId": 948,
+    "author": "Wil Hershberger",
+    "species": "Bewick's Wren"
+  },
+  {
+    "birdId": 949,
+    "author": "Wil Hershberger",
+    "species": "Trumpeter Swan"
+  },
+  {
+    "birdId": 950,
+    "author": "Nathan Pieplow",
+    "species": "Clark's Nutcracker"
+  },
+  {
+    "birdId": 951,
+    "author": "Matthew D. Medler",
+    "species": "Blue Jay"
+  },
+  {
+    "birdId": 952,
+    "author": "Wil Hershberger",
+    "species": "Trumpeter Swan"
+  },
+  {
+    "birdId": 953,
+    "author": "Martha Fischer",
+    "species": "Red-breasted Nuthatch"
+  },
+  {
+    "birdId": 954,
+    "author": "Joe B. Guinn",
+    "species": "Mississippi Kite"
+  },
+  {
+    "birdId": 955,
+    "author": "Randolph Little",
+    "species": "Ruddy Duck"
+  },
+  {
+    "birdId": 956,
+    "author": "Terri Gallion",
+    "species": "Golden Eagle"
+  },
+  {
+    "birdId": 957,
+    "author": "Glen Chapman",
+    "species": "Downy Woodpecker"
+  },
+  {
+    "birdId": 958,
+    "author": "Randolph Little",
+    "species": "Clapper Rail"
+  },
+  {
+    "birdId": 959,
+    "author": "Wil Hershberger",
+    "species": "Mourning Dove"
+  },
+  {
+    "birdId": 960,
+    "author": "Tom Johnson",
+    "species": "Northern Bobwhite"
+  },
+  {
+    "birdId": 961,
+    "author": "Glen Chapman",
+    "species": "Pine Siskin"
+  },
+  {
+    "birdId": 962,
+    "author": "Jay McGowan",
+    "species": "Eastern Bluebird"
+  },
+  {
+    "birdId": 963,
+    "author": "Jay McGowan",
+    "species": "Red-breasted Merganser"
+  },
+  {
+    "birdId": 964,
+    "author": "Arthur A. Allen",
+    "species": "Northern Harrier"
+  },
+  {
+    "birdId": 965,
+    "author": "Gerrit Vyn",
+    "species": "Snowy Owl"
+  },
+  {
+    "birdId": 966,
+    "author": "Paul Fenwick",
+    "species": "Red-shouldered Hawk"
+  },
+  {
+    "birdId": 967,
+    "author": "Wil Hershberger",
+    "species": "Indigo Bunting"
+  },
+  {
+    "birdId": 968,
+    "author": "Geoffrey A. Keller",
+    "species": "Scissor-tailed Flycatcher"
+  },
+  {
+    "birdId": 969,
+    "author": "Gregory Budney",
+    "species": "Cassin's Finch"
+  },
+  {
+    "birdId": 970,
+    "author": "Jay McGowan",
+    "species": "Brown Pelican"
+  },
+  {
+    "birdId": 971,
+    "author": "David L. Ross, Jr.",
+    "species": "Roadside Hawk"
+  },
+  {
+    "birdId": 972,
+    "author": "Jay McGowan",
+    "species": "Hairy Woodpecker"
+  },
+  {
+    "birdId": 973,
+    "author": "Curtis Marantz",
+    "species": "Green Kingfisher"
+  },
+  {
+    "birdId": 974,
+    "author": "Matthew D. Medler",
+    "species": "Song Sparrow"
+  },
+  {
+    "birdId": 975,
+    "author": "Jay McGowan",
+    "species": "Eastern Bluebird"
+  },
+  {
+    "birdId": 976,
+    "author": "Bob McGuire",
+    "species": "Vermilion Flycatcher"
+  },
+  {
+    "birdId": 977,
+    "author": "Dave Herr",
+    "species": "American Kestrel"
+  },
+  {
+    "birdId": 978,
+    "author": "John Patterson",
+    "species": "Franklin's Gull"
+  },
+  {
+    "birdId": 979,
+    "author": "Joe B. Guinn",
+    "species": "Mississippi Kite"
+  },
+  {
+    "birdId": 980,
+    "author": "Jay McGowan",
+    "species": "American Goldfinch"
+  },
+  {
+    "birdId": 981,
+    "author": "Randolph Little",
+    "species": "Clapper Rail"
+  },
+  {
+    "birdId": 982,
+    "author": "Matthew D. Medler",
+    "species": "Baltimore Oriole"
+  },
+  {
+    "birdId": 983,
+    "author": "Wil Hershberger",
+    "species": "Western Wood-Pewee"
+  },
+  {
+    "birdId": 984,
+    "author": "Matthew D. Medler",
+    "species": "Song Sparrow"
+  },
+  {
+    "birdId": 985,
+    "author": "Paul Marvin",
+    "species": "Say's Phoebe"
+  },
+  {
+    "birdId": 986,
+    "author": "Wil Hershberger",
+    "species": "White-breasted Nuthatch"
+  },
+  {
+    "birdId": 987,
+    "author": "Matthew D. Medler",
+    "species": "Ruby-crowned Kinglet"
+  },
+  {
+    "birdId": 988,
+    "author": "Charles A. Sutherland",
+    "species": "Cattle Egret"
+  },
+  {
+    "birdId": 989,
+    "author": "Wil Hershberger",
+    "species": "Wood Thrush"
+  },
+  {
+    "birdId": 990,
+    "author": "Bob McGuire",
+    "species": "Limpkin"
+  },
+  {
+    "birdId": 991,
+    "author": "Wil Hershberger",
+    "species": "Mountain Chickadee"
+  },
+  {
+    "birdId": 992,
+    "author": "Lucas DeCicco",
+    "species": "Wilson's Snipe"
+  },
+  {
+    "birdId": 993,
+    "author": "Paul Marvin",
+    "species": "Red-tailed Hawk"
+  },
+  {
+    "birdId": 994,
+    "author": "Nathan Pieplow",
+    "species": "Clark's Nutcracker"
+  },
+  {
+    "birdId": 995,
+    "author": "Robert C. Stein",
+    "species": "Bufflehead"
+  },
+  {
+    "birdId": 996,
+    "author": "Greg Clark",
+    "species": "Turkey Vulture"
+  },
+  {
+    "birdId": 997,
+    "author": "Jay McGowan",
+    "species": "Savannah Sparrow"
+  },
+  {
+    "birdId": 998,
+    "author": "Arthur A. Allen",
+    "species": "Purple Gallinule"
+  },
+  {
     "birdId": 999,
-    "author": "Forrest Baublitz",
-    "species": "Yellow-crowned Night-Heron"
+    "author": "Bob McGuire",
+    "species": "Painted Bunting"
   },
   {
     "birdId": 1000,
