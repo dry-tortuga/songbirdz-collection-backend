@@ -243,7 +243,7 @@ You should now be able to succesfully make API requests to the back-end server a
 - [x] Make public the (merkle-tree, images, species, audio) files for the "Masters of Disguise" flock.
 - [ ] Successfully mint all 1,000 birds (9000-9999) in the "Final Migration" flock.
 - [x] Make public the (merkle-tree, images, species, audio) files for the "Final Migration" flock.
-- [ ] Upload all metadata, images, and audio for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/).
+- [ ] Upload all metadata and images for the entire 10,000 NFT collection to a decentralized storage provider (i.e. [ipfs](https://ipfs.tech/).
 - [ ] Use the `publicSetBaseURI` method on basescan to update the `_baseURI` variable to the new metadata URL in [ipfs](https://ipfs.tech/).
 - [ ] Deploy a 2nd Solidity Contract to store Life List and Points data onchain.
 - [ ] Official roadmap is now complete!
