@@ -58,16 +58,17 @@ const getBirdMetadata = async (req, res, next) => {
 	const description = isIdentified ? null : 'This bird has not been identified yet.';
 	const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
 
-	const audioSpecies = KEY_BIRD_DATA[birdId]?.audioSpecies;
-	const audioContributor = KEY_BIRD_DATA[birdId]?.audioContributor;
+	// const audioSpecies = KEY_BIRD_DATA[birdId]?.audioSpecies;
+	// const audioContributor = KEY_BIRD_DATA[birdId]?.audioContributor;
 
 	// See below the required JSON structure for metadata
 	// https://docs.opensea.io/docs/getting-started
 
 	res.send({
 		name: `Songbird #${birdId}`,
-		description: `One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3. Audio: ${audioSpecies} © ${audioContributor}; Cornell Lab of Ornithology | Macaulay Library.`,
-		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
+		description: 'One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3.',
+		// description: `One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3. Audio: ${audioSpecies} © ${audioContributor}; Songbirdz Library.`,
+		// animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
@@ -235,8 +236,8 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 	res.send({
 		id: birdId,
 		name: `Songbird #${birdId}`,
-		description: 'This bird has not been identified yet.',
-		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
+		description: 'One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3.',
+		// animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
