@@ -11,52 +11,85 @@ const REQUIRED_FIELDS = ['species', 'family', 'flock', 'ids', 'facts', 'links'];
 // 10/20/25: White-crowned Pigeon
 // 10/27/25: Red-shouldered Hawk
 // 11/03/25: Northern Saw-whet Owl
+// 11/10/25: Bachman's Sparrow
+// 11/17/25: Roseate Spoonbill
+// 11/24/25: Brandt's Cormorant
+// 12/01/25: Vaux's Swift
 
 const newData = [{
-	species: 'White-crowned Pigeon',
-	family: 'Pigeons & Doves',
-	flock: 'Final Migration',
-	ids: [9116, 9293, 9949],
+	species: 'Bachman\'s Sparrow',
+	family: 'New World Sparrows',
+	flock: 'Night & Day',
+	ids: [3285, 3840],
 	facts: [
-		'The name "pigeon" means a young dove and is derived from Old French, which in turn is based on Latin. Doves and pigeons are in the same biological family, "Columbidae", so it makes sense.  They are similar, with doves being smaller than pigeons.',
-		'I feel like pigeons have always gotten a bum rap, perceived as a nuisance or dirty birds. Perhaps that is anecdotal and due to my proximity to New York City.  I definitely shared those sentiments earlier in my life. However, now with my growing love and understanding of not just birds, but all animals, that has changed.  If you know someone who harbors similar feelings towards Pigeons, perhaps the beuatiful White-crowned Pigeon will help sway their opinion. ',
-		'The White-crowned Pigeon is a strong flyer, which it relies on to make its daily commutes between their roosting sites and food sources, often over water for those that have island homes.  They\'re capable of eating the fruits of the poisonwood tree, which - as you may have guessed - is toxic. ',
-		'White-crowned Pigeons - both male and female - produce crop milk to feed their young and store it in their crop, an expandable pouch in their throat. Another trait they share with doves.',
-		'So, if you see a pigeon today, be sure to give it a smile. They deserve it after being pigeonholed as a nuisance and dirty bird for so long by people like me.',
+		'Bachman\'s sparrows are large, elusive songbirds native to the southeastern United States, named after the clergyman John Bachman.',
+		'In 1834, John James Audubon named the species after his friend John Bachman, who had hosted him during an expedition in South Carolina.',
+		'These sparrows are skilled at evading predators, often seeking refuge in burrows created by gopher tortoises or armadillos.',
+		'They prefer habitats such as open pine forests, grassy old fields, and young pine plantations, especially where native grasses cover the ground.',
+		'Bachman\'s sparrows spend much of their time on the ground, hopping or running as they search for insects, seeds, and spiders.',
+		'The male\'s song begins with a long, clear note followed by a trill, and he may produce a bubbling variation when disturbed or excited.',
+		'For their species, they are relatively long-lived—the oldest recorded Bachman\'s sparrow was a male that lived to be 3 years and 11 months old.',
 	],
 	links: [
-		'https://www.etymonline.com/word/pigeon',
-		'https://www.allaboutbirds.org/guide/White-crowned_Pigeon/overview',
-		'https://www.birdorable.com/blog/bird-term-crop',
-		'https://kids.kiddle.co/White-crowned_pigeon',
+		'https://www.allaboutbirds.org/guide/Bachmans_Sparrow/overview',
+		'https://landpotential.org/habitat-hub/bachmans-sparrow/',
+		'https://www.audubon.org/field-guide/bird/bachmans-sparrow',
 	],
 }, {
-	species: 'Red-shouldered Hawk',
-	family: 'Vultures, Hawks, & Allies',
+	species: 'Roseate Spoonbill',
+	family: 'Herons, Ibis, & Allies',
 	flock: 'Picasso Genesis',
-	ids: [160, 280, 557],
+	ids: [27, 618, 824],
 	facts: [
-		'Red-shouldered Hawks and Red-tail Hawks compete for nesting sites, which favors the latter due to their size advantage. ',
-		'While they tend to be secretive, during courtship, this is one noisy hawk with calls that can be heard miles away. The Blue Jays will mimic the call as a defense mechanism to scare away predators, a phenomenon known as acoustic mimicry. And yes, they also fly down for a short distance during their courtship ritual. ',
+		'Roseate Spoonbills are large wading birds found in the southeastern United States, the Caribbean, and parts of Central and South America, easily recognized by their bright pink plumage and spoon-shaped bills.',
+		'Their name comes from their distinctive flattened bills, which they use to sweep through shallow water to catch small fish, crustaceans, and insects.',
+		'The pink coloration of their feathers comes from the carotenoid pigments in the crustaceans they eat, similar to how flamingos get their color.',
+		'They inhabit coastal marshes, mangroves, and tidal lagoons, preferring shallow wetlands with plenty of aquatic life.',
+		'Roseate Spoonbills often feed in groups, moving their bills side to side through the water to locate prey by touch.',
+		'During breeding season, adults display even brighter colors, and they build nests in trees or shrubs near water, usually in colonies with other wading birds.',
+		'The oldest known Roseate Spoonbill lived to be over 16 years old, showing their impressive longevity among wading birds.',
 	],
 	links: [
-		'https://www.hawkmountain.org/raptors/red-shouldered-hawk',
-		'https://www.allaboutbirds.org/guide/Red-shouldered_Hawk/overview',
+		'https://cruisecocoa.com/2024/08/01/the-majestic-roseate-spoonbill-everything-you-need-to-know/',
+		'https://www.birdorable.com/blog/10-fun-roseate-spoonbill-facts',
 	],
 }, {
-	species: "Northern Saw-whet Owl",
-	family: "Owls",
-	flock: "Predator & Prey",
-	ids: [5123, 5363, 5470],
+	species: 'Brandt\'s Cormorant',
+	family: 'Cormorants & Anhingas',
+	flock: 'Hatchlings',
+	ids: [7405, 7813, 7907],
 	facts: [
-		'The Northern Saw-Whet Owl is a fierce predator, despite being under a foot tall, feeding mostly on mice, voles, small birds, and insects. It\'s not the smallest owl in North America, that goes to the Elf Owl (4-5.5 inches), with the Pygmy Owl and Flamulated Owl only 0.5-1 inch taller.',
-		'They\'ll catch an abundant amount of prey to stockpile in areas outside the nest - like tree holes - for later use. In the winter, the stored food may freeze, requiring the owl to thaw it by resting on it after retrieving it from its hiding places.',
-		'"Saw-Whet" was a name given to the owl by settlers which thought its call sounded like a saw being sharpened on a whetted stone. Later on, John James Audubon formally documented this in "Birds of America", which popularized it and the rest is history. Head to Songbirdz and give it a listen.',
+		'Brandt\'s Cormorants are large, dark seabirds native to the Pacific Coast of North America, easily recognized by their sleek black plumage and vivid blue throat patch during breeding season.',
+		'They were named after the German naturalist J.F. Brandt, who first described the species in the 19th century.',
+		'These cormorants are expert divers, plunging from the surface and using their strong legs and webbed feet to chase fish underwater.',
+		'They inhabit rocky coastlines, offshore islands, and sea cliffs, often nesting in large colonies near other seabirds.',
+		'Brandt\'s Cormorants feed mainly on small schooling fish such as anchovies and rockfish, which they catch during their deep, agile dives.',
+		'During breeding season, adults display bright blue skin on their throats and perform courtship displays that include bowing and showing off their vivid colors.',
+		'The oldest recorded Brandt\'s Cormorant lived to be nearly 18 years old, demonstrating their longevity among coastal seabirds.',
 	],
 	links: [
-		'https://centerofthewest.org/2016/06/08/my-favorite-interesting-facts-about-northern-saw-whet-owls/',
-		'https://edmonton.wbu.com/northern-saw-whet-owl',
-		'https://www.allaboutbirds.org/guide/Northern_Saw-whet_Owl/overview',
+		'https://www.allaboutbirds.org/guide/Brandts_Cormorant/overview',
+		'https://www.aquariumofpacific.org/reportcard/info/brandts_cormorant',
+	],
+}, {
+	species: 'Vaux\'s Swift',
+	family: 'Swifts',
+	flock: 'Night & Day',
+	ids: [3366, 3421, 3463],
+	facts: [
+		'Vaux\'s Swifts are small, agile birds native to western North and Central America, recognized for their cigar-shaped bodies and rapid, fluttering flight.',
+		'The species was named after the American naturalist William S. Vaux, a friend of ornithologist John K. Townsend, who first described the bird in the 19th century.',
+		'These swifts spend most of their lives in the air, feeding on flying insects and even drinking while in flight.',
+		'They inhabit forested regions near rivers and mountains, nesting or roosting in hollow trees, old woodpecker holes, or occasionally in chimneys.',
+		'Vaux\'s Swifts are highly social, often gathering in large flocks that migrate together and roost communally in great numbers during migration.',
+		'They are capable of unihemispheric slow-wave sleep (USWS), allowing one half of their brain to rest while the other remains awake—an adaptation that helps them stay aloft for long periods.',
+		'Their flight is quick and erratic, with constant wingbeats and sharp turns as they pursue airborne insects.',
+		'The oldest recorded Vaux\'s Swift lived to be over 6 years old, a remarkable lifespan for such a small aerial bird.',
+	],
+	links: [
+		'https://www.allaboutbirds.org/guide/Vauxs_Swift/overview',
+		'https://www.nps.gov/articles/000/vaux-s-swift.htm',
+		'https://en.wikipedia.org/wiki/Unihemispheric_slow-wave_sleep',
 	],
 }];
 
