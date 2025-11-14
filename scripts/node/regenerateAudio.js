@@ -3,8 +3,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "masters-of-disguise-8";
-const COLLECTION_START_INDEX = 8000;
+const COLLECTION_NAME = "final-migration-9";
+const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
 
 const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
@@ -13,7 +13,7 @@ const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`
 
 const audioFolder =  path.join(
 	__dirname,
-	`../../private/the-cornell-guide-to-bird-sounds--united-states-and-canada-v2021/`,
+	`../../private/audio-original/`,
 );
 
 // Get the audio files to use as source for the collection
@@ -50,7 +50,8 @@ const speciesKeyNames = fs.readFileSync(
 
 	console.log(`Redoing audio for the ${COLLECTION_NAME} collection:`);
 
-	const redoList = ["Wood Sandpiper"];
+	// Add species names here to redo the audio
+	const redoList = [];
 
 	let count = 0;
 

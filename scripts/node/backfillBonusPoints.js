@@ -5,27 +5,35 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const CURRENT_TIME = new Date();
 
-const SEASON_5_BONUS_POINT_SPECIES = [{
-	id: 1020,
+const SEASON_6_BONUS_POINT_SPECIES = [{
+	id: 1030,
 	label: 'Posted on X',
 	amount: 25,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // whalestacking
+		'0xd4b896413742ea782e3a9f1108171f5bb4d9dbaa', // leosharkpark
+		'0x0682f146b16e7c428a092106db430126a3766ec0', // bastr
+		'0x0de101737fafd0eb7cf0c986a1fc66137f1ece6f', // jimbey
+		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
+		'0x0bb618d7c55ce7fed637164cf45d577c03979d9a', // cryptomouse
+		'0x393b57b89c67349e0fc184b7b57e44e28ef3b29c', // tamara
 	],
 }, {
-	id: 1021,
+	id: 1031,
 	label: 'Posted on Farcaster',
 	amount: 25,
-	users: [],
+	users: [
+	],
 }, {
-	id: 1022,
+	id: 1032,
 	label: 'Joined Telegram',
 	amount: 10,
 	users: [
 		// MISSING POINTS: tokyo, jamesberg, jibbmoslice, RandomEgg, Tonywithouti,
 		// My_name_is_mudd, Basedsuiguru, VENOMDSLAYER, @OxMisan, @Web3majo,
 		// @bullionape1914,  oeuk nikon, melanie, @DEGENCOBRA, satoshi-nakamoto,
-		// crypto-lady, refaund09, memekreator
+		// crypto-lady, refaund09, memekreator, violet
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 		'0xdd9c5b8893434da7a4ce0ada32db13d0770a0116', // krakencoke
@@ -54,9 +62,22 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
 		'0x0000000000c2d145a2526bd8c716263bfebe1a72', // SBMweb3
 		'0x14b39a23288de637f5115bee1801b9443bd3765b', // jozzymentorz
+		'0x1796d7addeecb301692b0f16b19fd209af57ac31', // mackenzie
+		'0x4975eee83496c9c3df957c3196b0fcfc91f80c24', // riotffx
+		'0xbf9aea2f77059450f4de6c661dbeb3ef926d633d', // IMIDGIEI
+		'0x91c2232f8eab20b21aa95c325aaf9aad639ff486', // w3core
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x6989e6507dac1376502a5639e01259a778db35de', // spudnik
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // justforfreedom
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // whalestacking
+		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
+		'0xef4993567ec1df8aec7beba836135efb0652c2ef', // turtles
+		'0xd4b896413742ea782e3a9f1108171f5bb4d9dbaa', // leosharkpark
+		'0x0de101737fafd0eb7cf0c986a1fc66137f1ece6f', // jimbey
+		'0x211b25a4ed2cb5bbf8c36cc7872a13a1d00ca840', // great uxie ovey (nobodythere5)
 	],
 }, {
-	id: 1023,
+	id: 1033,
 	label: 'Joined Farcaster Channel',
 	amount: 10,
 	users: [
@@ -89,28 +110,39 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 		'0x056eb43118ffa352add9cdb9a7d2977a4842b936', // hankmoody
 		'0x6d7bb670765e2be191c1f6b91399db12c4fde911', // julex
 		'0x586eb1950b87bb4c9a80561d154d779c4ad872f8', // khayle8891
+		'0xd6b69e58d44e523eb58645f1b78425c96dfa648c', // uniquebeing404
+		'0x10fc964ef70c8467cd8c53e9ed9347422adf96a8', // kenny
+		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // disciple
+		'0x1ace9e4df9de3af66e33170991617ab73de5dc1a', // wanderlustmom
+		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
+		'0xab56c668b2c49f319fc5c4c0d27b2c564c3bd810', // john snow (cancersucks)
+		'0x80843e69308a594c40194ad414c3b77f606ee770', // virtualcat
+		'0xc8115c770efaaf0de401898e4b86f3be36eb2f42', // jonnybravo
 	],
 }, {
-	id: 1024,
+	id: 1034,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
 	users: [
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
-	id: 1025,
+	id: 1035,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
 	users: [
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
-	id: 1026,
+	id: 1036,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
+	users: [],
+}, {
+	id: 1037,
+	label: 'Hit 75 Day Streak',
+	amount: 1000,
 	users: [],
 }];
 
@@ -129,7 +161,7 @@ const SEASON_5_BONUS_POINT_SPECIES = [{
 
 		const results = {};
 
-		SEASON_5_BONUS_POINT_SPECIES.forEach((species) => {
+		SEASON_6_BONUS_POINT_SPECIES.forEach((species) => {
 
 			species.users.forEach((address) => {
 

@@ -3,55 +3,64 @@ const fs = require("fs");
 const path = require("path");
 
 const ABI_FOLDER = path.join(
-    __dirname,
-    "../../artifacts/contracts/SongBirdz.sol"
+	__dirname,
+	"../../artifacts/contracts/SongBirdz.sol"
 );
 const PRIVATE_FOLDER = path.join(
-    __dirname,
-    `../../private/${process.env.NODE_ENV}`
+	__dirname,
+	`../../private/${process.env.NODE_ENV}`
 );
 
 const PRIVATE_PATH = {
-    COLLECTIONS: path.join(PRIVATE_FOLDER, "collections"),
-    IMAGES: path.join(PRIVATE_FOLDER, "images-hidden"),
+	COLLECTIONS: path.join(PRIVATE_FOLDER, "collections"),
+	IMAGES: path.join(PRIVATE_FOLDER, "images-hidden"),
 };
 
 const DB_COLLECTION_IDS = [
-    "point_logs",
-    "point_logs_2",
-    "point_logs_3",
-    "point_logs_4",
-    "point_logs_5"
+	"point_logs",
+	"point_logs_2",
+	"point_logs_3",
+	"point_logs_4",
+	"point_logs_5",
+	"point_logs_6",
 ];
+
+const DB_COLLECTION_CURRENT_POINTS_SEASON = DB_COLLECTION_IDS[DB_COLLECTION_IDS.length - 1];
+
+const CURRENT_POINTS_SEASON_START_DATE = new Date("2025-08-31T23:00:03.000Z");
+const CURRENT_POINTS_SEASON_END_DATE = new Date("2025-11-30T23:00:00.000+00:00");
 
 const SONGBIRDZ_CONTRACT_ABI = require(`${ABI_FOLDER}/SongBirdz.json`);
 
+const AUDIO_CONTRIBUTORS = require("./audio-contributors.json");
 const FAMILIES_DATA = require("./families.json");
 
 const UNIDENTIFIED_NAME = "UNIDENTIFIED";
 
 const COLLECTION_KEYS = [
-    "picasso-genesis-0",
-    "deep-blue-1",
-    "small-and-mighty-2",
-    "night-and-day-3",
-    "fire-and-ice-4",
-    "predator-and-prey-5",
-    "love-birds-6",
-    "hatchlings-7",
-    "masters-of-disguise-8",
+	"picasso-genesis-0",
+	"deep-blue-1",
+	"small-and-mighty-2",
+	"night-and-day-3",
+	"fire-and-ice-4",
+	"predator-and-prey-5",
+	"love-birds-6",
+	"hatchlings-7",
+	"masters-of-disguise-8",
+	"final-migration-9",
 ];
 
 const COLLECTION_NAMES = [
-    "Picasso Genesis",
-    "Deep Blue",
-    "Small & Mighty",
-    "Night & Day",
-    "Fire & Ice",
-    "Predator & Prey",
-    "Lovebirds",
-    "Hatchlings",
-    "Masters of Disguise",
+	"Picasso Genesis",
+	"Deep Blue",
+	"Small & Mighty",
+	"Night & Day",
+	"Fire & Ice",
+	"Predator & Prey",
+	"Lovebirds",
+	"Hatchlings",
+	"Masters of Disguise",
+	"Final Migration",
 ];
 
 const COLLECTION_SIZE = 1000;
@@ -59,7 +68,7 @@ const COLLECTION_SIZE = 1000;
 const MIN_BIRD_ID = 0;
 const MAX_BIRD_ID = (COLLECTION_NAMES.length * COLLECTION_SIZE) - 1;
 
-const FIRST_ID_TO_IDENTIFY = 2402;
+const FIRST_ID_TO_IDENTIFY = 2434;
 
 // Build data map of ID -> name|collection|answer-choices for all the birds
 
@@ -73,175 +82,172 @@ const SOURCE_SPECIES_DATA = {};
 
 const MERKLE_TREE_DATA = [];
 
+// Keep track of the starting index for the species in the current collection
+let speciesStartIndex = 0;
+
 COLLECTION_KEYS.forEach((cKey, cIndex) => {
-    fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/key.txt`, "utf8")
-        .split(/\r?\n/)
-        .forEach((speciesName, birdIndex) => {
+	fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/key.txt`, "utf8")
+		.split(/\r?\n/)
+		.forEach((speciesName, birdIndex) => {
 
-            // Get the unique ID of the bird relative to the entire 10,000
-            const finalIndex = cIndex * COLLECTION_SIZE + birdIndex;
+			// Get the unique ID of the bird relative to the entire 10,000
+			const finalIndex = cIndex * COLLECTION_SIZE + birdIndex;
 
-            KEY_BIRD_DATA[finalIndex] = {
-                name: speciesName,
-                collectionName: COLLECTION_NAMES[cIndex],
-                collectionNumber: cIndex,
-                options: [],
-            };
+			const audioContributionData = AUDIO_CONTRIBUTORS[finalIndex];
 
-        });
+			KEY_BIRD_DATA[finalIndex] = {
+				name: speciesName,
+				audioContributor: audioContributionData.author,
+				audioSpecies: audioContributionData.species,
+				collectionName: COLLECTION_NAMES[cIndex],
+				collectionNumber: cIndex,
+				options: [],
+			};
 
-    if (
-        Object.keys(KEY_BIRD_DATA).length !==
-        COLLECTION_SIZE + COLLECTION_SIZE * cIndex
-    ) {
-        throw new Error(
-            `Invalid size=${
-                Object.keys(KEY_BIRD_DATA).length
-            } received for KEY_BIRD_DATA!`
-        );
-    }
+		});
 
-    // Add the list of possible answer choices for each bird to the final data
+	if (
+		Object.keys(KEY_BIRD_DATA).length !==
+		COLLECTION_SIZE + COLLECTION_SIZE * cIndex
+	) {
+		throw new Error(
+			`Invalid size=${
+				Object.keys(KEY_BIRD_DATA).length
+			} received for KEY_BIRD_DATA!`
+		);
+	}
 
-    const answerChoicesList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/answer-choices.json`);
+	// Add the list of possible answer choices for each bird to the final data
 
-    answerChoicesList.forEach((aData, aIndex) => {
+	const answerChoicesList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/answer-choices.json`);
 
-        // Get the unique ID of the bird relative to the entire 10,000
-        const finalIndex = cIndex * COLLECTION_SIZE + aIndex;
+	answerChoicesList.forEach((aData, aIndex) => {
 
-        let optionsCopy = [...aData.options];
+		// Get the unique ID of the bird relative to the entire 10,000
+		const finalIndex = cIndex * COLLECTION_SIZE + aIndex;
 
-        const name = KEY_BIRD_DATA[finalIndex].name;
+		let optionsCopy = [...aData.options];
 
-        const matchingIndex = optionsCopy.findIndex((tOption) => tOption === name);
+		const name = KEY_BIRD_DATA[finalIndex].name;
 
-        optionsCopy.splice(matchingIndex, 1);
+		const matchingIndex = optionsCopy.findIndex((tOption) => tOption === name);
 
-        optionsCopy = optionsCopy.slice(0, 3);
+		optionsCopy.splice(matchingIndex, 1);
 
-        rOptions = [...optionsCopy, name];
+		optionsCopy = optionsCopy.slice(0, 3);
 
-        shuffle(rOptions);
-        shuffle(rOptions);
+		rOptions = [...optionsCopy, name];
 
-        KEY_BIRD_DATA[finalIndex].options = [...rOptions];
+		shuffle(rOptions);
+		shuffle(rOptions);
 
-    });
+		KEY_BIRD_DATA[finalIndex].options = [...rOptions];
 
-    // Picasso Genesis collection had 200 unique species, all others will have 50
-    if (cIndex === 0) {
+	});
 
-        fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.txt`, "utf8")
-            .split(/\r?\n/)
-            .forEach((sName, sIndex) => {
-                const SPECIES_START_INDEX = 0;
+	// Determine the number of unique species in this collection
+	let expectedSpeciesCount;
 
-                // Get the unique ID of the species relative to the entire set
-                const finalIndex = SPECIES_START_INDEX + sIndex;
+	if (cIndex === 0 || cIndex === (COLLECTION_KEYS.length - 1)) {
+		expectedSpeciesCount = 200;
+	} else {
+		expectedSpeciesCount = 50;
+	}
 
-                SOURCE_SPECIES_DATA[sName] = {
-                    id: finalIndex,
-                    family: getFamily(sName),
-                };
-            });
+	const sourceList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`);
 
-        if (Object.keys(SOURCE_SPECIES_DATA).length !== 200) {
-            throw new Error(`Invalid size received for SOURCE_SPECIES_DATA!`);
-        }
+	sourceList.forEach((sBird, sIndex) => {
 
-    } else {
+		// Get the unique ID of the species relative to the entire set
+		const finalIndex = speciesStartIndex + sIndex;
 
-        const sourceList = require(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/source.json`);
+		SOURCE_SPECIES_DATA[sBird.name] = {
+			id: finalIndex,
+			family: getFamily(sBird.name),
+		};
 
-        sourceList.forEach((sBird, sIndex) => {
+	});
 
-            const SPECIES_START_INDEX = 200 + 50 * (cIndex - 1);
+	speciesStartIndex = speciesStartIndex + expectedSpeciesCount;
 
-            // Get the unique ID of the species relative to the entire set
-            const finalIndex = SPECIES_START_INDEX + sIndex;
+	if (Object.keys(SOURCE_SPECIES_DATA).length !== speciesStartIndex) {
+		throw new Error(
+			`Invalid size=${
+				Object.keys(SOURCE_SPECIES_DATA).length
+			} received for SOURCE_SPECIES_DATA!`
+		);
+	}
 
-            SOURCE_SPECIES_DATA[sBird.name] = {
-                id: finalIndex,
-                family: getFamily(sBird.name),
-            };
+	MERKLE_TREE_DATA.push(
+		StandardMerkleTree.load(
+			JSON.parse(
+				fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/tree.json`, "utf8")
+			)
+		)
+	);
 
-        });
+	if (Object.keys(MERKLE_TREE_DATA).length !== cIndex + 1) {
+		throw new Error(
+			`Invalid size=${
+				Object.keys(MERKLE_TREE_DATA).length
+			} received for MERKLE_TREE_DATA!`
+		);
+	}
 
-        if (Object.keys(SOURCE_SPECIES_DATA).length !== 200 + 50 * cIndex) {
-            throw new Error(
-                `Invalid size=${
-                    Object.keys(SOURCE_SPECIES_DATA).length
-                } received for SOURCE_SPECIES_DATA!`
-            );
-        }
-
-    }
-
-    MERKLE_TREE_DATA.push(
-        StandardMerkleTree.load(
-            JSON.parse(
-                fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/tree.json`, "utf8")
-            )
-        )
-    );
-
-    if (Object.keys(MERKLE_TREE_DATA).length !== cIndex + 1) {
-        throw new Error(
-            `Invalid size=${
-                Object.keys(MERKLE_TREE_DATA).length
-            } received for MERKLE_TREE_DATA!`
-        );
-    }
 });
 
 module.exports = {
-    UNIDENTIFIED_NAME,
-    COLLECTION_SIZE,
-    DB_COLLECTION_IDS,
-    MIN_BIRD_ID,
-    MAX_BIRD_ID,
-    FIRST_ID_TO_IDENTIFY,
-    KEY_BIRD_DATA,
-    SOURCE_SPECIES_DATA,
-    MERKLE_TREE_DATA,
-    SONGBIRDZ_CONTRACT_ABI,
-    PRIVATE_PATH,
+	UNIDENTIFIED_NAME,
+	COLLECTION_SIZE,
+	COLLECTION_KEYS,
+	COLLECTION_NAMES,
+	CURRENT_POINTS_SEASON_START_DATE,
+	CURRENT_POINTS_SEASON_END_DATE,
+	DB_COLLECTION_IDS,
+	DB_COLLECTION_CURRENT_POINTS_SEASON,
+	MIN_BIRD_ID,
+	MAX_BIRD_ID,
+	FIRST_ID_TO_IDENTIFY,
+	KEY_BIRD_DATA,
+	SOURCE_SPECIES_DATA,
+	MERKLE_TREE_DATA,
+	SONGBIRDZ_CONTRACT_ABI,
+	PRIVATE_PATH,
 };
 
 function getFamily(speciesName) {
 
-    const match = FAMILIES_DATA.find((group) => {
+	const match = FAMILIES_DATA.find((group) => {
 
-        const isSpeciesIncluded = Boolean(
-            group.species.find((item) => item.label === speciesName)
-        );
+		const isSpeciesIncluded = Boolean(
+			group.species.find((item) => item.label === speciesName)
+		);
 
-        return isSpeciesIncluded;
+		return isSpeciesIncluded;
 
-    });
+	});
 
-    return match.name;
+	return match.name;
 
 }
 
 function shuffle(array) {
 
-    let currentIndex = array.length,  randomIndex;
+	let currentIndex = array.length,  randomIndex;
 
-    // While there remain elements to shuffle.
-    while (currentIndex > 0) {
+	// While there remain elements to shuffle.
+	while (currentIndex > 0) {
 
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
+		// Pick a remaining element.
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex--;
 
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+		// And swap it with the current element.
+		[array[currentIndex], array[randomIndex]] = [
+		array[randomIndex], array[currentIndex]];
 
-    }
+	}
 
-    return array;
+	return array;
 
 }

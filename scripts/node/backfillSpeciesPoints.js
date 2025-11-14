@@ -8,16 +8,20 @@ const sdk = require("@api/opensea");
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const DB = require("../../server/db");
-const { SONGBIRDZ_CONTRACT_ABI } = require("../../server/constants");
+const {
+	CURRENT_POINTS_SEASON_START_DATE,
+	CURRENT_POINTS_SEASON_END_DATE,
+	SONGBIRDZ_CONTRACT_ABI,
+} = require("../../server/constants");
 const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const SEASON_GENESIS_BLOCK = 30971527;
-const SEASON_GENESIS_TIME = new Date("2025-05-31T23:00:03.000Z");
-const SEASON_END_TIME = new Date('2025-08-31T23:00:00.000+00:00');
+const SEASON_GENESIS_BLOCK = 34945927;
+const SEASON_GENESIS_TIME = CURRENT_POINTS_SEASON_START_DATE;
+const SEASON_END_TIME = CURRENT_POINTS_SEASON_END_DATE;
 const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 31095319;
+const CURRENT_BLOCK = 35320310;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds

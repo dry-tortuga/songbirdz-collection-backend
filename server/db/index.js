@@ -14,6 +14,8 @@ const rankDailyStreaks = require("./rankDailyStreaks");
 
 const rankSpeciesCounts = require("./rankSpeciesCounts");
 
+const fetchBirdOfTheWeek = require("./fetchBirdOfTheWeek");
+
 const { MongoClient } = require("mongodb");
 
 class DB {
@@ -91,6 +93,10 @@ class DB {
 
 	async rankSpeciesCounts(address, limit = 50) {
 		return await rankSpeciesCounts(this.client, address, limit);
+	}
+
+	async fetchBirdOfTheWeek() {
+		return await fetchBirdOfTheWeek(this.client);
 	}
 
 };

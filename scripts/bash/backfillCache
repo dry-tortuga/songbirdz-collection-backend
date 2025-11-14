@@ -1,4 +1,4 @@
-for i in $(seq 2200 6999);
+for i in $(seq 2434 9999);
 do
 	curl -get "https://songbirdz.cc/birds/metadata/$i"
 done

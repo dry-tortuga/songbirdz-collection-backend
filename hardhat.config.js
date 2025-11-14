@@ -7,9 +7,10 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 // Load our custom hardhat task scripts
 // require("./scripts/solidity/main/bulkSend");
 // require("./scripts/solidity/main/fetchHolders");
+require("./scripts/solidity/main/fetchIdentifiedBirds");
 require("./scripts/solidity/main/populateCollection");
 require("./scripts/solidity/hof/populateCollection");
-require("./scripts/solidity/lifeList/populateSpecies");
+// require("./scripts/solidity/lifeList/populateSpecies");
 
 // https://docs.base.org/guides/deploy-smart-contracts
 
@@ -49,7 +50,7 @@ const config = {
 if (process.env.NODE_ENV === "development") {
 
 	config.networks["base-local"] = {
-		url: "http://localhost:8545",
+		url: process.env.BASE_NETWORK_RPC_URL,
 		accounts: [
 			process.env.DEV_WALLET_PRIVATE_KEY_OWNER,
 			process.env.DEV_WALLET_PRIVATE_KEY_NON_OWNER,
@@ -61,11 +62,9 @@ if (process.env.NODE_ENV === "development") {
 } else if (process.env.NODE_ENV === "staging") {
 
 	config.networks["base-sepolia"] = {
-		url: "https://sepolia.base.org",
-		accounts:
-			isUsingLedgerHardwareWallet ? undefined : [process.env.WALLET_PRIVATE_KEY_OWNER],
-		ledgerAccounts:
-			isUsingLedgerHardwareWallet ? [process.env.LEDGER_HARDWARE_WALLET_PUB_KEY] : undefined,
+		url: process.env.BASE_NETWORK_RPC_URL,
+		accounts: undefined,
+		ledgerAccounts: [process.env.LEDGER_HARDWARE_WALLET_PUB_KEY],
 		gasPrice: "auto",
 		verify: {
 			etherscan: {
@@ -78,11 +77,9 @@ if (process.env.NODE_ENV === "development") {
 } else if (process.env.NODE_ENV === "production") {
 
 	config.networks["base-mainnet"] = {
-		url: "https://mainnet.base.org",
-		accounts:
-			isUsingLedgerHardwareWallet ? undefined : [process.env.WALLET_PRIVATE_KEY_OWNER],
-		ledgerAccounts:
-			isUsingLedgerHardwareWallet ? [process.env.LEDGER_HARDWARE_WALLET_PUB_KEY] : undefined,
+		url: process.env.BASE_NETWORK_RPC_URL,
+		accounts: undefined,
+		ledgerAccounts: [process.env.LEDGER_HARDWARE_WALLET_PUB_KEY],
 		gasPrice: "auto",
 		verify: {
 			etherscan: {

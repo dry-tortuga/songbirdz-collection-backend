@@ -36,6 +36,12 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				}
 			},
 			{
+				$unionWith: {
+					coll: DB_COLLECTION_IDS[5],
+					pipeline: []
+				}
+			},
+			{
 				$match: {
 					species_id: { $lt: 1000 }
 				}
@@ -111,6 +117,12 @@ const rankSpeciesCounts = async (client, address, limit) => {
 					}
 				},
 				{
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[5],
+						pipeline: []
+					}
+				},
+				{
 					$match: {
 						address: currentUserAddress,
 						species_id: { $lt: 1000 },
@@ -159,6 +171,12 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				{
 					$unionWith: {
 						coll: DB_COLLECTION_IDS[4],
+						pipeline: []
+					}
+				},
+				{
+					$unionWith: {
+						coll: DB_COLLECTION_IDS[5],
 						pipeline: []
 					}
 				},
