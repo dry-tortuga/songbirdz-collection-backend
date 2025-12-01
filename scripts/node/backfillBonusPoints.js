@@ -18,12 +18,22 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x0bb618d7c55ce7fed637164cf45d577c03979d9a', // cryptomouse
 		'0x393b57b89c67349e0fc184b7b57e44e28ef3b29c', // tamara
+		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
+		'0xef4993567ec1df8aec7beba836135efb0652c2ef', // turtles
+		'0x887a9f0873d48d9cdcfdc003a9cd8f4c6a4eb027', // cryptomouse
+		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
+		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x6989e6507dac1376502a5639e01259a778db35de', // spudnik
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
 	],
 }, {
 	id: 1031,
 	label: 'Posted on Farcaster',
 	amount: 25,
 	users: [
+		'0x463b1e8e78b28027b423ea6f00695f01a84efe72', // saltorious
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 	],
 }, {
 	id: 1032,
@@ -75,6 +85,8 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 		'0xd4b896413742ea782e3a9f1108171f5bb4d9dbaa', // leosharkpark
 		'0x0de101737fafd0eb7cf0c986a1fc66137f1ece6f', // jimbey
 		'0x211b25a4ed2cb5bbf8c36cc7872a13a1d00ca840', // great uxie ovey (nobodythere5)
+		'0x6a5d26288b3463e9fb9a18eb0a5b7960f2d46790', // itsverchi
+		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
 	],
 }, {
 	id: 1033,
@@ -118,6 +130,8 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 		'0xab56c668b2c49f319fc5c4c0d27b2c564c3bd810', // john snow (cancersucks)
 		'0x80843e69308a594c40194ad414c3b77f606ee770', // virtualcat
 		'0xc8115c770efaaf0de401898e4b86f3be36eb2f42', // jonnybravo
+		'0x64be80bc71516ac48d8b0d9ff56de0af45c95d58', // profian
+		'0x463b1e8e78b28027b423ea6f00695f01a84efe72', // saltorious
 	],
 }, {
 	id: 1034,
@@ -138,7 +152,9 @@ const SEASON_6_BONUS_POINT_SPECIES = [{
 	id: 1036,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
-	users: [],
+	users: [
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox 
+	],
 }, {
 	id: 1037,
 	label: 'Hit 75 Day Streak',

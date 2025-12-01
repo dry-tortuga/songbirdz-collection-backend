@@ -20,8 +20,8 @@ const OPENSEA_COLLECTION_SLUG = "songbirdz";
 const SEASON_GENESIS_BLOCK = 34945927;
 const SEASON_GENESIS_TIME = CURRENT_POINTS_SEASON_START_DATE;
 const SEASON_END_TIME = CURRENT_POINTS_SEASON_END_DATE;
-const CURRENT_TIME = new Date();
-const CURRENT_BLOCK = 35320310;
+const CURRENT_TIME = new Date("Sun Nov 30 2025 23:00:00 GMT+0000");
+const CURRENT_BLOCK = 38877126;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
@@ -48,6 +48,8 @@ const fetchAlchemyEvents = async (after, before, results = {}) => {
 
     // Loop through each batch in this time period
     while (isLoadingMore) {
+
+	sleep(10000);
 
     console.log(`-------- next=${nextBatchCursor} --------`);
 
@@ -156,8 +158,11 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
     // Loop through each batch in this time period
     while (isLoadingMore) {
 
+	sleep(10000);
+
     	console.log(`-------- next=${nextBatchCursor} --------`);
 
+	    console.log('OPENSEA FETCH');
         // Fetch the events from the OpenSea API
         const { data } = await sdk.list_events_by_collection({
             collection_slug: OPENSEA_COLLECTION_SLUG,
@@ -348,3 +353,9 @@ const fetchOpenseaEvents = async (after, before, results = {}) => {
     }
 
 })();
+
+function sleep(ms) {
+	return new Promise((resolve) => {
+		setTimeout(resolve, ms);
+	});
+}
