@@ -17,11 +17,11 @@ const { processPoints, storePoints } = require("../../server/utils/points");
 
 const OPENSEA_COLLECTION_SLUG = "songbirdz";
 
-const SEASON_GENESIS_BLOCK = 34945927;
+const SEASON_GENESIS_BLOCK = 38877127;
 const SEASON_GENESIS_TIME = CURRENT_POINTS_SEASON_START_DATE;
 const SEASON_END_TIME = CURRENT_POINTS_SEASON_END_DATE;
-const CURRENT_TIME = new Date("Sun Nov 30 2025 23:00:00 GMT+0000");
-const CURRENT_BLOCK = 38877126;
+const CURRENT_TIME = new Date();
+const CURRENT_BLOCK = 38877127;
 
 const ONE_WEEK_IN_SECS = 604800;
 const ONE_WEEK_IN_BLOCKS = 604800 / 2; // 1 block produced every 2 seconds
