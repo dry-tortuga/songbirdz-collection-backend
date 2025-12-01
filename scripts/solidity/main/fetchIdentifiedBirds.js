@@ -20,8 +20,8 @@ const existingResults = JSON.parse(fs.readFileSync(path.join(
 const TASK_NAME = "fetchIdentifiedBirds";
 const TASK_DESCRIPTION = "Fetch a list of all birds (IDs) that have been identified in the SongBirdz collection";
 
-const START_INDEX = 6308;
-const TOTAL_SUPPLY = 6313;
+const START_INDEX = 6550;
+const TOTAL_SUPPLY = 6599;
 
 // Task action function receives the Hardhat Runtime Environment as second argument
 task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
