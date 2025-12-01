@@ -75,6 +75,11 @@ const updateDailyStreak = async (client, address) => {
 					pointsEarned = 300;
 					updatedFields.bonus_points_earned += 300;
 
+				} else if (updatedFields.login_streak === 75) {
+
+					pointsEarned = 1000;
+					updatedFields.bonus_points_earned += 1000;
+
 				}
 
 			} else {

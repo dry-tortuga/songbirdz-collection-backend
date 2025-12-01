@@ -24,6 +24,8 @@ const getPointsLeaderboard = async (req, res, next) => {
 		dbCollectionId = DB_COLLECTION_IDS[3];
 	} else if (req.query.season === "5") {
 		dbCollectionId = DB_COLLECTION_IDS[4];
+	} else if (req.query.season === "6") {
+		dbCollectionId = DB_COLLECTION_IDS[5];
 	}
 
 	// Fetch the results for the leaderboard
