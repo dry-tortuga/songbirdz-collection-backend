@@ -21,124 +21,143 @@ const REQUIRED_FIELDS = ['species', 'family', 'flock', 'ids', 'facts', 'links'];
 // 12/29/25: Pacific Golden-Plover
 // 01/05/25: White-faced Ibis
 // 01/12/25: Snowy Egret
+// 01/19/25: Inca Dove
+// 01/26/25: Bay-breasted Warbler
+// 02/02/25: Hawaiian Duck
+// 02/09/25: Phainopepla
+// 02/16/25: Curve-billed Thrasher
+// 02/23/25: Blackpoll Warbler
+// 03/02/25: White-faced Whistling-Duck
+
+
+/*
+
+{
+	species: "",
+	family: "",
+	flock: "",
+	ids: [],
+	facts: [
+		"",
+	],
+	links: [
+		"",
+		"",
+		"",
+	],
+}
+
+*/
 
 const newData = [{
-	species: 'Greater Yellowlegs',
-	family: 'Shorebirds',
-	flock: 'Hatchlings',
-	ids: [7041, 7701, 7880],
+	species: "Inca Dove",
+	family: "Pigeons & Doves",
+	flock: "Final Migration",
+	ids: [9765],
 	facts: [
-		"Greater Yellowlegs are known for their loud, piercing 'tew-tew-tew' alarm calls.",
-		"They have long, bright yellow legs that make them easy to identify.",
-		"These birds are skilled hunters, often chasing fish and insects through shallow water.",
-		"They migrate long distances, traveling from North America to Central and South America.",
-		"Greater Yellowlegs sometimes perform a bobbing or teetering motion while foraging.",
-		"They are sandpipers but larger and more robust than many of their relatives.",
-		"Their nests are usually simple ground scrapes lined with leaves and moss.",
-		"Despite their size, they can be surprisingly agile in flight with rapid wingbeats."
+		"Inca Doves are named after the Inca Empire, but their range does not align. Aztec Dove would be more appropriate, given their range and habit of pyramid roosting.",
+		"They are small, slender doves with scaly-looking feathers and a long tail edged in white.",
+		"Inca Doves often huddle together in large groups to conserve heat during cold weather.",
+		"Unlike many birds, they can produce a rattling call by vibrating their wing feathers during flight.",
 	],
 	links: [
-		'https://www.sacramentoaudubon.org/kids-corner/meet-the-greater-yellowlegs',
-		'https://www.allaboutbirds.org/guide/Greater_Yellowlegs/id',
-		'https://cottagelife.com/outdoors/wild-profile-meet-the-greater-yellowlegs/',
+		"https://www.nationalgeographic.com/animals/birds/facts/inca-dove",
+		"https://www.allaboutbirds.org/guide/Inca_Dove",
+		"https://www.youtube.com/watch?v=ttZS5L8JGzQ",
 	],
 }, {
-	species: 'Steller\'s Jay',
-	family: 'Jays, Magpies, Crows, & Ravens',
-	flock: 'Picasso Genesis',
-	ids: [108, 470],
+	species: "Bay-breasted Warbler",
+	family: "Wood-Warblers",
+	flock: "Small & Mighty",
+	ids: [2242,2649,2839],
 	facts: [
-		"Steller's Jays are known for their bold personalities and loud, varied calls.",
-		"They have striking blue bodies with a black crest on their heads.",
-		"These jays are excellent mimics and can imitate other birds, animals, and even machinery.",
-		"They often cache food like nuts and seeds to eat later.",
-		"Steller's Jays are the only crested jay found west of the Rocky Mountains.",
-		"They are highly curious and frequently visit campsites and picnic areas.",
-		"Their diet is diverse, ranging from insects and berries to small animals and human food scraps.",
-		"Pairs often stay together year-round and cooperate in raising young."
+		"Bay-breasted Warblers are named for the rich chestnut (bay) color on their throat and chest during breeding season.",
+		"They breed in the boreal forests of Canada and migrate to Central and northern South America for the winter.",
+		"Their population fluctuates with outbreaks of spruce budworms, a major food source during breeding season.",
+		"Outside of breeding season, their plumage becomes much duller, making them harder to distinguish from similar warblers.",
 	],
 	links: [
-		'https://www.estesparknews.com/estes_valley_spotlight/article_fff5e290-24fd-11eb-b830-eb7957826f4f.html',
-		'https://ridgefieldfriends.org/species-spotlight-stellers-jay/',
+		"https://www.etymonline.com/word/warbler",
+		"https://www.allaboutbirds.org/guide/Bay-breasted_Warbler/overview",
+		"https://kids.kiddle.co/Bay-breasted_warbler",
 	],
 }, {
-	species: 'Mexican Whip-poor-will',
-	family: 'Nightjars',
-	flock: 'Masters of Disguise',
-	ids: [8303, 8476, 8967],
+	species: "Hawaiian Duck",
+	family: "Waterfowl",
+	flock: "Predator & Prey",
+	ids: [5090, 5943],
 	facts: [
-		"The Mexican Whip-poor-will is a nocturnal bird known for its rhythmic, repetitive nighttime call.",
-		"It belongs to the nightjar family, which is famous for excellent camouflage.",
-		"By day, it rests motionless on the forest floor or low branches, blending perfectly with leaf litter.",
-		"Its wide mouth helps it catch flying insects during acrobatic nighttime flights.",
-		"Unlike many birds, it doesn’t build a traditional nest, eggs are laid directly on the ground.",
-		"Its plumage varies regionally, helping it match local habitats for better concealment.",
-		"The species is closely related to the Eastern Whip-poor-will but lives primarily in Mexico and parts of Central America.",
-		"Males often sing persistently during breeding season, especially on moonlit nights."
+		"The Hawaiian Duck, also known as the koloa maoli, is endemic to the Hawaiian Islands.",
+		"It closely resembles the female Mallard and readily hybridizes with introduced Mallards.",
+		"Hawaiian Ducks inhabit wetlands, streams, and taro fields rather than open lakes.",
+		"It is considered an endangered species due to habitat loss, invasive predators, and hybridization.",
 	],
 	links: [
-		'https://www.allaboutbirds.org/guide/Mexican_Whip-poor-will/overview',
-		'https://www.discoverwildlife.com/animal-facts/animals-who-sound-like-their-names',
-		'https://ccbbirds.org/2010/07/10/mexican-whip-poor-will-monitoring/',
+		"https://www.allaboutbirds.org/guide/Hawaiian_Duck/overview",
+		"https://dlnr.hawaii.gov/wildlife/birds/koloa-maoli/",
+		"https://www.fws.gov/species/hawaiian-duck-anas-wyvilliana",
 	],
 }, {
-	species: 'Pacific Golden-Plover',
-	family: 'Shorebirds',
-	flock: 'Final Migration',
-	ids: [9985],
+	species: "Phainopepla",
+	family: "Silky-Flycatchers",
+	flock: "Picasso Genesis",
+	ids: [846],
 	facts: [
-		"Pacific Golden-Plovers are famous long-distance migrants, sometimes flying nonstop for thousands of miles.",
-		"They breed in the Arctic tundra and winter in places as far as Hawaii, Australia, and Southeast Asia.",
-		"In breeding season, adults develop striking black faces and bellies with golden speckling on their backs.",
-		"They are known for their distinctive, flute-like whistled calls during flight.",
-		"These plovers often return to the same wintering grounds year after year with remarkable accuracy.",
-		"They forage by quickly running and pausing to pick insects, worms, and small crustaceans.",
-		"During migration, they can reach impressive speeds thanks to strong, direct flight.",
-		"Their golden-spotted plumage provides excellent camouflage in both tundra and coastal habitats."
+		"The berry-loving Phainopepla (fay-no-pep-la) can down 1,000 mistletoe berries in a day, enough to keep the part-time desert inhabitant hydrated without drinking water.",
+		"Their digestive system is specially suited for berry consumption, with the ability to remove the skin, pack it separately for more efficient digestion, and allow the seeds to pass through undigested.",
+		"The Phainopepla's diet and digestive system play a crucial role in propagating mistletoe. Their seed-rich droppings fall onto the branches below, allowing the seeds to germinate there. The germinated seed's roots penetrate into the branches of the tree, tapping into its nutrients for growth. Who knew that mistletoe was a parasitic plant?",
 	],
 	links: [
-		'https://www.allaboutbirds.org/guide/Pacific_Golden-Plover/overview',
-		'https://kids.kiddle.co/Pacific_golden_plover',
-		'https://a-z-animals.com/blog/interesting-facts-about-plovers/',
+		"https://www.allaboutbirds.org/guide/Phainopepla/overview",
+		"https://rachelcarsoncouncil.salsalabs.org/phainopepla",
+		"https://www.desertsun.com/story/life/home-garden/james-cornett/2014/12/06/mistletoe-depends-upon-bird/20039567/",
 	],
 }, {
-	species: 'White-faced Ibis',
-	family: 'Shorebirds',
-	flock: 'Final Migration',
-	ids: [9282],
+	species: "Curve-billed Thrasher",
+	family: "Catbirds, Mockingbirds, & Thrashers",
+	flock: "Fire & Ice",
+	ids: [4266, 4506, 4649],
 	facts: [
-		"The White-faced Ibis has a long, down-curved bill perfect for probing mud for food.",
-		"Its plumage appears dark at a distance but shines with iridescent greens, purples, and bronzes up close.",
-		"Adults have a distinctive white border around the face during breeding season.",
-		"They often forage in groups, stirring up insects and crustaceans in shallow wetlands.",
-		"White-faced Ibises are strong fliers and migrate in V-shaped flocks.",
-		"Their diet includes insects, snails, small crustaceans, and occasionally small frogs.",
-		"They typically nest in colonies, often alongside herons and other wading birds.",
-		"These ibises are highly dependent on healthy wetland habitats for feeding and breeding."
+		"Curve-billed Thrashers are named for their long, strongly curved bill, which they use to dig insects and small animals out of the ground.",
+		"They are commonly found in desert, scrub, and urban areas of the southwestern United States and Mexico.",
+		"Curve-billed Thrashers are known for their loud, varied songs, often delivered from exposed perches.",
+		"They aggressively defend their nesting territories and may remain territorial year-round.",
 	],
 	links: [
-		'https://www.tn.gov/twra/wildlife/birds/waterbirds/white-faced-ibis.html',
-		'https://www.instagram.com/p/DJef__xSSeV/?hl=en',
+		"https://www.allaboutbirds.org/guide/Curve-billed_Thrasher/overview",
+		"https://tucsonbirds.org/bird_profile/curve-billed-thrasher/",
+		"https://kids.kiddle.co/Curve-billed_thrasher",
 	],
 }, {
-	species: 'Snowy Egret',
-	family: 'Herons, Ibis, & Allies',
-	flock: 'Picasso Genesis',
-	ids: [538],
+	species: "Blackpoll Warbler",
+	family: "Wood-Warblers",
+	flock: "Final Migration",
+	ids: [9150, 9206],
 	facts: [
-		"Snowy Egrets are known for their bright yellow feet, often described as looking like they’re wearing golden slippers.",
-		"They use their flashy feet to stir up fish while hunting in shallow water.",
-		"Their plumage is entirely white, with elegant lacy plumes during breeding season.",
-		"Snowy Egrets were once heavily hunted for their decorative feathers, leading to major conservation efforts.",
-		"They have a sharp, black bill and contrasting black legs.",
-		"These egrets are agile hunters, using quick darting movements to catch fish, insects, and crustaceans.",
-		"They often feed in mixed flocks with other herons and wading birds.",
-		"Snowy Egrets give soft, raspy calls, especially around breeding colonies."
+		"Blackpoll Warblers are named for the black cap worn by males during the breeding season.",
+		"They undertake one of the longest migrations of any North American warbler, including nonstop flights over the Atlantic Ocean.",
+		"During fall migration, they can nearly double their body weight to fuel long-distance flights.",
+		"They breed in northern boreal forests of Canada and Alaska and winter in northern South America.",
 	],
 	links: [
-		'https://www.allaboutbirds.org/guide/Snowy_Egret/lifehistory',
-		'https://portal.ct.gov/deep/wildlife/fact-sheets/snowy-egret',
-		'https://www.estesparknews.com/estes_valley_spotlight/article_739956d8-bb4c-11ec-9a5e-db8013819969.html',
+		"https://www.allaboutbirds.org/guide/Blackpoll_Warbler/overview",
+		"https://datazone.birdlife.org/species/factsheet/blackpoll-warbler-setophaga-striata",
+		"https://nhaudubon.org/bird-of-the-month-blackpoll-warbler/",
+	],
+}, {
+	species: "White-faced Whistling-Duck",
+	family: "Waterfowl",
+	flock: "Final Migration",
+	ids: [9080],
+	facts: [
+		"White-faced Whistling-Ducks are named for the bright white patch on their face and their distinctive whistling calls.",
+		"They are primarily found in tropical and subtropical regions of Africa, Central America, South America, and the southern United States.",
+		"Unlike many ducks, they often perch in trees and nest in tree cavities or dense vegetation.",
+		"They are social birds, frequently seen in large flocks, especially outside the breeding season.",
+	],
+	links: [
+		"https://lazoo.org/explore-your-zoo/our-animals/birds/white-faced-whistling-duck/",
+		"https://www.saczoo.org/white-faced-whistling-duck",
 	],
 }];
 

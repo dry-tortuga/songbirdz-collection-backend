@@ -3,17 +3,15 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "final-migration-9";
-const COLLECTION_START_INDEX = 9000;
+const COLLECTION_NAME = "picasso-genesis-0";
+const COLLECTION_START_INDEX = 0;
 const COLLECTION_SIZE = 1000;
-
-const FILE_NUMBERS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
 
-const audioFolder =  path.join(
-	__dirname,
-	`../../private/audio-original/`,
+const audioFolder = path.join(
+	privatePath,
+	`/audio-original/`,
 );
 
 // Get the audio files to use as source for the collection
@@ -22,19 +20,24 @@ const audioHashMap = {};
 
 fs.readdirSync(audioFolder).forEach((file) => {
 
-	for (const number of FILE_NUMBERS) {
+	const filePieces = file.split("-");
 
-		if (file.indexOf(` ${number} `) >= 0) {
+	const id = filePieces.pop().replace(".mp3", "");
+	const count = filePieces.pop();
+	const type = filePieces.pop();
+	const speciesName = filePieces.join("-");
 
-			const pieces = file.split(` ${number} `);
-			const name = pieces[0];
+	if (!id || !count || !type || !speciesName) {
+		throw new Error("File name is invalid: ", file);
+	}
 
-			if (!audioHashMap[name]) { audioHashMap[name] = []; }
+	if (!audioHashMap[speciesName]) { audioHashMap[speciesName] = {}; }
 
-			audioHashMap[name].push(file);
-
-		}
-
+	audioHashMap[speciesName][count] = {
+		file,
+		type,
+		id,
+		used: false,
 	}
 
 });
@@ -45,49 +48,75 @@ const speciesKeyNames = fs.readFileSync(
 	`${privatePath}/collections/${COLLECTION_NAME}/key.txt`, "utf8"
 ).split(/\r?\n/);
 
-// Redo "some" of the audio files for the collection
+// Redo the audio files for the collection
 (() => {
 
 	console.log(`Redoing audio for the ${COLLECTION_NAME} collection:`);
 
-	// Add species names here to redo the audio
-	const redoList = [];
+	const missing = {};
+	const citations = {};
 
-	let count = 0;
-
-	for (let i = 0; i < 1000; i += 1) {
+	for (let i = 0; i < COLLECTION_SIZE; i += 1) {
 
 		const name = speciesKeyNames[i];
 
-		if (redoList.indexOf(name) === -1) { continue; }
-
 		console.log(`${i}:${name}`);
 
-		if (!audioHashMap[name] || audioHashMap[name].length === 0) {
+		if (!audioHashMap[name]) {
+			missing[name] = true;
+			console.log(`MISSING AUDIO for "${name}"`);
+			continue;
+		}
+
+		if (Object.keys(audioHashMap[name]).length === 0) {
 			throw new Error(`The audio file is missing for species="${name}"!`);
 		}
 
-		const audioFilesForSpecies = [...audioHashMap[name]];
+		const audioFilesForSpecies = Object.values(audioHashMap[name]);
 
-		const selectedAudioFile = audioFilesForSpecies[Math.floor(Math.random() * audioFilesForSpecies.length)];
+		// Loop through and pick out the first audio file that is not yet used
+		let selectedAudioFile = null, selectedRecordingId = null;
+
+		for (let j = 0; j < audioFilesForSpecies.length; j += 1) {
+
+			if (!audioFilesForSpecies[j].used) {
+				selectedAudioFile = audioFilesForSpecies[j].file;
+				selectedRecordingId = audioFilesForSpecies[j].id;
+				audioFilesForSpecies[j].used = true;
+				break;
+			}
+
+		}
+
+		// If they have all been used at least once, just choose one at random
+		if (!selectedAudioFile) {
+			const randomIdx = Math.floor(Math.random() * audioFilesForSpecies.length);
+			selectedAudioFile = audioFilesForSpecies[randomIdx].file;
+			selectedRecordingId = audioFilesForSpecies[randomIdx].id;
+		}
 
 		// Get the unique ID of the bird relative to the entire 10000
 		const finalIndex = COLLECTION_START_INDEX + i;
 
-		const originalFileName =
-		`${privatePath}/audio-original/${finalIndex}-original.mp3`;
+		const outputFileName = `${privatePath}/audio-hidden/${finalIndex}.mp3`;
 
 		console.log(`Using audio file "${selectedAudioFile}" for "${name}"`);
 
 		fs.copyFileSync(
 			`${audioFolder}/${selectedAudioFile}`,
-			originalFileName,
+			outputFileName,
 		);
 
-		count += 1;
+		citations[parseInt(i, 10)] = {
+			id: parseInt(selectedRecordingId, 10),
+		};
 
     }
 
-    console.log(`${count} audio files for the ${COLLECTION_NAME} collection were fixed and stored at ${privatePath}/audio-original!`);
+    console.log(`audio files for the ${COLLECTION_NAME} collection created at ${privatePath}/audio-hidden!`);
+
+	fs.writeFileSync(`${privatePath}/audio-metadata.json`, JSON.stringify(citations));
+
+	console.log(`\n\n`, missing, `\n\n`);
 
 })();
