@@ -39,14 +39,19 @@ const xenoCantoMetadata = require(
 
 		const recording = results.recordings[0];
 
+		const description = `The original recording has been modified by the Songbirdz project. Original recording is "XC${recording.id} · ${recording.en} · ${recording.gen} ${recording.sp}" by ${recording.rec}. Available for use under the CC ${recording.lic.split('/').slice(4, 6).join('/')} license (creativecommons.org/licenses/${recording.lic.split('/').slice(4, 6).join('/')}), at www.xeno-canto.org/${recordingID}.`;
+
 		citations[birdId] = {
 			id: recording.id,
 			en: recording.en,
+			gen: recording.gen,
+			sp: recording.sp,
 			rec: recording.rec,
 			type: recording.type,
 			method: recording.method,
 			lic: recording.lic.split('/').slice(4, 6).join('/'),
 			q: recording.q,
+			description,
 			//  url: '//xeno-canto.org/78062',
 			// file: 'https://xeno-canto.org/78062/download',
 			// 'file-name': 'JMJ-20110516-064956-000223-USA-MN-BearHeadLake-YBSA.mp3',
@@ -61,7 +66,7 @@ const xenoCantoMetadata = require(
 			album: "Songbirdz",
 			comment: {
 				language: "eng",
-				text: `${recording.rec}, XC${recordingID}. Original recording at www.xeno-canto.org/${recordingID}. Edited by the Songbirdz project. License is ${recording.lic.split('/').slice(4, 6).join('/')}.`
+				text: description,
 			}
 		}, audioFile);
 
