@@ -9,7 +9,9 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 	id: 1040,
 	label: 'Posted on X',
 	amount: 25,
-	users: [],
+	users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+	],
 }, {
 	id: 1041,
 	label: 'Posted on Farcaster',
@@ -68,7 +70,7 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 		'0x6a5d26288b3463e9fb9a18eb0a5b7960f2d46790', // itsverchi
 		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
 	],
-}, {
+},/* {
 	id: 1043,
 	label: 'Joined Farcaster Channel',
 	amount: 10,
@@ -113,26 +115,49 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 		'0x64be80bc71516ac48d8b0d9ff56de0af45c95d58', // profian
 		'0x463b1e8e78b28027b423ea6f00695f01a84efe72', // saltorious
 	],
-}, {
+},*/ {
 	id: 1044,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [],
+	users: [
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1045,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [],
+	users: [
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1046,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
-	users: [],
+	users: [
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }, {
 	id: 1047,
 	label: 'Hit 75 Day Streak',
 	amount: 1000,
 	users: [],
+}, {
+	id: 1048,
+        label: 'PFP on X',
+        amount: 50,
+        users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+	],
+}, {
+	id: 1049,
+        label: 'PFP on Base App',
+        amount: 50,
+        users: [
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+	],
 }];
 
 // Re-calculate and update points related to bonuses for all users for the current season

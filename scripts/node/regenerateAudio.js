@@ -3,8 +3,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "picasso-genesis-0";
-const COLLECTION_START_INDEX = 0;
+const COLLECTION_NAME = "small-and-mighty-2";
+const COLLECTION_START_INDEX = 2000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
@@ -59,8 +59,10 @@ const speciesKeyNames = fs.readFileSync(
 	for (let i = 0; i < COLLECTION_SIZE; i += 1) {
 
 		const name = speciesKeyNames[i];
+		// Get the unique ID of the bird relative to the entire 10000
+		const finalIndex = COLLECTION_START_INDEX + i;
 
-		console.log(`${i}:${name}`);
+		console.log(`${finalIndex}:${name}`);
 
 		if (!audioHashMap[name]) {
 			missing[name] = true;
@@ -95,9 +97,6 @@ const speciesKeyNames = fs.readFileSync(
 			selectedRecordingId = audioFilesForSpecies[randomIdx].id;
 		}
 
-		// Get the unique ID of the bird relative to the entire 10000
-		const finalIndex = COLLECTION_START_INDEX + i;
-
 		const outputFileName = `${privatePath}/audio-hidden/${finalIndex}.mp3`;
 
 		console.log(`Using audio file "${selectedAudioFile}" for "${name}"`);
@@ -107,7 +106,7 @@ const speciesKeyNames = fs.readFileSync(
 			outputFileName,
 		);
 
-		citations[parseInt(i, 10)] = {
+		citations[finalIndex] = {
 			id: parseInt(selectedRecordingId, 10),
 		};
 
