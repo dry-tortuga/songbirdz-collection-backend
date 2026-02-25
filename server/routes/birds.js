@@ -241,7 +241,6 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
-		species: birdData?.name,
 		family,
 		flock: birdData?.collectionName,
 		options: birdData?.options,
