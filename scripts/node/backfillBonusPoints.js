@@ -11,12 +11,23 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 	amount: 25,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x1dff91e932184fc80a0c65894bb4bf3f3067d001', // skurring,
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
+		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
+		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic
 	],
 }, {
 	id: 1041,
 	label: 'Posted on Farcaster',
 	amount: 25,
-	users: [],
+	users: [
+		'0xf0807da85b2af462edd8a1855f4d301fba1f74ae', // jawarpe
+		'0x477b7fcf2879fbeecb83781509a4ef73d9d84ed4', // ruburi,
+		'0x463b1e8e78b28027b423ea6f00695f01a84efe72', // saltorious
+		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+	],
 }, {
 	id: 1042,
 	label: 'Joined Telegram',
@@ -69,6 +80,7 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 		'0x211b25a4ed2cb5bbf8c36cc7872a13a1d00ca840', // great uxie ovey (nobodythere5)
 		'0x6a5d26288b3463e9fb9a18eb0a5b7960f2d46790', // itsverchi
 		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
+		'0x1dff91e932184fc80a0c65894bb4bf3f3067d001', // skurring,
 	],
 },/* {
 	id: 1043,
@@ -96,7 +108,7 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 		'0x9beadc1297f97fff916a487e49dea1004510c59e', // s0tric.base.eth
 		'0x8d888326e1e2b6a399b751105339f82476208d5d', // tomkey
 		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
-		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic.base.eth
+		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic
 		'0xaf1c69da79a71f82b9fbc1f72dca7f0ee70f8460', // 0xhanma
 		'0xc41ba732369ac17d1372542520247518c726ef0e', // brendannn
 		'0x92e05c3243266e94cd2d728fd9954eee05c4308c', // rnvnislmy
@@ -149,6 +161,8 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
         amount: 50,
         users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
+		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
 	],
 }, {
 	id: 1049,
