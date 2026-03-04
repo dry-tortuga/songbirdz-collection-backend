@@ -5,38 +5,25 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 const CURRENT_TIME = new Date();
 
-const SEASON_7_BONUS_POINT_SPECIES = [{
-	id: 1040,
+const SEASON_8_BONUS_POINT_SPECIES = [{
+	id: 1050,
 	label: 'Posted on X',
 	amount: 25,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
-		'0x1dff91e932184fc80a0c65894bb4bf3f3067d001', // skurring,
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
-		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
-		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
-		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic
 	],
 }, {
-	id: 1041,
+	id: 1051,
 	label: 'Posted on Farcaster',
 	amount: 25,
 	users: [
-		'0xf0807da85b2af462edd8a1855f4d301fba1f74ae', // jawarpe
-		'0x477b7fcf2879fbeecb83781509a4ef73d9d84ed4', // ruburi,
-		'0x463b1e8e78b28027b423ea6f00695f01a84efe72', // saltorious
-		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+
 	],
 }, {
-	id: 1042,
+	id: 1052,
 	label: 'Joined Telegram',
 	amount: 10,
 	users: [
-		// MISSING POINTS: tokyo, jamesberg, jibbmoslice, RandomEgg, Tonywithouti,
-		// My_name_is_mudd, Basedsuiguru, VENOMDSLAYER, @OxMisan, @Web3majo,
-		// @bullionape1914,  oeuk nikon, melanie, @DEGENCOBRA, satoshi-nakamoto,
-		// crypto-lady, refaund09, memekreator, violet
 		'0xdf53adbc2fea827c3ea675d3122bec89ccbc1af4', // arcturus
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 		'0xdd9c5b8893434da7a4ce0ada32db13d0770a0116', // krakencoke
@@ -82,93 +69,40 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
 		'0x1dff91e932184fc80a0c65894bb4bf3f3067d001', // skurring,
 	],
-},/* {
-	id: 1043,
-	label: 'Joined Farcaster Channel',
-	amount: 10,
-	users: [
-		'0x585d3ef48e12cb1be6837109b0853afe78b5ebe3', // drytortuga (self)
-		'0x2c4291cfd783164971ca39ddecd2def485cf499d', // omer
-		'0x17fe7565aa7d86b5392857574a32613de150fcbe', // 6bazinga
-		'0xa6c49cf1871c3fbabc0373d4fd2812c4a4fb4683', // myro5
-		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // artgridz
-		'0x972955a934de4d0e642d913a22e9cee77386f188', // ogstyle
-		'0xba397faae1d5fe10c0356f2e585bef34577ab111', // tanazolam
-		'0x91a0c767e86e832d279faa2b4b9deda28bbb26ce', // million.base.eth
-		'0x46eca8796d1fab2cc52e66a508f499c8207378da', // crunklez
-		'0x75521de871eea2f188a45e1a232bb6794600ebc6', // abrahamdomenick.base.eth
-		'0x76ce03b1eea333ecce7d6e3506bc36cfb4dd76c6', // pederzani.eth (ozFather)
-		'0xa13d127dc4e3a5552fb9a8eb10f30052579f62c5', // karii-explores
-		'0xbe061d84c50e156e2faa791228662e3b52c906e2', // xbornid.eth
-		'0xf5da620ba68d658fae300d79c11efab82a594243', // nuwwara1725
-		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
-		'0x91eb3b483244cb2d7671b4e6433e7c6008878355', // dabus.base.eth
-		'0xbcfcd3bb907507a123f9c37e920ceb5c8db56feb', // myk.base.eth
-		'0x11415669286d998fd85a2a6146c41f6be41a794d', // reisub.base.eth
-		'0x9beadc1297f97fff916a487e49dea1004510c59e', // s0tric.base.eth
-		'0x8d888326e1e2b6a399b751105339f82476208d5d', // tomkey
-		'0x2fe61e1fcb4fd2453ed34ca57a648db4d71a9232', // dbin78
-		'0x8ba0d7704df6a610f4ce9937d31e0bbc19717311', // asendic
-		'0xaf1c69da79a71f82b9fbc1f72dca7f0ee70f8460', // 0xhanma
-		'0xc41ba732369ac17d1372542520247518c726ef0e', // brendannn
-		'0x92e05c3243266e94cd2d728fd9954eee05c4308c', // rnvnislmy
-		'0x41f4ddcc02c550a92336a027f248c7e2e0367dd0', // jenna
-		'0x056eb43118ffa352add9cdb9a7d2977a4842b936', // hankmoody
-		'0x6d7bb670765e2be191c1f6b91399db12c4fde911', // julex
-		'0x586eb1950b87bb4c9a80561d154d779c4ad872f8', // khayle8891
-		'0xd6b69e58d44e523eb58645f1b78425c96dfa648c', // uniquebeing404
-		'0x10fc964ef70c8467cd8c53e9ed9347422adf96a8', // kenny
-		'0x2dc85944fd65b8c89cfdd76d81fc670595ee2bf0', // disciple
-		'0x1ace9e4df9de3af66e33170991617ab73de5dc1a', // wanderlustmom
-		'0x70faa7333f352f74452afc24156f171100a0a8ab', // logonaut
-		'0xab56c668b2c49f319fc5c4c0d27b2c564c3bd810', // john snow (cancersucks)
-		'0x80843e69308a594c40194ad414c3b77f606ee770', // virtualcat
-		'0xc8115c770efaaf0de401898e4b86f3be36eb2f42', // jonnybravo
-		'0x64be80bc71516ac48d8b0d9ff56de0af45c95d58', // profian
-		'0x463b1e8e78b28027b423ea6f00695f01a84efe72', // saltorious
-	],
-},*/ {
-	id: 1044,
+}, {
+	id: 1054,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-	],
+	users: [],
 }, {
-	id: 1045,
+	id: 1055,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [
-		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-	],
+	users: [],
 }, {
-	id: 1046,
+	id: 1056,
 	label: 'Hit 30 Day Streak',
 	amount: 300,
-	users: [
-		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
-	],
+	users: [],
 }, {
-	id: 1047,
+	id: 1057,
 	label: 'Hit 75 Day Streak',
 	amount: 1000,
 	users: [],
 }, {
-	id: 1048,
-        label: 'PFP on X',
-        amount: 50,
-        users: [
+	id: 1058,
+	label: 'PFP on X',
+	amount: 50,
+	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
 		'0xa3e17ca80549c16cc850d37acee1a02c45736f68', // mhall0693
 	],
 }, {
-	id: 1049,
-        label: 'PFP on Base App',
-        amount: 50,
-        users: [
+	id: 1059,
+	label: 'PFP on Farcaster',
+	amount: 50,
+	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
 	],
@@ -189,7 +123,7 @@ const SEASON_7_BONUS_POINT_SPECIES = [{
 
 		const results = {};
 
-		SEASON_7_BONUS_POINT_SPECIES.forEach((species) => {
+		SEASON_8_BONUS_POINT_SPECIES.forEach((species) => {
 
 			species.users.forEach((address) => {
 

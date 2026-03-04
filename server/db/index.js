@@ -4,10 +4,6 @@ const updatePointLog = require("./updatePointLog");
 const fetchPointLogs = require("./fetchPointLogs");
 const rankPointLogs = require("./rankPointLogs");
 
-const createMemoryMatchLog = require("./createMemoryMatchLog");
-const getMemoryMatchLeaderboard = require("./getMemoryMatchLeaderboard");
-const getMemoryMatchGamesPlayed = require("./getMemoryMatchGamesPlayed");
-
 const fetchDailyStreak = require("./fetchDailyStreak");
 const updateDailyStreak = require("./updateDailyStreak");
 const rankDailyStreaks = require("./rankDailyStreaks");
@@ -45,18 +41,6 @@ class DB {
 		}
 
 
-	}
-
-	async createMemoryMatchLog(data) {
-		return await createMemoryMatchLog(this.client, data);
-	}
-
-	async getMemoryMatchLeaderboard(data) {
-		return await getMemoryMatchLeaderboard(this.client, data);
-	}
-
-	async getMemoryMatchGamesPlayed(address) {
-		return await getMemoryMatchGamesPlayed(this.client, address);
 	}
 
 	async fetchPointLog(collectionId, address, birdID) {
