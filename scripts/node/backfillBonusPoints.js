@@ -11,6 +11,7 @@ const SEASON_8_BONUS_POINT_SPECIES = [{
 	amount: 25,
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
+		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
 	],
 }, {
 	id: 1051,
