@@ -65,7 +65,7 @@ const getBirdMetadata = async (req, res, next) => {
 	res.send({
 		name: `Songbird #${birdId}`,
 		description: `One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3. Audio: ${audioDescription || 'None'}`,
-		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
+		animation_url: audioDescription ? `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3` : null,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
