@@ -55,7 +55,6 @@ const getBirdMetadata = async (req, res, next) => {
 	const isIdentified = await isBirdIdentified(birdId, BIRD_ID_RESULTS);
 
 	const species = isIdentified ? KEY_BIRD_DATA[birdId].name : UNIDENTIFIED_NAME;
-	const description = isIdentified ? null : 'This bird has not been identified yet.';
 	const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
 
 	const audioDescription = KEY_BIRD_DATA[birdId]?.audioDescription;
