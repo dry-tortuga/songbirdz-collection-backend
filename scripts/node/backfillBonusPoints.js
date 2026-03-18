@@ -12,6 +12,8 @@ const SEASON_8_BONUS_POINT_SPECIES = [{
 	users: [
 		'0x79e47f12fe6382cfb29e8e7dc05c57b5c04cc814', // paesan
 		'0x47ade238cc739dbce060c572e7393467ed6f0c50', // zksnarky
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+		'0x4d389ddfa4984735b6988b2d853522925ee8ec6b', // jpunke
 	],
 }, {
 	id: 1051,
@@ -74,12 +76,16 @@ const SEASON_8_BONUS_POINT_SPECIES = [{
 	id: 1054,
 	label: 'Hit 7 Day Streak',
 	amount: 50,
-	users: [],
+	users: [
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+	],
 }, {
 	id: 1055,
 	label: 'Hit 14 Day Streak',
 	amount: 125,
-	users: [],
+	users: [
+		'0x8d57ee867c65231e20aead5040a7c489704eb5f6', // thedefifox
+	],
 }, {
 	id: 1056,
 	label: 'Hit 30 Day Streak',
