@@ -67,8 +67,7 @@ const getBirdMetadata = async (req, res, next) => {
 		description: `One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3. Audio: ${audioDescription || 'None'}`,
 		animation_url: audioDescription ? `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3` : null,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
-		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
-		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
+		image: `ipfs://${process.env.IPFS_CID_IMAGES}/${birdId}.jpg`, // IPFS via Storacha
 		species,
 		attributes: [{
 			trait_type: "Flock",
@@ -239,7 +238,6 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
-		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
 		family,
 		flock: birdData?.collectionName,
 		options: birdData?.options,
