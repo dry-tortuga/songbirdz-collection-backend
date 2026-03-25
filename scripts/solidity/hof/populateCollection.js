@@ -34,7 +34,7 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 		`---- populating ${process.env.NODE_ENV} trophies for the Hall of Fame ----`
 	);
 
-	for (let i = 0; i < dataToUpload.length; i++) {
+	for (let i = 21; i < dataToUpload.length; i++) {
 
 		console.log(`--------------------- i=${i} ----------------------------`);
 
@@ -59,6 +59,11 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 		// The transaction is now on chain!
 		console.log(`Tx=${receipt.hash}, gas=${receipt.gasUsed}, is mined in block ${receipt.blockNumber}`);
+
+		const tokenData = await contract.tokenURI(i - 18);
+
+		console.log(`\n\n`);
+		console.log(tokenData);
 
 		console.log('-------------------------------------------------------');
 

@@ -55,7 +55,6 @@ const getBirdMetadata = async (req, res, next) => {
 	const isIdentified = await isBirdIdentified(birdId, BIRD_ID_RESULTS);
 
 	const species = isIdentified ? KEY_BIRD_DATA[birdId].name : UNIDENTIFIED_NAME;
-	const description = isIdentified ? null : 'This bird has not been identified yet.';
 	const family = SOURCE_SPECIES_DATA[KEY_BIRD_DATA[birdId].name]?.family;
 
 	const audioDescription = KEY_BIRD_DATA[birdId]?.audioDescription;
@@ -66,7 +65,7 @@ const getBirdMetadata = async (req, res, next) => {
 	res.send({
 		name: `Songbird #${birdId}`,
 		description: `One of the 10,000 birds in the Songbirdz collection. Curated by drytortuga. Image: DALL-E 3. Audio: ${audioDescription || 'None'}`,
-		animation_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3`,
+		animation_url: audioDescription ? `${process.env.SONGBIRDZ_FRONTEND_URL}/audio/${birdId}.mp3` : null,
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
@@ -241,7 +240,6 @@ const getRandomUnidentifiedBird = async (req, res, next) => {
 		external_url: `${process.env.SONGBIRDZ_FRONTEND_URL}/collection/${birdId}`,
 		image: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}-lg.jpg`,
 		image_onchain: `${process.env.SONGBIRDZ_FRONTEND_URL}/images/${birdId}.jpg`,
-		species: birdData?.name,
 		family,
 		flock: birdData?.collectionName,
 		options: birdData?.options,

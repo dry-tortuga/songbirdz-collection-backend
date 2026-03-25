@@ -92,9 +92,6 @@ It uses the OpenSea Streaming SDK to listen for ERC-721 transfer and sale events
 - `GET /birds/daily-streaks/active` -> Returns the daily streak leaderboard.
 - `GET /birds/daily-streak` -> Returns the daily streak for a specific user.
 - `POST /birds/daily-streak` -> Updates the daily streak for a specific user.
-- `GET /birds/memory-match/leaderboard` -> Returns the leaderboard for the memory match game.
-- `GET /birds/memory-match/games-played` -> Returns the games played (today) for a specific user for the memory match game.
-- `POST /birds/memory-match/log` -> Stores the result of a memory match game for a specific user.
 
 **Node scripts:**
 - `./scripts/node/backfillBonusPoints.js` - backfills bonus points data based on offchain activities such as user activity on Twitter, Telegram, and Farcaster.

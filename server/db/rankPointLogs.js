@@ -9,7 +9,7 @@ const rankPointLogs = async (client, collectionId, address, limit) => {
 		const database = client.db("songbirdz");
 		const pointLogs = database.collection(collectionId);
 
-		// Sort/Sum/Query for the top 52 point logs
+		// Sort/Sum/Query for the top X point logs
 
 		const pointLogQueryResults = await pointLogs.aggregate([{
 			$group: {

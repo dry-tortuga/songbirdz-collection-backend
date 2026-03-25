@@ -4,8 +4,8 @@ const path = require("path");
 
 require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
-const COLLECTION_NAME = "picasso-genesis-0";
-const COLLECTION_START_INDEX = 0;
+const COLLECTION_NAME = "final-migration-9";
+const COLLECTION_START_INDEX = 9000;
 const COLLECTION_SIZE = 1000;
 
 const privatePath = path.join(__dirname, `../../private/${process.env.NODE_ENV}`);
