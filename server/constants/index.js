@@ -78,17 +78,32 @@ const KEY_BIRD_DATA = {};
 
 const SOURCE_SPECIES_DATA = {};
 
+// Build data map of species ID -> total supply for all the species
+// (the number of birds for the species i.e. the rarity of the species)
+
+const SPECIES_SUPPLY = {};
+
 // Build an array of merkle tree data for all the collections
 
 const MERKLE_TREE_DATA = [];
 
 // Keep track of the starting index for the species in the current collection
 let speciesStartIndex = 0;
-
 COLLECTION_KEYS.forEach((cKey, cIndex) => {
+
+	// Tally the total supply (i.e. count of birds) for each species
+	// in the current collection
+
+	const speciesSupplyInCollection = {};
+
 	fs.readFileSync(`${PRIVATE_PATH.COLLECTIONS}/${cKey}/key.txt`, "utf8")
 		.split(/\r?\n/)
 		.forEach((speciesName, birdIndex) => {
+
+			if (speciesName) {
+				speciesSupplyInCollection[speciesName] =
+					(speciesSupplyInCollection[speciesName] || 0) + 1;
+			}
 
 			// Get the unique ID of the bird relative to the entire 10,000
 			const finalIndex = cIndex * COLLECTION_SIZE + birdIndex;
@@ -166,6 +181,8 @@ COLLECTION_KEYS.forEach((cKey, cIndex) => {
 			family: getFamily(sBird.name),
 		};
 
+		SPECIES_SUPPLY[finalIndex] = speciesSupplyInCollection[sBird.name] || 0;
+
 	});
 
 	speciesStartIndex = speciesStartIndex + expectedSpeciesCount;
@@ -210,6 +227,7 @@ module.exports = {
 	FIRST_ID_TO_IDENTIFY,
 	KEY_BIRD_DATA,
 	SOURCE_SPECIES_DATA,
+	SPECIES_SUPPLY,
 	MERKLE_TREE_DATA,
 	SONGBIRDZ_CONTRACT_ABI,
 	PRIVATE_PATH,

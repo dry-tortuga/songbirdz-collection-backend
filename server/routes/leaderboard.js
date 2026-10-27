@@ -1,4 +1,4 @@
-const { DB_COLLECTION_CURRENT_POINTS_SEASON, DB_COLLECTION_IDS } = require("../constants");
+const { DB_COLLECTION_CURRENT_POINTS_SEASON, DB_COLLECTION_IDS, SPECIES_SUPPLY } = require("../constants");
 const DB = require("../db");
 
 const LEADERBOARD_SIZE = 55;
@@ -72,8 +72,17 @@ const getLifeListLeaderboard = async (req, res, next) => {
 
 };
 
+const getSpeciesSupply = async (req, res, next) => {
+
+	// Total supply (i.e. number of birds) for each species,
+	// keyed by the species ID ("rarity" map for the species)
+	res.send(SPECIES_SUPPLY);
+
+};
+
 module.exports = {
 	getPointsLeaderboard,
 	getLifeListData,
 	getLifeListLeaderboard,
+	getSpeciesSupply,
 };

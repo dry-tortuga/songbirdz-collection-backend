@@ -1,4 +1,4 @@
-const { DB_COLLECTION_IDS } = require('../constants');
+const { DB_COLLECTION_IDS, SPECIES_SUPPLY } = require('../constants');
 
 const rankSpeciesCounts = async (client, address, limit) => {
 
@@ -51,18 +51,27 @@ const rankSpeciesCounts = async (client, address, limit) => {
 					_id: {
 						address: "$address",
 						species_id: "$species_id"
+					},
+					bird_id: {
+						$first: "$bird_id"
 					}
 				}
 			},
 			{
 				$group: {
 					_id: "$_id.address",
-					uniqueSpeciesCount: { $sum: 1 }
+					count: { $sum: 1 },
+					species_docs: {
+						$push: {
+							species_id: "$_id.species_id",
+							bird_id: "$bird_id"
+						}
+					}
 				}
 			},
 			{
 				$sort: {
-					uniqueSpeciesCount: -1
+					count: -1
 				}
 			},
 			{
@@ -71,26 +80,33 @@ const rankSpeciesCounts = async (client, address, limit) => {
 			{
 				$project: {
 					address: "$_id",
-					count: "$uniqueSpeciesCount",
+					count: "$count",
+					species_docs: "$species_docs",
 					_id: 0
 				}
 			}
 		];
 
-		const finalData =
+		const results =
 			await database.collection(DB_COLLECTION_IDS[0])
 				.aggregate(pipeline).toArray();
 
-		// Add rank to each result
-		for (let i = 0; i < finalData.length; i++) {
-			finalData[i].rank = i + 1;
-		}
+		// Add rank & the user's rarest bird to each result
+		const finalData = results.map((result, index) => ({
+
+			address: result.address,
+			count: result.count,
+			rank: index + 1,
+
+			...getRarestBird(result.species_docs),
+
+		}));
 
 		// Include current user if not in top results
 		if (currentUserAddress &&
 			finalData.findIndex((temp) => temp.address === currentUserAddress) === -1) {
 
-			// Count unique species for current user
+			// Find the unique species (and a bird id for each) for current user
 			const userPipeline = [
 				{
 					$unionWith: {
@@ -130,16 +146,10 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				},
 				{
 					$group: {
-						_id: {
-							address: "$address",
-							species_id: "$species_id"
+						_id: "$species_id",
+						bird_id: {
+							$first: "$bird_id"
 						}
-					}
-				},
-				{
-					$group: {
-						_id: "$_id.address",
-						uniqueSpeciesCount: { $sum: 1 }
 					}
 				}
 			];
@@ -202,7 +212,7 @@ const rankSpeciesCounts = async (client, address, limit) => {
 				{
 					$match: {
 						uniqueSpeciesCount: {
-							$gt: userResult.length > 0 ? userResult[0].uniqueSpeciesCount : 0
+							$gt: userResult.length
 						}
 					}
 				},
@@ -218,9 +228,16 @@ const rankSpeciesCounts = async (client, address, limit) => {
 			const rank = rankResult.length > 0 ? (rankResult[0].rank + 1) : 'N/A';
 
 			finalData.push({
+
 				address: currentUserAddress,
-				count: userResult.length > 0 ? userResult[0].uniqueSpeciesCount : 0,
+				count: userResult.length,
 				rank,
+
+				...getRarestBird(userResult.map((species) => ({
+					species_id: species._id,
+					bird_id: species.bird_id,
+				}))),
+
 			});
 
 		}
@@ -231,6 +248,37 @@ const rankSpeciesCounts = async (client, address, limit) => {
 		console.error(error);
 		throw error;
 	}
+
+};
+
+// The user's rarest bird is a bird for the rarest species (i.e. the species
+// with the smallest total supply of birds) that the user has recorded
+const getRarestBird = (speciesDocs) => {
+
+	let rarest = null;
+
+	speciesDocs.forEach((doc) => {
+
+		const supply = SPECIES_SUPPLY[doc.species_id];
+
+		if (supply === undefined) {
+			return;
+		}
+
+		if (!rarest || supply < rarest.supply) {
+			rarest = {
+				supply,
+				species_id: doc.species_id,
+				bird_id: doc.bird_id ?? null,
+			};
+		}
+
+	});
+
+	return {
+		rarest_species_id: rarest ? rarest.species_id : null,
+		rarest_bird_id: rarest ? rarest.bird_id : null,
+	};
 
 };
 

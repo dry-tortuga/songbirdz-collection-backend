@@ -18,6 +18,9 @@ const fetchBirdOfTheWeek = require("./fetchBirdOfTheWeek");
 
 const { MongoClient } = require("mongodb");
 
+// Use "fake" data instead of the real MongoDB database in development mode
+const isDevelopment = process.env.NODE_ENV === "development";
+
 class DB {
 
 	constructor() {
@@ -101,4 +104,4 @@ class DB {
 
 };
 
-module.exports = DB;
+module.exports = isDevelopment ? require("./fake") : DB;

@@ -18,6 +18,7 @@ const {
 	getPointsLeaderboard,
 	getLifeListData,
 	getLifeListLeaderboard,
+	getSpeciesSupply,
 } = require("./leaderboard");
 const {
 	createMemoryMatchLog,
@@ -47,6 +48,9 @@ router.get("/life-list/leaderboard", getLifeListLeaderboard);
 
 // Get the life list (i.e. species data) for a specific user
 router.get("/life-list/data", getLifeListData);
+
+// Get the supply (rarity) of every species, keyed by species ID
+router.get("/species-supply", getSpeciesSupply);
 
 // Get the daily streaks
 router.get("/daily-streaks/active", getDailyStreaks);
