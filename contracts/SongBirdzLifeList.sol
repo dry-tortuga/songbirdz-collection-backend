@@ -1,42 +1,55 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "hardhat/console.sol";
-
-import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
-import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
-// TODO: Mint as soulbound erc-721 tokens (MAKE IT SOULBOUND)
-
-// 300k gas -> ~$.02
-
+/**
+ * @dev The Songbirdz Life List
+ *
+ * A soulbound ERC-721 collection that stores a permanent record of the species
+ * each user has collected in the Songbirdz project. There is one NFT issued for
+ * each species (per user) with SVG images from xPoli stored fully onchain,
+ * similar to how they are rendered/stored for the Hall of Fame contract.
+ *
+ * Species records can be claimed in two ways:
+ *   1. Ownership   -> the user currently owns a Songbirdz bird of that species.
+ *   2. History     -> the user owned the bird in the past, verified via a merkle
+ *                     tree of all past data uploaded by the contract owner.
+ *
+ * Records can be claimed one at a time, or in bulk within a single transaction.
+ */
 interface ISongbirdz {
 	function ownerOf(uint256 tokenId) external view returns (address);
 }
 
-contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
+contract SongBirdzLifeList is ERC721, Ownable {
 
 	/* -------------------- CONSTANTS --------------- */
 
-	// The total number of birds
+	// The total number of birds in the Songbirdz collection
 	uint16 private constant NUMBER_OF_BIRDS = 10000;
 
-	// The total number of species
+	// The total number of species in the Songbirdz collection
 	uint16 private constant NUMBER_OF_SPECIES = 800;
 
-	// The unlock tiers for the life list
-	uint16[5] private immutable SPECIES_UNLOCK_TIERS = [5, 25, 100, 250, NUMBER_OF_SPECIES];
-	uint256[5] private immutable SPECIES_UNLOCK_TIERS_PRICE_ETH = [
+	// The number of 256-bit rows needed for the species bitmask (800/256 = 3.125)
+	uint256 private constant SPECIES_BITMAP_ROWS = 4;
+
+	// The unlock tiers for the life list, i.e. the maximum number of species
+	// that a user can record before needing to unlock the next tier
+	uint16[5] private SPECIES_UNLOCK_TIERS = [5, 25, 100, 250, NUMBER_OF_SPECIES];
+
+	// The price to unlock each tier (index 0 is never used)
+	uint256[5] private SPECIES_UNLOCK_TIERS_PRICE_ETH = [
 		0,
-		0.00001 ether,
-		0.0001 ether,
-		0.001 ether,
-		0.01 ether
+		10000000000000,
+		100000000000000,
+		1000000000000000,
+		10000000000000000
 	];
 
 	string private constant svgStartString = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="auto">';
@@ -63,16 +76,16 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	ISongbirdz private songbirdzContract;
 
 	// Starting from 0, the species must be uploaded in sequential order until we have all 800
-	uint256 currentSpeciesId = 0;
+	uint256 public currentSpeciesId = 0;
 
-	// The merkle tree root for the past species history
-	bytes32 historyMerkleTree;
+	// The merkle tree root used to verify past history claims
+	bytes32 public historyMerkleTree;
 
 	// True, if the merkle tree (for past species history) is permanently locked
-	bool isHistoryTreeLocked = false;
+	bool public isHistoryTreeLocked = false;
 
 	// True, if backfill of user unlocked tiers (for past species history) is permanently locked
-	bool isHistoryTiersLocked = false;
+	bool public isHistoryTiersLocked = false;
 
 	// There are a total of 800 species in the collection
 	mapping(uint16 => Species) private species;
@@ -83,7 +96,21 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	// Mapping of soulbound token ID to species ID for the erc-721 nfts
 	mapping(uint256 => uint16) private tokenIdToSpeciesId;
 
-	// Mapping of owner to life list data
+	// The ID of the next soulbound ERC-721 token to be minted
+	uint256 private nextTokenId;
+
+	// Every user that has claimed at least one species (used to build leaderboards)
+	address[] private userList;
+
+	// True, if the user has been added to the user list
+	mapping(address => bool) private isUserListed;
+
+	// The number of users at each species count, i.e. speciesCountHistogram[c]
+	// is the number of users that have recorded exactly "c" species.
+	// (Used to compute leaderboard ranks without iterating the user list)
+	uint16[801] private speciesCountHistogram;
+
+	// Mapping of user address to their life list data
 	mapping(address => LifeList) private users;
 
 	/* ---------------------- CUSTOM EVENTS ------------------- */
@@ -112,29 +139,16 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	error SpeciesOutOfOrder();
 	error MaxSpeciesReached();
 
+	error EmptyMint();
+	error ArrayLengthMismatch();
 	error InvalidBirdId();
 	error SpeciesAlreadyIdentified();
 	error NotBirdOwner();
+	error NoRecordsToClaim();
 
-	error NextTierLocked();
 	error AllTiersUnlocked();
 	error InsufficientFunds();
-
-	/**
-	 * @dev Throws if the user needs to unlock the next tier in their life list.
-	 */
-	modifier isMintTierUnlocked() {
-
-		LifeList memory user = users[msg.sender];
-
-		// Cannot mint if the next tier is locked
-		if (user.count == SPECIES_UNLOCK_TIERS[user.unlockedTier]) {
-			revert NextTierLocked();
-		}
-
-		_;
-
-	}
+	error TierCapacityReached();
 
 	/* --------------------- CUSTOM STRUCTS --------------- */
 
@@ -151,13 +165,13 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	struct LifeList {
 		uint16 count; // The number of species recorded by the user
 		uint8 unlockedTier; // The current unlocked tier of the user
-		mapping(uint16 => bool) speciesMap; // Species recorded by the user (by unique ID)
+		mapping(uint16 => uint256) speciesBitmap; // Bitmask of the species recorded by the user (up to 4 rows of 256 bits)
 	}
 
 	/* ----------------------- CONSTRUCTOR ------------------------- */
 
 	// Contract constructor
-	constructor(address songbirdzContractAddress) Ownable(msg.sender) ERC721("SongbirdzLifeList", "SongBirdzLifeList") {
+	constructor(address songbirdzContractAddress) Ownable(msg.sender) ERC721("SongbirdzLifeList", "SongbirdzLifeList") {
 		songbirdzContract = ISongbirdz(songbirdzContractAddress);
 	}
 
@@ -169,7 +183,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	 *
 	 * @dev NOTE: Only called by the contract owner.
 	 */
-	function publicSetMerkleTree(bytes memory _root, bool _locked) external onlyOwner {
+	function publicSetMerkleTree(bytes32 _root, bool _locked) external onlyOwner {
 
 		if (isHistoryTreeLocked) {
 			revert HistoryTreeLocked();
@@ -199,6 +213,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		LifeList storage user = users[_address];
 
 		user.unlockedTier = _tier;
+
 		isHistoryTiersLocked = _locked;
 
 	}
@@ -247,7 +262,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		species[speciesId] = newSpecies;
 
 		// Map the bird token IDs (0-9999) to the species ID (0-799)
-		for (uint16 i = 0; i < birdIds.length; i++) {
+		for (uint256 i = 0; i < birdIds.length; i++) {
 			birdIdToSpeciesId[birdIds[i]] = speciesId;
 		}
 
@@ -255,128 +270,287 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 
 	}
 
-	/* -------------------- MECHANISM FUNCTIONS (PUBLIC) ------------------ */
+	/**
+	 * @dev Withdraws any ETH sent to the contract (tier unlock fees).
+	 *
+	 * @dev NOTE: Only called by the contract owner.
+	 */
+	function publicWithdrawETH() external onlyOwner {
+		(bool sent, ) = payable(msg.sender).call{value: address(this).balance}("");
+		if (!sent) {
+			revert InsufficientFunds();
+		}
+	}
+
+	/* -------------------- CLAIMING LIFE LIST RECORDS (PUBLIC) ------------------ */
 
 	/**
-	 * @dev Mint a new species record in your Life List and mark it as identified.
-	 * @dev NOTE: This function is called when you own the bird.
+	 * @dev Claims a new species record in your Life List by owning the bird.
 	 *
-	 * @param birdId  The bird ID.
+	 * @param birdId  The ID of the bird you currently own.
 	 */
-	function publicMintLifeListRecord(uint16 birdId) external nonReentrant isMintTierUnlocked {
+	function publicMintLifeListRecordFromOwnership(uint16 birdId) external {
 
-		// Check to make sure the bird exists
+		LifeList storage user = users[msg.sender];
+
+		// Can never claim species outside of the collection
 		if (birdId >= NUMBER_OF_BIRDS) {
 			revert InvalidBirdId();
 		}
 
-		// Get the species id for that bird
+		// Can never claim to have identified a species that does not exist yet
 		uint16 speciesId = birdIdToSpeciesId[birdId];
 
-		// Check to make sure the species has not already been identified by this user
-		LifeList storage user = users[msg.sender];
+		if (!species[speciesId].exists) {
+			revert InvalidBirdId();
+		}
 
-		if (user.speciesMap[speciesId]) {
+		// Can only claim a species once
+		if (_isSpeciesRecorded(user, speciesId)) {
 			revert SpeciesAlreadyIdentified();
 		}
 
-		// Check to make sure the msg.sender is the current owner of the bird
+		// Must still own the bird
 		if (songbirdzContract.ownerOf(birdId) != msg.sender) {
 			revert NotBirdOwner();
 		}
 
-		// Permanently store the identification of this species for the user
+		// Store the recording
 
-		user.speciesMap[speciesId] = true;
-		user.count++;
+		uint16[] memory birdIdsToCommit = new uint16[](1);
+		uint16[] memory speciesIdsToCommit = new uint16[](1);
 
-		// Keep track of the species ID for the new soulbound erc-721 token
+		birdIdsToCommit[0] = birdId;
+		speciesIdsToCommit[0] = speciesId;
 
-		uint256 newTokenId = totalSupply();
-
-		tokenIdToSpeciesId[newTokenId] = speciesId;
-
-		// This will assign ownership, and also emit the Transfer event as required per ERC721
-
-		_safeMint(msg.sender, newTokenId);
-
-		emit SpeciesIdentified(
-			msg.sender,
-			uint256(speciesId),
-			uint256(birdId),
-			species[speciesId].name,
-			newTokenId
-		);
+		_commitLifeListRecords(user, birdIdsToCommit, speciesIdsToCommit, 1);
 
 	}
 
 	/**
-	 * @dev Mint a new species record in your Life List and mark it as identified.
-	 * @dev NOTE: This function is called for recording your past history (in case you sold the bird).
+	 * @dev Claims a new species record in your Life List from your past history,
+	 * i.e. for birds that you owned in the past but have since sold.
 	 *
-	 * @param birdId  The bird ID.
+	 * @param birdId        The ID of the bird you previously owned.
+	 * @param speciesId     The species ID of that bird.
+	 * @param speciesProof  Your merkle proof for the bird.
 	 */
 	function publicMintLifeListRecordFromHistory(
 		uint16 birdId,
 		uint16 speciesId,
-		bytes32[] memory speciesProof
-	) external nonReentrant isMintTierUnlocked {
+		bytes32[] calldata speciesProof
+	) external {
 
-		// Check to make sure the bird exists
+		LifeList storage user = users[msg.sender];
+
+		// Can never claim species outside of the collection
 		if (birdId >= NUMBER_OF_BIRDS) {
 			revert InvalidBirdId();
 		}
 
-		// Check to make sure the species has not already been identified by this user
-		LifeList storage user = users[msg.sender];
-
-		if (user.speciesMap[speciesId]) {
+		// Can only claim a species once
+		if (_isSpeciesRecorded(user, speciesId)) {
 			revert SpeciesAlreadyIdentified();
 		}
 
-		// Generate the hash value for the leaf
+		// Validate the bird ownership claim via the merkle proof provided
+
 		bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(birdId, speciesId, msg.sender))));
 
-		// Validate the species ID via the leaf hash value and proof provided
-		bool isValid = MerkleProof.verify(speciesProof, historyMerkleTree, leaf);
-
-		if (!isValid) {
+		if (!MerkleProof.verify(speciesProof, historyMerkleTree, leaf)) {
 			revert InvalidHistoryProof();
 		}
 
-		// Permanently store the identification of this species for the user
+		// Store the recording
 
-		user.speciesMap[speciesId] = true;
-		user.count++;
+		uint16[] memory birdIdsToCommit = new uint16[](1);
+		uint16[] memory speciesIdsToCommit = new uint16[](1);
 
-		// Keep track of the species ID for the new soulbound erc-721 token
+		birdIdsToCommit[0] = birdId;
+		speciesIdsToCommit[0] = speciesId;
 
-		uint256 newTokenId = totalSupply();
+		_commitLifeListRecords(user, birdIdsToCommit, speciesIdsToCommit, 1);
 
-		tokenIdToSpeciesId[newTokenId] = speciesId;
+	}
 
-		// This will assign ownership, and also emit the Transfer event as required per ERC721
+	/* ------------------- CLAIMING MULTIPLE LIFE LIST RECORDS (PUBLIC) ------------------- */
 
-		_safeMint(msg.sender, newTokenId);
+	/**
+	 * @dev Claims a new species record in your Life List for each bird that you
+	 * currently own. This lets you claim multiple species in bulk within a
+	 * single transaction, which saves on gas fees.
+	 *
+	 * @dev Birds that are outside of the bird collection, no longer owned by the
+	 * user, not yet identified (i.e. without a species ID), or that belong to a
+	 * species already claimed in a previous call (or earlier in this call) are
+	 * silently skipped rather than reverting the whole transaction.
+	 *
+	 * @param birdIdsToClaim  The list of IDs of birds to claim.
+	 */
+	function publicMintLifeListRecordsFromOwnership(uint16[] calldata birdIdsToClaim) external {
 
-		emit SpeciesIdentified(
-			msg.sender,
-			uint256(speciesId),
-			uint256(birdId),
-			species[speciesId].name,
-			newTokenId
-		);
+		if (birdIdsToClaim.length == 0) {
+			revert EmptyMint();
+		}
+
+		LifeList storage user = users[msg.sender];
+
+		// Build the list of new species recordings to commit
+
+		uint16[] memory birdIdsToCommit = new uint16[](birdIdsToClaim.length);
+		uint16[] memory speciesIdsToCommit = new uint16[](birdIdsToClaim.length);
+		uint256 numberOfNewRecords = 0;
+
+		// Temporary bitmask to track species handled within this call
+		uint256[SPECIES_BITMAP_ROWS] memory pendingSpeciesBitmap;
+
+		for (uint256 i = 0; i < birdIdsToClaim.length; i++) {
+
+			uint16 birdId = birdIdsToClaim[i];
+
+			// Can never claim species outside of the collection
+			if (birdId >= NUMBER_OF_BIRDS) {
+				revert InvalidBirdId();
+			}
+
+			// Skip birds that are not yet identified (i.e. without a species ID)
+			uint16 speciesId = birdIdToSpeciesId[birdId];
+
+			if (!species[speciesId].exists) {
+				continue;
+			}
+
+			// Skip species already recorded by this user (or earlier in this call)
+			if (_isSpeciesRecorded(user, speciesId) || _isSpeciesRecorded(pendingSpeciesBitmap, speciesId)) {
+				continue;
+			}
+
+			// Skip birds that are no longer owned by the user
+			// (including birds that have never been minted at all)
+			bool isOwnedByUser = false;
+
+			try songbirdzContract.ownerOf(birdId) returns (address currentOwner) {
+				isOwnedByUser = currentOwner == msg.sender;
+			} catch {
+				// Bird has never been minted -> skip
+			}
+
+			if (!isOwnedByUser) {
+				continue;
+			}
+
+			// Add this recording to the list of new records to commit
+			_markSpeciesRecorded(pendingSpeciesBitmap, speciesId);
+
+			birdIdsToCommit[numberOfNewRecords] = birdId;
+			speciesIdsToCommit[numberOfNewRecords] = speciesId;
+			numberOfNewRecords++;
+
+		}
+
+		if (numberOfNewRecords == 0) {
+			revert NoRecordsToClaim();
+		}
+
+		_commitLifeListRecords(user, birdIdsToCommit, speciesIdsToCommit, numberOfNewRecords);
 
 	}
 
 	/**
-	 * @dev Unlock the next tier in your life list.
+	 * @dev Claims a new species record in your Life List for each bird from your
+	 * past history, i.e. for birds that you owned in the past but have since
+	 * sold. This lets you claim multiple species in bulk within a single
+	 * transaction, which saves on gas fees.
+	 *
+	 * @dev The arrays are parallel lists, i.e. the bird at index `i` is
+	 * `birdIdsToClaim[i]` of species `speciesIdsToClaim[i]` with the merkle
+	 * proof `speciesProofs[i]`.
+	 *
+	 * @dev Birds that are outside of the bird collection, not yet identified
+	 * (i.e. without a species ID), or that belong to a species already claimed
+	 * in a previous call (or earlier in this call) are silently skipped rather
+	 * than reverting the whole transaction.
+	 *
+	 * @param birdIdsToClaim     The list of IDs of birds to claim.
+	 * @param speciesIdsToClaim  The list of species IDs for each bird.
+	 * @param speciesProofs      The list of merkle proofs for each bird.
 	 */
-	function publicUnlockNextTier() external payable nonReentrant {
+	function publicMintLifeListRecordsFromHistory(
+		uint16[] calldata birdIdsToClaim,
+		uint16[] calldata speciesIdsToClaim,
+		bytes32[][] calldata speciesProofs
+	) external {
+
+		if (birdIdsToClaim.length == 0) {
+			revert EmptyMint();
+		}
+
+		if (birdIdsToClaim.length != speciesIdsToClaim.length || birdIdsToClaim.length != speciesProofs.length) {
+			revert ArrayLengthMismatch();
+		}
 
 		LifeList storage user = users[msg.sender];
 
-		// Cannot mint more than the maximum number of species
+		// Build the list of new species recordings to commit
+
+		uint16[] memory birdIdsToCommit = new uint16[](birdIdsToClaim.length);
+		uint16[] memory speciesIdsToCommit = new uint16[](birdIdsToClaim.length);
+		uint256 numberOfNewRecords = 0;
+
+		// Temporary bitmask to track species handled within this call
+		uint256[SPECIES_BITMAP_ROWS] memory pendingSpeciesBitmap;
+
+		for (uint256 i = 0; i < birdIdsToClaim.length; i++) {
+
+			uint16 birdId = birdIdsToClaim[i];
+			uint16 speciesId = speciesIdsToClaim[i];
+
+			// Can never claim species outside of the collection
+			if (birdId >= NUMBER_OF_BIRDS) {
+				revert InvalidBirdId();
+			}
+
+			// Skip species already recorded by this user (or earlier in this call)
+			if (_isSpeciesRecorded(user, speciesId) || _isSpeciesRecorded(pendingSpeciesBitmap, speciesId)) {
+				continue;
+			}
+
+			// Validate the bird ownership claim via the merkle proof provided
+
+			bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(birdId, speciesId, msg.sender))));
+
+			if (!MerkleProof.verify(speciesProofs[i], historyMerkleTree, leaf)) {
+				revert InvalidHistoryProof();
+			}
+
+			// Add this recording to the list of new records to commit
+			_markSpeciesRecorded(pendingSpeciesBitmap, speciesId);
+
+			birdIdsToCommit[numberOfNewRecords] = birdId;
+			speciesIdsToCommit[numberOfNewRecords] = speciesId;
+			numberOfNewRecords++;
+
+		}
+
+		if (numberOfNewRecords == 0) {
+			revert NoRecordsToClaim();
+		}
+
+		_commitLifeListRecords(user, birdIdsToCommit, speciesIdsToCommit, numberOfNewRecords);
+
+	}
+
+	/* ------------------- UNLOCKING TIERS (PUBLIC) ------------------- */
+
+	/**
+	 * @dev Unlock the next tier in your life list to increase your maximum
+	 * number of species records.
+	 */
+	function publicUnlockNextTier() external payable {
+
+		LifeList storage user = users[msg.sender];
+
+		// Cannot unlock more than the maximum number of tiers
 		if (user.unlockedTier == SPECIES_UNLOCK_TIERS.length - 1) {
 			revert AllTiersUnlocked();
 		}
@@ -384,7 +558,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		// Get the price for the next tier
 		uint256 price = SPECIES_UNLOCK_TIERS_PRICE_ETH[user.unlockedTier + 1];
 
-		// Check if the user has enough ETH to pay for the next tier
+		// Check if the user has sent enough ETH to pay for the next tier
 		if (msg.value < price) {
 			revert InsufficientFunds();
 		}
@@ -395,7 +569,21 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 
 	}
 
-	/* ----------------------- READ ONLY FUNCTIONS (PUBLIC) --------------------- */
+	/* ----------------------- READING LIFE LIST DATA (PUBLIC) --------------------- */
+
+	/**
+	 * Gets the total number of species uploaded to the collection.
+	 */
+	function publicGetTotalSpecies() public view returns (uint256) {
+		return currentSpeciesId;
+	}
+
+	/**
+	 * Gets the number of soulbound NFTs minted in the contract so far.
+	 */
+	function publicGetTotalTokensMinted() public view returns (uint256) {
+		return nextTokenId;
+	}
 
 	/**
 	 * Gets the name for the provided species ID.
@@ -481,27 +669,183 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 	/**
 	 * Gets the unlocked tier for the provided address.
 	 *
-	 * @param _address  The address.
+	 * @param _address  The address of the user.
 	 */
 	function publicGetUnlockedTier(address _address) public view returns (uint8) {
-		LifeList memory user = users[_address];
-		return user.unlockedTier;
+		return users[_address].unlockedTier;
 	}
 
 	/**
 	 * Gets the price to unlock the next tier for the provided address.
+	 * Returns 0 if all tiers are already unlocked.
 	 *
-	 * @param _address  The address.
+	 * @param _address  The address of the user.
 	 */
 	function publicGetNextTierPrice(address _address) public view returns (uint256) {
 
-		LifeList memory user = users[_address];
+		uint8 unlockedTier = users[_address].unlockedTier;
 
-		if (user.unlockedTier == SPECIES_UNLOCK_TIERS.length - 1) {
+		if (unlockedTier == SPECIES_UNLOCK_TIERS.length - 1) {
 			return 0;
 		}
 
-		return SPECIES_UNLOCK_TIERS_PRICE_ETH[user.unlockedTier + 1];
+		return SPECIES_UNLOCK_TIERS_PRICE_ETH[unlockedTier + 1];
+
+	}
+
+	/**
+	 * Gets whether at least one species has been recorded by the provided address.
+	 *
+	 * @param _address  The address of the user.
+	 */
+	function publicIsUserRecorded(address _address) public view returns (bool) {
+		return isUserListed[_address];
+	}
+
+	/**
+	 * Gets the number of users that have claimed at least one species.
+	 */
+	function publicGetTotalUsers() public view returns (uint256) {
+		return userList.length;
+	}
+
+	/**
+	 * Gets a page of users that have claimed at least one species.
+	 * Useful for building leaderboards.
+	 *
+	 * @param startIndex  The index to start from.
+	 * @param endIndex    The index to end at (exclusive).
+	 */
+	function publicGetUsers(uint256 startIndex, uint256 endIndex) public view returns (address[] memory) {
+
+		// Clamp to the size of the user list
+		if (endIndex > userList.length) {
+			endIndex = userList.length;
+		}
+
+		if (startIndex > endIndex) {
+			startIndex = endIndex;
+		}
+
+		address[] memory addresses = new address[](endIndex - startIndex);
+
+		for (uint256 i = startIndex; i < endIndex; i++) {
+			addresses[i - startIndex] = userList[i];
+		}
+
+		return addresses;
+
+	}
+
+	/**
+	 * Gets the life list data for the provided address: the species count,
+	 * the unlocked tier, and the list of recorded species IDs (ascending).
+	 *
+	 * @param _address  The address of the user.
+	 */
+	function publicGetLifeList(address _address) public view returns (
+		uint16 count,
+		uint8 unlockedTier,
+		uint16[] memory speciesIds
+	) {
+
+		LifeList storage user = users[_address];
+
+		count = user.count;
+		unlockedTier = user.unlockedTier;
+
+		speciesIds = new uint16[](count);
+
+		uint256 index = 0;
+
+		// Walk the species bitmask rows to extract each recorded species ID in ascending order
+		for (uint16 row = 0; row < SPECIES_BITMAP_ROWS; row++) {
+
+			uint256 rowData = user.speciesBitmap[row];
+
+			while (rowData != 0) {
+
+				// Find the position of the lowest set bit in this row
+				uint256 bitIndex = 0;
+
+				while (((rowData >> bitIndex) & 1) == 0) {
+					bitIndex++;
+				}
+
+				// Record this species ID and clear the bit
+				speciesIds[index] = uint16((row * 256) + bitIndex);
+				rowData = rowData & (rowData - 1);
+				index++;
+
+			}
+
+		}
+
+	}
+
+	/**
+	 * Gets the completion data for the provided address: the species count,
+	 * the total number of species, and the completion percentage expressed in
+	 * basis points (i.e. 50% completion = 5000).
+	 *
+	 * @param _address  The address of the user.
+	 */
+	function publicGetLifeListCompletion(address _address) public view returns (
+		uint16 count,
+		uint16 total,
+		uint16 completionInPercentBps
+	) {
+
+		LifeList storage user = users[_address];
+
+		count = user.count;
+		total = uint16(NUMBER_OF_SPECIES);
+		completionInPercentBps = uint16((uint256(count) * 10000) / NUMBER_OF_SPECIES);
+
+	}
+
+	/**
+	 * Gets the rank for the provided address, i.e. 1 + the number of users with
+	 * a strictly higher species count. Users with an equal species count share
+	 * the same rank. Returns 0 for users that have not claimed any species yet.
+	 *
+	 * @param _address  The address of the user.
+	 */
+	function publicGetLifeListRank(address _address) public view returns (uint256) {
+
+		LifeList storage user = users[_address];
+
+		// Users without any species records are not ranked
+		if (user.count == 0) {
+			return 0;
+		}
+
+		// Count all users with a strictly higher species count
+		uint256 rank = 1;
+
+		for (uint16 c = uint16(NUMBER_OF_SPECIES); c > user.count; c--) {
+			rank += speciesCountHistogram[c];
+		}
+
+		return rank;
+
+	}
+
+	/**
+	 * Gets the species count for a batch of addresses.
+	 * Useful for ranking multiple users in a single call.
+	 *
+	 * @param _addresses  The list of user addresses.
+	 */
+	function publicGetCountsForUsers(address[] calldata _addresses) public view returns (uint16[] memory) {
+
+		uint16[] memory counts = new uint16[](_addresses.length);
+
+		for (uint256 i = 0; i < _addresses.length; i++) {
+			counts[i] = users[_addresses[i]].count;
+		}
+
+		return counts;
 
 	}
 
@@ -554,7 +898,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		address from,
 		address to,
 		uint256 tokenId
-	) public pure override(ERC721, IERC721) {
+	) public override(ERC721) {
 		revert("SongBirdzLifeList: Tokens are non-transferable");
 	}
 
@@ -563,19 +907,114 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		address to,
 		uint256 tokenId,
 		bytes memory _data
-	) public pure override(ERC721, IERC721) {
+	) public override(ERC721) {
 		revert("SongBirdzLifeList: Tokens are non-transferable");
 	}
 
-	function approve(address to, uint256 tokenId) public pure override(ERC721, IERC721) {
+	function approve(address to, uint256 tokenId) public override(ERC721) {
 		revert("SongBirdzLifeList: Tokens are non-transferable");
 	}
 
-	function setApprovalForAll(address operator, bool approved) public pure override(ERC721, IERC721) {
+	function setApprovalForAll(address operator, bool approved) public override(ERC721) {
 		revert("SongBirdzLifeList: Tokens are non-transferable");
 	}
 
 	/* ------------------------ PRIVATE METHODS -------------------------- */
+
+	/**
+	 * @dev Commits a set of new species recordings to the user's life list.
+	 *
+	 * @dev Reverts if the user does not have enough space in their current
+	 * unlocked tier to record all of the new species.
+	 */
+	function _commitLifeListRecords(
+		LifeList storage user,
+		uint16[] memory birdIdsToCommit,
+		uint16[] memory speciesIdsToCommit,
+		uint256 numberOfNewRecords
+	) private {
+
+		// Cannot hold more species records than the currently unlocked tier allows
+		if (uint256(user.count) + numberOfNewRecords > SPECIES_UNLOCK_TIERS[user.unlockedTier]) {
+			revert TierCapacityReached();
+		}
+
+		// Update the count histogram used for computing leaderboard ranks
+
+		if (user.count > 0) {
+			speciesCountHistogram[user.count] -= 1;
+		}
+
+		user.count += uint16(numberOfNewRecords);
+
+		speciesCountHistogram[user.count] += 1;
+
+		// Add the user to the global user list on their first recorded species
+		if (!isUserListed[msg.sender]) {
+			isUserListed[msg.sender] = true;
+			userList.push(msg.sender);
+		}
+
+		// Permanently store each new recording and mint a soulbound token for each
+		for (uint256 i = 0; i < numberOfNewRecords; i++) {
+
+			uint16 speciesId = speciesIdsToCommit[i];
+
+			// Record the species in the user's life list bitmask
+			_markSpeciesRecorded(user, speciesId);
+
+			// Mint a new soulbound ERC-721 token (assigns ownership and emits Transfer)
+			uint256 newTokenId = nextTokenId++;
+
+			tokenIdToSpeciesId[newTokenId] = speciesId;
+
+			_safeMint(msg.sender, newTokenId);
+
+			emit SpeciesIdentified(
+				msg.sender,
+				uint256(speciesId),
+				uint256(birdIdsToCommit[i]),
+				species[speciesId].name,
+				newTokenId
+			);
+
+		}
+
+	}
+
+	/**
+	 * @dev Returns true if the species ID has already been recorded by the user,
+	 * as tracked in the permanent species bitmask of the user's life list.
+	 */
+	function _isSpeciesRecorded(LifeList storage user, uint16 speciesId) internal view returns (bool) {
+		uint256 row = user.speciesBitmap[speciesId / 256];
+		return ((row >> (uint256(speciesId) % 256)) & 1) == 1;
+	}
+
+	/**
+	 * @dev Returns true if the species ID is marked in the provided bitmask
+	 * (used to track species handled within a single claim call).
+	 */
+	function _isSpeciesRecorded(uint256[SPECIES_BITMAP_ROWS] memory bitmap, uint16 speciesId) internal pure returns (bool) {
+		uint256 row = bitmap[uint256(speciesId) / 256];
+		return ((row >> (uint256(speciesId) % 256)) & 1) == 1;
+	}
+
+	/**
+	 * @dev Sets the bit for the species ID in the permanent species bitmask
+	 * of the user's life list.
+	 */
+	function _markSpeciesRecorded(LifeList storage user, uint16 speciesId) internal {
+		user.speciesBitmap[speciesId / 256] |= (1 << (uint256(speciesId) % 256));
+	}
+
+	/**
+	 * @dev Sets the bit for the species ID in the provided bitmask
+	 * (used to track species handled within a single claim call).
+	 */
+	function _markSpeciesRecorded(uint256[SPECIES_BITMAP_ROWS] memory bitmap, uint16 speciesId) internal pure {
+		bitmap[uint256(speciesId) / 256] |= (1 << (uint256(speciesId) % 256));
+	}
 
 	/**
 	 * @dev Build the JSON attributes for the token.
@@ -630,7 +1069,7 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 
 			uint256 shift = shiftIndex == 0 ? 4 : 0;
 
-			uint8 colorIdx = (uint8(uint8(speciesToRender.pixels[byteIndex]) >> shift) & 0xf);
+			uint8 colorIdx = uint8((uint8(speciesToRender.pixels[byteIndex]) >> shift) & 0x0f);
 
 			svgContent = string(
 				abi.encodePacked(
@@ -687,8 +1126,8 @@ contract SongBirdzLifeList is ERC721Enumerable, Ownable, ReentrancyGuard {
 		bytes memory s = new bytes(6);
 
 		for (uint256 i = 0; i < 3; i++) {
-			s[i*2] = HEX_SYMBOLS[(uint8(color[i]) >> 4) & 0xe];
-			s[(i*2)+1] = HEX_SYMBOLS[uint8(color[i]) & 0xe];
+			s[i*2] = HEX_SYMBOLS[(uint8(color[i]) >> 4) & 0x0f];
+			s[(i*2)+1] = HEX_SYMBOLS[uint8(color[i]) & 0x0f];
 		}
 
 		return string(s);

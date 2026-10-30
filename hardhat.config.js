@@ -10,7 +10,7 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 require("./scripts/solidity/main/fetchIdentifiedBirds");
 require("./scripts/solidity/main/populateCollection");
 require("./scripts/solidity/hof/populateCollection");
-// require("./scripts/solidity/lifeList/populateSpecies");
+require("./scripts/solidity/lifeList/populateSpecies");
 
 // https://docs.base.org/guides/deploy-smart-contracts
 
@@ -21,6 +21,12 @@ console.log(`Initializing hardhat.config.js with isUsingLedgerHardwareWallet=${i
 const config = {
 	solidity: {
 		version: "0.8.22",
+		settings: {
+			optimizer: {
+				enabled: true,
+				runs: 1000,
+			},
+		},
 	},
 	networks: {},
 	defaultNetwork: "base-local",

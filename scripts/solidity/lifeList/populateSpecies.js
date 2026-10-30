@@ -51,9 +51,9 @@ task(TASK_NAME, TASK_DESCRIPTION, async (_, { ethers }) => {
 
 		// Publish the transaction
 		const tx = await contract.publicGenerateSpecies(
-			species.id,
 			species.colors1,
 			species.colors2,
+			species.id,
 			species.pixels,
 			species.birdIds,
 			species.name,
